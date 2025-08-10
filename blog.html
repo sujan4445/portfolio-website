@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sujan Chapagain - Expert Insights & Research Blog</title>
+  <meta name="description" content="Expert insights on wheat phenotyping, drought resistance, and agricultural research">
+
+  <!-- Open Graph tags -->
+  <meta property="og:site_name" content="Sujan Chapagain">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sujan Chapagain - Expert Insights & Research Blog">
+  <meta property="og:description" content="Expert insights on wheat phenotyping, drought resistance, and agricultural research">
+  <meta property="og:url" content="#">
+  <meta property="og:image" content="#">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+    body {
+      background: linear-gradient(135deg, #065f46, #047857, #10b981);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #1e293b;
+    }
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .navbar a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    .navbar a:hover {
+      color: #047857;
+      transform: translateY(-2px);
+      text-shadow: 0 4px 8px rgba(4, 120, 87, 0.3);
+    }
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #047857, #10b981);
+      transition: width 0.3s ease;
+    }
+    .navbar a:hover::after {
+      width: 100%;
+    }
+    .navbar a.active {
+      color: #047857;
+      font-weight: 600;
+    }
+    .navbar a.active::after {
+      width: 100%;
+    }
+    .hero-section {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 2rem;
+      margin: 2rem auto;
+      padding: 3rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      margin: 0 auto 2rem;
+    }
+    .profile-photo:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 0 50px rgba(16, 185, 129, 0.8);
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: calc(0.2s * var(--index));
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, #047857, #10b981, #34d399);
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 3rem;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80%;
+      height: 4px;
+      background: linear-gradient(to right, #10b981, #34d399, #6ee7b7);
+      border-radius: 2px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .expert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .read-more {
+      color: #047857;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .read-more:hover {
+      color: #065f46;
+      transform: translateX(5px);
+    }
+    .read-more::after {
+      content: '→';
+      transition: transform 0.3s ease;
+    }
+    .read-more:hover::after {
+      transform: translateX(3px);
+    }
+    .content p {
+      line-height: 1.8;
+      color: #64748b;
+    }
+    .content p.truncated {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    .tag {
+      background: linear-gradient(135deg, #047857, #10b981);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .expert-grid, .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-section {
+        margin: 1rem;
+        padding: 2rem;
+      }
+    }
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .floating-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+    .floating-circle:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      width: 100px;
+      height: 100px;
+      animation-delay: 0s;
+    }
+    .floating-circle:nth-child(2) {
+      top: 60%;
+      right: 10%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 2s;
+    }
+    .floating-circle:nth-child(3) {
+      bottom: 20%;
+      left: 20%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 4s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Background Elements -->
+  <div class="floating-elements">
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+    <div class="floating-circle"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar py-4">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif;">Sujan Chapagain</h1>
+      <div class="space-x-8">
+        <a href="#about" class="text-gray-700 hover:text-blue-700">About</a>
+        <a href="#expert-insights" class="text-gray-700 hover:text-blue-700">Expert Insights</a>
+        <a href="#my-blogs" class="text-gray-700 hover:text-blue-700">My Research</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-6 py-8">
+    <!-- Hero Section -->
+    <section id="about" class="hero-section">
+      <img src="https://via.placeholder.com/150" alt="Sujan Chapagain" class="profile-photo">
+      <h1 class="text-4xl font-bold text-white mb-4" style="font-family: 'Playfair Display', serif;">Welcome to My Research Hub</h1>
+      <p class="text-xl text-white/90 mb-6">Exploring wheat phenotyping, drought resistance, and sustainable agriculture through cutting-edge research and expert collaboration.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="tag">Wheat Phenotyping</span>
+        <span class="tag">Drought Resistance</span>
+        <span class="tag">Agricultural Research</span>
+        <span class="tag">Plant Breeding</span>
+      </div>
+    </section>
+
+    <!-- Expert Insights Section -->
+    <section id="expert-insights" class="mb-20">
+      <h2 class="section-title text-4xl font-bold text-center">Expert Insights</h2>
+      <div class="expert-grid">
+        <!-- Expert 1 - Wheat Breeding Specialist -->
+        <div class="card" style="--index: 1;">
+          <div class="flex items-center mb-4">
+            <img src="https://via.placeholder.com/80" alt="Dr. Sarah Johnson" class="w-20 h-20 rounded-full object-cover mr-4 border-2 border-green-200">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800" style="font-family: 'Playfair Display', serif;">Dr. Sarah Johnson</h3>
+              <p class="text-sm text-gray-500">Senior Wheat Breeder, CIMMYT</p>
+              <p class="text-sm text-gray-500">PhD in Plant Genetics, University of California</p>
+            </div>
+          </div>
+          <div class="blog-meta">
+            <span>🌾 Wheat Breeding</span>
+            <span>•</span>
+            <span>January 15, 2025</span>
+          </div>
+          <div class="content flex-grow">
+            <p class="truncated">The future of wheat breeding lies in precision phenotyping combined with genomic selection. Our recent trials have shown that high-throughput phenotyping can identify drought-tolerant genotypes 60% faster than traditional methods. The integration of remote sensing technologies, particularly thermal imaging and multispectral analysis, has revolutionized how we assess water stress responses in wheat populations. Climate change demands rapid development of resilient varieties, and phenotyping is the bridge between genetic potential and field performance. We're now seeing promising results with deep root architectures and enhanced water use efficiency traits that could transform wheat production in arid regions.</p>
+          </div>
+          <span class="read-more mt-4" onclick="toggleContent(this)">Read More</span>
+        </div>
+
+        <!-- Expert 2 - Drought Stress Physiologist -->
+        <div class="card" style="--index: 2;">
+          <div class="flex items-center mb-4">
+            <img src="https://via.placeholder.com/80" alt="Prof. Ahmed Hassan" class="w-20 h-20 rounded-full object-cover mr-4 border-2 border-green-200">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800" style="font-family: 'Playfair Display', serif;">Prof. Ahmed Hassan</h3>
+              <p class="text-sm text-gray-500">Plant Stress Physiologist, ICARDA</p>
+              <p class="text-sm text-gray-500">PhD in Plant Physiology, Cairo University</p>
+            </div>
+          </div>
+          <div class="blog-meta">
+            <span>💧 Drought Physiology</span>
+            <span>•</span>
+            <span>February 8, 2025</span>
+          </div>
+          <div class="content flex-grow">
+            <p class="truncated">Understanding the physiological mechanisms behind drought tolerance is crucial for effective phenotyping strategies. Our research focuses on osmotic adjustment, stomatal regulation, and antioxidant systems in wheat under water deficit conditions. Recent findings indicate that varieties with superior drought tolerance maintain higher relative water content and exhibit enhanced root hydraulic conductance. The correlation between canopy temperature depression and grain yield under stress conditions has proven to be a reliable phenotyping tool. We've identified specific metabolic markers that predict drought performance, opening new avenues for biochemical phenotyping approaches that complement traditional morphological assessments.</p>
+          </div>
+          <span class="read-more mt-4" onclick="toggleContent(this)">Read More</span>
+        </div>
+
+        <!-- Expert 3 - Remote Sensing Specialist -->
+        <div class="card" style="--index: 3;">
+          <div class="flex items-center mb-4">
+            <img src="https://via.placeholder.com/80" alt="Dr. Maria Rodriguez" class="w-20 h-20 rounded-full object-cover mr-4 border-2 border-green-200">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800" style="font-family: 'Playfair Display', serif;">Dr. Maria Rodriguez</h3>
+              <p class="text-sm text-gray-500">Remote Sensing Researcher, IRRI</p>
+              <p class="text-sm text-gray-500">PhD in Agricultural Engineering, Technical University of Madrid</p>
+            </div>
+          </div>
+          <div class="blog-meta">
+            <span>🛰️ Remote Sensing</span>
+            <span>•</span>
+            <span>March 3, 2025</span>
+          </div>
+          <div class="content flex-grow">
+            <p class="truncated">Remote sensing technologies are transforming wheat phenotyping by enabling non-destructive, high-throughput data collection across large breeding programs. UAV-based platforms equipped with RGB, multispectral, and thermal sensors can assess thousands of plots in a single day. Our latest algorithms combine vegetation indices, canopy temperature, and 3D structural data to predict drought tolerance with 85% accuracy. Machine learning models trained on spectral signatures can identify stress responses before visible symptoms appear. The integration of satellite imagery for regional-scale monitoring complements ground-based phenotyping, providing a comprehensive view of genotype performance across diverse environments and seasons.</p>
+          </div>
+          <span class="read-more mt-4" onclick="toggleContent(this)">Read More</span>
+        </div>
+
+        <!-- Expert 4 - Climate Resilience Researcher -->
+        <div class="card" style="--index: 4;">
+          <div class="flex items-center mb-4">
+            <img src="https://via.placeholder.com/80" alt="Dr. James Mitchell" class="w-20 h-20 rounded-full object-cover mr-4 border-2 border-green-200">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800" style="font-family: 'Playfair Display', serif;">Dr. James Mitchell</h3>
+              <p class="text-sm text-gray-500">Climate Resilience Researcher, CSIRO</p>
+              <p class="text-sm text-gray-500">PhD in Agricultural Climatology, University of Queensland</p>
+            </div>
+          </div>
+          <div class="blog-meta">
+            <span>🌡️ Climate Adaptation</span>
+            <span>•</span>
+            <span>March 20, 2025</span>
+          </div>
+          <div class="content flex-grow">
+            <p class="truncated">Climate change is intensifying drought stress patterns globally, making phenotyping for resilience more critical than ever. Our multi-environment trials across 15 countries reveal that wheat varieties with stable performance under variable precipitation patterns share common physiological traits. Phenotyping protocols must now account for heat-drought combinations, which are becoming increasingly common. We've developed stress indices that integrate temperature and water availability to better simulate future growing conditions. The challenge lies in breeding varieties that maintain yield stability across this expanding range of environmental stresses while preserving grain quality and nutritional content.</p>
+          </div>
+          <span class="read-more mt-4" onclick="toggleContent(this)">Read More</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Research Blogs Section -->
+    <section id="my-blogs" class="mb-20">
+      <h2 class="section-title text-4xl font-bold text-center">My Research & Insights</h2>
+      <div class="blog-grid">
+        <!-- Blog Post 1 -->
+        <div class="card" style="--index: 1;">
+          <div class="blog-meta">
+            <span class="tag">Research</span>
+            <span>January 10, 2025</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800" style="font-family: 'Playfair Display', serif;">Phenotyping Wheat Under Drought: Unlocking Resilience for Future Harvests</h3>
+          <div class="content flex-grow">
+            <p class="truncated">Drought stress remains one of the biggest challenges to wheat production worldwide, especially in rainfed agricultural systems. To secure food supplies amid changing climates, scientists and breeders focus on phenotyping—the detailed measurement of observable plant traits—to identify wheat varieties that can thrive under limited water. In this comprehensive analysis, I explore the latest methodologies and their implications for sustainable wheat production.</p>
+          </div>
+          <span class="read-more mt-4" onclick="readFullBlog('blog1')">Read Full Article</span>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="card" style="--index: 2;">
+          <div class="blog-meta">
+            <span class="tag">Methodology</span>
+            <span>February 22, 2025</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800" style="font-family: 'Playfair Display', serif;">Advanced Root Phenotyping Techniques in Wheat Research</h3>
+          <div class="content flex-grow">
+            <p class="truncated">Root architecture plays a crucial role in drought tolerance, yet it remains one of the most challenging traits to phenotype accurately. Recent advances in imaging technologies and non-destructive measurement techniques are revolutionizing our understanding of below-ground plant performance. This article delves into innovative approaches for assessing root systems and their practical applications in breeding programs.</p>
+          </div>
+          <span class="read-more mt-4" onclick="readFullBlog('blog2')">Read Full Article</span>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="card" style="--index: 3;">
+          <div class="blog-meta">
+            <span class="tag">Technology</span>
+            <span>March 5, 2025</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800" style="font-family: 'Playfair Display', serif;">Machine Learning Applications in Wheat Phenotyping</h3>
+          <div class="content flex-grow">
+            <p class="truncated">The integration of artificial intelligence and machine learning in agricultural research is opening new frontiers in phenotyping accuracy and efficiency. From automated trait extraction to predictive modeling, these technologies are transforming how we evaluate crop performance. Here, I discuss the current applications and future potential of AI-driven phenotyping systems in wheat research.</p>
+          </div>
+          <span class="read-more mt-4" onclick="readFullBlog('blog3')">Read Full Article</span>
+        </div>
+
+        <!-- Add New Blog Post Card -->
+        <div class="card border-dashed border-2 border-green-300" style="--index: 4;">
+          <div class="flex flex-col items-center justify-center h-full text-center p-8">
+            <div class="text-6xl text-green-400 mb-4">+</div>
+            <h3 class="text-xl font-semibold text-gray-600 mb-2">Share Your Research</h3>
+            <p class="text-gray-500 mb-4">Have insights on wheat phenotyping or drought resistance? Contribute to the research community.</p>
+            <button class="bg-gradient-to-r from-green-600 to-green-500 text-white px-6 py-2 rounded-lg hover:from-green-700 hover:to-green-600 transition-all duration-300" onclick="openSubmissionForm()">Submit Article</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Smooth scrolling for navbar links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    // Highlight active nav link on scroll
+    window.addEventListener('scroll', () => {
+      const sections = ['about', 'expert-insights', 'my-blogs'];
+      const navLinks = document.querySelectorAll('.navbar a');
+      let current = '';
+
+      sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element && element.getBoundingClientRect().top <= 150) {
+          current = section;
+        }
+      });
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const isActive = href.slice(1) === current;
+          link.classList.toggle('active', isActive);
+        }
+      });
+    });
+
+    // Toggle content for expert views
+    function toggleContent(element) {
+      const contentP = element.previousElementSibling.querySelector('p');
+      if (contentP.classList.contains('truncated')) {
+        contentP.classList.remove('truncated');
+        element.textContent = 'Show Less';
+      } else {
+        contentP.classList.add('truncated');
+        element.innerHTML = 'Read More';
+      }
+    }
+
+    // Function to handle blog reading (placeholder)
+    function readFullBlog(blogId) {
+      alert(`Opening full article: ${blogId}\nThis would navigate to the full blog post page.`);
+      // In a real implementation, this would navigate to the full blog post
+    }
+
+    // Function to open submission form (placeholder)
+    function openSubmissionForm() {
+      alert('This would open a form for submitting new research articles or blog posts.');
+      // In a real implementation, this would open a modal or navigate to a submission form
+    }
+
+    // Add some interactive hover effects
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>
