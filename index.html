@@ -30,10 +30,8 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                        url('YOUR_HERO_IMAGE_URL_HERE'),
-                        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23ff6b35;stop-opacity:1" /><stop offset="25%" style="stop-color:%23f7931e;stop-opacity:1" /><stop offset="50%" style="stop-color:%23dc143c;stop-opacity:1" /><stop offset="75%" style="stop-color:%23b22222;stop-opacity:1" /><stop offset="100%" style="stop-color:%23800000;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad1)"/><circle cx="100" cy="100" r="20" fill="%23ff4500" opacity="0.6"/><circle cx="300" cy="150" r="25" fill="%23ff6347" opacity="0.5"/><circle cx="500" cy="80" r="30" fill="%23dc143c" opacity="0.7"/><circle cx="700" cy="200" r="35" fill="%23b22222" opacity="0.4"/><circle cx="900" cy="120" r="28" fill="%23ff0000" opacity="0.6"/><circle cx="1100" cy="180" r="22" fill="%23cd5c5c" opacity="0.5"/><ellipse cx="200" cy="400" rx="40" ry="25" fill="%23ff4500" opacity="0.3"/><ellipse cx="600" cy="350" rx="35" ry="20" fill="%23dc143c" opacity="0.4"/><ellipse cx="1000" cy="450" rx="45" ry="30" fill="%23b22222" opacity="0.3"/></svg>');
-            background-size: cover, cover; background-position: center, center; background-attachment: fixed;
+                        url('YOUR_HERO_IMAGE_URL_HERE');
+            background-size: cover; background-position: center; background-attachment: fixed;
             color: white; text-align: center; padding: 180px 40px; min-height: 600px;
             display: flex; flex-direction: column; justify-content: center; position: relative;
         }
@@ -65,17 +63,24 @@
             background-image: url('img/profile.png'); background-size: cover; background-position: center;
         }
 
-        /* NEW: contact card under the image */
+        /* Contact card full width */
         .contact-card {
-            margin-top: 18px; background: #f7f7f7; border: 1px solid #e6e6e6;
-            border-radius: 12px; padding: 16px; text-align: left; font-size: 16px;
+            margin-top: 18px;
+            background: #f7f7f7;
+            border: 1px solid #e6e6e6;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: left;
+            font-size: 16px;
+            width: 100%;   /* ✅ Full width */
+            box-sizing: border-box;
         }
         .contact-row { display: flex; gap: 10px; align-items: baseline; margin-bottom: 8px; }
         .contact-row i { width: 20px; text-align: center; color: #444; }
         .contact-card a { color: #0a66c2; text-decoration: none; }
         .contact-card a:hover { text-decoration: underline; }
 
-        /* NEW: round icon links row */
+        /* Round icon links row */
         .contact-links {
             display: flex; justify-content: center; gap: 14px; margin-top: 14px;
         }
@@ -85,7 +90,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform .2s ease, box-shadow .2s ease;
         }
         .contact-links a:hover { transform: scale(1.08); box-shadow: 0 6px 14px rgba(0,0,0,0.2); }
-        /* optional brand tints on hover */
         .contact-links a.linkedin:hover { background:#0a66c2; color:#fff; }
         .contact-links a.researchgate:hover { background:#00ccbb; color:#fff; }
         .contact-links a.orcid:hover { background:#a6ce39; color:#fff; }
@@ -143,13 +147,10 @@
                     <p>I am a confident and dedicated undergraduate student pursuing a B.Sc. in Agriculture at IAAS, TU, with a strong foundation in sustainable farming and crop research. My research work focuses on crop characterization, abiotic stress tolerance, and nutrient management to support resilient agriculture.</p>
                     <p>My scholarship sits at the intersection of sustainable agriculture, climate resilience, and food security. Broadly, my work explores how modern agricultural practices can be optimized for various environmental conditions, by asking timely questions that investigate important topics such as crop adaptation strategies, soil health management, and sustainable farming techniques.</p>
                     <p>I believe in teamwork, stress management, and integrity while taking on leadership roles and driving youth-led initiatives. With solid technical knowledge and strong communication skills, my goal is to grow in a way that benefits both my career and the communities I serve.</p>
-                    <p>In 2024, I was recognized for my contributions to agricultural research and sustainable farming practices. I continue to work on projects that bridge the gap between traditional farming methods and modern agricultural innovations.</p>
                 </div>
 
                 <div class="profile-sidebar">
                     <div class="profile-photo"></div>
-
-                    <!-- Contact card under the image -->
                     <div class="contact-card" aria-label="Contact information">
                         <div class="contact-row">
                             <i class="fa-solid fa-envelope"></i>
@@ -167,25 +168,14 @@
                             <i class="fa-solid fa-location-dot"></i>
                             <span>Lamjung Campus, Nepal</span>
                         </div>
-
-                        <!-- Icon links row -->
                         <div class="contact-links" aria-label="Profile links">
-                            <a class="linkedin" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a class="researchgate" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank" rel="noopener" aria-label="ResearchGate">
-                                <i class="fab fa-researchgate"></i>
-                            </a>
-                            <a class="orcid" href="https://orcid.org/my-orcid?orcid=0000-0002-2037-3491" target="_blank" rel="noopener" aria-label="ORCID">
-                                <i class="fab fa-orcid"></i>
-                            </a>
-                            <a class="linktree" href="https://linktr.ee/Sujan_Chapagain" target="_blank" rel="noopener" aria-label="Linktree">
-                                <!-- Linktree doesn't have an official FA brand; using tree icon -->
-                                <i class="fa-solid fa-tree"></i>
-                            </a>
+                            <a class="linkedin" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="researchgate" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                            <a class="orcid" href="https://orcid.org/my-orcid?orcid=0000-0002-2037-3491" target="_blank" rel="noopener" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                            <a class="linktree" href="https://linktr.ee/Sujan_Chapagain" target="_blank" rel="noopener" aria-label="Linktree"><i class="fa-solid fa-tree"></i></a>
                         </div>
                     </div>
-                </div><!-- /.profile-sidebar -->
+                </div>
             </div>
         </div>
     </section>
@@ -196,7 +186,6 @@
     </footer>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -205,7 +194,6 @@
             });
         });
 
-        // Active navigation
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-menu a');
