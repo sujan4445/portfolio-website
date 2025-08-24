@@ -30,10 +30,18 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                        url('img/aa.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            color: white; text-align: center; padding: 180px 40px; min-height: 600px;
-            display: flex; flex-direction: column; justify-content: center; position: relative;
+                        url('img/aa.jpg');   /* ✅ FIXED to use aa.png */
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+            color: white; 
+            text-align: center; 
+            padding: 180px 40px; 
+            min-height: 600px;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            position: relative;
         }
         .hero::before {
             content: ''; position: absolute; inset: 0;
