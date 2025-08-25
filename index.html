@@ -72,7 +72,7 @@
             padding: 16px;
             text-align: left;
             font-size: 16px;
-            width: 110%;   /* ✅ Full width */
+            width: 100%;   /* ✅ Fixed from 110% */
             box-sizing: border-box;
         }
         .contact-row { display: flex; gap: 10px; align-items: baseline; margin-bottom: 8px; }
@@ -111,6 +111,7 @@
             .about-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .about-text { text-align: left; }
             .profile-photo { width: 220px; height: 220px; }
+            .hero { background-attachment: scroll; } /* ✅ Fix for mobile compatibility */
         }
     </style>
 </head>
@@ -153,26 +154,26 @@
                     <div class="profile-photo"></div>
                     <div class="contact-card" aria-label="Contact information">
                         <div class="contact-row">
-                            <i class="fa-solid fa-envelope"></i>
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             <a href="mailto:chapagainsujan45@gmail.com">chapagainsujan45@gmail.com</a>
                         </div>
                         <div class="contact-row">
-                            <i class="fa-solid fa-phone"></i>
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
                             <a href="tel:+9779865532285">+977 9865532285</a>
                         </div>
                         <div class="contact-row">
-                            <i class="fa-solid fa-university"></i>
+                            <i class="fa-solid fa-university" aria-hidden="true"></i>
                             <span>Tribhuvan University, Institute of Agriculture and Animal Science (IAAS)</span>
                         </div>
                         <div class="contact-row">
-                            <i class="fa-solid fa-location-dot"></i>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                             <span>Lamjung Campus, Nepal</span>
                         </div>
                         <div class="contact-links" aria-label="Profile links">
-                            <a class="linkedin" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="researchgate" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                            <a class="orcid" href="https://orcid.org/my-orcid?orcid=0000-0002-2037-3491" target="_blank" rel="noopener" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
-                            <a class="linktree" href="https://linktr.ee/Sujan_Chapagain" target="_blank" rel="noopener" aria-label="Linktree"><i class="fa-solid fa-tree"></i></a>
+                            <a class="linkedin" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                            <a class="researchgate" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fab fa-researchgate" aria-hidden="true"></i></a>
+                            <a class="orcid" href="https://orcid.org/0000-0002-2037-3491" target="_blank" rel="noopener" aria-label="ORCID"><i class="fab fa-orcid" aria-hidden="true"></i></a>
+                            <a class="linktree" href="https://linktr.ee/Sujan_Chapagain" target="_blank" rel="noopener" aria-label="Linktree"><i class="fa-solid fa-tree" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
