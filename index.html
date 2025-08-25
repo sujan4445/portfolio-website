@@ -1,179 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sujan Chapagain</title>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujan Chapagain</title>
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fdf5e6; /* cream white */
-      color: #333; /* black text */
-      line-height: 1.6;
-    }
+        body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; }
 
-    /* Navigation Bar */
-    nav {
-      background-color: #fdf5e6; /* cream white background */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 8%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        /* Header */
+        .header { background: rgba(0,0,0,0.6); padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 40px;
+        }
+        .logo { font-size: 24px; font-weight: bold; color: #fff; text-decoration: none; }
+        .nav-menu { display: flex; list-style: none; gap: 25px; }
+        .nav-menu a {
+            text-decoration: none; color: #fff; font-size: 16px; padding: 10px 0;
+            border-bottom: 2px solid transparent; transition: border-color 0.3s;
+        }
+        .nav-menu a:hover, .nav-menu a.active { border-bottom: 2px solid #fff; }
+        .social-icons { display: flex; gap: 20px; }
+        .social-icons a { color: #fff; font-size: 20px; }
 
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #000; /* black text */
-      text-decoration: none;
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('img/aa.png');  /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 200px 40px 150px; /* Adjusted for fixed header */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero > * { position: relative; z-index: 2; }
 
-    nav ul li {
-      display: inline-block;
-    }
+        /* Name Styling */
+        .hero h1 {
+            font-size: 90px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;  /* White */
+            text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+        }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #000; /* black text */
-      font-weight: bold;
-      font-size: 1rem;
-      transition: color 0.3s, border-bottom 0.3s;
-    }
+        /* Subtitle Styling */
+        .hero .subtitle {
+            font-size: 36px;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            color: #f1f1f1;
+            text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.6);
+        }
 
-    nav ul li a:hover {
-      color: #0073e6;
-      border-bottom: 2px solid #0073e6;
-    }
+        /* About Section */
+        .about-section { background: white; padding: 80px 40px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .about-content {
+            display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: start;
+        }
+        .section-title { font-size: 42px; color: #333; margin-bottom: 40px; font-weight: bold; text-align: left; }
+        .profile-sidebar { text-align: center; }
 
-    /* Header Section */
-    header {
-      background-color: #fdf5e6; /* cream white */
-      color: #000; /* black text */
-      text-align: center;
-      padding: 40px 20px;
-    }
+        .profile-photo {
+            width: 300px; height: 300px; border-radius: 10px; margin: 0 auto;
+            background-image: url('img/profile.png'); background-size: cover; background-position: center;
+        }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+        /* Contact card */
+        .contact-card {
+            margin-top: 18px;
+            background: #f7f7f7;
+            border: 1px solid #e6e6e6;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: left;
+            font-size: 16px;
+            width: 110%;
+            box-sizing: border-box;
+        }
+        .contact-row { display: flex; gap: 10px; align-items: baseline; margin-bottom: 8px; }
+        .contact-row i { width: 20px; text-align: center; color: #444; }
+        .contact-card a { color: #0a66c2; text-decoration: none; }
+        .contact-card a:hover { text-decoration: underline; }
 
-    header p {
-      font-size: 1.2rem;
-      color: #333;
-    }
+        .contact-links {
+            display: flex; justify-content: center; gap: 14px; margin-top: 14px;
+        }
+        .contact-links a {
+            width: 48px; height: 48px; border-radius: 50%; background: #fff; color: #111;
+            display: flex; align-items: center; justify-content: center; font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .contact-links a:hover { transform: scale(1.08); box-shadow: 0 6px 14px rgba(0,0,0,0.2); }
+        .contact-links a.linkedin:hover { background:#0a66c2; color:#fff; }
+        .contact-links a.researchgate:hover { background:#00ccbb; color:#fff; }
+        .contact-links a.orcid:hover { background:#a6ce39; color:#fff; }
+        .contact-links a.linktree:hover { background:#39e09b; color:#111; }
 
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 20px auto;
-    }
+        .about-text { font-family: 'Times New Roman', serif; font-size: 18px; line-height: 1.8; color: #333; text-align: justify; }
+        .about-text p { margin-bottom: 20px; }
 
-    /* Card */
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      text-align: center;
-    }
+        /* Footer */
+        .footer { background: #333; color: white; text-align: center; padding: 40px; }
 
-    .card img {
-      max-width: 200px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-
-    /* Social Icons */
-    .social-icons {
-      margin-top: 15px;
-    }
-
-    .social-icons a {
-      color: #333;
-      margin: 0 10px;
-      font-size: 1.5rem;
-      transition: color 0.3s;
-    }
-
-    .social-icons a:hover {
-      color: #0073e6;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #fdf5e6; /* cream white */
-      color: #000;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 20px;
-      border-top: 1px solid #ddd;
-    }
-  </style>
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 20px; padding: 20px; }
+            .nav-menu { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 42px; }
+            .hero .subtitle { font-size: 20px; }
+            .about-section { padding: 60px 20px; }
+            .about-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .about-text { text-align: left; }
+            .profile-photo { width: 220px; height: 220px; }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">SC</a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#organization">Organization</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#" class="logo">SC</a>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Publications</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Blogs</a></li>
-      <li><a href="#">Organization</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Sujan Chapagain</h1>
+        <p class="subtitle">Researcher • Author • Advisor</p>
+    </section>
 
-  <!-- Header -->
-  <header>
-    <h1>Sujan Chapagain</h1>
-    <p>Welcome to my personal portfolio</p>
-  </header>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a confident and dedicated undergraduate student pursuing a B.Sc. in Agriculture at IAAS, TU, with a strong foundation in sustainable farming and crop research. My research work focuses on crop characterization, abiotic stress tolerance, and nutrient management to support resilient agriculture.</p>
+                    <p>My scholarship sits at the intersection of sustainable agriculture, climate resilience, and food security. Broadly, my work explores how modern agricultural practices can be optimized for various environmental conditions, by asking timely questions that investigate important topics such as crop adaptation strategies, soil health management, and sustainable farming techniques.</p>
+                    <p>I believe in teamwork, stress management, and integrity while taking on leadership roles and driving youth-led initiatives. With solid technical knowledge and strong communication skills, my goal is to grow in a way that benefits both my career and the communities I serve.</p>
+                </div>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="card">
-      <img src="img/aa.png" alt="Profile Picture">
-      <h2>Sujan Chapagain</h2>
-      <p>B.Sc. Agriculture | Researcher | Activist</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
+                <div class="profile-sidebar">
+                    <div class="profile-photo"></div>
+                    <div class="contact-card" aria-label="Contact information">
+                        <div class="contact-row">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:chapagainsujan45@gmail.com">chapagainsujan45@gmail.com</a>
+                        </div>
+                        <div class="contact-row">
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+9779865532285">+977 9865532285</a>
+                        </div>
+                        <div class="contact-row">
+                            <i class="fa-solid fa-university"></i>
+                            <span>Tribhuvan University, Institute of Agriculture and Animal Science (IAAS)</span>
+                        </div>
+                        <div class="contact-row">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Lamjung Campus, Nepal</span>
+                        </div>
+                        <div class="contact-links" aria-label="Profile links">
+                            <a class="linkedin" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="researchgate" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                            <a class="orcid" href="https://orcid.org/my-orcid?orcid=0000-0002-2037-3491" target="_blank" rel="noopener" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                            <a class="linktree" href="https://linktr.ee/Sujan_Chapagain" target="_blank" rel="noopener" aria-label="Linktree"><i class="fa-solid fa-tree"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
+    </footer>
 
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) currentSection = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
