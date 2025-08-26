@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sujan Chapagain - Academic Profile</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    color: #333;
+    background: #f9f9f9;
+}
+
+/* Header / Navigation */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0a66c2;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #0a66c2;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #0a66c2;
+    padding-bottom: 10px;
+}
+
+/* Profile Sidebar */
+.profile-sidebar {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-image: url('img/profile.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 20px auto;
+}
+
+.contact-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.contact-row i { color: #0a66c2; }
+
+.contact-row a { 
+    text-decoration: none; 
+    color: #0a66c2; 
+    font-weight: 500; 
+}
+
+.contact-row a:hover { text-decoration: underline; }
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.contact-links a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #111;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.contact-links a:hover { transform: scale(1.1); }
+
+.contact-links a.linkedin:hover { background:#0a66c2; color:#fff; }
+.contact-links a.researchgate:hover { background:#00ccbb; color:#fff; }
+.contact-links a.orcid:hover { background:#a6ce39; color:#fff; }
+.contact-links a.linktree:hover { background:#39e09b; color:#111; }
+
+/* About Section */
+.about-text {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    font-family: 'Times New Roman', serif;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+/* Education */
+.education-item {
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.education-item img {
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.education-item h4 {
+    margin: 5px 0;
+    font-weight: 600;
+    color: #0a66c2;
+}
+
+.education-item p {
+    margin: 4px 0;
+    font-size: 16px;
+}
+
+/* Card Sections */
+.card-section h4 {
+    color: #0a66c2;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card p {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.card a { color: #0a66c2; text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 768px){
+    .container { padding: 20px; }
+    .profile-photo { width: 180px; height: 180px; }
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header class="header">
+    <nav class="nav-container">
+        <a href="index.html" class="logo">SC</a>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="organization.html">Organization</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- Profile Photo & Contact -->
+    <aside class="profile-sidebar">
+        <div class="profile-photo" aria-label="Profile Photo"></div>
+        <div class="contact-card">
+            <div class="contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:chapagainsujan45@gmail.com">chapagainsujan45@gmail.com</a></div>
+            <div class="contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+9779865532285">+977 9865532285</a></div>
+            <div class="contact-row"><i class="fa-solid fa-university"></i><span>Tribhuvan University, Institute of Agriculture and Animal Science (IAAS)</span></div>
+            <div class="contact-row"><i class="fa-solid fa-location-dot"></i><span>Lamjung Campus, Nepal</span></div>
+            <div class="contact-links">
+                <a class="linkedin" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="researchgate" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                <a class="orcid" href="https://orcid.org/0000-0002-2037-3491" target="_blank" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                <a class="linktree" href="https://linktr.ee/Sujan_Chapagain" target="_blank" aria-label="Linktree"><i class="fa-solid fa-tree"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- About / Biography -->
+    <section class="about-text">
+        <p>I am a dedicated undergraduate student pursuing a B.Sc. in Agriculture at IAAS, TU. My research focuses on sustainable farming practices, crop characterization, abiotic stress tolerance, and nutrient management, with the objective of enhancing resilient agriculture and food security.</p>
+        <p>My academic work spans the intersection of sustainable agriculture, climate resilience, and scientific innovation. I explore methods to optimize modern agricultural practices, including soil health management, crop adaptation strategies, and environmentally sustainable cultivation techniques.</p>
+        <p>In addition to research, I actively participate in leadership initiatives, youth-led projects, and collaborative academic endeavors. My core values include integrity, teamwork, and professional communication, ensuring meaningful contributions to both scholarly and community development.</p>
+    </section>
+
+    <!-- Education -->
+    <section>
+        <div class="section-title">Education</div>
+        <div class="education-item">
+            <img src="img/tu.png" alt="TU Logo">
+            <img src="img/iaas.png" alt="IAAS Logo">
+            <h4>Bachelor of Agriculture – 85.5%</h4>
+            <p>Tribhuvan University, Institute of Agriculture and Animal Science (IAAS)</p>
+            <p>Lamjung Campus, Lamjung, Nepal</p>
+            <p>March 2021 – August 2025</p>
+            <p><a href="https://iaas.tu.edu.np/" target="_blank">Official Website</a></p>
+        </div>
+        <div class="education-item">
+            <img src="img/bsamv.jpg" alt="SAMV Logo" style="border-radius:50%;">
+            <h4>NATIONAL EXAMINATIONS BOARD – 3.79 GPA</h4>
+            <p>Sainik Awasiya Mahavidhyalaya (SAMV), Sallaghari, Bhaktapur</p>
+            <p>December 2018 – December 2020</p>
+            <p><a href="https://bsamv.edu.np/" target="_blank">Official Website</a></p>
+        </div>
+    </section>
+
+    <!-- Non-Credential Courses -->
+    <section>
+        <div class="section-title">Non-Credential Courses</div>
+        <div class="card-section">
+            <div class="card">
+                <h4>Sustainable Agricultural Land Management</h4>
+                <p>University of Florida | Agriculture | Final Grade: 93.21% | January 2024</p>
+                <p>Completed advanced modules on sustainable land management, soil conservation, and resource-efficient agricultural practices. Certificate available in gallery (Sustainable.pdf).</p>
+            </div>
+            <div class="card">
+                <h4>Data Analysis with R Programming</h4>
+                <p>Google | Agriculture | Final Grade: 89.89% | August 2023</p>
+                <p>Acquired skills in data analysis, visualization, and statistical modeling using R programming, applied to agricultural datasets. Certificate available in gallery (Rprogram.pdf).</p>
+            </div>
+            <div class="card">
+                <h4>Crop Pest Diagnosis and Management Foundation Certificate</h4>
+                <p>Centre for Agriculture and Bioscience International (CABI)</p>
+                <p>Gained expertise in crop pest identification, diagnostic techniques, and integrated pest management strategies. Certificates available in gallery (management.png, foundation.png).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Grants -->
+    <section>
+        <div class="section-title">Research Grants</div>
+        <div class="card-section">
+            <div class="card">
+                <h4>Agriculture Research Mini Grant</h4>
+                <p>Funding Agency: Champa Devi Rural Municipality | Duration: 1 Year | Grant Amount: NPR 300,000 / USD 2,196.76</p>
+                <p>Project Title: Physiological Response and Agronomic Performance of Wheat Genotypes under Drought Stress.</p>
+                <p>This research investigates the physiological responses and agronomic performance of wheat genotypes under controlled drought conditions, providing critical insights for breeding resilient crops.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors & Awards -->
+    <section>
+        <div class="section-title">Honors & Awards</div>
+        <div class="card-section">
+            <div class="card">
+                <h4>Silver Jubilee MGSS Scholarship</h4>
+                <p>Embassy of India, July 2020</p>
+                <p>Awarded to outstanding Nepali students based on exceptional SLC/SEE performance, supporting higher education studies.</p>
+            </div>
+            <div class="card">
+                <h4>Golden Jubilee MGSS Scholarship</h4>
+                <p>Embassy of India, July 2022</p>
+                <p>Granted to 200 meritorious Nepali students annually to pursue undergraduate studies, encouraging academic excellence and India-Nepal educational collaboration.</p>
+            </div>
+            <div class="card">
+                <h4>Gandaki Provincial Scholarship</h4>
+                <p>Ministry of Social Development, Youth, and Sports – July 2022</p>
+                <p>Awarded to dedicated students in Gandaki province pursuing bachelor degrees, providing full scholarship support.</p>
+            </div>
+            <div class="card">
+                <h4>University Full Merit Scholarship</h4>
+                <p>Tribhuvan University, July 2020</p>
+                <p>Granted to students with the highest scores in the university-level entrance exam among 4000+ candidates, ensuring academic merit recognition.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
