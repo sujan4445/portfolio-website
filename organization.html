@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Organizations – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --ink:#0f172a;
+      --muted:#475569;
+      --accent:#2563eb; /* vibrant blue */
+      --accent-light:#3b82f6;
+      --accent-gradient: linear-gradient(135deg, #2563eb, #06b6d4); /* blue → teal */
+      --ring:#e2e8f0; /* neutral gray for balance */
+      --soft:#f1f5f9;
+      --radius:18px;
+      --shadow: 0 8px 24px rgba(2,12,27,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6
+    }
+    a{color:inherit;text-decoration:none;transition:all .2s ease-in-out}
+    a:hover{color:var(--accent)}
+
+    /* Header / Navigation */
+    .header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.9);
+      backdrop-filter:saturate(140%) blur(10px);
+      border-bottom:1px solid var(--ring);
+    }
+    .nav-container{
+      max-width:1100px;margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 20px
+    }
+    .logo{font-weight:800;letter-spacing:.5px;font-size:20px;color:var(--accent)}
+    .nav-menu{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    .nav-menu a{
+      padding:8px 12px;border-radius:10px;
+      font-weight:600;color:var(--muted);
+      transition:.25s ease
+    }
+    .nav-menu a.active,
+    .nav-menu a:hover{
+      color:#fff;
+      background:var(--accent-gradient);
+    }
+
+    /* Layout */
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+    .page-title{
+      font-size:34px;line-height:1.2;margin:10px 0 18px;
+      font-weight:800;letter-spacing:.2px;
+      background:var(--accent-gradient);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .lead{color:var(--muted);max-width:850px;margin-bottom:24px}
+
+    /* Sections / Cards */
+    .section{
+      background:var(--card);
+      box-shadow:var(--shadow);
+      border:1px solid var(--ring);
+      border-radius:var(--radius);
+      padding:22px;margin:18px 0;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .section:hover{
+      transform: translateY(-4px);
+      box-shadow:0 12px 28px rgba(2,12,27,.12);
+    }
+    .heading{
+      display:flex;align-items:center;gap:14px;margin-bottom:10px
+    }
+    .heading img.logo{
+      width:48px;height:48px;border-radius:12px;
+      border:2px solid var(--ring); /* neutral border instead of blue */
+      object-fit:contain;background:#fff;padding:6px
+    }
+    .heading h2{margin:0;font-size:22px;line-height:1.25;color:var(--accent)}
+
+    /* Meta */
+    .meta{display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:14px;margin:6px 0 4px}
+    .role{font-weight:700;color:var(--ink)}
+
+    /* Actions */
+    .actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      border:none;padding:10px 16px;border-radius:14px;
+      background:var(--accent-gradient);
+      font-weight:600;color:#fff;
+      box-shadow:0 4px 8px rgba(2,12,27,.1);
+      cursor:pointer;transition:.25s ease
+    }
+    .btn:hover{
+      background:linear-gradient(135deg,#1d4ed8,#0891b2);
+      transform:translateY(-2px);
+    }
+
+    /* Gallery */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+    .grid img,.modal-grid img{
+      border-radius:14px;
+      border:2px solid var(--ring); /* neutral instead of blue */
+      transition:transform .25s ease;
+    }
+    .grid img:hover,.modal-grid img:hover{
+      transform:scale(1.04);
+    }
+
+    /* Modal Gallery */
+    .modal{
+      position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:24px;
+      background:rgba(2,6,23,.6);z-index:100
+    }
+    .modal.open{display:flex}
+    .modal-card{
+      max-width:980px;width:100%;background:#fff;border-radius:20px;border:1px solid var(--ring);box-shadow:var(--shadow);overflow:hidden
+    }
+    .modal-header{
+      display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--ring)
+    }
+    .modal-title{font-weight:800;color:var(--accent)}
+    .close{
+      border:none;background:transparent;font-size:20px;cursor:pointer;color:var(--muted)
+    }
+    .modal-body{padding:16px}
+    .modal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .modal-grid img{width:100%;height:220px;object-fit:cover}
+    .caption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+
+    /* Small screens */
+    @media (max-width:720px){
+      .modal-grid, .grid{grid-template-columns:repeat(2,1fr)}
+      .modal-grid img{height:180px}
+      .grid img{height:160px}
+    }
+    @media (max-width:480px){
+      .nav-menu{display:none}
+      .modal-grid, .grid{grid-template-columns:1fr}
+      .modal-grid img, .grid img{height:220px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="#" class="logo">SC</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a class="active" href="organizations.html">Organizations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <h1 class="page-title">Organizations & Internship</h1>
+    <p class="lead">A snapshot of my roles in student bodies, climate education initiatives, and a technology-driven agricultural internship.</p>
+
+    <!-- Internship: GeoKrishi -->
+    <section class="section" id="geokrishi">
+      <div class="heading">
+        <img class="logo" src="img/geokrishi.png" alt="GeoKrishi logo">
+        <h2>GeoKrishi — Internship</h2>
+      </div>
+      <div class="meta">
+        <span class="role">Supervisor:</span> <span>Prem Kunwar</span>
+        <span>•</span>
+        <span>Duration:</span> <span>3 months</span>
+      </div>
+      <p class="descr">
+        During my 3-month internship, I actively bridged traditional farming with modern technology, empowering farmers with digital tools for increased productivity and sustainability. This experience deepened my agricultural insight and fueled my dedication to fostering innovation in farming communities.
+      </p>
+      <div class="actions">
+        <button class="btn gallery-btn"
+                data-title="GeoKrishi — Internship Certificate"
+                data-images="img/Intern.png">
+          <i class="fa-solid fa-images"></i> Gallery
+        </button>
+      </div>
+    </section>
+
+    <!-- IAAS Nepal (National) -->
+    <section class="section" id="iaas-nepal">
+      <div class="heading">
+        <img class="logo" src="img/iaasnepal.png" alt="IAAS Nepal logo">
+        <h2>International Association of Agriculture Students and Related Science Nepal (IAAS Nepal)</h2>
+      </div>
+      <div class="meta">
+        <span class="role">National Campaign Coordinator</span>
+        <span>•</span>
+        <span>Jan 2023 – Jan 2024</span>
+      </div>
+      <p class="descr">
+        Online, campaign-driven volunteering focused on climate education—mobilizing students nationwide, curating digital content, and coordinating awareness activities to strengthen climate literacy among youth communities.
+      </p>
+      <div class="actions">
+        <button class="btn gallery-btn"
+                data-title="IAAS Nepal — Campaigns"
+                data-images="img/campaign1.png,img/campaign2.png,img/campaign3.png,img/campaign4.png,img/campaign5.png,img/campaign6.png">
+          <i class="fa-solid fa-images"></i> Gallery
+        </button>
+      </div>
+    </section>
+
+    <!-- IAAS Nepal LC Lamjung -->
+    <section class="section" id="iaas-lc-lamjung">
+      <div class="heading">
+        <img class="logo" src="img/iaaslamjung.png" alt="IAAS Nepal LC Lamjung logo">
+        <h2>IAAS Nepal Local Committee Lamjung</h2>
+      </div>
+      <div class="meta">
+        <span class="role">Local Director</span>
+        <span>•</span>
+        <span>Jan 2023 – Jan 2024</span>
+      </div>
+      <p class="descr">
+        Online-based climate education volunteering—coordinating local outreach, mentoring peers, and delivering climate-smart messages tailored to the Lamjung context.
+      </p>
+      <div class="meta" style="margin-top:6px">
+        <span class="role">Quality Board Member, Exchange Department</span>
+        <span>•</span>
+        <span>Jan 2022 – Jan 2023</span>
+      </div>
+      <p class="descr">
+        Supported quality assurance for exchange activities, documentation, and participant experience across virtual programming.
+      </p>
+      <div class="actions">
+        <button class="btn gallery-btn"
+                data-title="IAAS LC Lamjung — Activities"
+                data-images="img/ca1.png,img/ca2.png,img/ca3.png,img/ca4.png,img/ca5.png,img/ca6.png">
+          <i class="fa-solid fa-images"></i> Gallery
+        </button>
+      </div>
+    </section>
+
+    <!-- ClimatEducate Project -->
+    <section class="section" id="climate-educate">
+      <div class="heading">
+        <img class="logo" src="img/ClimatEducate.png" alt="ClimatEducate logo">
+        <h2>ClimatEducate Project</h2>
+      </div>
+      <div class="meta">
+        <span class="role">Project Member — Research, Education & Awareness Department</span>
+        <span>•</span>
+        <span>Nov 2021 – Jan 2024</span>
+      </div>
+      <p class="descr">
+        Contributed to research briefs, educational materials, and outreach events to translate climate science into practical, youth-friendly learning resources.
+      </p>
+      <div class="actions">
+        <button class="btn gallery-btn"
+                data-title="ClimatEducate — Gallery"
+                data-images="img/c1.png,img/c2.png,img/c3.png,img/c4.png,img/c5.png,img/c6.png">
+          <i class="fa-solid fa-images"></i> Gallery
+        </button>
+      </div>
+    </section>
+
+    <!-- Amnesty International KCYN Lamjung -->
+    <section class="section" id="amnesty">
+      <div class="heading">
+        <img class="logo" src="img/amnesty.png" alt="Amnesty Lamjung logo">
+        <h2>Amnesty International Krishi Campus Youth Network, Lamjung</h2>
+      </div>
+
+      <div class="meta"><span class="role">Coordinator</span> <span>•</span> <span>Jan 2024 – Jan 2025</span></div>
+      <p class="descr">
+        Led the chapter’s strategy and programming—campaign planning, partnerships, and member engagement—anchored in campus-wide advocacy for human rights and peaceful assembly.
+      </p>
+
+      <div class="meta" style="margin-top:6px"><span class="role">Finance Head</span> <span>•</span> <span>Jan 2023 – Jan 2024</span></div>
+      <p class="descr">
+        Oversaw budgeting, procurement, and transparent financial reporting to support sustained advocacy activities and trainings.
+      </p>
+
+      <div class="meta" style="margin-top:6px"><span class="role">Human Rights Education Coordinator</span> <span>•</span> <span>Jan 2022 – Jan 2023</span></div>
+      <p class="descr">
+        Designed and delivered workshops on rights literacy, fostering a culture of informed participation and civic responsibility among students.
+      </p>
+
+      <div class="actions">
+        <button class="btn gallery-btn"
+                data-title="Amnesty KCYN Lamjung — Gallery"
+                data-images="img/a1.png,img/a2.png,img/a3.png,img/a4.png,img/a5.png,img/a6.png">
+          <i class="fa-solid fa-images"></i> Gallery
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="galleryModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">Gallery</div>
+        <button class="close" id="modalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid" id="modalGrid"></div>
+        <div class="caption">Click anywhere outside the card or the ✕ to close.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Utility: try alternate filename variant like "x6.png" -> "x.6png"
+    function altVariant(name){
+      const m = name.match(/^(.*?)(\d)\.png$/i);
+      if(!m) return null;
+      return `${m[1]}.${m[2]}png`;
+    }
+
+    function buildTile(src){
+      const wrap = document.createElement('div');
+      const img = document.createElement('img');
+      img.src = src;
+      img.loading = 'lazy';
+      img.alt = 'Gallery image';
+      img.style.width = '100%';
+      img.style.height = '220px';
+      img.style.objectFit = 'cover';
+
+      img.onerror = function(){
+        const alt = altVariant(src);
+        if(alt && img.dataset.tried !== 'alt'){
+          img.dataset.tried = 'alt';
+          img.src = alt;
+        }
+      };
+      wrap.appendChild(img);
+      return wrap;
+    }
+
+    const modal = document.getElementById('galleryModal');
+    const modalGrid = document.getElementById('modalGrid');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeBtn = document.getElementById('modalClose');
+
+    function openModal(title, images){
+      modalTitle.textContent = title || 'Gallery';
+      modalGrid.innerHTML = '';
+      images.forEach(src => modalGrid.appendChild(buildTile(src.trim())));
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.gallery-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const title = btn.dataset.title || 'Gallery';
+        const images = (btn.dataset.images || '').split(',').filter(Boolean);
+        if(images.length) openModal(title, images);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{
+      if(e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+  </script>
+</body>
+</html>
+``
