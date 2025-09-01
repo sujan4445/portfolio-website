@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amnesty AIKYCN Lamjung – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; }
+
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; padding: 0 40px;
+    }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+    .nav-menu { display: flex; list-style: none; gap: 25px; }
+    .nav-menu a {
+      text-decoration: none; color: #333; font-size: 16px; padding: 10px 0;
+      border-bottom: 2px solid transparent; transition: border-color 0.3s;
+    }
+    .nav-menu a:hover, .nav-menu a.active { border-bottom: 2px solid #333; }
+
+    /* Hero */
+    .mela-hero {
+      background: url('img/aikcyn.jpg') center/cover no-repeat;
+      color: white; text-align: center; padding: 160px 20px; position: relative;
+    }
+    .mela-hero::before {
+      content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45);
+    }
+    .mela-hero > * { position: relative; z-index: 2; }
+    .mela-hero h1 { font-size: 50px; margin-bottom: 15px; font-weight: 400; }
+    .mela-hero p { font-size: 26px; }
+
+    /* Profile */
+    .mela-profile {
+      display: flex; align-items: flex-start; gap: 40px;
+      max-width: 1000px; margin: 60px auto; padding: 20px;
+    }
+    .profile-pic {
+      flex: 0 0 220px; height: 220px;
+      border-radius: 50%; background: url('img/amnesty.jpg') center/cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer; transition: transform 0.3s;
+    }
+    .profile-pic:hover { transform: scale(1.05); }
+
+    .mela-text { flex: 1; font-size: 18px; }
+    .mela-text h3 { margin-bottom: 20px; font-size: 22px; text-align: left; }
+
+    /* Positions Section */
+    .positions-list {
+      border-left: 4px solid #333;
+      padding-left: 20px;
+    }
+    .position-item {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .position-item i {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px; /* aligns with text first line */
+    }
+    .position-title {
+      font-weight: bold;
+      font-size: 18px;
+      color: #222;
+    }
+    .position-duration {
+      display: block;
+      font-size: 15px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* Specific colors for icons */
+    .position-item .fa-user-tie { color: #007bff; }
+    .position-item .fa-coins { color: #28a745; }
+    .position-item .fa-book-open { color: #ff9800; }
+
+    /* Section text */
+    .content-section {
+      max-width: 1000px; margin: 20px auto 60px; padding: 20px; font-size: 18px; text-align: justify;
+    }
+    .content-section h2 { text-align: center; font-size: 28px; margin-bottom: 18px; }
+
+    /* Gallery */
+    .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+    .gallery h2 { text-align: center; font-size: 32px; margin-bottom: 30px; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s;
+    }
+    .gallery-item img {
+      width: 100%; height: auto; display: block;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      object-fit: contain;
+    }
+
+    /* First two images rectangle style */
+    .gallery-item.rect img {
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05); filter: brightness(1.05);
+    }
+    .gallery-caption { padding: 15px; font-size: 16px; text-align: center; }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      .mela-hero h1 { font-size: 36px; }
+      .mela-hero p { font-size: 16px; }
+      .mela-profile { flex-direction: column; text-align: center; }
+      .profile-pic { margin: 0 auto; }
+      .mela-text h3 { text-align: center; }
+      .positions-list { border-left: none; padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SC</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="organization.html" class="active">Organization</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="mela-hero">
+    <h1>Amnesty International Krishi Campus Youth Network</h1>
+    <p>Strengthening Human Rights & Youth Leadership</p>
+  </section>
+
+  <!-- Profile -->
+  <section class="mela-profile">
+    <div class="profile-pic"></div>
+    <div class="mela-text">
+      <h3>Tenure & Positions</h3>
+      <div class="positions-list">
+        <div class="position-item">
+          <i class="fas fa-user-tie"></i>
+          <div>
+            <span class="position-title">Coordinator</span>
+            <span class="position-duration">Jan 2024 – Jan 2025</span>
+          </div>
+        </div>
+        <div class="position-item">
+          <i class="fas fa-coins"></i>
+          <div>
+            <span class="position-title">Finance Head</span>
+            <span class="position-duration">Jan 2023 – Jan 2024</span>
+          </div>
+        </div>
+        <div class="position-item">
+          <i class="fas fa-book-open"></i>
+          <div>
+            <span class="position-title">Human Rights Education Coordinator</span>
+            <span class="position-duration">Jan 2022 – Jan 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roles & Impact -->
+  <section class="content-section">
+    <h2>Roles, Activities & Community Impact</h2>
+    <p>Led the chapter’s strategy and programming — campaign planning, partnerships, and member engagement — anchored in campus-wide advocacy for human rights and peaceful assembly.</p>
+    <p>Oversaw budgeting, procurement, and transparent financial reporting to support sustained advocacy activities and trainings.</p>
+    <p>Designed and delivered workshops on rights literacy, fostering a culture of informed participation and civic responsibility among students. These activities strengthened local youth leadership, increased rights-awareness in the campus community, and supported collective action for human dignity and peaceful protest.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Highlights</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item rect"><img src="img/Hre1.jpg" alt="HRE 1"><div class="gallery-caption">Human Rights Education Workshop</div></div>
+      <div class="gallery-item rect"><img src="img/Hre2.jpg" alt="HRE 2"><div class="gallery-caption">Dialogue on Peaceful Assembly</div></div>
+      <div class="gallery-item"><img src="img/Iconic.jpg" alt="Iconic"><div class="gallery-caption">Iconic Campaign Moment</div></div>
+      <div class="gallery-item"><img src="img/Aikycn2.jpg" alt="AIKYCN team"><div class="gallery-caption">AIKYCN Youth Network Team</div></div>
+      <div class="gallery-item"><img src="img/Hre3.jpg" alt="HRE 3"><div class="gallery-caption">Community Rights Education Drive</div></div>
+      <div class="gallery-item"><img src="img/Hre4.jpg" alt="HRE 4"><div class="gallery-caption">Advocacy & Training Session</div></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

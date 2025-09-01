@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheat Genotype Evaluation – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; background: #fff; }
+
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; padding: 0 40px;
+    }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+
+    /* Return button inside header */
+    .return-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #009966, #006633);
+      color: #fff;
+      padding: 8px 18px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .return-btn i { margin-right: 6px; }
+    .return-btn:hover {
+      background: linear-gradient(135deg, #00b377, #004d26);
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .project-hero {
+      background: url('img/wh1.jpg') center/cover no-repeat;
+      color: white; text-align: center; padding: 180px 20px;
+      position: relative;
+    }
+    .project-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .project-hero > * { position: relative; z-index: 2; }
+    .project-hero h1 { font-size: 56px; margin-bottom: 15px; font-weight: 500; color: #fff; }
+    .project-hero p { font-size: 20px; color: #fff; }
+
+    /* Content */
+    .content {
+      max-width: 1000px; margin: 60px auto; padding: 0 20px;
+    }
+    .content h2 { 
+      font-size: 28px; margin: 40px 0 20px; 
+      border-left: 6px solid #ff6600; padding-left: 12px; 
+      color: #cc3300;
+    }
+    .details ul { list-style: none; padding: 0; margin: 0; }
+    .details li { margin: 10px 0; font-size: 18px; }
+    .content p { font-size: 18px; text-align: justify; color: #444; }
+
+    /* Collapsible details */
+    details { margin-top: 20px; }
+    summary { font-weight: bold; cursor: pointer; list-style: none; font-size: 18px; }
+    summary::-webkit-details-marker { display: none; }
+    .summary-btn i { margin-right: 8px; }
+    .lbl-open { display:none; }
+    details[open] .lbl-open { display:inline; }
+    details[open] .lbl-closed { display:none; }
+
+    .details-section { margin-top: 15px; }
+    .details-section h3 { font-size: 20px; font-weight: 600; color: #cc3300; margin-bottom: 5px; }
+    .details-section p, .details-section ul { font-size: 17px; color: #444; margin-left: 20px; }
+
+    /* Contact */
+    .contact-inline {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #006600;
+    }
+    .contact-inline a {
+      text-decoration: none;
+      color: #444;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+    .contact-inline a:hover { color: #0073e6; }
+
+    /* Gallery */
+    .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+    .gallery h2 {
+      text-align:center; font-size:32px; margin-bottom:30px; 
+      color:#0066cc; border-bottom:3px solid #0066cc; display:inline-block; padding-bottom:5px;
+    }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item { 
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+      transition: transform 0.3s;
+    }
+    .gallery-item img { 
+      width: 100%; height: 320px; object-fit: cover;
+      display: block; image-rendering: auto; 
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.08); filter: brightness(1.1); }
+    .gallery-caption { padding: 15px; font-size: 16px; text-align: center; }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      .project-hero h1 { font-size: 36px; }
+      .project-hero p { font-size: 16px; }
+      .gallery-item img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SC</a>
+      <a href="projects.html" class="return-btn"><i class="fa-solid fa-arrow-left"></i> Return to Projects</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <h1>Wheat Genotype Evaluation</h1>
+    <p>Characterization and performance evaluation under contrasting environments</p>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <h2>Project Details</h2>
+    <div class="details">
+      <ul>
+        <li><strong>Funding Agency:</strong> 1 Year Trial</li>
+        <li><strong>Principal Investigator:</strong> Sujan Chapagain</li>
+        <li><strong>Co-Principal Investigator:</strong> Sandesh Subedi</li>
+        <li><strong>Project Members:</strong> Samir Nepal, Sancheet Gautam, Prabesh Mandal, Sagar Kalwar</li>
+        <li><strong>Project Supervisors:</strong> Ankur Poudel, Bishnu Prasad Kandel, Mahesh Subedi</li>
+      </ul>
+    </div>
+
+    <h2>Description</h2>
+    <p>
+      Landraces, genotypes, and released varieties were studied under two contrasting environments. 
+      Moreover, two new genotypes <strong>AFU W01</strong> and <strong>AFU W02</strong> developed by Professor 
+      Madhav Ghimire were also used as genetic material in this study.
+    </p>
+
+    <!-- Collapsible Details -->
+    <details>
+      <summary class="summary-btn">
+        <i class="fa-solid fa-circle-plus"></i>
+        <span class="lbl-closed">Read more</span>
+        <span class="lbl-open">Hide details</span>
+      </summary>
+
+      <div class="details-section">
+        <h3>Background</h3>
+        <p>This study evaluates wheat genotypes to identify lines with high adaptability, yield stability, and resilience under diverse environments.</p>
+      </div>
+
+      <div class="details-section">
+        <h3>Objectives</h3>
+        <ul>
+          <li>Assess performance of local and improved wheat genotypes.</li>
+          <li>Identify genotypes suitable for contrasting environments.</li>
+          <li>Support wheat breeding programs and future variety release.</li>
+        </ul>
+      </div>
+
+      <div class="details-section">
+        <h3>Design / Method</h3>
+        <p>Field evaluation in two environments, measurement of agronomic traits including growth stages, yield components, and grain yield. Data analyzed using ANOVA and cluster analysis.</p>
+      </div>
+
+      <div class="details-section">
+        <h3>Funding & Timeline</h3>
+        <p>1-year trial funded internally; conducted from March 2025 to February 2026.</p>
+      </div>
+
+      <!-- Contact inside details -->
+      <div class="contact-inline">
+        For more details, contact: 
+        <a href="mailto:chapagainsuajn45@gmail.com"><i class="fa-solid fa-envelope"></i> PI</a>
+      </div>
+    </details>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Project Highlights</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="img/afuw1.jpg" alt="Highlight 1"><div class="gallery-caption">AFU W01 in trial</div></div>
+      <div class="gallery-item"><img src="img/afu2.jpg" alt="Highlight 2"><div class="gallery-caption">AFU W02 genotype</div></div>
+      <div class="gallery-item"><img src="img/wh2.jpg" alt="Highlight 3"><div class="gallery-caption">Field performance under irrigated condition</div></div>
+      <div class="gallery-item"><img src="img/wh3.jpg" alt="Highlight 4"><div class="gallery-caption">Wheat heading stage</div></div>
+      <div class="gallery-item"><img src="img/wh5.jpg" alt="Highlight 5"><div class="gallery-caption">Grain filling stage</div></div>
+      <div class="gallery-item"><img src="img/wh6.jpg" alt="Highlight 6"><div class="gallery-caption">Phenotypic variation observed</div></div>
+      <div class="gallery-item"><img src="img/wheat.jpg" alt="Highlight 7"><div class="gallery-caption">Harvested wheat plots</div></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
+  </footer>
+</body>
+</html>

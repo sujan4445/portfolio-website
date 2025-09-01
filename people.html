@@ -1,0 +1,134 @@
+<!-- Add this link in <head> if not already included -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+/* People Section */
+.people-section {
+    background: #f9f9f9;
+    padding: 80px 40px;
+}
+.people-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.people-title {
+    font-size: 42px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+.person-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.person-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.person-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.person-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.person-title {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+.person-bio {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+.person-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+.person-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+.person-links a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+.person-links a.linkedin:hover { background: #0a66c2; }
+.person-links a.researchgate:hover { background: #00ccbb; }
+.person-links a.scholar:hover { background: #4285F4; }
+.person-links a.orcid:hover { background: #a6ce39; }
+</style>
+
+<!-- People Section -->
+<section class="people-section" id="people">
+    <div class="people-container">
+        <h2 class="people-title">Our People</h2>
+        <div class="people-grid">
+            
+            <!-- Person 1 -->
+            <div class="person-card">
+                <img src="img/1.png" alt="Ankur Poudel" class="person-photo">
+                <h3 class="person-name">Ankur Poudel</h3>
+                <p class="person-title">Ph.D., Assistant Professor / Mentor<br>Undergraduate Research and Thesis Supervisor</p>
+                <p class="person-bio">
+                    Dr. Ankur Poudel is an expert in plant stress biology with a strong focus on genomics and molecular approaches. 
+                    His work integrates advanced genomic tools to understand crop adaptation under abiotic stress, with a vision to 
+                    improve sustainable agriculture. He also mentors undergraduate students in research and thesis projects.
+                </p>
+                <div class="person-links">
+                    <a href="https://www.linkedin.com/in/ankur-poudel-0b695481/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.researchgate.net/profile/Ankur-Poudel" target="_blank" class="researchgate" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=fu7bTmEAAAAJ" target="_blank" class="scholar" aria-label="Google Scholar"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://orcid.org/0000-0002-2748-9243" target="_blank" class="orcid" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                </div>
+            </div>
+            
+            <!-- Person 2 -->
+            <div class="person-card">
+                <img src="img/2.png" alt="Bishnu Prasad Kandel" class="person-photo">
+                <h3 class="person-name">Bishnu Prasad Kandel</h3>
+                <p class="person-title">Assistant Professor / Mentor<br>Undergraduate Research and Thesis Member Advisor</p>
+                <p class="person-bio">
+                    Prof. Bishnu Prasad Kandel is dedicated to guiding students in agricultural sciences, with expertise in crop 
+                    improvement, soil health, and sustainable farming systems. His mentoring role as a thesis advisor provides 
+                    essential academic and research support, encouraging young scholars to pursue impactful scientific inquiry.
+                </p>
+                <div class="person-links">
+                    <a href="https://www.linkedin.com/in/bishnu-kandel-923575118/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.researchgate.net/profile/Bishnu-Kandel" target="_blank" class="researchgate" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=FlrS2lUAAAAJ" target="_blank" class="scholar" aria-label="Google Scholar"><i class="fa-brands fa-google"></i></a>
+                    <a href="https://orcid.org/0000-0001-6606-2544" target="_blank" class="orcid" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

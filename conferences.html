@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conferences – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; }
+
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; padding: 0 40px;
+    }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+    .nav-menu { display: flex; list-style: none; gap: 25px; }
+    .nav-menu a {
+      text-decoration: none; color: #333; font-size: 16px; padding: 10px 0;
+      border-bottom: 2px solid transparent; transition: border-color 0.3s;
+    }
+    .nav-menu a:hover, .nav-menu a.active { border-bottom: 2px solid #333; }
+
+    /* Hero / Banner */
+    .conference-hero {
+      background: url('img/fayi background.jpg') center/cover no-repeat;
+      color: white; text-align: center; padding: 160px 20px;
+      position: relative;
+    }
+    .conference-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .conference-hero > * { position: relative; z-index: 2; }
+    .conference-hero h1 { font-size: 64px; margin-bottom: 20px; font-weight: 400; letter-spacing: 2px; }
+    .conference-hero p { font-size: 22px; }
+
+    /* Profile & About */
+    .conference-profile {
+      display: flex; align-items: flex-start; gap: 40px;
+      max-width: 1000px; margin: 60px auto; padding: 20px;
+    }
+    .profile-pic {
+      flex: 0 0 220px; height: 220px;
+      border-radius: 50%; background: url('img/fayiprofile.jpg') center/cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer; transition: transform 0.3s;
+    }
+    .profile-pic:hover { transform: scale(1.05); }
+    .conference-text { flex: 1; font-size: 18px; text-align: justify; }
+
+    .conference-text a {
+      color: #1a73e8; text-decoration: none; transition: color 0.3s;
+    }
+    .conference-text a:hover { color: #155ab6; }
+
+    .conference-text em {
+      font-style: italic; font-weight: bold; color: #d35400;
+    }
+
+    /* Gallery */
+    .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item { 
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+      display: flex; flex-direction: column; 
+    }
+    .gallery-item img { 
+      width: 100%; 
+      height: 220px;   /* fixed uniform height */
+      object-fit: cover; /* crop to fill frame nicely */
+      display: block; 
+      transition: transform 0.3s;
+    }
+    .gallery-item img:hover { transform: scale(1.05); }
+    .gallery-caption { padding: 15px; font-size: 16px; text-align: center; }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      .conference-hero h1 { font-size: 36px; }
+      .conference-hero p { font-size: 16px; }
+      .conference-profile { flex-direction: column; text-align: center; }
+      .profile-pic { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SC</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="organization.html">Organization</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="conferences.html" class="active">Conferences</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conference Hero -->
+  <section class="conference-hero">
+    <h1>Food and Youth Institute (FAYI) Symposium</h1>
+    <p>August 2023 — Youth with Connected Minds in Agriculture & Food</p>
+  </section>
+
+  <!-- Profile & Description -->
+  <section class="conference-profile">
+    <div class="profile-pic"></div>
+    <div class="conference-text">
+      <p>
+        The <a href="https://www.facebook.com/p/FAYI-Food-and-Agriculture-Youth-Institute-61552478429305/?_rdr" target="_blank">Food and Youth Institute (FAYI)</a> International Symposium held in August 2023 brought together passionate young 
+        researchers, students, and innovators working in agriculture and food systems. With the theme 
+        <em>"Youth Empowerment for Sustainable Futures: A Symposium on Agriculture, Food Security, and One Health"</em>, the symposium created a platform to share ideas, showcase 
+        research, and promote collaborations for sustainable agriculture and resilient food systems.
+      </p>
+      <p>
+        The event highlighted the role of youth in advancing agricultural research, climate-smart practices, 
+        and food security strategies. Participants engaged in discussions on crop innovation, nutrition-sensitive 
+        farming, policy advocacy, and technological applications for rural development. The symposium was 
+        not only an academic gathering but also a celebration of collective action for a sustainable future.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2 style="text-align:center; font-size:32px; margin-bottom:30px;">Symposium Highlights</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="img/ss1.jpg" alt="Session 1">
+        <div class="gallery-caption">Sujan Chapgain representing IAAS Nepal as speakers on youth and food security</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/ss7.JPG" alt="Session 2">
+        <div class="gallery-caption">IAAS Delta Project & Youth Engagement Activities</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/ss6.jpg" alt="Session 6">
+        <div class="gallery-caption">Interactive workshop on sustainable agriculture practices</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/ss3.jpg" alt="Session 3">
+        <div class="gallery-caption">Delegates with Symposium Certificates</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/ss4.jpg" alt="Session 4">
+        <div class="gallery-caption">Permaculture spider web, HASERA Permaculture learning center</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/ss8.jpg" alt="Session 8">
+        <div class="gallery-caption">Panel discussion on climate-smart agriculture</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/ss9.jpg" alt="Session 9">
+        <div class="gallery-caption">Networking and collaborative projects among youth delegates</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,67 +1,210 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects – Sujan Chapagain</title>
-
-  <!-- Icons + Tailwind (Tailwind used for project cards layout exactly as you had) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    /* ====== MATCH NAVBAR TO YOUR ORIGINAL MAIN CSS ====== */
-    * { box-sizing: border-box; }
-    body { font-family: 'Georgia', serif; line-height: 1.6; color: #111827; background: #fafaf7; }
+    body {
+      font-family: 'Georgia', serif;
+      background: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
 
-    /* Header (copied from your main CSS styles) */
-    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 50; }
+    .header {
+      background: #f8f8f8;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
     .nav-container {
-      max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
-      align-items: center; padding: 0 40px;
-    }
-    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
-    .nav-menu { display: flex; list-style: none; gap: 25px; }
-    .nav-menu a {
-      text-decoration: none; color: #333; font-size: 16px; padding: 10px 0;
-      border-bottom: 2px solid transparent; transition: border-color 0.3s;
-    }
-    .nav-menu a:hover, .nav-menu a.active { border-bottom: 2px solid #333; }
-
-    /* ===== Project details/summary styling (kept from your original projects page) ===== */
-    details[open] .summary-btn .lbl-open { display: inline; }
-    details[open] .summary-btn .lbl-closed { display: none; }
-    details:not([open]) .summary-btn .lbl-open { display: none; }
-    details:not([open]) .summary-btn .lbl-closed { display: inline; }
-
-    .summary-btn {
-      display: inline-flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: .5rem;
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 9999px;
-      border: 1px solid #0f766e20;
-      padding: .6rem 1rem;
-      background: #ffffff;
-      color: #0f766e;
-      box-shadow: 0 2px 6px rgba(0,0,0,.06);
+      padding: 0 40px;
     }
-    .summary-btn:hover { background: #f0fdfa; border-color: #0f766e40; }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      padding: 10px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      border-bottom: 2px solid #0f766e;
+      font-weight: bold;
+      color: #0f766e;
+    }
+
+    .page-header {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #0f766e;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-image {
+      flex: 1 1 400px;
+      min-width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease;
+    }
+
+    .project-content {
+      flex: 2 1 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Make project titles clickable */
+    .project-content h2 a {
+      font-size: 1.8rem;
+      color: #0f766e;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .project-content h2 a:hover {
+      color: #064e3b;
+      text-decoration: underline;
+    }
+
+    .project-content p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+/* Modern & Professional More Details Button */
+.more-btn {
+  display: inline-flex;                /* Keep icon + text inline */
+  align-items: center;                /* Vertically center content */
+  gap: 8px;                           /* Space between icon and text */
+  padding: 8px 14px;                  /* Balanced padding */
+  font-size: 1rem;                    /* Professional readable size */
+  font-weight: 600;                   /* Slightly bold for emphasis */
+  font-family: 'Segoe UI', Roboto, sans-serif;  /* Clean & modern font */
+  color: #ffffff;                     /* White text for contrast */
+  background: linear-gradient(135deg, #1abc9c, #16a085); /* Elegant gradient */
+  border-radius: 25px;                /* Smooth rounded corners */
+  text-decoration: none;              /* Remove underline */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* Soft shadow for depth */
+  transition: all 0.3s ease-in-out;   /* Smooth hover effect */
+  width: auto;
+  max-width: fit-content;
+  cursor: pointer;
+}
+
+/* Icon Styling */
+.more-btn i {
+  font-size: 1.05rem;                 /* Perfectly sized icon */
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.more-btn:hover {
+  background: linear-gradient(135deg, #16a085, #1abc9c); /* Reverse gradient */
+  transform: translateY(-2px) scale(1.03);               /* Lift + slight scale */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);             /* Deeper shadow */
+}
+
+/* Icon Rotation on Hover */
+.more-btn:hover i {
+  transform: translateX(3px) rotate(90deg);
+}
+
+
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .project-card {
+        flex-direction: column;
+      }
+      .project-image {
+        height: 300px;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <!-- Header (matches main site; links go back to index sections) -->
+
+  <!-- Header -->
   <header class="header">
     <nav class="nav-container">
-      <a href="index.html#home" class="logo">SC</a>
+      <a href="index.html" class="logo">SC</a>
       <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="About.html">About</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
-        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a href="organization.html">Organization</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -70,449 +213,63 @@
   </header>
 
   <!-- Page Header -->
-  <section class="bg-white border-b">
-    <div class="max-w-6xl mx-auto px-6 py-10">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-teal-700">Research Projects</h1>
-      <p class="text-gray-600 mt-2">Documenting diversity, resilience, and performance of crops in Nepal</p>
-    </div>
+  <section class="page-header">
+    <h1>Research Projects</h1>
+    <p>Documenting diversity, resilience, and performance of crops in Nepal</p>
   </section>
 
-  <!-- Projects Section (YOUR CONTENT UNCHANGED) -->
-  <main id="projects" class="max-w-6xl mx-auto px-6 py-12 space-y-12">
+  <!-- Projects Section -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
 
-    <!-- ===== Project Card Component (1) ===== -->
-    <article class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 overflow-hidden">
-      <div class="grid md:grid-cols-2 gap-0">
-        <img src="img/fm3.jpg" alt="Agro-Morphological Diversity in Finger Millet"
-             class="h-full w-full object-cover md:max-h-[380px]">
-        <div class="p-6 md:p-8">
-          <h2 class="text-2xl font-bold text-teal-700">Agro-Morphological Diversity in Finger Millet</h2>
-          <p class="mt-3 text-gray-700">
-            Nepal harbors significant finger millet landrace diversity adapted to hilly and mountain agro-ecologies.
-            This project characterizes landraces for genetic, phenotypic, and agronomic variability to inform selection
-            and on-farm conservation.
-          </p>
-
-          <!-- Quick stats -->
-          <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">12+</div>
-              <div class="text-xs text-gray-600">Landraces</div>
-            </div>
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">High</div>
-              <div class="text-xs text-gray-600">Genetic variability</div>
-            </div>
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">2</div>
-              <div class="text-xs text-gray-600">Agro-ecologies</div>
-            </div>
-          </div>
-
-          <!-- Read more -->
-          <details class="mt-6">
-            <summary class="summary-btn">
-              <i class="fa-solid fa-circle-plus"></i>
-              <span class="lbl-closed">Read more</span>
-              <span class="lbl-open">Hide details</span>
-            </summary>
-
-            <div class="mt-6 space-y-6">
-              <section class="space-y-2">
-                <h3 class="font-semibold text-gray-900">Background</h3>
-                <p class="text-gray-700">
-                  Finger millet (<em>Eleusine coracana</em>) remains a vital staple for mid-hills households.
-                  Landraces show wide variability for yield, maturity, and stress tolerance, yet are under-documented.
-                </p>
-              </section>
-
-              <section class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h3 class="font-semibold text-gray-900">Place</h3>
-                  <p class="text-gray-700">IAAS, Sundarbazar, Lamjung, Nepal</p>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900">Objectives</h3>
-                  <ul class="text-gray-700 list-disc ml-5">
-                    <li>Quantify phenotypic diversity for key agro-morphological traits.</li>
-                    <li>Estimate heritability and genetic advance.</li>
-                    <li>Identify divergent clusters for breeding and conservation.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="font-semibold text-gray-900">Design / Method</h3>
-                <p class="text-gray-700">
-                  Alpha lattice RCBD (2 reps); traits: PH, DM, EL, TGW, GY, etc.; ANOVA, PCA, clustering, and
-                  variability parameters (H<sup>2</sup>, GA%).
-                </p>
-              </section>
-
-              <section class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h3 class="font-semibold text-gray-900">Funding</h3>
-                  <p class="text-gray-700">Internal (IAAS mini-grant) — <span class="text-gray-500">₹ / NPR amount</span></p>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900">Timeline</h3>
-                  <p class="text-gray-700">Nov 2024 – Aug 2025</p>
-                </div>
-              </section>
-
-              <!-- 6-Image Gallery -->
-              <section>
-                <h3 class="font-semibold text-gray-900 mb-2">Gallery</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <img src="img/fm1.jpg" alt="finger-millet image 1" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/fm2.jpg" alt="finger-millet image 2" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/fm3.jpg" alt="finger-millet image 3" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/fm4.jpg" alt="finger-millet image 4" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/fm5.jpg" alt="finger-millet image 5" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/fm6.jpg" alt="finger-millet image 6" class="rounded-xl object-cover h-36 w-full">
-                </div>
-              </section>
-
-              <!-- Investigators -->
-              <section>
-                <h3 class="font-semibold text-gray-900 mb-2">Project Members / Investigators</h3>
-                <ul class="space-y-1 text-gray-700">
-                  <li><span class="font-medium">PI:</span> Sujan Chapagain (IAAS, Lamjung)</li>
-                  <li><span class="font-medium">Co-I:</span> [Name], IAAS Lamjung</li>
-                  <li><span class="font-medium">Advisor:</span> [Name], IAAS Lamjung</li>
-                </ul>
-              </section>
-            </div>
-          </details>
-        </div>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-image" style="background-image:url('img/fm3.jpg')"></div>
+      <div class="project-content">
+        <h2><a href="project2.html">Agro-Morphological Diversity in Finger Millet</a></h2>
+        <p>This project explores Nepal’s rich finger millet landrace diversity. It identifies traits such as seed size, panicle structure, and stress tolerance, guiding breeding programs for climate-resilient crops.</p>
+        <p>Conservation strategies derived from this research help preserve genetic diversity and promote sustainable farming systems.</p>
+        <a href="project2.html" class="more-btn"><i class="fas fa-plus"></i> More Details</a>
       </div>
-    </article>
+    </div>
 
-    <!-- ===== Project Card Component (2) ===== -->
-    <article class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 overflow-hidden">
-      <div class="grid md:grid-cols-2 gap-0">
-        <div class="p-6 md:p-8 order-2 md:order-1">
-          <h2 class="text-2xl font-bold text-teal-700">Morpho-Physiological Screening of Wheat under Drought</h2>
-          <p class="mt-3 text-gray-700">
-            Evaluated wheat genotypes under irrigated and rainfed conditions at IAAS Lamjung to identify drought-tolerant
-            lines using traits such as RWC, leaf rolling index, and yield stability.
-          </p>
-
-          <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">RWC</div>
-              <div class="text-xs text-gray-600">High H²</div>
-            </div>
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">Clusters</div>
-              <div class="text-xs text-gray-600">Distinct groups</div>
-            </div>
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">GY</div>
-              <div class="text-xs text-gray-600">Stable lines</div>
-            </div>
-          </div>
-
-          <details class="mt-6">
-            <summary class="summary-btn">
-              <i class="fa-solid fa-circle-plus"></i>
-              <span class="lbl-closed">Read more</span>
-              <span class="lbl-open">Hide details</span>
-            </summary>
-
-            <div class="mt-6 space-y-6">
-              <section class="space-y-2">
-                <h3 class="font-semibold text-gray-900">Background</h3>
-                <p class="text-gray-700">
-                  Frequent terminal droughts constrain wheat productivity in mid-hills. Identifying drought-tolerant
-                  genotypes supports resilient farming systems.
-                </p>
-              </section>
-
-              <section class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h3 class="font-semibold text-gray-900">Place</h3>
-                  <p class="text-gray-700">IAAS, Sundarbazar, Lamjung, Nepal</p>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900">Objectives</h3>
-                  <ul class="text-gray-700 list-disc ml-5">
-                    <li>Screen genotypes under contrasting moisture regimes.</li>
-                    <li>Estimate heritability of morpho-physiological traits.</li>
-                    <li>Classify drought response via multivariate analysis.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="font-semibold text-gray-900">Design / Method</h3>
-                <p class="text-gray-700">
-                  Split-plot with irrigation as main plot; traits: RWC, LRI, PH, HI, GY; stability via AMMI/GGE; clustering & PCA.
-                </p>
-              </section>
-
-              <section class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h3 class="font-semibold text-gray-900">Funding</h3>
-                  <p class="text-gray-700">Departmental support — <span class="text-gray-500">NPR amount</span></p>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900">Timeline</h3>
-                  <p class="text-gray-700">Nov 2024 – May 2025</p>
-                </div>
-              </section>
-
-              <section>
-                <h3 class="font-semibold text-gray-900 mb-2">Gallery</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <img src="img/wheat1.jpg" alt="wheat drought image 1" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat2.jpg" alt="wheat drought image 2" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat3.jpg" alt="wheat drought image 3" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat4.jpg" alt="wheat drought image 4" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat5.jpg" alt="wheat drought image 5" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat6.jpg" alt="wheat drought image 6" class="rounded-xl object-cover h-36 w-full">
-                </div>
-              </section>
-
-              <!-- Investigators -->
-              <section>
-                <h3 class="font-semibold text-gray-900 mb-2">Project Members / Investigators</h3>
-                <ul class="space-y-1 text-gray-700">
-                  <li><span class="font-medium">PI:</span> Sujan Chapagain (IAAS, Lamjung)</li>
-                  <li><span class="font-medium">Co-I:</span> [Name], IAAS Lamjung</li>
-                  <li><span class="font-medium">Technical:</span> [Name], Field & Lab</li>
-                </ul>
-              </section>
-            </div>
-          </details>
-        </div>
-
-        <img src="img/wheat.jpg" alt="Wheat Screening under Drought"
-             class="h-full w-full object-cover md:max-h-[380px] order-1 md:order-2">
+    <!-- Project 2 -->
+    <div class="project-card">
+      <div class="project-image" style="background-image:url('img/wheat.jpg')"></div>
+      <div class="project-content">
+        <h2><a href="project3.html">Morpho-Physiological Screening of Wheat under Drought</a></h2>
+        <p>This project evaluates phenotypic traits, root architecture, and yield of wheat under drought stress. Combined with genotypic data, it helps identify drought-tolerant lines for breeding resilient wheat varieties in Nepal.</p>
+        <p>It informs sustainable crop management and climate-adaptive strategies to improve productivity under water-limited conditions.</p>
+        <a href="project3.html" class="more-btn"><i class="fas fa-plus"></i> More Details</a>
       </div>
-    </article>
+    </div>
 
-    <!-- ===== Project Card Component (3) ===== -->
-    <article class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 overflow-hidden">
-      <div class="grid md:grid-cols-2 gap-0">
-        <img src="img/whh.jpg" alt="Genotypic and Phenotypic Characterization in Finger Millet"
-             class="h-full w-full object-cover md:max-h-[380px]">
-        <div class="p-6 md:p-8">
-          <h2 class="text-2xl font-bold text-teal-700">Performance Evaluation of Wheat Genotypes under irrigated and drought conditions</h2>
-          <p class="mt-3 text-gray-700">
-            Wheat production in Nepal is significantly constrained by biotic and abiotic stresses, with drought being the most critical abiotic factor. Despite an increase in the area under wheat cultivation, wheat productivity has remained unchanged in the past few years. g.
-          </p>
-
-          <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">Markers</div>
-              <div class="text-xs text-gray-600">SSR/GBS</div>
-            </div>
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">Paths</div>
-              <div class="text-xs text-gray-600">EL → GY; PH → GY</div>
-            </div>
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">H²</div>
-              <div class="text-xs text-gray-600">Moderate–High</div>
-            </div>
-          </div>
-
-          <details class="mt-6">
-            <summary class="summary-btn">
-              <i class="fa-solid fa-circle-plus"></i>
-              <span class="lbl-closed">Read more</span>
-              <span class="lbl-open">Hide details</span>
-            </summary>
-
-            <div class="mt-6 space-y-6">
-              <section class="space-y-2">
-                <h3 class="font-semibold text-gray-900">Background</h3>
-                <p class="text-gray-700">
-                  Wheat is the major and important cereals in Nepal holding the potential for yield improvement and nutritioanl secuirty in lamjung.
-                </p>
-              </section>
-
-              <section class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h3 class="font-semibold text-gray-900">Place</h3>
-                  <p class="text-gray-700">IAAS, Sundarbazar, Lamjung, Nepal</p>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900">Objectives</h3>
-                  <ul class="text-gray-700 list-disc ml-5">
-                    <li>Estimate trait heritability and GA%.</li>
-                    <li>Conduct path analysis to identify yield drivers.</li>
-                    <li>Relate marker diversity to phenotypic clusters.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="font-semibold text-gray-900">Design / Method</h3>
-                <p class="text-gray-700">
-                  RCBD phenotyping; molecular marker genotyping; correlation & path coefficients; STRUCTURE/PCA for
-                  population insights.
-                </p>
-              </section>
-
-              <section class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h3 class="font-semibold text-gray-900">Funding</h3>
-                  <p class="text-gray-700">[Grant / Lab Support] — <span class="text-gray-500">NPR amount</span></p>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900">Timeline</h3>
-                  <p class="text-gray-700">Feb 2025 – Dec 2025</p>
-                </div>
-              </section>
-
-              <section>
-                <h3 class="font-semibold text-gray-900 mb-2">Gallery</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <img src="img/wh1.jpg" alt="genomics image 1" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wh2.jpg" alt="genomics image 2" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wh3.jpg" alt="genomics image 3" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wh4.jpg" alt="genomics image 4" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wh5.jpg" alt="genomics image 5" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wh6.jpg" alt="genomics image 6" class="rounded-xl object-cover h-36 w-full">
-                </div>
-              </section>
-
-              <!-- Investigators -->
-              <section>
-                <h3 class="font-semibold text-gray-900 mb-2">Project Members / Investigators</h3>
-                <ul class="space-y-1 text-gray-700">
-                  <li><span class="font-medium">PI:</span> Sujan Chapagain (IAAS, Lamjung)</li>
-                  <li><span class="font-medium">Co-I:</span> [Name], IAAS Lamjung</li>
-                  <li><span class="font-medium">Advisor:</span> [Name], IAAS Lamjung</li>
-                </ul>
-              </section>
-            </div>
-          </details>
-        </div>
+    <!-- Project 3 -->
+    <div class="project-card">
+      <div class="project-image" style="background-image:url('img/turmeric.jpg')"></div>
+      <div class="project-content">
+        <h2><a href="project1.html">Performance Evaluation of Wheat Genotypes under Irrigated and Drought Conditions</a></h2>
+        <p>This research compares wheat genotypes under irrigated and drought environments, evaluating growth, yield, and stress adaptation to select high-performance varieties for variable climates.</p>
+        <p>It guides targeted breeding programs, optimizing genotype selection for resilience, yield stability, and nutritional quality.</p>
+        <a href="project1.html" class="more-btn"><i class="fas fa-plus"></i> More Details</a>
       </div>
-    </article>
+    </div>
 
-    <!-- ===== Project Card Component (4) ===== -->
-    <article class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 overflow-hidden">
-      <div class="grid md:grid-cols-2 gap-0">
-        <div class="p-6 md:p-8 order-2 md:order-1">
-          <h2 class="text-2xl font-bold text-teal-700">Screening Wheat Genotypes for Drought Tolerance via Early Seedling Traits</h2>
-          <p class="mt-3 text-gray-700">
-            Evaluated 20 wheat genotypes under controlled soil moisture regimes (100%, 75%, and 50% field capacity) to
-            identify drought-tolerant lines using early seedling vigor, root traits, and biomass performance.
-          </p>
-
-          <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">20</div>
-              <div class="text-xs text-gray-600">Genotypes</div>
-            </div>
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">3 FC</div>
-              <div class="text-xs text-gray-600">100%, 75%, 50%</div>
-            </div>
-            <div class="bg-teal-50 rounded-xl p-3 text-center">
-              <div class="text-teal-700 font-extrabold text-xl">Seedling</div>
-              <div class="text-xs text-gray-600">Vigor traits</div>
-            </div>
-          </div>
-
-          <details class="mt-6">
-            <summary class="summary-btn">
-              <i class="fa-solid fa-circle-plus"></i>
-              <span class="lbl-closed">Read more</span>
-              <span class="lbl-open">Hide details</span>
-            </summary>
-
-            <div class="mt-6 space-y-6">
-              <section class="space-y-2">
-                <h3 class="font-semibold text-gray-900">Background</h3>
-                <p class="text-gray-700">
-                  Early seedling traits are crucial for drought escape and adaptation. Identifying seedling-stage tolerant genotypes
-                  accelerates breeding for resilience in water-limited environments.
-                </p>
-              </section>
-
-              <section class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h3 class="font-semibold text-gray-900">Place</h3>
-                  <p class="text-gray-700">IAAS, Sundarbazar, Lamjung, Nepal</p>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900">Objectives</h3>
-                  <ul class="text-gray-700 list-disc ml-5">
-                    <li>Evaluate 20 wheat genotypes under different field capacity levels.</li>
-                    <li>Characterize early root and shoot traits linked to drought tolerance.</li>
-                    <li>Identify promising genotypes for breeding and field testing.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="font-semibold text-gray-900">Design / Method</h3>
-                <p class="text-gray-700">
-                  Pot experiment with three moisture regimes (100%, 75%, 50% FC); traits: root length, root-to-shoot ratio,
-                  seedling dry weight, vigor index; analysis via ANOVA, PCA & clustering.
-                </p>
-              </section>
-
-              <section class="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <h3 class="font-semibold text-gray-900">Funding</h3>
-                  <p class="text-gray-700">Departmental support — <span class="text-gray-500">NPR amount</span></p>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-900">Timeline</h3>
-                  <p class="text-gray-700">Nov 2024 – Apr 2025</p>
-                </div>
-              </section>
-
-              <section>
-                <h3 class="font-semibold text-gray-900 mb-2">Gallery</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <img src="img/wheat-seedling1.jpg" alt="wheat seedling image 1" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat-seedling2.jpg" alt="wheat seedling image 2" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat-seedling3.jpg" alt="wheat seedling image 3" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat-seedling4.jpg" alt="wheat seedling image 4" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat-seedling5.jpg" alt="wheat seedling image 5" class="rounded-xl object-cover h-36 w-full">
-                  <img src="img/wheat-seedling6.jpg" alt="wheat seedling image 6" class="rounded-xl object-cover h-36 w-full">
-                </div>
-              </section>
-
-              <!-- Investigators -->
-              <section>
-                <h3 class="font-semibold text-gray-900 mb-2">Project Members / Investigators</h3>
-                <ul class="space-y-1 text-gray-700">
-                  <li><span class="font-medium">PI:</span> Sujan Chapagain (IAAS, Lamjung)</li>
-                  <li><span class="font-medium">Co-I:</span> [Name], IAAS Lamjung</li>
-                  <li><span class="font-medium">Technical:</span> [Name], Greenhouse & Lab</li>
-                </ul>
-              </section>
-            </div>
-          </details>
-        </div>
-
-        <img src="img/wheat-seedling1.jpg" alt="Wheat Seedling under Moisture Stress"
-             class="h-full w-full object-cover md:max-h-[380px] order-1 md:order-2">
+    <!-- Project 4 -->
+    <div class="project-card">
+      <div class="project-image" style="background-image:url('img/agroecology.jpg')"></div>
+      <div class="project-content">
+        <h2><a href="project4.html">Screening Wheat Genotypes for Drought Tolerance via Early Seedling Traits</a></h2>
+        <p>Early seedling traits provide a rapid indicator of drought tolerance. This project evaluates germination, seedling vigor, and root development to identify resilient genotypes.</p>
+        <p>Findings support sustainable agroecological intensification, soil health improvement, and biodiversity-friendly cropping systems.</p>
+        <a href="project4.html" class="more-btn"><i class="fas fa-plus"></i> More Details</a>
       </div>
-    </article>
+    </div>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-white border-t">
-    <div class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-600">
-      <p>&copy; 2025 Sujan Chapagain • IAAS Lamjung • </p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Sujan Chapagain • IAAS Lamjung</p>
   </footer>
 
-  <!-- (Optional) helper: if URL has #projects, scroll to it -->
-  <script>
-    if (location.hash === '#projects') {
-      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
