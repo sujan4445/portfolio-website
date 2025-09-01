@@ -3,123 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Organization – Sujan Chapagain</title>
+  <title>Organizations – Sujan Chapagain</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --card:#ffffff;
-      --ink:#222;
-      --muted:#555;
-      --accent:#7c3aed;
-      --accent-gradient: linear-gradient(135deg, #7c3aed, #9333ea);
-      --ring:#e2e8f0;
-      --radius:18px;
-      --shadow: 0 8px 24px rgba(2,12,27,.08);
+    body {
+      font-family: 'Georgia', serif;
+      background: #f4f2ef;
+      color: #333;
+      line-height: 1.6;
     }
 
-    /* Global */
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      padding:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family: "Times New Roman", Times, serif;
-      line-height:1.6;
+    /* Header */
+    .header {
+      background: #f4f2ef;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
-    a{color:inherit;text-decoration:none}
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #444;
+      text-decoration: none;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: #444;
+      font-size: 16px;
+      padding: 10px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      border-bottom: 2px solid #1d4ed8;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
 
-    /* Header (nav) */
-    .header { background:#f8f8f8; padding:20px 0; border-bottom:1px solid #ddd; }
-    .nav-container{
-      max-width:1200px; margin:0 auto;
-      display:flex; justify-content:space-between; align-items:center;
-      padding:0 40px;
+    /* Page Header */
+    .page-header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      padding: 60px 20px;
     }
-    .logo{ font-size:24px; font-weight:bold; color:#333; text-decoration:none; }
-    .nav-menu{ display:flex; list-style:none; gap:25px; margin:0; padding:0; }
-    .nav-menu a{
-      text-decoration:none; color:#333; font-size:16px; padding:10px 0;
-      border-bottom:2px solid transparent; transition:border-color .3s;
+    .page-header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #1d4ed8;
     }
-    .nav-menu a:hover, .nav-menu a.active{ border-bottom:2px solid #333; }
+    .page-header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
 
-    /* Main layout */
-    .container{ max-width:1100px; margin:28px auto; padding:0 20px; }
-    .page-title{
-      font-size:34px; line-height:1.2; margin:10px 0 18px;
-      font-weight:700; letter-spacing:.2px;
-      background:var(--accent-gradient);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    /* Main container */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 15px;
     }
-    .lead{ color:var(--muted); max-width:850px; margin-bottom:24px; }
 
-    /* Section cards */
-    .section{
-      background:var(--card);
-      box-shadow:var(--shadow);
-      border:1px solid var(--ring);
-      border-radius:var(--radius);
-      padding:22px; margin:18px 0;
-      transition: transform .25s ease, box-shadow .25s ease;
+    /* Project Card */
+    .project-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      align-items: center;
     }
-    .section:hover{ transform: translateY(-4px); box-shadow:0 12px 28px rgba(2,12,27,.12); }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+      background-color: #f9f9f9;
+    }
 
-    .heading{ display:flex; align-items:center; gap:14px; margin-bottom:10px; }
-    .heading img.org-logo{
-      width:48px; height:48px; border-radius:12px;
-      border:2px solid var(--ring); object-fit:contain;
-      background:#fff; padding:6px;
+    /* Project Image Fixed Size */
+    .project-image {
+      flex: 0 0 170px;
+      width: 170px;
+      height: 170px;
+      border-radius: 10%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    .heading h2{ margin:0; font-size:22px; line-height:1.25; color:#5b21b6; }
 
-    .meta{ display:flex; flex-wrap:wrap; gap:10px; color:var(--muted); font-size:14px; margin:6px 0 4px; }
-    .role{ font-weight:700; color:var(--ink); }
+    .project-content {
+      flex: 1 1 850px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .project-content h2 a {
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #1d4ed8;
+      transition: color 0.3s ease;
+    }
+    .project-content h2 a:hover {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+    .project-content p {
+      font-size: 1rem;
+      color: #555;
+      margin: 10px 0;
+    }
+    .meta {
+      font-size: 0.95rem;
+      color: #666;
+      margin: 5px 0 10px;
+    }
+    .meta .role {
+      font-weight: 600;
+      color: #333;
+    }
 
-    .descr{ margin:8px 0 0; }
+    /* Button */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 8px 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: #1d4ed8;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      border: none;
+      width: 160px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px) scale(1.03);
+    }
 
-    /* Buttons */
-    .actions{ margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
-    .btn{
-      display:inline-flex; align-items:center; gap:8px;
-      border:none; padding:10px 16px; border-radius:14px;
-      background:var(--accent-gradient);
-      font-weight:600; color:#fff;
-      box-shadow:0 4px 8px rgba(2,12,27,.1);
-      cursor:pointer; transition:.25s ease;
+    /* Footer */
+    footer {
+      background: #1d4ed8;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
     }
-    .btn:hover{ transform:translateY(-2px); }
 
-    /* Modal gallery */
-    .modal{
-      position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:24px;
-      background:rgba(2,6,23,.6); z-index:100;
-    }
-    .modal.open{ display:flex; }
-    .modal-card{
-      max-width:980px; width:100%; background:#fff; border-radius:20px;
-      border:1px solid var(--ring); box-shadow:var(--shadow); overflow:hidden;
-    }
-    .modal-header{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 16px; border-bottom:1px solid var(--ring);
-    }
-    .modal-title{ font-weight:800; color:#5b21b6; }
-    .close{ border:none; background:transparent; font-size:20px; cursor:pointer; color:#666; }
-    .modal-body{ padding:16px; }
-    .modal-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-    .modal-grid img{ width:100%; height:220px; object-fit:cover; border-radius:14px; border:2px solid var(--ring); cursor:pointer; }
-
-    /* Responsive gallery/grid */
-    @media (max-width:720px){
-      .modal-grid{ grid-template-columns:repeat(2,1fr); }
-      .modal-grid img{ height:180px; }
-    }
-    @media (max-width:480px){
-      .modal-grid{ grid-template-columns:1fr; }
-      .modal-grid img{ height:220px; }
+    @media (max-width: 768px) {
+      .project-card {
+        flex-direction: column;
+        align-items: center;
+      }
+      .project-image {
+        width: 170px;
+        height: 170px;
+      }
+      .project-content {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -131,7 +206,7 @@
       <a href="index.html" class="logo">SC</a>
       <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="conferences.html">Conferences</a></li>
@@ -143,456 +218,93 @@
     </nav>
   </header>
 
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Organizations & Internship</h1>
+    <p>A snapshot of my roles in student bodies, climate education initiatives, and a technology-driven agricultural internship.</p>
+  </section>
+
   <!-- Main -->
-  <main class="container">
-    <h1 class="page-title">Organizations & Internship</h1>
-    <p class="lead">A snapshot of my roles in student bodies, climate education initiatives, and a technology-driven agricultural internship.</p>
+  <main>
 
- <!-- GeoKrishi Section -->
-<section class="section" id="geokrishi">
-  <div class="heading">
-    <img class="org-logo" src="img/geokrishi.png" alt="GeoKrishi logo">
-    <h2>GeoKrishi — Internship</h2>
-  </div>
-  <div class="meta">
-    <span class="role">Supervisor:</span> <span>Prem Kunwar</span>
-    <span>•</span>
-    <span>Duration:</span> <span>3 months</span>
-  </div>
-  <p class="descr">
-    During my 3-month internship, I bridged traditional farming with modern technology, empowering farmers with digital tools for increased productivity and sustainability. This experience deepened my agricultural insight and fueled my dedication to fostering innovation in farming communities.
-  </p>
-  <div class="actions">
-    <button class="btn gallery-btn" onclick="openLightbox('img/GeoKrishi1.png')">
-      <i class="fa-solid fa-images"></i> Gallery
-    </button>
-  </div>
-</section>
-
-<!-- Lightbox Modal -->
-<div id="lightbox">
-  <div id="lightbox-content">
-    <span id="lightbox-close" onclick="closeLightbox()">×</span>
-    <img id="lightbox-img" src="" alt="Full Image">
-  </div>
-</div>
-
-<style>
-  /* Lightbox Styles */
-  #lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(255, 253, 240, 0.95); /* Cream-white background */
-    justify-content: center;
-    align-items: center;
-  }
-
-  #lightbox-content {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80%;
-    max-height: 80%;
-  }
-
-  #lightbox img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    display: block;
-  }
-
-  #lightbox-close {
-    position: absolute;
-    top: -15px;
-    right: -15px; /* Top-right corner outside image */
-    font-size: 40px;
-    background: #333; /* Dark circle background */
-    color: #fff; /* White X for contrast */
-    width: 35px;
-    height: 35px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    user-select: none;
-  }
-</style>
-
-<script>
-  function openLightbox(src) {
-    const lightbox = document.getElementById('lightbox');
-    const img = document.getElementById('lightbox-img');
-    img.src = src;
-    lightbox.style.display = 'flex';
-  }
-
-  function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-  }
-</script>
-
-
-
-
-<!-- Lightbox Modal -->
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="Full Image">
-</div>
-
-<style>
-  /* Lightbox Styles */
-  #lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-  }
-
-  #lightbox img {
-    max-width: 75%;
-    max-height: 75%;
-    border-radius: 10px;
-  }
-</style>
-
-<script>
-  function openLightbox(src) {
-    const lightbox = document.getElementById('lightbox');
-    const img = document.getElementById('lightbox-img');
-    img.src = src;
-    lightbox.style.display = 'flex';
-  }
-
-  function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-  }
-</script>
-
-
-    <!-- IAAS Nepal (National) -->
-    <section class="section" id="iaas-nepal">
-      <div class="heading">
-        <img class="org-logo" src="img/iaasnepal.png" alt="IAAS Nepal logo">
-        <h2>International Association of Agriculture Students and Related Science Nepal (IAAS Nepal)</h2>
-      </div>
-      <div class="meta">
-        <span class="role">National Campaign Coordinator</span>
-        <span>•</span>
-        <span>Jan 2023 – Jan 2024</span>
-      </div>
-      <p class="descr">
-        Online, campaign-driven volunteering focused on climate education—mobilizing students nationwide, curating digital content, and coordinating awareness activities to strengthen climate literacy among youth communities.
-      </p>
-      <div class="actions">
-        <button class="btn gallery-btn"
-                data-title="IAAS Nepal — Campaigns"
-                data-images="img/campaign1.png,img/campaign2.png,img/campaign3.png,img/campaign4.png,img/campaign5.png,img/campaign6.png">
-          <i class="fa-solid fa-images"></i> Gallery
-        </button>
-      </div>
-    </section>
-
-    <!-- IAAS Nepal LC Lamjung -->
-    <section class="section" id="iaas-lc-lamjung">
-      <div class="heading">
-        <img class="org-logo" src="img/iaaslamjung.png" alt="IAAS Nepal LC Lamjung logo">
-        <h2>IAAS Nepal Local Committee Lamjung</h2>
-      </div>
-      <div class="meta">
-        <span class="role">Local Director</span>
-        <span>•</span>
-        <span>Jan 2023 – Jan 2024</span>
-      </div>
-      <p class="descr">
-        Online-based climate education volunteering—coordinating local outreach, mentoring peers, and delivering climate-smart messages tailored to the Lamjung context.
-      </p>
-      <div class="meta" style="margin-top:6px">
-        <span class="role">Quality Board Member, Exchange Department</span>
-        <span>•</span>
-        <span>Jan 2022 – Jan 2023</span>
-      </div>
-      <p class="descr">
-        Supported quality assurance for exchange activities, documentation, and participant experience across virtual programming.
-      </p>
-      <div class="actions">
-        <button class="btn gallery-btn"
-                data-title="IAAS LC Lamjung — Activities"
-                data-images="img/ca1.png,img/ca2.png,img/ca3.png,img/ca4.png,img/ca5.png,img/ca6.png">
-          <i class="fa-solid fa-images"></i> Gallery
-        </button>
-      </div>
-    </section>
-
-    <!-- ClimatEducate Project -->
-    <section class="section" id="climate-educate">
-      <div class="heading">
-        <img class="org-logo" src="img/ClimatEducate.png" alt="ClimatEducate logo">
-        <h2>ClimatEducate Project</h2>
-      </div>
-      <div class="meta">
-        <span class="role">Project Member — Research, Education & Awareness Department</span>
-        <span>•</span>
-        <span>Nov 2021 – Jan 2024</span>
-      </div>
-      <p class="descr">
-        Contributed to research briefs, educational materials, and outreach events to translate climate science into practical, youth-friendly learning resources.
-      </p>
-      <div class="actions">
-        <button class="btn gallery-btn"
-                data-title="ClimatEducate — Gallery"
-                data-images="img/c1.png,img/c2.png,img/c3.png,img/c4.png,img/c5.png,img/c6.png">
-          <i class="fa-solid fa-images"></i> Gallery
-        </button>
-      </div>
-    </section>
-<!-- ===== Amnesty International KCYN Lamjung (compact) ===== -->
-<section class="section" id="amnesty">
-  <div class="heading">
-    <img class="org-logo" src="img/amnesty.png" alt="Amnesty Lamjung logo">
-    <h2>Amnesty International Krishi Campus Youth Network, Lamjung</h2>
-  </div>
-
-  <!-- Tenure only: role + year (compact view) -->
-  <div class="meta"><span class="role">Coordinator</span> <span>•</span> <span>Jan 2024 – Jan 2025</span></div>
-  <div class="meta" style="margin-top:6px"><span class="role">Finance Head</span> <span>•</span> <span>Jan 2023 – Jan 2024</span></div>
-  <div class="meta" style="margin-top:6px"><span class="role">Human Rights Education Coordinator</span> <span>•</span> <span>Jan 2022 – Jan 2023</span></div>
-
-  <div class="actions" style="margin-top:12px;">
-    <!-- keep existing classes/attributes; add id for JS hook -->
-    <button id="openAikycn" class="btn gallery-btn"
-            data-title="Amnesty KCYN Lamjung — Gallery"
-            data-images="img/a1.png,img/a2.png,img/a3.png,img/a4.png,img/a5.png,img/a6.png">
-      <i class="fa-solid fa-images"></i> Explore AIKYCN
-    </button>
-  </div>
-</section>
-
-<!-- ===== AIKYCN DETAILED VIEW (hidden by default) ===== -->
-<section id="aikycn-detail" style="display:none;">
-  <!-- Hero -->
-  <section class="mela-hero" id="aikycn-hero" style="background:url('img/aikcyn.jpg') center/cover no-repeat; color:#fff; text-align:center; padding:140px 20px; position:relative;">
-    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.45);"></div>
-    <div style="position:relative; z-index:2;">
-      <h1 style="font-size:40px; margin-bottom:10px;">Amnesty KCYN Lamjung</h1>
-      <p style="font-size:18px; margin:0;">Strengthening Human Rights & Youth Leadership</p>
-    </div>
-  </section>
-
-  <!-- Profile (image) + Tenure (role + year) -->
-  <section class="mela-profile" style="display:flex; align-items:flex-start; gap:30px; max-width:1000px; margin:40px auto; padding:20px;">
-    <div class="profile-pic" style="flex:0 0 220px; height:220px; border-radius:50%; background:url('img/amnesty.jpg') center/cover; box-shadow:0 4px 12px rgba(0,0,0,0.2);"></div>
-
-    <div class="mela-text" style="flex:1; font-size:18px;">
-      <h3 style="margin-top:0;">Tenure & Positions</h3>
-      <ul style="list-style:none; padding:0; margin:0; font-size:16px; line-height:1.8;">
-        <li><strong>Coordinator</strong> — Jan 2024 – Jan 2025</li>
-        <li><strong>Finance Head</strong> — Jan 2023 – Jan 2024</li>
-        <li><strong>Human Rights Education Coordinator</strong> — Jan 2022 – Jan 2023</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Roles, Activities & Impact -->
-  <section style="max-width:1000px; margin:20px auto 40px; padding:20px; font-size:18px; text-align:justify;">
-    <h2 style="text-align:center; font-size:26px; margin-bottom:12px;">Roles, Activities & Community Impact</h2>
-
-    <p style="margin-bottom:12px;">
-      Led the chapter’s strategy and programming — campaign planning, partnerships, and member engagement —
-      anchored in campus-wide advocacy for human rights and peaceful assembly.
-    </p>
-
-    <p style="margin-bottom:12px;">
-      Oversaw budgeting, procurement, and transparent financial reporting to support sustained advocacy activities and trainings.
-    </p>
-
-    <p>
-      Designed and delivered workshops on rights literacy, fostering a culture of informed participation and civic responsibility among students.
-      These activities strengthened local youth leadership, increased rights-awareness in the campus community,
-      and supported collective action for human dignity and peaceful protest.
-    </p>
-  </section>
-
-  <!-- Highlights Gallery -->
-  <section class="gallery" style="max-width:1100px; margin:40px auto 80px; padding:0 20px;">
-    <h2 style="text-align:center; font-size:32px; margin-bottom:20px;">Highlights</h2>
-
-    <div class="gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;">
-      <div class="gallery-item" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-        <img src="img/Hre1.jpg" alt="HRE 1" style="width:100%;display:block;">
-        <div class="gallery-caption" style="padding:12px;text-align:center;">Human Rights Education Workshop</div>
-      </div>
-
-      <div class="gallery-item" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-        <img src="img/Hre2.jpg" alt="HRE 2" style="width:100%;display:block;">
-        <div class="gallery-caption" style="padding:12px;text-align:center;">Dialogue on Peaceful Assembly</div>
-      </div>
-
-      <div class="gallery-item" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-        <img src="img/Iconic.jpg" alt="Iconic" style="width:100%;display:block;">
-        <div class="gallery-caption" style="padding:12px;text-align:center;">Iconic Campaign Moment</div>
-      </div>
-
-      <div class="gallery-item" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-        <img src="img/Aikycn2.jpg" alt="AIKYCN team" style="width:100%;display:block;">
-        <div class="gallery-caption" style="padding:12px;text-align:center;">AIKYCN Youth Network Team</div>
-      </div>
-
-      <div class="gallery-item" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-        <img src="img/Hre3.jpg" alt="HRE 3" style="width:100%;display:block;">
-        <div class="gallery-caption" style="padding:12px;text-align:center;">Community Rights Education Drive</div>
-      </div>
-
-      <div class="gallery-item" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
-        <img src="img/Hre4.jpg" alt="HRE 4" style="width:100%;display:block;">
-        <div class="gallery-caption" style="padding:12px;text-align:center;">Advocacy & Training Session</div>
-      </div>
-    </div>
-  </section>
-</section>
-
-<!-- Fixed Go Back button (visible only in detail view) -->
-<button id="aikycn-go-back" aria-label="Go back to AIKYCN summary"
-        style="display:none; position:fixed; right:18px; bottom:18px; z-index:9999;
-               background:#d9534f; color:white; border:none; padding:10px 14px;
-               border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.2); cursor:pointer;">
-  ← Go Back
-</button>
-
-<!-- ===== Minimal JS: show/hide and smooth scroll ===== -->
-<script>
-  (function () {
-    const openBtn = document.getElementById('openAikycn');
-    const compact = document.getElementById('amnesty');
-    const detail = document.getElementById('aikycn-detail');
-    const goBack = document.getElementById('aikycn-go-back');
-
-    if (!openBtn || !compact || !detail || !goBack) return;
-
-    function showDetail() {
-      compact.style.display = 'none';
-      detail.style.display = 'block';
-      goBack.style.display = 'block';
-      // scroll to top of the detail view smoothly
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function showCompact() {
-      detail.style.display = 'none';
-      compact.style.display = 'block';
-      goBack.style.display = 'none';
-      // scroll the compact into view
-      compact.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    openBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      showDetail();
-    });
-
-    goBack.addEventListener('click', function (e) {
-      e.preventDefault();
-      showCompact();
-    });
-
-    // handle "Escape" keyboard to go back (convenience)
-    document.addEventListener('keydown', function (ev) {
-      if (ev.key === 'Escape' && detail.style.display === 'block') {
-        showCompact();
-      }
-    });
-  })();
-</script>
-
-
-  <!-- Modal -->
-  <div class="modal" id="galleryModal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-header">
-        <div class="modal-title" id="modalTitle">Gallery</div>
-        <button type="button" class="close" id="modalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-grid" id="modalGrid"></div>
-        <div class="caption" style="text-align:center; color:#666; font-size:13px; margin-top:6px;">
-          Click outside the card or the ✕ to close.
+    <!-- 1. GeoKrishi -->
+    <div class="project-card">
+      <div class="project-image" style="background-image:url('img/geokrishi.png')"></div>
+      <div class="project-content">
+        <h2><a href="#">GeoKrishi — Internship</a></h2>
+        <div class="meta">
+          <span class="role">Supervisor:</span> Prem Kunwar • <span>Duration:</span> 3 months
         </div>
+        <p>
+          Bridged traditional farming with modern technology, empowering farmers with digital tools for increased productivity and sustainability.
+        </p>
+        <button class="btn"><i class="fa-solid fa-plus"></i> More Details</button>
       </div>
     </div>
+
+    <!-- 2. IAAS Nepal -->
+    <div class="project-card">
+      <div class="project-image" style="background-image:url('img/iaasnepal.jpg')"></div>
+      <div class="project-content">
+        <h2><a href="#">IAAS Nepal — National Campaign</a></h2>
+        <div class="meta"><span class="role">National Campaign Coordinator</span> • Jan 2023 – Jan 2024</div>
+        <p>
+          Online, campaign-driven volunteering focused on climate education—mobilizing students nationwide, curating digital content, and coordinating awareness activities.
+        </p>
+        <button class="btn"><i class="fa-solid fa-plus"></i> More Details</button>
+      </div>
+    </div>
+
+   <!-- 3. Amnesty KCYN Lamjung -->
+<div class="project-card">
+  <div class="project-image" style="background-color: white; padding: 10px; text-align: center;">
+    <img src="img/amn.png" alt="Amnesty Image" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
   </div>
+  <div class="project-content">
+    <h2><a href="aikync.html">Amnesty International Krishi Campus Youth Network</a></h2>
+    <div class="meta"><span class="role">Coordinator</span> • Jan 2024 – Jan 2025</div>
+    <div class="meta"><span class="role">Finance Head</span> • Jan 2023 – Jan 2024</div>
+    <div class="meta"><span class="role">HRE Coordinator</span> • Jan 2022 – Jan 2023</div>
+    <a href="aikync.html"><button class="btn"><i class="fa-solid fa-plus"></i> More Details</button></a>
+  </div>
+</div>
 
-  <script>
-    // Build a tile for the modal grid
-    function buildTile(src){
-      const wrap = document.createElement('div');
-      const img = document.createElement('img');
-      img.src = src.trim();
-      img.loading = 'lazy';
-      img.alt = 'Gallery image';
-      img.style.width = '100%';
-      img.style.height = '220px';
-      img.style.objectFit = 'cover';
-      img.style.borderRadius = '14px';
-      img.style.border = '2px solid #e2e8f0';
+    <!-- 4. IAAS LC Lamjung -->
+    <div class="project-card">
+      <div class="project-image" style="background-image:url('img/iaaslamjung.jpg')"></div>
+      <div class="project-content">
+        <h2><a href="#">IAAS Local Committee Lamjung</a></h2>
+        <div class="meta"><span class="role">Local Director</span> • Jan 2023 – Jan 2024</div>
+        <p>
+          Coordinated local outreach, mentoring peers, and delivering climate-smart messages tailored to the Lamjung context.
+        </p>
+        <div class="meta"><span class="role">Quality Board Member</span> • Jan 2022 – Jan 2023</div>
+        <p>
+          Supported quality assurance for exchange activities, documentation, and participant experience across virtual programming.
+        </p>
+        <button class="btn"><i class="fa-solid fa-plus"></i> More Details</button>
+      </div>
+    </div>
 
-      // Robust fallback: try .PNG, .jpg, .jpeg if current fails
-      img.onerror = function(){
-        const ext = img.src.split('.').pop().toLowerCase();
-        if(!img.dataset.fallback){
-          img.dataset.fallback = 'PNG';
-          img.src = src.replace(new RegExp(`\\.${ext}$`, 'i'), '.PNG');
-        } else if(img.dataset.fallback === 'PNG'){
-          img.dataset.fallback = 'jpg';
-          img.src = src.replace(new RegExp(`\\.${ext}$`, 'i'), '.jpg');
-        } else if(img.dataset.fallback === 'jpg'){
-          img.dataset.fallback = 'jpeg';
-          img.src = src.replace(new RegExp(`\\.${ext}$`, 'i'), '.jpeg');
-        }
-      };
-      wrap.appendChild(img);
-      return wrap;
-    }
+    <!-- 5. ClimatEducate -->
+    <div class="project-card">
+      <div class="project-image" style="background-image:url('img/cliamateeducate.jpeg')"></div>
+      <div class="project-content">
+        <h2><a href="#">ClimatEducate Project</a></h2>
+        <div class="meta"><span class="role">Research & Awareness Dept</span> • Nov 2021 – Jan 2024</div>
+        <p>
+          Contributed to research briefs, educational materials, and outreach events to translate climate science into practical, youth-friendly learning resources.
+        </p>
+        <button class="btn"><i class="fa-solid fa-plus"></i> More Details</button>
+      </div>
+    </div>
 
-    const modal = document.getElementById('galleryModal');
-    const modalGrid = document.getElementById('modalGrid');
-    const modalTitle = document.getElementById('modalTitle');
-    const closeBtn = document.getElementById('modalClose');
+  </main>
 
-    function openModal(title, images){
-      modalTitle.textContent = title || 'Gallery';
-      modalGrid.innerHTML = '';
-      images.forEach(src => modalGrid.appendChild(buildTile(src)));
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal(){
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sujan Chapagain • IAAS Lamjung</p>
+  </footer>
 
-    // Bind gallery buttons
-    document.querySelectorAll('.gallery-btn').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const title = btn.dataset.title || 'Gallery';
-        const images = (btn.dataset.images || '').split(',').filter(Boolean);
-        if(images.length) openModal(title, images);
-      });
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
-  </script>
 </body>
 </html>
