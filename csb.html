@@ -1,71 +1,189 @@
-<!-- Purkot Community Seed Bank (CSB) Exchange Visit -->
-<section id="csb-hero" style="background-image:url('img/csbbackground.jpg'); background-size:cover; background-position:center; padding:150px 20px 100px; color:#fff; text-align:center;">
-  <div style="max-width:900px; margin:0 auto;">
-    <h1 style="font-size:48px; margin-bottom:20px; text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">Purkot Community Seed Bank</h1>
-    <p style="font-size:20px; text-shadow: 1px 1px 5px rgba(0,0,0,0.6);">BaisJagar, Bhanu, Tanahu, Gandaki — Academic Exchange Visit</p>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purkot Community Seed Bank – IAAS LC Lamjung</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-<!-- Profile & Description -->
-<section class="mela-profile" style="display:flex; flex-wrap:wrap; padding:50px 20px; gap:30px; align-items:flex-start; max-width:1200px; margin:0 auto;">
-  <div class="profile-pic" style="flex:1; min-width:280px; height:280px; background-image:url('img/csb.jpg'); background-size:cover; background-position:center; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.2);"></div>
-  <div class="mela-text" style="flex:2; min-width:320px; font-size:18px; line-height:1.7; color:#333;">
-    <p>
-      During the tenure of the <strong>Local Director, IAAS LC Lamjung</strong>, the team conducted an academic exchange visit to the <strong>Purkot Community Seed Bank (CSB)</strong> located in BaisJagar, Bhanu, Tanahu, Gandaki. 
-      This visit aimed to study the community-driven approach to biodiversity conservation, focusing on maintaining traditional landraces, seed preservation, and sustainable agricultural practices.
+  <style>
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+    .return-btn { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #333; padding: 10px 18px; border-radius: 8px; font-weight: bold; border: 1px solid #333; transition: all 0.25s ease; }
+    .return-btn:hover { background: #333; color: #fff; transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .return-btn i { font-size: 16px; }
+
+    /* Hero Section */
+    .csb-hero { background: url('img/csbbackground.jpg') center/cover no-repeat; color: #fff; text-align: center; padding: 160px 20px; position: relative; }
+    .csb-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+    .csb-hero > * { position: relative; z-index: 2; }
+    .csb-hero h1 { font-size: 64px; margin-bottom: 20px; font-weight: 400; letter-spacing: 2px; }
+    .csb-hero p { font-size: 22px; }
+
+    /* Profile & About */
+    .csb-profile { display: flex; align-items: flex-start; gap: 40px; max-width: 1000px; margin: 60px auto; padding: 20px; }
+    .profile-pic { flex: 0 0 220px; height: 220px; border-radius: 50%; background: url('img/csb.jpg') center/cover no-repeat; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s; }
+    .profile-pic:hover { transform: scale(1.05); }
+    .csb-text { flex: 1; font-size: 18px; text-align: justify; }
+    .csb-text a { color: #1a73e8; text-decoration: none; transition: color 0.3s; }
+    .csb-text a:hover { color: #155ab6; }
+    .csb-text em { font-style: italic; font-weight: bold; color: #d35400; }
+
+    /* Tenure & Roles */
+    .csb-tenure { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    .csb-tenure h2 { text-align: center; font-size: 32px; margin-bottom: 40px; color: #222; }
+    .csb-tenure .meta { font-weight: 600; color: #555; margin-bottom: 10px; }
+    .csb-tenure .descr { margin-bottom: 30px; color: #444; line-height: 1.6; }
+
+    /* Gallery */
+    .gallery { max-width: 1200px; margin: 80px auto; padding: 0 20px; text-align: center; }
+    .gallery h2 { font-size: 40px; margin-bottom: 40px; font-weight: bold; color: #222; }
+
+    /* First Row: Landscape */
+    .row-rect {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    .row-rect img {
+      width: 100%;
+      height: 280px; /* big rectangle */
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    .row-rect img:hover { transform: scale(1.05); }
+
+    /* Second Row: Portrait */
+    .row-vert {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .row-vert img {
+      width: 100%;
+      height: 450px; /* tall portrait */
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    .row-vert img:hover { transform: scale(1.05); }
+
+    .gallery-caption {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .row-rect, .row-vert {
+        grid-template-columns: 1fr;
+      }
+      .row-rect img, .row-vert img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SC</a>
+      <a href="iaaslclamjung.html" class="return-btn">
+        <i class="fa-solid fa-arrow-left"></i> Return to Organizations
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="csb-hero">
+    <div>
+      <h1>Purkot Community Seed Bank</h1>
+      <p>BaisJagar, Bhanu, Tanahu, Gandaki — Academic Exchange Visit</p>
+    </div>
+  </section>
+
+  <!-- Profile & Description -->
+  <section class="csb-profile">
+    <div class="profile-pic"></div>
+    <div class="csb-text">
+      <p>
+        During the tenure of the <strong>Local Director, IAAS LC Lamjung</strong>, the team conducted an academic exchange visit to the <strong>Purkot Community Seed Bank (CSB)</strong> located in BaisJagar, Bhanu, Tanahu, Gandaki. 
+        This visit aimed to study the community-driven approach to biodiversity conservation, focusing on maintaining traditional landraces, seed preservation, and sustainable agricultural practices.
+      </p>
+      <p>
+        The CSB serves as a crucial hub for local farmers, promoting seed sharing, safeguarding genetic diversity, and enhancing community resilience. The visit allowed participants to engage with local custodians, document conservation methods, and understand the socio-ecological impacts of community-managed seed systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tenure & Roles -->
+  <section class="csb-tenure">
+    <h2>Tenure & Roles</h2>
+
+    <div class="meta">
+      <span class="role">Local Director, IAAS LC Lamjung</span> <span>•</span> <span>During Visit</span>
+    </div>
+    <p class="descr">
+      Led the academic exchange visit, engaging with CSB staff and local farmers. Documented landrace varieties, evaluated seed conservation practices, and provided recommendations for enhancing community seed management.
     </p>
-    <p>
-      The CSB serves as a crucial hub for local farmers, promoting seed sharing, safeguarding genetic diversity, and enhancing community resilience. The visit allowed participants to engage with local custodians, document conservation methods, and understand the socio-ecological impacts of community-managed seed systems.
+
+    <div class="meta">
+      <span class="role">Research & Documentation Team</span> <span>•</span> <span>During Visit</span>
+    </div>
+    <p class="descr">
+      Collected detailed data on biodiversity, cropping patterns, and seed storage methods. Contributed to reports emphasizing the role of CSB in conserving traditional seeds and supporting sustainable livelihoods.
     </p>
-  </div>
-</section>
+  </section>
 
-<!-- Tenure & Roles -->
-<section class="csb-tenure" style="padding:50px 20px; max-width:900px; margin:0 auto;">
-  <h2 style="text-align:center; font-size:32px; margin-bottom:40px; color:#222;">Tenure & Roles</h2>
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Gallery</h2>
 
-  <div class="meta" style="font-weight:600; color:#555; margin-bottom:10px;">
-    <span class="role">Local Director, IAAS LC Lamjung</span> <span>•</span> <span>During Visit</span>
-  </div>
-  <p class="descr" style="margin-bottom:30px; color:#444; line-height:1.6;">
-    Led the academic exchange visit, engaging with CSB staff and local farmers. Documented landrace varieties, evaluated seed conservation practices, and provided recommendations for enhancing community seed management.
-  </p>
+    <!-- Row 1: Rectangular -->
+    <div class="row-rect">
+      <div>
+        <img src="img/csbrice.webp" alt="CSB Rice">
+        <div class="gallery-caption">Documentation of local rice biodiversity</div>
+      </div>
+      <div>
+        <img src="img/csb2.jpg" alt="CSB 2">
+        <div class="gallery-caption">Community seed storage structures</div>
+      </div>
+      <div>
+        <img src="img/csb3.jpg" alt="CSB 3">
+        <div class="gallery-caption">Interaction with local custodians</div>
+      </div>
+    </div>
 
-  <div class="meta" style="font-weight:600; color:#555; margin-bottom:10px;">
-    <span class="role">Research & Documentation Team</span> <span>•</span> <span>During Visit</span>
-  </div>
-  <p class="descr" style="color:#444; line-height:1.6;">
-    Collected detailed data on biodiversity, cropping patterns, and seed storage methods. Contributed to reports emphasizing the role of CSB in conserving traditional seeds and supporting sustainable livelihoods.
-  </p>
-</section>
+    <!-- Row 2: Portrait -->
+    <div class="row-vert">
+      <div>
+        <img src="img/csb4.jpg" alt="CSB 4">
+        <div class="gallery-caption">Seed sorting and labeling activities</div>
+      </div>
+      <div>
+        <img src="img/csb6.jpg" alt="CSB 6">
+        <div class="gallery-caption">Learning on landrace conservation</div>
+      </div>
+      <div>
+        <img src="img/csb8.jpg" alt="CSB 8">
+        <div class="gallery-caption">Community engagement and capacity building</div>
+      </div>
+    </div>
+  </section>
 
-<!-- Highlights Gallery -->
-<section class="gallery" style="padding:50px 20px; max-width:1200px; margin:0 auto;">
-  <h2 style="text-align:center; font-size:32px; margin-bottom:40px; color:#222;">Highlights</h2>
-  <div class="gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px;">
-    <div class="gallery-item" style="border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-      <img src="img/csbrice.webp" alt="CSB Rice" style="width:100%; display:block;">
-      <div class="gallery-caption" style="padding:12px; background:#f7f7f7; text-align:center; font-size:16px;">Documentation of local rice biodiversity</div>
-    </div>
-    <div class="gallery-item" style="border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-      <img src="img/csb2.jpg" alt="CSB 2" style="width:100%; display:block;">
-      <div class="gallery-caption" style="padding:12px; background:#f7f7f7; text-align:center; font-size:16px;">Community seed storage structures</div>
-    </div>
-    <div class="gallery-item" style="border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-      <img src="img/csb3.jpg" alt="CSB 3" style="width:100%; display:block;">
-      <div class="gallery-caption" style="padding:12px; background:#f7f7f7; text-align:center; font-size:16px;">Interaction with local custodians</div>
-    </div>
-    <div class="gallery-item" style="border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-      <img src="img/csb4.jpg" alt="CSB 4" style="width:100%; display:block;">
-      <div class="gallery-caption" style="padding:12px; background:#f7f7f7; text-align:center; font-size:16px;">Seed sorting and labeling activities</div>
-    </div>
-    <div class="gallery-item" style="border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-      <img src="img/csb6.jpg" alt="CSB 6" style="width:100%; display:block;">
-      <div class="gallery-caption" style="padding:12px; background:#f7f7f7; text-align:center; font-size:16px;">Learning on landrace conservation</div>
-    </div>
-    <div class="gallery-item" style="border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-      <img src="img/csb8.jpg" alt="CSB 8" style="width:100%; display:block;">
-      <div class="gallery-caption" style="padding:12px; background:#f7f7f7; text-align:center; font-size:16px;">Community engagement and capacity building</div>
-    </div>
-  </div>
-</section>
+</body>
+</html>
