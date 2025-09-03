@@ -11,27 +11,18 @@
 
     /* Header */
     .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
-    .nav-container {
-      max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
-      align-items: center; padding: 0 40px;
-    }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
     .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
-    .nav-menu { display: flex; list-style: none; gap: 25px; }
-    .nav-menu a {
-      text-decoration: none; color: #333; font-size: 16px; padding: 10px 0;
-      border-bottom: 2px solid transparent; transition: border-color 0.3s;
-    }
-    .nav-menu a:hover, .nav-menu a.active { border-bottom: 2px solid #333; }
+    .return-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; color: #333; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; border: 1px solid #ddd; transition: background 0.3s, color 0.3s; }
+    .return-btn:hover { background: #333; color: #fff; }
 
     /* Hero / Banner */
     .mela-hero {
       background: url('img/melabackground.jpg') center/cover no-repeat;
-      color: white; text-align: center; padding: 160px 20px;
-      position: relative;
+      color: white; text-align: center; padding: 160px 20px; position: relative;
     }
     .mela-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: rgba(0,0,0,0.45);
+      content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45);
     }
     .mela-hero > * { position: relative; z-index: 2; }
     .mela-hero h1 { font-size: 64px; margin-bottom: 20px; font-weight: 400; letter-spacing: 2px; }
@@ -45,8 +36,7 @@
     .profile-pic {
       flex: 0 0 220px; height: 220px;
       border-radius: 50%; background: url('img/amnesty.jpg') center/cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      cursor: pointer; transition: transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; transition: transform 0.3s;
     }
     .profile-pic:hover { transform: scale(1.05); }
     .mela-text { flex: 1; font-size: 18px; text-align: justify; }
@@ -55,23 +45,10 @@
 
     /* Gallery */
     .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
-    .gallery-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .gallery-item { 
-      background: #fff; border-radius: 12px; overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-      transition: transform 0.3s;
-    }
-    .gallery-item img { 
-      width: 100%; display: block; 
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-    .gallery-item:hover img { 
-      transform: scale(1.08); 
-      filter: brightness(1.1);
-    }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .gallery-item { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .gallery-item img { width: 100%; display: block; transition: transform 0.4s ease, filter 0.4s ease; }
+    .gallery-item:hover img { transform: scale(1.08); filter: brightness(1.1); }
     .gallery-caption { padding: 15px; font-size: 16px; text-align: center; }
 
     /* Footer */
@@ -86,76 +63,70 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <nav class="nav-container">
-      <a href="index.html" class="logo">SC</a>
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="organization.html">Organization</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="conferences.html">Conferences</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Amnesty Hero -->
-  <section class="mela-hero">
-    <h1>Amnesty Youth Mela</h1>
-    <p>15th Youth Discussion Forum — Amnesty International Nepal Section</p>
-  </section>
+<!-- Header with Return Button -->
+<header class="header">
+  <nav class="nav-container">
+    <a href="index.html" class="logo">SC</a>
+    <a href="aikync.html" class="return-btn">
+      <i class="fa-solid fa-arrow-left"></i> Return to AIKYCN
+    </a>
+  </nav>
+</header>
 
-  <!-- Profile & Description -->
-  <section class="mela-profile">
-    <div class="profile-pic"></div>
-    <div class="mela-text">
-      <p>
-        The <a href="https://amnestynepal.org/" target="_blank">Amnesty International Nepal Section</a> 
-        annually hosts the <strong>Amnesty Youth Mela</strong>, a dynamic youth discussion forum that brings 
-        together participants from diverse youth networks across the nation. This 15th Youth Mela was a 
-        three-day residential program featuring panel discussions, dialogue sessions, report reflections, 
-        and forward planning for empowering youth voices.
-      </p>
-      <p>
-        The forum created a safe and inspiring space for young people to share perspectives on human rights, 
-        engage in collective action, and build strategies for the future. With sessions covering rights 
-        education, advocacy, peaceful assembly, and solidarity campaigns, the mela amplified youth leadership 
-        in advancing justice and human dignity.
-      </p>
+<!-- Amnesty Hero -->
+<section class="mela-hero">
+  <h1>Amnesty Youth Mela</h1>
+  <p>15th Youth Discussion Forum — Amnesty International Nepal Section</p>
+</section>
+
+<!-- Profile & Description -->
+<section class="mela-profile">
+  <div class="profile-pic"></div>
+  <div class="mela-text">
+    <p>
+      The <a href="https://amnestynepal.org/" target="_blank">Amnesty International Nepal Section</a> 
+      annually hosts the <strong>Amnesty Youth Mela</strong>, a dynamic youth discussion forum that brings 
+      together participants from diverse youth networks across the nation. This 15th Youth Mela was a 
+      three-day residential program featuring panel discussions, dialogue sessions, report reflections, 
+      and forward planning for empowering youth voices.
+    </p>
+    <p>
+      The forum created a safe and inspiring space for young people to share perspectives on human rights, 
+      engage in collective action, and build strategies for the future. With sessions covering rights 
+      education, advocacy, peaceful assembly, and solidarity campaigns, the mela amplified youth leadership 
+      in advancing justice and human dignity.
+    </p>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <h2 style="text-align:center; font-size:32px; margin-bottom:30px;">Youth Mela Highlights</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="img/mela1.JPG" alt="Mela 1">
+      <div class="gallery-caption">Sujan Chapgain, Human Rights Coordinator, Krishi Campus Youth Network</div>
     </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="gallery">
-    <h2 style="text-align:center; font-size:32px; margin-bottom:30px;">Youth Mela Highlights</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="img/mela1.JPG" alt="Mela 1">
-        <div class="gallery-caption">Sujan Chapgain, Human Rights Coordinator, Krishi Campus Youth Network</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/mela2.JPG" alt="Mela 2">
-        <div class="gallery-caption">Presenting on human rights education and Krishi Campus Youth Network's initiatives</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/mela3.jpg" alt="Mela 3">
-        <div class="gallery-caption">Team Krishi Campus Youth Network participating in peaceful protest forum</div>
-      </div>
-      <div class="gallery-item">
-        <img src="img/mela5.jpeg" alt="Mela 5">
-        <div class="gallery-caption">Speaking up for Afghan women — solidarity campaign</div>
-      </div>
+    <div class="gallery-item">
+      <img src="img/mela2.JPG" alt="Mela 2">
+      <div class="gallery-caption">Presenting on human rights education and Krishi Campus Youth Network's initiatives</div>
     </div>
-  </section>
+    <div class="gallery-item">
+      <img src="img/mela3.jpg" alt="Mela 3">
+      <div class="gallery-caption">Team Krishi Campus Youth Network participating in peaceful protest forum</div>
+    </div>
+    <div class="gallery-item">
+      <img src="img/mela5.jpeg" alt="Mela 5">
+      <div class="gallery-caption">Speaking up for Afghan women — solidarity campaign</div>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Sujan Chapgain. All rights reserved.</p>
-  </footer>
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 Sujan Chapgain. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
