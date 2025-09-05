@@ -3,17 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amnesty AIKYCN Lamjung – Sujan Chapagain</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amnesty Youth Mela – Sujan Chapagain</title>
+  <title>IAAS LC Lamjung – Sujan Chapagain</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,13 +23,13 @@
     .logo {
       font-size: 24px;
       font-weight: bold;
-      color: #333;        /* Always visible color */
+      color: #333;        
       text-decoration: none;
       transition: color 0.3s;
     }
     .logo:hover,
     .logo:focus {
-      color: #0077cc;     /* Changes on hover or click */
+      color: #0077cc;     
     }
 
   /* Return Button */
@@ -47,36 +37,29 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: transparent; /* No background initially */
-  color: #333;                  /* Text visible by default */
+  background-color: transparent;
+  color: #333;
   padding: 10px 18px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  border: 1px solid #333;       /* Border visible */
+  border: 1px solid #333;
   box-shadow: none;
   transition: all 0.3s ease;
 }
-
-/* On Hover or Click */
 .return-btn:hover,
 .return-btn:focus {
-  background-color: #333;       /* Background appears */
-  color: #fff;                  /* Text color changes to white */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   transform: scale(1.05);
 }
-
-.return-btn i {
-  font-size: 16px;
-}
-
-
+.return-btn i { font-size: 16px; }
 
     /* Hero */
     .mela-hero {
-      background: url('img/amnestybackground.jpg') center/cover no-repeat;
+      background: url('img/iaaslamjungbackground.jpg') center/cover no-repeat;
       color: white; text-align: center; padding: 160px 20px; position: relative;
     }
     .mela-hero::before {
@@ -93,7 +76,7 @@
     }
     .profile-pic {
       flex: 0 0 220px; height: 220px;
-      border-radius: 50%; background: url('img/amnesty.jpg') center/cover;
+      border-radius: 50%; background: url('img/iaaslamjung.jpg') center/cover;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       cursor: pointer; transition: transform 0.3s;
     }
@@ -123,35 +106,36 @@
       display: block;
       font-size: 15px;
       color: #666;
-      margin-top: 4px;
-    }
+      margin-top: 4px;}
+    
 
-    /* Specific colors for icons */
-    .position-item .fa-user-tie { color: #007bff; }
-    .position-item .fa-coins { color: #28a745; }
-    .position-item .fa-book-open { color: #ff9800; }
+
+    /* Specific colors for icons (IAAS LC roles) */
+.position-item .fa-people-group { color: #007bff; }      /* Local Director */
+.position-item .fa-right-left { color: #28a745; }        /* Exchange Dept (QB) */
+.position-item .fa-user-graduate { color: #ff9800; }     /* General Member */
 
     /* Section text */
     .content-section {
       max-width: 1000px; margin: 20px auto 60px; padding: 20px; font-size: 18px; text-align: justify;
     }
     .content-section h2 { text-align: center; font-size: 28px; margin-bottom: 18px; }
-/* Collapsible details */
-details { margin-top: 20px; }
-summary { font-weight: bold; cursor: pointer; list-style: none; font-size: 18px; }
-summary::-webkit-details-marker { display: none; }
 
-.summary-btn i { margin-right: 8px; }
-.lbl-open { display: none; }
-details[open] .lbl-open { display: inline; }
-details[open] .lbl-closed { display: none; }
+    /* Collapsible details */
+    details { margin-top: 20px; }
+    summary { font-weight: bold; cursor: pointer; list-style: none; font-size: 18px; }
+    summary::-webkit-details-marker { display: none; }
 
-.details-section { margin-top: 15px; }
-.details-section ol { margin-left: 25px; }
-.details-section li { font-size: 17px; color: #444; margin-bottom: 8px; }
-.details-section a { color: #007bff; text-decoration: underline; }
-.details-section a:hover { color: #0056b3; }
+    .summary-btn i { margin-right: 8px; }
+    .lbl-open { display: none; }
+    details[open] .lbl-open { display: inline; }
+    details[open] .lbl-closed { display: none; }
 
+    .details-section { margin-top: 15px; }
+    .details-section ol { margin-left: 25px; }
+    .details-section li { font-size: 17px; color: #444; margin-bottom: 8px; }
+    .details-section a { color: #007bff; text-decoration: underline; }
+    .details-section a:hover { color: #0056b3; }
 
     /* Gallery */
     .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
@@ -206,8 +190,8 @@ details[open] .lbl-closed { display: none; }
 
   <!-- Hero -->
   <section class="mela-hero">
-    <h1>Amnesty International Krishi Campus Youth Network</h1>
-    <p>Strengthening Human Rights & Youth Leadership</p>
+    <h1>International Association of Students in Agricultural and Related Sciences – LC Lamjung</h1>
+    <p>Empowering Youth in Agriculture & Exchange</p>
   </section>
 
   <!-- Profile -->
@@ -217,23 +201,24 @@ details[open] .lbl-closed { display: none; }
       <h3>Tenure & Positions</h3>
       <div class="positions-list">
         <div class="position-item">
-          <i class="fas fa-user-tie"></i>
+          <i class="fas fa-people-group"></i>
+
           <div>
-            <span class="position-title">Coordinator</span>
+            <span class="position-title">Local Director</span>
             <span class="position-duration">Jan 2024 – Jan 2025</span>
           </div>
         </div>
         <div class="position-item">
-          <i class="fas fa-coins"></i>
+          <i class="fas fa-right-left"></i>
           <div>
-            <span class="position-title">Finance Head</span>
+            <span class="position-title">Quality Board Member – Exchange Department</span>
             <span class="position-duration">Jan 2023 – Jan 2024</span>
           </div>
         </div>
         <div class="position-item">
-          <i class="fas fa-book-open"></i>
+          <i class="fas fa-user-graduate"></i>
           <div>
-            <span class="position-title">Human Rights Education Coordinator</span>
+            <span class="position-title">General Member</span>
             <span class="position-duration">Jan 2022 – Jan 2023</span>
           </div>
         </div>
@@ -241,47 +226,49 @@ details[open] .lbl-closed { display: none; }
     </div>
   </section>
 
-  <!-- Roles & Impact -->
+  <!-- Roles & Contributions -->
   <section class="content-section">
-    <h2>Roles, Activities & Community Impact</h2>
-    <p>Led the chapter’s strategy and programming — campaign planning, partnerships, and member engagement — anchored in campus-wide advocacy for human rights and peaceful assembly.</p>
-    <p>Oversaw budgeting, procurement, and transparent financial reporting to support sustained advocacy activities and trainings.</p>
-    <p>Designed and delivered workshops on rights literacy, fostering a culture of informed participation and civic responsibility among students. These activities strengthened local youth leadership, increased rights-awareness in the campus community, and supported collective action for human dignity and peaceful protest.</p>
+    <h2>Roles, Activities & Contributions</h2>
+    <p>As part of IAAS LC Lamjung, I have been actively involved in strengthening youth engagement in agriculture and sustainable development. My journey includes leading local committee strategies, supporting exchange programs, and fostering cross-cultural learning among agricultural students.</p>
+    <p>During my tenure as Local Director, I coordinated campaigns, exchange opportunities, and workshops to connect students with practical agricultural innovation and global experiences. This helped build a platform for Lamjung students to showcase local agricultural practices internationally.</p>
+    <p>As Quality Board member, I worked on improving the exchange department’s efficiency, ensuring transparent processes for both incoming and outgoing students, and creating meaningful experiences that combined academic and cultural exposure.</p>
+    <p>Overall, my work with IAAS LC Lamjung emphasized leadership, networking, and the promotion of sustainable agriculture among youth at both local and global levels.</p>
   </section>
-<!-- Representation & Major Events (Collapsible List) -->
-<section class="content-section">
-  <h2>Representation & Major Events</h2>
 
-  <p>Key events and activities organized and participated in by the Amnesty International Krishi Campus Youth Network include:</p>
+  <!-- Events & Representation -->
+  <section class="content-section">
+    <h2>Representation & Major Events</h2>
+    <p>Some of the major activities organized and represented through IAAS LC Lamjung include:</p>
 
-  <details>
-    <summary class="summary-btn">
-      <i class="fa-solid fa-circle-plus"></i>
-      <span class="lbl-closed">View +</span>
-      <span class="lbl-open">Hide</span>
-    </summary>
+    <details>
+      <summary class="summary-btn">
+        <i class="fa-solid fa-circle-plus"></i>
+        <span class="lbl-closed">View +</span>
+        <span class="lbl-open">Hide</span>
+      </summary>
 
-    <div class="details-section">
-      <ol>
-        <li><a href="mela.html">Amnesty Youth Mela</a> – A flagship event bringing together students, volunteers, and community leaders to promote human rights awareness and youth leadership.</li>
-        <li>Campus seminars and workshops on human rights education.</li>
-        <li>Participation in national youth forums and advocacy campaigns.</li>
-      </ol>
-    </div>
-  </details>
-</section>
-
+      <div class="details-section">
+        <ol>
+          <li>Organized <strong>youth training sessions</strong> on sustainable agriculture, leadership, and climate justice.</li>
+          <li>Facilitated <strong>student exchange programs</strong>, connecting Lamjung students with international agricultural communities.</li>
+          <li>Hosted <strong>IAAS Nepal campaigns</strong> promoting food security, sustainable farming, and youth participation.</li>
+          <li>Engaged in <strong>collaborations with local farmers</strong> to promote traditional crops like finger millet and highlight indigenous practices.</li>
+          <li>Represented LC Lamjung in <strong>national IAAS events</strong> and policy dialogues with agricultural stakeholders.</li>
+        </ol>
+      </div>
+    </details>
+  </section>
 
   <!-- Gallery -->
   <section class="gallery">
     <h2>Highlights</h2>
     <div class="gallery-grid">
-      <div class="gallery-item rect"><img src="img/Hre1.jpg" alt="HRE 1"><div class="gallery-caption">Human Rights Education Workshop</div></div>
-      <div class="gallery-item rect"><img src="img/Hre2.jpg" alt="HRE 2"><div class="gallery-caption">Dialogue on Peaceful Assembly</div></div>
-      <div class="gallery-item"><img src="img/Iconic.jpg" alt="Iconic"><div class="gallery-caption">Iconic Campaign Moment</div></div>
-      <div class="gallery-item"><img src="img/Aikycn2.jpg" alt="AIKYCN team"><div class="gallery-caption">AIKYCN Youth Network Team</div></div>
-      <div class="gallery-item"><img src="img/Hre3.jpg" alt="HRE 3"><div class="gallery-caption">Community Rights Education Drive</div></div>
-      <div class="gallery-item"><img src="img/Hre4.jpg" alt="HRE 4"><div class="gallery-caption">Advocacy & Training Session</div></div>
+      <div class="gallery-item rect"><img src="img/iaas1.jpg" alt="IAAS Event 1"><div class="gallery-caption">Exchange Orientation Program</div></div>
+      <div class="gallery-item rect"><img src="img/iaas2.jpg" alt="IAAS Event 2"><div class="gallery-caption">Youth in Agriculture Campaign</div></div>
+      <div class="gallery-item"><img src="img/iaas3.jpg" alt="IAAS Event 3"><div class="gallery-caption">IAAS LC Lamjung Team</div></div>
+      <div class="gallery-item"><img src="img/iaas4.jpg" alt="IAAS Event 4"><div class="gallery-caption">Student Interaction Session</div></div>
+      <div class="gallery-item"><img src="img/iaas5.jpg" alt="IAAS Event 5"><div class="gallery-caption">Awareness Drive on Finger Millet</div></div>
+      <div class="gallery-item"><img src="img/iaas6.jpg" alt="IAAS Event 6"><div class="gallery-caption">Workshop on Sustainable Agriculture</div></div>
     </div>
   </section>
 

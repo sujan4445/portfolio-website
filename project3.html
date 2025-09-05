@@ -14,23 +14,35 @@
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
     .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
 
-    /* Return button inside header */
-    .return-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #009966, #006633);
-      color: #fff;
-      padding: 8px 18px;
-      font-size: 15px;
-      font-weight: bold;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .return-btn i { margin-right: 6px; }
-    .return-btn:hover {
-      background: linear-gradient(135deg, #00b377, #004d26);
-      transform: translateY(-2px);
-    }
+    /* Return Button */
+.return-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent; /* No background initially */
+  color: #333;                  /* Text visible by default */
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #333;       /* Border visible */
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+/* On Hover or Click */
+.return-btn:hover,
+.return-btn:focus {
+  background-color: #333;       /* Background appears */
+  color: #fff;                  /* Text color changes to white */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.return-btn i {
+  font-size: 16px;
+}
 
     /* Hero */
     .project-hero { background: url('img/wheat.jpg') center/cover no-repeat; color: white; text-align: center; padding: 180px 20px; position: relative; }
@@ -104,10 +116,10 @@
     <h2>Project Details</h2>
     <div class="details">
       <ul>
-        <li><strong>Funding Agency:</strong> Departmental Support</li>
+        <li><strong>Funding Agency:</strong> Self Funded and Departmental Support</li>
         <li><strong>Principal Investigator:</strong> Sujan Chapagain</li>
-        <li><strong>Co-Principal Investigator:</strong> [Name]</li>
-        <li><strong>Project Members:</strong> [List of members]</li>
+        <li><strong>Co-Principal Investigator:</strong> Samir Nepal and Sancheet Gautam </li>
+        <li><strong>Project Supervisors:</strong>Ankur Poudel, Bishnu Prasad Kandel, and Mahesh Subedi</li>
       </ul>
     </div>
 
@@ -138,14 +150,29 @@
         </ul>
       </div>
 
-      <div class="details-section">
-        <h3>Methods</h3>
-        <p>Field trials under irrigated and rainfed conditions; measurements included RWC, leaf rolling, plant height, HI, and grain yield. Data analyzed using AMMI, GGE biplot, and cluster analysis.</p>
-      </div>
+    <div class="details-section">
+  <h3>Methods</h3>
+  <p>
+    A two-factor factorial experiment was conducted using a Completely Randomized Design (CRD), involving 40 genotypes and two moisture regimes: 
+    <strong>Well-watered</strong> (70% Field Capacity) and <strong>Water-stressed</strong> (35% Field Capacity).
+  </p>
+  
+  <p><strong>Data Collection:</strong></p>
+  <ul>
+    <li><strong>Physiological Traits:</strong> Relative Water Content (RWC %), Canopy Temperature, SPAD, Chlorophyll Content, Leaf Succulence, Water Saturation Deficit (%), Maximum Quantum Efficiency (Fv/Fm), Performance Index (Fv/Fo), and Leaf Rolling.</li>
+    <li><strong>Morphological Traits:</strong> Plant Height, Flag Leaf Area, and Harvest Index (%).</li>
+    <li><strong>Phenological Traits:</strong> Days to Booting, Days to Anthesis, Days to Heading, and Days to Maturity.</li>
+    <li><strong>Yield-related Traits:</strong> Thousand Grain Weight and Grain Yield.</li>
+  </ul>
+
+  <p><strong>Data Analysis:</strong> Analysis of Variance (ANOVA), Post Hoc Tests, Correlation Analysis, Additive Main Effects and Multiplicative Interaction (AMMI), Genotype and Genotype × Environment interaction (GGE) Biplot, and Cluster Analysis were performed.</p>
+</div>
+
+
 
       <div class="details-section">
         <h3>Funding & Timeline</h3>
-        <p>Funded by departmental support; conducted from March 2025 to February 2026.</p>
+        <p> Self Funded and Departmental support; 1 year trail conducted from March 2025 to February 2026.</p>
       </div>
 
       <!-- Contact inside details -->

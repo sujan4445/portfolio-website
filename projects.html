@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects – Sujan Chapagain</title>
+  <title>Research Projects – Sujan Chapagain</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Georgia', serif;
-      background: #f8f8f8;
+      background: #f9f9f9;
       color: #333;
       line-height: 1.6;
     }
 
+    /* NAVBAR */
     .header {
-      background: #f8f8f8;
+      background: #fff;
       padding: 20px 0;
       border-bottom: 1px solid #ddd;
       position: sticky;
@@ -35,7 +36,7 @@
     .logo {
       font-size: 24px;
       font-weight: bold;
-      color: #333;
+      color: #0f766e;
       text-decoration: none;
     }
 
@@ -61,141 +62,138 @@
       color: #0f766e;
     }
 
+    /* HEADER SECTION */
     .page-header {
       background: white;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 2px solid #0f766e;
       text-align: center;
-      padding: 60px 20px;
+      padding: 60px 20px 40px;
     }
 
     .page-header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: bold;
       color: #0f766e;
       margin-bottom: 10px;
     }
 
     .page-header p {
-      font-size: 1.1rem;
-      color: #555;
+      font-size: 1.2rem;
+      color: #444;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* PROJECT SECTION */
+    .project-wrapper {
+      max-width: 1200px;
+      margin: 60px auto;
+      position: relative;
+    }
+
+    .project-label {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0f766e;
+      margin-bottom: 10px;
+      margin-left: 10px;
     }
 
     .project-card {
       background: white;
-      border-radius: 25px;
-      padding: 30px;
-      margin-bottom: 40px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-    }
-
-    .project-image {
-      flex: 1 1 400px;
-      min-width: 300px;
-      height: 300px;
       border-radius: 20px;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.3s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      overflow: visible;
+      position: relative;
+      padding-top: 30px;
     }
 
-    .project-content {
-      flex: 2 1 500px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .title-bar {
+      border-left: 8px solid #0f766e;
+      padding-left: 15px;
     }
 
-    /* Make project titles clickable */
-    .project-content h2 a {
+    .project-header {
+      padding: 20px 30px 10px 30px;
+    }
+
+    .project-title {
       font-size: 1.8rem;
+      font-weight: bold;
       color: #0f766e;
-      font-weight: 700;
-      margin-bottom: 15px;
-      text-decoration: none;
-      transition: color 0.3s ease;
     }
 
-    .project-content h2 a:hover {
-      color: #064e3b;
+    .project-title a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+
+    .project-title a:hover {
       text-decoration: underline;
     }
 
-    .project-content p {
+    .project-description {
+      background: #f0f9f8;
+      padding: 25px 30px;
       font-size: 1rem;
-      color: #555;
+      color: #444;
       line-height: 1.7;
-      margin-bottom: 15px;
     }
-/* Modern & Professional More Details Button */
-.more-btn {
-  display: inline-flex;                /* Keep icon + text inline */
-  align-items: center;                /* Vertically center content */
-  gap: 8px;                           /* Space between icon and text */
-  padding: 8px 14px;                  /* Balanced padding */
-  font-size: 1rem;                    /* Professional readable size */
-  font-weight: 600;                   /* Slightly bold for emphasis */
-  font-family: 'Segoe UI', Roboto, sans-serif;  /* Clean & modern font */
-  color: #ffffff;                     /* White text for contrast */
-  background: linear-gradient(135deg, #1abc9c, #16a085); /* Elegant gradient */
-  border-radius: 25px;                /* Smooth rounded corners */
-  text-decoration: none;              /* Remove underline */
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* Soft shadow for depth */
-  transition: all 0.3s ease-in-out;   /* Smooth hover effect */
-  width: auto;
-  max-width: fit-content;
-  cursor: pointer;
-}
 
-/* Icon Styling */
-.more-btn i {
-  font-size: 1.05rem;                 /* Perfectly sized icon */
-  transition: transform 0.3s ease;
-}
+    .project-image {
+      width: 100%;
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      border-top: 1px solid #eee;
+      border-radius: 0 0 20px 20px;
+    }
 
-/* Hover Effects */
-.more-btn:hover {
-  background: linear-gradient(135deg, #16a085, #1abc9c); /* Reverse gradient */
-  transform: translateY(-2px) scale(1.03);               /* Lift + slight scale */
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);             /* Deeper shadow */
-}
+    .details-btn {
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      line-height: 1.2;
+      padding: 0;
+      z-index: 10;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
 
-/* Icon Rotation on Hover */
-.more-btn:hover i {
-  transform: translateX(3px) rotate(90deg);
-}
+    .details-btn:hover {
+      transform: scale(1.1);
+      background: #1d4ed8;
+    }
 
-
+    .details-btn span {
+      padding: 10px;
+      display: inline-block;
+    }
 
     footer {
       background: #333;
       color: white;
       text-align: center;
       padding: 40px;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 768px) {
-      .project-card {
-        flex-direction: column;
-      }
-      .project-image {
-        height: 300px;
-      }
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- NAVBAR -->
   <header class="header">
     <nav class="nav-container">
       <a href="index.html" class="logo">SC</a>
@@ -204,6 +202,7 @@
         <li><a href="About.html">About</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
         <li><a href="blog.html">Blogs</a></li>
         <li><a href="organization.html">Organization</a></li>
         <li><a href="gallery.html">Gallery</a></li>
@@ -212,61 +211,89 @@
     </nav>
   </header>
 
-  <!-- Page Header -->
+  <!-- PAGE HEADER -->
   <section class="page-header">
     <h1>Research Projects</h1>
     <p>Documenting diversity, resilience, and performance of crops in Nepal</p>
   </section>
 
-  <!-- Projects Section -->
-  <main class="max-w-6xl mx-auto px-6 py-12">
-
-    <!-- Project 1 -->
+  <!-- PROJECT 1 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 1</div>
     <div class="project-card">
+      <a href="project2.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title">
+            <a href="project2.html">Agro-Morphological Diversity in Finger Millet</a>
+          </h2>
+        </div>
+      </div>
+      <div class="project-description">
+        This project explores Nepal's rich finger millet landrace diversity. It identifies traits such as seed size, panicle structure, and stress tolerance, guiding breeding programs for climate-resilient crops.
+      </div>
       <div class="project-image" style="background-image:url('img/fm3.jpg')"></div>
-      <div class="project-content">
-        <h2><a href="project2.html">Agro-Morphological Diversity in Finger Millet</a></h2>
-        <p>This project explores Nepal’s rich finger millet landrace diversity. It identifies traits such as seed size, panicle structure, and stress tolerance, guiding breeding programs for climate-resilient crops.</p>
-        <p>Conservation strategies derived from this research help preserve genetic diversity and promote sustainable farming systems.</p>
-        <a href="project2.html" class="more-btn"><i class="fas fa-plus"></i> More Details</a>
-      </div>
     </div>
+  </div>
 
-    <!-- Project 2 -->
+  <!-- PROJECT 2 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 2</div>
     <div class="project-card">
+      <a href="project3.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title">
+            <a href="project3.html">Morpho-Physiological Screening of Wheat under Drought</a>
+          </h2>
+        </div>
+      </div>
+      <div class="project-description">
+        This project evaluates phenotypic traits, root architecture, and yield of wheat under drought stress. Combined with genotypic data, it helps identify drought-tolerant lines for breeding resilient wheat varieties.
+      </div>
       <div class="project-image" style="background-image:url('img/wheat.jpg')"></div>
-      <div class="project-content">
-        <h2><a href="project3.html">Morpho-Physiological Screening of Wheat under Drought</a></h2>
-        <p>This project evaluates phenotypic traits, root architecture, and yield of wheat under drought stress. Combined with genotypic data, it helps identify drought-tolerant lines for breeding resilient wheat varieties in Nepal.</p>
-        <p>It informs sustainable crop management and climate-adaptive strategies to improve productivity under water-limited conditions.</p>
-        <a href="project3.html" class="more-btn"><i class="fas fa-plus"></i> More Details</a>
-      </div>
     </div>
+  </div>
 
-    <!-- Project 3 -->
+  <!-- PROJECT 3 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 3</div>
     <div class="project-card">
+      <a href="project1.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title">
+            <a href="project1.html">Performance Evaluation of Wheat Genotypes</a>
+          </h2>
+        </div>
+      </div>
+      <div class="project-description">
+        This research compares wheat genotypes under irrigated and drought environments, evaluating growth, yield, and stress adaptation to select high-performance varieties for variable climates.
+      </div>
       <div class="project-image" style="background-image:url('img/turmeric.jpg')"></div>
-      <div class="project-content">
-        <h2><a href="project1.html">Performance Evaluation of Wheat Genotypes under Irrigated and Drought Conditions</a></h2>
-        <p>This research compares wheat genotypes under irrigated and drought environments, evaluating growth, yield, and stress adaptation to select high-performance varieties for variable climates.</p>
-        <p>It guides targeted breeding programs, optimizing genotype selection for resilience, yield stability, and nutritional quality.</p>
-        <a href="project1.html" class="more-btn"><i class="fas fa-plus"></i> More Details</a>
-      </div>
     </div>
+  </div>
 
-    <!-- Project 4 -->
+  <!-- PROJECT 4 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 4</div>
     <div class="project-card">
-      <div class="project-image" style="background-image:url('img/agroecology.jpg')"></div>
-      <div class="project-content">
-        <h2><a href="project4.html">Screening Wheat Genotypes for Drought Tolerance via Early Seedling Traits</a></h2>
-        <p>Early seedling traits provide a rapid indicator of drought tolerance. This project evaluates germination, seedling vigor, and root development to identify resilient genotypes.</p>
-        <p>Findings support sustainable agroecological intensification, soil health improvement, and biodiversity-friendly cropping systems.</p>
-        <a href="project4.html" class="more-btn"><i class="fas fa-plus"></i> More Details</a>
+      <a href="project4.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title">
+            <a href="project4.html">Screening Wheat Genotypes for Drought Tolerance</a>
+          </h2>
+        </div>
       </div>
+      <div class="project-description">
+        Early seedling traits provide a rapid indicator of drought tolerance. This project evaluates germination, seedling vigor, and root development to identify resilient genotypes.
+      </div>
+      <div class="project-image" style="background-image:url('img/agroecology.jpg')"></div>
     </div>
+  </div>
 
-  </main>
-
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Sujan Chapagain • IAAS Lamjung</p>
   </footer>

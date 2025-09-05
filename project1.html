@@ -17,23 +17,36 @@
     }
     .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
 
-    /* Return button inside header */
-    .return-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #009966, #006633);
-      color: #fff;
-      padding: 8px 18px;
-      font-size: 15px;
-      font-weight: bold;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .return-btn i { margin-right: 6px; }
-    .return-btn:hover {
-      background: linear-gradient(135deg, #00b377, #004d26);
-      transform: translateY(-2px);
-    }
+    /* Return Button */
+.return-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent; /* No background initially */
+  color: #333;                  /* Text visible by default */
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #333;       /* Border visible */
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+/* On Hover or Click */
+.return-btn:hover,
+.return-btn:focus {
+  background-color: #333;       /* Background appears */
+  color: #fff;                  /* Text color changes to white */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.return-btn i {
+  font-size: 16px;
+}
+
 
     /* Hero */
     .project-hero {
@@ -133,7 +146,7 @@
 
   <!-- Hero -->
   <section class="project-hero">
-    <h1>Wheat Genotype Evaluation</h1>
+    <h1>Performance Evaluation of Wheat Genotypes under Irrigated and Drought Environments</h1>
     <p>Characterization and performance evaluation under contrasting environments</p>
   </section>
 
@@ -142,7 +155,7 @@
     <h2>Project Details</h2>
     <div class="details">
       <ul>
-        <li><strong>Funding Agency:</strong> 1 Year Trial</li>
+        <li><strong>Funding Agency:</strong> Champadevi Rural Municipality, Okhaldhunga </li>
         <li><strong>Principal Investigator:</strong> Sujan Chapagain</li>
         <li><strong>Co-Principal Investigator:</strong> Sandesh Subedi</li>
         <li><strong>Project Members:</strong> Samir Nepal, Sancheet Gautam, Prabesh Mandal, Sagar Kalwar</li>
@@ -167,8 +180,18 @@
 
       <div class="details-section">
         <h3>Background</h3>
-        <p>This study evaluates wheat genotypes to identify lines with high adaptability, yield stability, and resilience under diverse environments.</p>
-      </div>
+<p>
+Wheat (<i>Triticum aestivum</i> L.) is one of the most important staple cereal crops of Nepal, contributing significantly to national <b>food security</b>, dietary energy supply, and rural livelihoods. In Nepal, most wheat research and varietal development have been concentrated in the <b>Terai</b> domain, where irrigation facilities and relatively favorable growing conditions have enabled the release of several high-yielding varieties. However, the <b>mid-hill</b> region, which constitutes a large proportion of the country’s cultivated area, has received comparatively less attention.
+</p>
+
+<p>
+The mid-hills present unique challenges and opportunities for wheat production. This region is predominantly rainfed, highly dependent on erratic and unevenly distributed rainfall, with limited access to irrigation infrastructure. As a result, wheat productivity here is constrained by frequent <b>moisture stress</b> and increasing vulnerability to climate variability. Only a few varieties have been specifically released and recommended for mid-hill conditions, leading to a lack of suitable options for farmers who depend on wheat as a winter crop.
+</p>
+
+<p>
+Despite these constraints, the mid-hills hold great potential for expanding wheat cultivation and strengthening food system <b>resilience</b>. Developing and promoting wheat genotypes with high adaptability, yield stability, and <b>drought tolerance</b> is a key strategy to enhance sustainable agriculture in this region. Introducing resilient varieties can not only improve productivity and household <b>food security</b> but also support farmers in coping with climate-induced risks, thereby securing wheat’s role as a reliable crop in the mid-hills of Nepal.
+</p>
+
 
       <div class="details-section">
         <h3>Objectives</h3>
@@ -179,14 +202,28 @@
         </ul>
       </div>
 
-      <div class="details-section">
-        <h3>Design / Method</h3>
-        <p>Field evaluation in two environments, measurement of agronomic traits including growth stages, yield components, and grain yield. Data analyzed using ANOVA and cluster analysis.</p>
-      </div>
+  <div class="details-section">
+  <h3>Methods</h3>
+  
+  <p>
+    A field experiment was conducted using an Alpha Lattice Design under two environmental conditions: 
+    <strong>Irrigated</strong> and <strong>Drought-stressed</strong>, with two replications per environment.
+  </p>
+  
+  <p><strong>Data Collection:</strong></p>
+  <ul>
+    <li><strong>Phenological Traits:</strong> Days to Booting, Days to Heading, Days to Anthesis, and Days to Maturity.</li>
+    <li><strong>Yield-related Traits:</strong> Spike Length, Number of Spikelets, Number of Grains per Spike, Harvest Index, Biological Yield, and Grain Yield.</li>
+  </ul>
+  
+  <p><strong>Data Analysis:</strong> Analysis of Variance (ANOVA), Post Hoc Tests, Additive Main Effects and Multiplicative Interaction (AMMI), Genotype and Genotype × Environment (GGE) Biplot, Principal Component Analysis (PCA), and Cluster Analysis were conducted.</p>
+</div>
+
+
 
       <div class="details-section">
         <h3>Funding & Timeline</h3>
-        <p>1-year trial funded internally; conducted from March 2025 to February 2026.</p>
+        <p> Champadevi Rural Municipality, 1-year trial; conducted from March 2025 to February 2026.</p>
       </div>
 
       <!-- Contact inside details -->

@@ -14,24 +14,35 @@
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
     .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
 
-    /* Return button inside header */
-    .return-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #009966, #006633);
-      color: #fff;
-      padding: 8px 18px;
-      font-size: 15px;
-      font-weight: bold;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .return-btn i { margin-right: 6px; }
-    .return-btn:hover {
-      background: linear-gradient(135deg, #00b377, #004d26);
-      transform: translateY(-2px);
-    }
+ /* Return Button */
+.return-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent; /* No background initially */
+  color: #333;                  /* Text visible by default */
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #333;       /* Border visible */
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
 
+/* On Hover or Click */
+.return-btn:hover,
+.return-btn:focus {
+  background-color: #333;       /* Background appears */
+  color: #fff;                  /* Text color changes to white */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.return-btn i {
+  font-size: 16px;
+}
     /* Hero */
     .project-hero { background: url('img/wheat-seedling1.jpg') center/cover no-repeat; color: white; text-align: center; padding: 180px 20px; position: relative; }
     .project-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
