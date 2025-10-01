@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports & Organizational Activities – Sujan Chapagain</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Georgia', serif; background: #f8f8f8; color: #333; line-height: 1.6; }
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 50; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+    .nav-menu { display: flex; list-style: none; gap: 25px; }
+    .nav-menu a { text-decoration: none; color: #333; font-size: 16px; padding: 10px 0; border-bottom: 2px solid transparent; transition: border-color 0.3s, color 0.3s; }
+    .nav-menu a:hover, .nav-menu a.active { border-bottom: 2px solid #0f766e; font-weight: bold; color: #0f766e; }
+
+    .page-header { background: white; border-bottom: 1px solid #ddd; text-align: center; padding: 60px 20px; }
+    .page-header h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; background: linear-gradient(90deg, #3b82f6, #1e40af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .page-header p { font-size: 1.1rem; color: #555; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+    .gallery-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px rgba(0,0,0,0.15); }
+    .gallery-image { width: 100%; height: 220px; object-fit: cover; transition: transform 0.3s ease; }
+    .gallery-content { padding: 15px 20px; }
+    .gallery-content h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #1e40af; }
+    .gallery-content p { font-size: 0.95rem; color: #555; }
+
+    footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav-container">
+    <a href="index.html" class="logo">SC</a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="conferences.html">Conferences</a></li>
+      <li><a href="blog.html">Blogs</a></li>
+      <li><a href="organization.html">Organization</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-header">
+  <h1>Sports & Organizational Activities</h1>
+  <p>Sports, leadership roles, and organizational events highlighting teamwork and growth.</p>
+</section>
+
+<main class="max-w-6xl mx-auto p-6">
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="images/sports1.jpg" alt="Marathon Event" class="gallery-image">
+      <div class="gallery-content">
+        <h3>Marathon Event</h3>
+        <p>Participated in 'Run for Freedom' marathon advocating human rights and youth empowerment.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/sports2.jpg" alt="Campus Sports" class="gallery-image">
+      <div class="gallery-content">
+        <h3>Campus Sports</h3>
+        <p>Engaged in sports activities promoting teamwork, discipline, and physical fitness.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/sports3.jpg" alt="Youth Network Activity" class="gallery-image">
+      <div class="gallery-content">
+        <h3>Youth Network Activity</h3>
+        <p>Organized and participated in youth-led community and organizational events.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/sports4.jpg" alt="Leadership Training" class="gallery-image">
+      <div class="gallery-content">
+        <h3>Leadership Training</h3>
+        <p>Attended leadership workshops to strengthen organizational and managerial skills.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Sujan Chapagain. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

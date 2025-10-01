@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lamjung Model United Nations – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; }
+
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+    .return-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; color: #333; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 6px; border: 1px solid #ddd; transition: background 0.3s, color 0.3s; }
+    .return-btn:hover { background: #333; color: #fff; }
+
+    /* Hero */
+    .mun-hero {
+      background: url('img/munbackground.jpg') center/cover no-repeat;
+      color: white; text-align: center; padding: 160px 20px; position: relative;
+    }
+    .mun-hero::before {
+      content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45);
+    }
+    .mun-hero > * { position: relative; z-index: 2; }
+    .mun-hero h1 { font-size: 60px; margin-bottom: 20px; font-weight: 400; letter-spacing: 2px; }
+    .mun-hero p { font-size: 22px; }
+
+    /* Intro */
+    .mun-intro {
+      max-width: 1000px; margin: 60px auto; padding: 20px; text-align: center; line-height: 1.8;
+    }
+    .mun-intro h2 { font-size: 32px; margin-bottom: 20px; color: #333; }
+    .mun-intro blockquote {
+      font-size: 20px; font-style: italic; color: #555; border-left: 4px solid #0077cc;
+      padding-left: 15px; margin: 20px auto; max-width: 800px;
+    }
+    .mun-intro p { font-size: 18px; margin-top: 15px; text-align: justify; }
+
+    /* Profile */
+    .mun-profile {
+      display: flex; align-items: flex-start; gap: 40px;
+      max-width: 1000px; margin: 60px auto; padding: 20px;
+    }
+    .profile-pic {
+      flex: 0 0 220px; height: 220px;
+      border-radius: 50%; background: url('img/munlogo.png') center/cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; transition: transform 0.3s;
+    }
+    .profile-pic:hover { transform: scale(1.05); }
+    .mun-text { flex: 1; font-size: 18px; text-align: justify; }
+    .mun-text a { color: #0077cc; text-decoration: none; }
+    .mun-text a:hover { text-decoration: underline; }
+
+    /* Gallery */
+    .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .gallery-item { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .gallery-item img { width: 100%; display: block; transition: transform 0.4s ease, filter 0.4s ease; }
+    .gallery-item:hover img { transform: scale(1.08); filter: brightness(1.1); }
+    .gallery-caption { padding: 15px; font-size: 16px; text-align: center; }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      .mun-hero h1 { font-size: 36px; }
+      .mun-hero p { font-size: 16px; }
+      .mun-profile { flex-direction: column; text-align: center; }
+      .profile-pic { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <nav class="nav-container">
+    <a href="index.html" class="logo">SC</a>
+    <a href="events.html" class="return-btn">
+      <i class="fa-solid fa-arrow-left"></i> Return to Events
+    </a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="mun-hero">
+  <h1>Lamjung Model United Nations</h1>
+  <p>Past Editions & Legacy of Diplomacy</p>
+</section>
+
+<!-- Intro -->
+<section class="mun-intro">
+  <h2>Embark on a Journey of Discovery with Us!</h2>
+  <blockquote>
+    “Even the greatest was once a beginner. Don’t be afraid to take that first step.”  
+    <br>— Muhammad Ali
+  </blockquote>
+  <p>
+    <strong>Model United Nation (MUN)</strong> is the simulation of one of the assemblies of the United Nations. 
+    It aims at providing youths and students with deep insights into global diplomacy, negotiation, and 
+    international relations. MUN activities include debating, public speaking, research, and writing, 
+    where participants act as delegates representing assigned countries. 
+  </p>
+  <p>
+    MUN is about learning the world and addressing global issues in a spirit of fun and teamwork, 
+    while building leadership skills. 
+  </p>
+  <p>
+    <strong>Youth Thinkers’ Society – Lamjung</strong> fosters this platform for young leaders to engage in 
+    debate, diplomacy, and problem-solving. This initiative reflects YTS-Lamjung’s unwavering commitment to 
+    youth engagement, advancement, and igniting the power of the next generation for a sustainable future.
+  </p>
+</section>
+
+<!-- About LMUN -->
+<section class="mun-profile">
+  <div class="profile-pic"></div>
+  <div class="mun-text">
+    <p>
+      The <strong>Lamjung Model United Nations (LMUN)</strong> has been a landmark youth initiative in Lamjung, 
+      creating a platform for aspiring diplomats, debaters, and change-makers. 
+      Since its inception, LMUN has grown into one of the most awaited intellectual events, 
+      drawing participation from schools, colleges, and youth organizations. 
+    </p>
+    <p>
+      Over the years, the conference has provided participants with hands-on experience in 
+      <em>policy-making, negotiations, leadership, and global problem-solving</em>. 
+      Each edition carried unique themes reflecting pressing global issues — from climate change 
+      to human rights, from peacebuilding to sustainable development.
+    </p>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <h2 style="text-align:center; font-size:32px; margin-bottom:30px;">Past Editions Highlights</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="img/mun1.jpg" alt="LMUN 1">
+      <div class="gallery-caption">1st LMUN – Theme: Global Peace and Security (2019)</div>
+    </div>
+    <div class="gallery-item">
+      <img src="img/mun2.jpg" alt="LMUN 2">
+      <div class="gallery-caption">2nd LMUN – Sustainable Development & Climate Action (2021)</div>
+    </div>
+    <div class="gallery-item">
+      <img src="img/mun3.jpg" alt="LMUN 3">
+      <div class="gallery-caption">3rd LMUN – Human Rights & Justice for All (2023)</div>
+    </div>
+    <div class="gallery-item">
+      <img src="img/mun4.jpg" alt="LMUN 4">
+      <div class="gallery-caption">Special Youth Diplomacy Workshop – Preparing for Global Stage</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

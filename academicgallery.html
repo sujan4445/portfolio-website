@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic & Trainings – Sujan Chapagain</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Merriweather', Georgia, serif;
+      background: #fafafa;
+      color: #222;
+      line-height: 1.7;
+    }
+    .nav-menu a { 
+      text-decoration: none; 
+      font-size: 15px; 
+      color: #444; 
+      padding: 8px 0; 
+      border-bottom: 2px solid transparent; 
+      transition: all 0.3s;
+    }
+    .nav-menu a:hover, .nav-menu a.active { 
+      border-bottom: 2px solid #2563eb; 
+      color: #2563eb; 
+      font-weight: 600; 
+    }
+    .page-header h1 {
+      font-size: 2.3rem; font-weight: 700;
+      background: linear-gradient(90deg, #2563eb, #1e3a8a);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .gallery-card { 
+      background: white; border-radius: 16px; overflow: hidden; 
+      border: 1px solid #e5e7eb; 
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .gallery-card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #1f2937; 
+      color: #d1d5db; 
+      text-align: center; 
+      padding: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header bg-white sticky top-0 border-b z-50">
+    <nav class="nav-container max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="text-xl font-bold text-gray-800">Sujan Chapagain</a>
+      <ul class="nav-menu flex gap-6">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="organization.html">Organization</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header py-16 bg-white text-center border-b">
+    <h1>Academic & Trainings</h1>
+    <p class="text-gray-600 text-lg mt-2">Highlights from workshops, seminars, and field trainings</p>
+  </section>
+
+  <!-- Gallery Grid -->
+  <main class="max-w-6xl mx-auto p-6">
+    <div class="gallery-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div class="gallery-card">
+        <img src="images/academic1.jpg" alt="Workshop on Climate Change - Kathmandu University 2023" class="w-full h-52 object-cover">
+        <div class="gallery-content p-5">
+          <h3 class="text-lg font-semibold text-blue-800">Workshop on Climate Change</h3>
+          <p class="text-gray-600 text-sm">Engaged in advanced discussions on climate adaptation strategies for South Asia.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/academic2.jpg" alt="Data Analysis Training - Tribhuvan University 2022" class="w-full h-52 object-cover">
+        <div class="gallery-content p-5">
+          <h3 class="text-lg font-semibold text-blue-800">Data Analysis Training</h3>
+          <p class="text-gray-600 text-sm">Hands-on training with R & SPSS for agricultural research datasets.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/academic3.jpg" alt="Agroforestry Seminar - ICIMOD 2022" class="w-full h-52 object-cover">
+        <div class="gallery-content p-5">
+          <h3 class="text-lg font-semibold text-blue-800">Seminar on Agroforestry</h3>
+          <p class="text-gray-600 text-sm">Shared sustainable agroforestry practices with international researchers.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="images/academic4.jpg" alt="Farmer Field Visit - Nawalpur 2021" class="w-full h-52 object-cover">
+        <div class="gallery-content p-5">
+          <h3 class="text-lg font-semibold text-blue-800">Farmer Field Visit</h3>
+          <p class="text-gray-600 text-sm">Observed real-world applications of sustainable agriculture with local farmers.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sujan Chapagain |
+  </footer>
+
+</body>
+</html>

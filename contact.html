@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Sujan Chapagain</title>
+  <meta name="description" content="Contact page of Sujan Chapagain with profile, links, and contact form." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: #f8f8f8;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      padding: 10px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      border-bottom: 2px solid #0f766e;
+      font-weight: bold;
+      color: #0f766e;
+    }
+
+    /* Profile Header */
+    .profile-header {
+      background: linear-gradient(135deg, #4f9bbf, #2c3e50);
+      padding: 100px 20px 80px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .profile-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 8px solid white;
+      object-fit: cover;
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      position: relative;
+      z-index: 2;
+    }
+    .profile-header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    .profile-header p {
+      font-size: 1.3rem;
+      color: #e0e0e0;
+    }
+
+    /* Social icons */
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: absolute;
+      bottom: -110px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+    }
+    .contact-links a {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #fff;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .contact-links a:hover {
+      transform: translateY(-6px) scale(1.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    .contact-links a.linkedin { background:#0a66c2; color:#fff; }
+    .contact-links a.researchgate { background:#00ccbb; color:#fff; }
+    .contact-links a.orcid { background:#a6ce39; color:#fff; }
+    .contact-links a.linktree { background:#39e09b; color:#111; }
+    .contact-links a.whatsapp { background:#25D366; color:#fff; }
+    .contact-links a.gmail { background:#4285F4; color:#fff; }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SC</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="organization.html">Organization</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Profile Header -->
+  <section class="profile-header">
+    <div class="profile-container">
+      <img src="img/profile.png" alt="Sujan Chapagain" class="profile-img">
+      <h1>Sujan Chapagain</h1>
+      <p>Agriculture Student • Researcher • Climate Justice Activist</p>
+
+      <!-- Social Icons -->
+      <div class="contact-links" aria-label="Profile links">
+        <a class="linkedin" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a class="researchgate" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank"><i class="fab fa-researchgate"></i></a>
+        <a class="orcid" href="https://orcid.org/0000-0002-2037-3491" target="_blank"><i class="fab fa-orcid"></i></a>
+        <a class="linktree" href="https://linktr.ee/Sujan_Chapagain" target="_blank"><i class="fa-solid fa-tree"></i></a>
+        <a class="whatsapp" href="https://wa.me/9779865532285" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a class="gmail" href="mailto:chapagainsujan45@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Contact Section -->
+  <section class="max-w-6xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-12">
+    
+    <!-- Info -->
+    <div class="space-y-6">
+      <h2 class="text-3xl font-bold">Get in Touch</h2>
+      <p class="text-gray-600">I’d love to hear from you. Whether it’s a project idea, collaboration, or just a friendly hello, feel free to drop a message!</p>
+      <div class="space-y-4">
+        <div class="flex items-center gap-3"><i class="fas fa-envelope text-blue-600"></i> <span>chapagainsujan45@gmail.com</span></div>
+        <div class="flex items-center gap-3"><i class="fas fa-phone text-green-600"></i> <span>+977 9865532285</span></div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form id="contactForm" class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-2">Full Name *</label>
+          <input type="text" id="name" name="name" required
+                 class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-400 outline-none">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2">Email *</label>
+          <input type="email" id="email" name="email" required
+                 class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-400 outline-none">
+        </div>
+      </div>
+      <div>
+        <label class="block font-semibold mb-2">Subject</label>
+        <input type="text" id="subject" name="subject"
+               class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-400 outline-none">
+      </div>
+      <div>
+        <label class="block font-semibold mb-2">Message *</label>
+        <textarea id="message" name="message" required rows="5"
+                  class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-400 outline-none"></textarea>
+      </div>
+      <div class="flex gap-4">
+        <button type="submit" class="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-blue-700 transition">
+          <i class="fas fa-paper-plane"></i> Send
+        </button>
+        <button type="reset" class="flex items-center gap-2 bg-gray-200 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+          <i class="fas fa-undo"></i> Reset
+        </button>
+      </div>
+      <p id="formMessage" class="hidden text-center font-semibold"></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6 mt-12">
+    <p>&copy; 2025 Sujan Chapagain • IAAS Lamjung</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const msg = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      msg.textContent = "⏳ Sending...";
+      msg.className = "text-blue-600 font-semibold text-center";
+      msg.classList.remove("hidden");
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+      })
+      .then(() => {
+        msg.textContent = "✅ Message sent successfully!";
+        msg.className = "text-green-600 font-semibold text-center";
+        form.reset();
+      }, (error) => {
+        msg.textContent = "❌ Failed to send message. Try again.";
+        msg.className = "text-red-600 font-semibold text-center";
+        console.error("EmailJS Error:", error);
+      });
+    });
+  </script>
+</body>
+</html>
