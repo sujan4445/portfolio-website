@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>In vivo efficacy of botanical extracts against Penicillium digitatum — Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#006633;
+      --accent-light:#e6f2e8;
+      --muted:#6b6b6b;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Georgia", serif;
+      color:#222;
+      background:#fff;
+      line-height:1.6;
+    }
+
+    /* Header/nav */
+    header{background:#f6f6f6;border-bottom:1px solid #e6e6e6}
+    .nav{
+      max-width:var(--max-width); margin:0 auto; display:flex; align-items:center; justify-content:space-between;
+      padding:18px 20px;
+    }
+    .logo{font-weight:700; font-size:20px; color:#222; text-decoration:none}
+    .return-btn{
+      display:inline-flex; align-items:center; gap:.6rem; padding:8px 14px; border-radius:8px;
+      border:1px solid #222; text-decoration:none; color:#222; font-weight:700; transition:.18s;
+      background:transparent;
+    }
+    .return-btn:hover{background:#222;color:#fff; transform:scale(1.03)}
+
+    /* Hero */
+    .hero{
+      position:relative; color:#fff; text-align:center;
+      padding:120px 20px;
+      background:linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("img/Greenmould/mould2.jpg") center/cover no-repeat;
+    }
+    .hero h1{font-size:34px; margin-bottom:8px; font-weight:600}
+    .hero p{font-size:18px; color:#e8f1e9; margin:0 auto; max-width:900px}
+    
+    /* Quick stats */
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(5px);
+      padding: 15px 20px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 150px;
+    }
+    .stat-value {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .stat-label {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* Main content */
+    main{max-width:var(--max-width); margin:50px auto; padding:0 20px}
+    h2{font-size:24px; color:var(--accent); margin:40px 0 16px; border-left:6px solid var(--accent); padding-left:10px}
+    p{font-size:17px; color:#333; margin-bottom:12px; text-align:justify}
+    ul{margin-left:22px; margin-bottom:12px}
+    li{margin-bottom:8px; font-size:17px; color:#333}
+    
+    /* Tabs */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 12px 20px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+    .tab.active {
+      border-bottom-color: var(--accent);
+      color: var(--accent);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Results area: graphs + text side-by-side */
+    .results-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:18px;
+      align-items:start;
+      margin-top:18px;
+    }
+    .result-card{
+      background:#fff; border-radius:10px; padding:16px; box-shadow:0 6px 18px rgba(0,0,0,.06);
+      display:flex; flex-direction:column; gap:12px;
+      transition: transform 0.3s ease;
+    }
+    .result-card:hover {
+      transform: translateY(-5px);
+    }
+    .result-card figure{margin:0}
+    .result-card img{width:100%; height:220px; object-fit:contain; border-radius:8px; background:#fafafa}
+    .result-card h3{color:var(--accent); font-size:18px; margin:0}
+    .result-card p{color:#444; font-size:15px; margin:0}
+
+    /* Results detail rows (image left, text right) */
+    .result-row{display:flex; gap:26px; align-items:center; margin-top:28px; flex-wrap:wrap}
+    .result-row .img-wrap{flex:1 1 46%}
+    .result-row .img-wrap img{width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,.08)}
+    .result-row .txt{flex:1 1 50%}
+    .result-row .txt h3{margin-top:0; color:var(--accent)}
+    .stat-list{margin-top:12px; display:grid; gap:6px; color:#222; font-weight:600}
+    
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 12px 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    .comparison-table thead tr {
+      background-color: var(--accent);
+      color: white;
+    }
+    .comparison-table tbody tr:nth-of-type(even) {
+      background-color: #f9f9f9;
+    }
+    .comparison-table tbody tr:last-of-type {
+      border-bottom: 2px solid var(--accent);
+    }
+    .comparison-table tbody tr:hover {
+      background-color: var(--accent-light);
+    }
+    
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 100%;
+      margin: 30px 0;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--accent);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 4px solid var(--accent);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .left {
+      left: 0;
+    }
+    .right {
+      left: 50%;
+    }
+    .left::after {
+      right: -10px;
+    }
+    .right::after {
+      left: -10px;
+    }
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .timeline-content h4 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    /* Gallery */
+    .gallery{margin-top:42px}
+    .gallery-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px}
+    .gallery-item{border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.06); transition: transform 0.3s ease;}
+    .gallery-item:hover {transform: scale(1.03);}
+    .gallery-item img{width:100%; height:200px; object-fit:cover; display:block}
+    .caption{padding:10px; font-size:15px; color:#333; text-align:center}
+    
+    /* Download section */
+    .download-section {
+      background-color: var(--accent-light);
+      border-radius: 10px;
+      padding: 25px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--accent);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      margin: 0 10px;
+    }
+    .download-btn:hover {
+      background-color: #004d26;
+    }
+
+    /* Footer */
+    footer{background:#222; color:#fff; text-align:center; padding:28px 12px; margin-top:56px}
+
+    /* responsive */
+    @media (max-width:1000px){
+      .results-grid{grid-template-columns:repeat(2,1fr)}
+      .result-card img{height:180px}
+      .timeline::after {left: 31px;}
+      .timeline-item {width: 100%; padding-left: 70px; padding-right: 25px;}
+      .timeline-item::after {left: 21px;}
+      .left, .right {left: 0;}
+    }
+    @media (max-width:700px){
+      .results-grid{grid-template-columns:1fr}
+      .result-row{flex-direction:column}
+      .result-row .img-wrap img{height:240px}
+      h2{font-size:20px}
+      .hero{padding:80px 18px}
+      .hero h1{font-size:22px}
+      .quick-stats {gap: 15px;}
+      .stat-box {min-width: 120px; padding: 10px 15px;}
+      .stat-value {font-size: 22px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="nav">
+      <a class="logo" href="index.html">SC</a>
+      <a class="return-btn" href="projects.html"><i class="fa-solid fa-arrow-left"></i> Return to Projects</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Hero: project title and image">
+    <h1>In vivo efficacy of botanical extracts</h1>
+    <p>Against <em>Penicillium digitatum</em> (Pers.: Fr.) Sacc. — causal agent of green mould in citrus.</p>
+    
+    <div class="quick-stats">
+      <div class="stat-box">
+        <div class="stat-value">46.72%</div>
+        <div class="stat-label">Highest Inhibition</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">9 days</div>
+        <div class="stat-label">Observation Period</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Botanicals Tested</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Control Severity</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main>
+    <h2>Abstract (short)</h2>
+    <p>
+      <strong>Penicillium digitatum</strong> is a major postharvest pathogen causing green mould in citrus. Due to health risks and chemical resistance associated with synthetic fungicides, this study evaluated the in-vivo efficacy of three botanical extracts — <strong>chilli, garlic, and ginger</strong> — each at <strong>5%</strong> and <strong>15%</strong> concentrations. Pathogen growth was recorded at 3, 6 and 9 days after inoculation. All treatments significantly reduced green mould compared with the control (p ≤ 0.001). Chilli 15% produced the highest inhibition (46.72%), followed by garlic 15% (35.25%). Ginger showed the least effect (PI ≈ 6–8%). Chilli 15% also recorded the lowest disease severity and PDI among treatments. These botanicals show promise as eco-friendly postharvest measures.
+    </p>
+
+    <!-- Tabs for detailed sections -->
+    <div class="tabs">
+      <div class="tab active" data-tab="methods">Methods</div>
+      <div class="tab" data-tab="results">Results</div>
+      <div class="tab" data-tab="analysis">Statistical Analysis</div>
+      <div class="tab" data-tab="conclusion">Conclusion</div>
+    </div>
+
+    <div class="tab-content active" id="methods">
+      <h2>Materials & Methods (detailed)</h2>
+      <ul>
+        <li><strong>Experimental Design:</strong> Completely Randomized Design (CRD) with 3 replications per treatment.</li>
+        <li><strong>Treatments:</strong> 
+          <ul>
+            <li>Chilli extract at 5% and 15% concentration</li>
+            <li>Garlic extract at 5% and 15% concentration</li>
+            <li>Ginger extract at 5% and 15% concentration</li>
+            <li>Control: Distilled water application</li>
+          </ul>
+        </li>
+        <li><strong>Plant Material:</strong> Fresh, healthy mandarin fruits (Citrus reticulata) of uniform size and maturity.</li>
+        <li><strong>Pathogen:</strong> <em>Penicillium digitatum</em> isolated from infected citrus fruits, maintained on PDA medium.</li>
+        <li><strong>Inoculum Preparation:</strong> Spore suspension adjusted to 1 × 10<sup>6</sup> spores ml<sup>-1</sup> using hemocytometer.</li>
+        <li><strong>Extract Preparation:</strong> Aqueous extracts prepared by macerating 50g and 150g of each botanical in 1L distilled water, filtered through muslin cloth.</li>
+        <li><strong>Application:</strong> Fruits were surface sterilized, wounded (3mm deep), treated with extracts, then inoculated with pathogen.</li>
+        <li><strong>Observation Parameters:</strong> Lesion diameter measurement and disease scoring at 3, 6, and 9 days after inoculation.</li>
+        <li><strong>Data Analysis:</strong> Calculated Percent Disease Index (PDI), Disease Severity (DS), and Percent Inhibition (PI). Statistical analysis using ANOVA and Duncan's Multiple Range Test (p ≤ 0.05).</li>
+      </ul>
+      
+      <h3>Experimental Timeline</h3>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h4>Day 0</h4>
+            <p>Fruit selection, surface sterilization, wound creation, and treatment application with botanical extracts.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h4>Day 1</h4>
+            <p>Inoculation with <em>P. digitatum</em> spore suspension (1×10<sup>6</sup> spores/ml).</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h4>Day 3</h4>
+            <p>First observation: Initial lesion development measurement and scoring.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h4>Day 6</h4>
+            <p>Second observation: Disease progression assessment.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h4>Day 9</h4>
+            <p>Final observation: Complete data collection for PDI, DS, and PI calculations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="results">
+      <h2>Key Results</h2>
+
+      <!-- three small result cards for quick view -->
+      <div class="results-grid" role="list">
+        <article class="result-card" role="listitem" aria-label="Disease severity">
+          <figure><img src="img/Greenmould/Diseaseseverity.png" alt="Bar chart showing disease severity across treatments"></figure>
+          <h3>Disease severity</h3>
+          <p>Control reached 100% severity. Chilli 15% reduced severity most strongly (example: 53.28% at 9 days), garlic 15% was intermediate (≈64.60%), ginger treatments neared control levels.</p>
+        </article>
+
+        <article class="result-card" role="listitem" aria-label="Percent disease index">
+          <figure><img src="img/Greenmould/PDI.png" alt="Bar chart of percent disease index (PDI)"></figure>
+          <h3>Percent Disease Index (PDI)</h3>
+          <p>Chilli 15% recorded the lowest PDI (58.33% at 9 days). Control = 100% PDI; ginger 5% ≈95.83%.</p>
+        </article>
+
+        <article class="result-card" role="listitem" aria-label="Percent inhibition">
+          <figure><img src="img/Greenmould/PI.png" alt="Bar chart of percent inhibition (PI)"></figure>
+          <h3>Percent Inhibition (PI)</h3>
+          <p>Highest inhibition: Chilli 15% = 46.72%; Garlic 15% = 35.25%. Ginger: 5% = 6.41%, 15% = 7.82% (minimal effect).</p>
+        </article>
+      </div>
+
+      <!-- detailed result rows with image + explanatory text -->
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Results — full details</h2>
+
+        <div class="result-row" aria-hidden="false">
+          <div class="img-wrap">
+            <img src="img/Greenmould/mould1.jpg" alt="Mandarin fruits showing green mould lesions (example)">
+          </div>
+          <div class="txt">
+            <h3>Disease severity & lesion development</h3>
+            <p>Across 9 days of observation, control fruits developed severe lesions reaching 100% severity. Chilli 15% significantly reduced lesion progression; at day 9 chilli 15% recorded ~53.28% severity while garlic 15% was ~64.60%. Ginger treatments produced marginal reduction versus control (≈92–95%).</p>
+            <div class="stat-list">
+              <div>Control (9 d): <strong>100%</strong> severity</div>
+              <div>Chilli 15% (9 d): <strong>53.28%</strong></div>
+              <div>Garlic 15% (9 d): <strong>64.60%</strong></div>
+              <div>Ginger 5% / 15% (9 d): <strong>~93–95%</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-row">
+          <div class="img-wrap">
+            <img src="img/Greenmould/mould3.jpg" alt="Treatment application and inoculation setup">
+          </div>
+          <div class="txt">
+            <h3>Percent Disease Index (PDI)</h3>
+            <p>PDI increased over time in all treatments, but chilli 15% showed the slowest increase. At day 9: Control = <strong>100%</strong>, Chilli 15% = <strong>58.33%</strong>, Garlic 15% = <strong>66.67%</strong>, Ginger 5% = <strong>95.83%</strong>.</p>
+            <div class="stat-list">
+              <div>PDI (Chilli 15%): <strong>58.33%</strong></div>
+              <div>PDI (Garlic 15%): <strong>66.67%</strong></div>
+              <div>PDI (Ginger 5%): <strong>95.83%</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-row">
+          <div class="img-wrap">
+            <img src="img/Greenmould/mould4.jpg" alt="Observation and recording of disease on treated fruits">
+          </div>
+          <div class="txt">
+            <h3>Percent Inhibition (PI)</h3>
+            <p>Percent inhibition (relative to control) on day 9: Chilli 15% = <strong>46.72%</strong>, Garlic 15% = <strong>35.25%</strong>. Ginger treatments showed PI of ~<strong>6.41%</strong> (5%) and <strong>7.82%</strong> (15%), indicating weak antifungal action.</p>
+            <div class="stat-list">
+              <div>PI — Chilli 15%: <strong>46.72%</strong></div>
+              <div>PI — Garlic 15%: <strong>35.25%</strong></div>
+              <div>PI — Ginger 5%: <strong>6.41%</strong></div>
+              <div>PI — Ginger 15%: <strong>7.82%</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <h3>Treatment Comparison Table</h3>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Treatment</th>
+            <th>Disease Severity (%)</th>
+            <th>PDI (%)</th>
+            <th>PI (%)</th>
+            <th>Rank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Control</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>0.00</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Chilli 5%</td>
+            <td>68.45</td>
+            <td>75.00</td>
+            <td>25.00</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Chilli 15%</td>
+            <td>53.28</td>
+            <td>58.33</td>
+            <td>46.72</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Garlic 5%</td>
+            <td>78.92</td>
+            <td>83.33</td>
+            <td>16.67</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Garlic 15%</td>
+            <td>64.60</td>
+            <td>66.67</td>
+            <td>35.25</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Ginger 5%</td>
+            <td>94.18</td>
+            <td>95.83</td>
+            <td>6.41</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Ginger 15%</td>
+            <td>92.76</td>
+            <td>92.18</td>
+            <td>7.82</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content" id="analysis">
+      <h2>Statistical Analysis</h2>
+      <p>The data were subjected to analysis of variance (ANOVA) using statistical software, and means were separated using Duncan's Multiple Range Test at p ≤ 0.05.</p>
+      
+      <h3>Key Statistical Findings</h3>
+      <ul>
+        <li>All botanical extract treatments showed statistically significant differences from the control (p ≤ 0.001).</li>
+        <li>Chilli 15% was significantly superior to all other treatments in reducing disease severity and PDI.</li>
+        <li>Garlic 15% showed intermediate efficacy, significantly different from both chilli treatments and ginger treatments.</li>
+        <li>Ginger extracts at both concentrations were not significantly different from each other but were significantly different from control and other treatments.</li>
+        <li>Concentration effect was significant for chilli and garlic extracts, with 15% concentration performing significantly better than 5%.</li>
+      </ul>
+      
+      <h3>Correlation Analysis</h3>
+      <p>Strong negative correlation was observed between extract concentration and disease parameters for chilli (r = -0.89) and garlic (r = -0.76), indicating that higher concentrations provided better disease control.</p>
+    </div>
+
+    <div class="tab-content" id="conclusion">
+      <h2>Conclusion & Recommendations</h2>
+      <p>
+        Chilli and garlic extracts at 15% concentration showed meaningful inhibition of <em>P. digitatum</em> in vivo and reduced disease severity and PDI compared to the control. Ginger aqueous extracts provided minimal control under these conditions.
+      </p>
+      
+      <h3>Key Conclusions</h3>
+      <ul>
+        <li>Chilli extract at 15% concentration demonstrated the highest antifungal activity against <em>P. digitatum</em>.</li>
+        <li>Garlic extract at 15% concentration showed moderate but significant antifungal properties.</li>
+        <li>Ginger aqueous extracts exhibited minimal antifungal activity against citrus green mould.</li>
+        <li>Higher concentrations (15%) were more effective than lower concentrations (5%) for both chilli and garlic extracts.</li>
+        <li>Botanical extracts offer a promising eco-friendly alternative to synthetic fungicides for postharvest disease management in citrus.</li>
+      </ul>
+      
+      <h3>Recommendations for Future Research</h3>
+      <ul>
+        <li>Investigate alcoholic (ethanolic or methanolic) extracts which may yield higher concentrations of active compounds.</li>
+        <li>Test a broader concentration range (5-25%) to determine optimal application rates.</li>
+        <li>Evaluate combination treatments of different botanicals for synergistic effects.</li>
+        <li>Conduct shelf-life studies to determine the persistence of antifungal activity during storage.</li>
+        <li>Investigate the mode of action of effective botanical extracts at cellular and molecular levels.</li>
+        <li>Perform field trials to validate laboratory findings under commercial conditions.</li>
+      </ul>
+    </div>
+
+    <div class="download-section">
+      <h2>Download Research Materials</h2>
+      <p>Access the complete research paper, datasets, and additional resources:</p>
+      <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> Full Paper (PDF)</a>
+      <a href="#" class="download-btn"><i class="fas fa-table"></i> Research Data</a>
+      <a href="#" class="download-btn"><i class="fas fa-images"></i> High-Res Images</a>
+    </div>
+
+    <p><strong>Study design:</strong> CRD with 3 replicates | <strong>Observation days:</strong> 3, 6, 9 | <strong>Location:</strong> IAAS Central Plant Pathology Lab</p>
+
+  </main>
+
+  <!-- Gallery -->
+  <section class="gallery" aria-label="Experiment photos">
+    <main style="max-width:var(--max-width); margin:18px auto; padding:0 20px;">
+      <h2>Photographic highlights</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="img/mould1.jpg" alt="Green mould on mandarin fruit">
+          <figcaption class="caption">Green mould infection on mandarin</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/mould2.jpg" alt="Treatment and storage setup">
+          <figcaption class="caption">Treatment application and incubation</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/mould3.jpg" alt="Application of botanical extracts">
+          <figcaption class="caption">Botanical extract application</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/mould4.jpg" alt="Measurement of lesion">
+          <figcaption class="caption">Lesion measurement and recording</figcaption>
+        </figure>
+      </div>
+    </main>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p style="margin:0">&copy; 2025 Sujan Chapagain — Central Plant Pathology Lab, IAAS</p>
+  </footer>
+
+  <script>
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs and contents
+          tabs.forEach(t => t.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to clicked tab and corresponding content
+          tab.classList.add('active');
+          const tabId = tab.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
