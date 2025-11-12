@@ -1,123 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academic & Trainings – Sujan Chapagain</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Merriweather', Georgia, serif;
-      background: #fafafa;
-      color: #222;
-      line-height: 1.7;
-    }
-    .nav-menu a { 
-      text-decoration: none; 
-      font-size: 15px; 
-      color: #444; 
-      padding: 8px 0; 
-      border-bottom: 2px solid transparent; 
-      transition: all 0.3s;
-    }
-    .nav-menu a:hover, .nav-menu a.active { 
-      border-bottom: 2px solid #2563eb; 
-      color: #2563eb; 
-      font-weight: 600; 
-    }
-    .page-header h1 {
-      font-size: 2.3rem; font-weight: 700;
-      background: linear-gradient(90deg, #2563eb, #1e3a8a);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .gallery-card { 
-      background: white; border-radius: 16px; overflow: hidden; 
-      border: 1px solid #e5e7eb; 
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-    .gallery-card:hover { 
-      transform: translateY(-4px); 
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #1f2937; 
-      color: #d1d5db; 
-      text-align: center; 
-      padding: 30px;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic & Trainings – Sujan Chapagain</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    font-family: 'Merriweather', Georgia, serif;
+    background: #f9fafb;
+    color: #222;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #2563eb, #1e3a8a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .certificate-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.25s, box-shadow 0.25s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .certificate-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  }
+
+  /* Heights */
+  .portrait { 
+    height: 650px; /* increased height for first row */
+  }
+  .landscape-fixed { 
+    height: 550px; 
+  }
+
+  /* Ensure images and iframes fill space properly */
+  .certificate-card img,
+  .certificate-card iframe {
+    width: 100%;
+    flex-grow: 1;      
+    flex-shrink: 1;
+    object-fit: contain; 
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  /* Specifically for first row images */
+  .certificate-card.portrait img {
+    max-height: 500px; /* ensures full image is visible */
+  }
+
+  .certificate-caption {
+    padding: 12px;
+    background: #f3f4f6;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1e3a8a;
+    flex-shrink: 0;    
+  }
+
+  .certificate-detail {
+    padding: 0 12px 12px;
+    font-size: 14px;
+    color: #374151;
+    flex-shrink: 0;
+  }
+
+  footer {
+    background: #1f2937;
+    color: #d1d5db;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header bg-white sticky top-0 border-b z-50">
-    <nav class="nav-container max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-      <a href="index.html" class="text-xl font-bold text-gray-800">Sujan Chapagain</a>
-      <ul class="nav-menu flex gap-6">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="conferences.html">Conferences</a></li>
-        <li><a href="blog.html">Blogs</a></li>
-        <li><a href="organization.html">Organization</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="header bg-white sticky top-0 border-b z-50">
+  <nav class="nav-container max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="index.html" class="text-xl font-bold text-gray-800">Sujan Chapagain</a>
+    <ul class="nav-menu flex gap-6">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="conferences.html">Conferences</a></li>
+      <li><a href="blog.html">Blogs</a></li>
+      <li><a href="organization.html">Organization</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Page Header -->
-  <section class="page-header py-16 bg-white text-center border-b">
-    <h1>Academic & Trainings</h1>
-    <p class="text-gray-600 text-lg mt-2">Highlights from workshops, seminars, and field trainings</p>
-  </section>
+<section class="page-header py-16 bg-white text-center border-b">
+  <h1>Academic & Trainings</h1>
+  <p class="text-gray-600 text-lg mt-2">Highlights from workshops, seminars, and field trainings</p>
+</section>
 
-  <!-- Gallery Grid -->
-  <main class="max-w-6xl mx-auto p-6">
-    <div class="gallery-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <div class="gallery-card">
-        <img src="images/academic1.jpg" alt="Workshop on Climate Change - Kathmandu University 2023" class="w-full h-52 object-cover">
-        <div class="gallery-content p-5">
-          <h3 class="text-lg font-semibold text-blue-800">Workshop on Climate Change</h3>
-          <p class="text-gray-600 text-sm">Engaged in advanced discussions on climate adaptation strategies for South Asia.</p>
-        </div>
-      </div>
+<main class="max-w-6xl mx-auto p-6">
 
-      <div class="gallery-card">
-        <img src="images/academic2.jpg" alt="Data Analysis Training - Tribhuvan University 2022" class="w-full h-52 object-cover">
-        <div class="gallery-content p-5">
-          <h3 class="text-lg font-semibold text-blue-800">Data Analysis Training</h3>
-          <p class="text-gray-600 text-sm">Hands-on training with R & SPSS for agricultural research datasets.</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="images/academic3.jpg" alt="Agroforestry Seminar - ICIMOD 2022" class="w-full h-52 object-cover">
-        <div class="gallery-content p-5">
-          <h3 class="text-lg font-semibold text-blue-800">Seminar on Agroforestry</h3>
-          <p class="text-gray-600 text-sm">Shared sustainable agroforestry practices with international researchers.</p>
-        </div>
-      </div>
-
-      <div class="gallery-card">
-        <img src="images/academic4.jpg" alt="Farmer Field Visit - Nawalpur 2021" class="w-full h-52 object-cover">
-        <div class="gallery-content p-5">
-          <h3 class="text-lg font-semibold text-blue-800">Farmer Field Visit</h3>
-          <p class="text-gray-600 text-sm">Observed real-world applications of sustainable agriculture with local farmers.</p>
-        </div>
-      </div>
-
+  <!-- First row: Portrait certificates (images) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+    <div class="certificate-card portrait">
+      <img src="img/Crop Pest diagnosis.png" alt="Crop Pest Diagnosis">
+      <div class="certificate-caption">Crop Pest Diagnosis</div>
+      <p class="certificate-detail">
+        Learned to identify major crop pests, recognize symptoms on different crops, and use diagnostic tools for pest detection.
+      </p>
     </div>
-  </main>
+    <div class="certificate-card portrait">
+      <img src="img/Crop Pest Management.png" alt="Crop Pest Management">
+      <div class="certificate-caption">Crop Pest Management</div>
+      <p class="certificate-detail">
+        Gained hands-on experience in integrated pest management techniques including biological control, chemical safety, and crop protection planning.
+      </p>
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Sujan Chapagain |
-  </footer>
+  <!-- Second row onward: Landscape certificates (PDFs using iframe) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+    <div class="certificate-card landscape-fixed">
+      <iframe src="img/surveillance and pest status determination.pdf" type="application/pdf"></iframe>
+      <div class="certificate-caption">Surveillance & Pest Status Determination</div>
+      <p class="certificate-detail">
+        Learned to monitor pest populations, assess outbreak risks, and record regional pest incidence for informed decision-making.
+      </p>
+    </div>
+<div class="certificate-card landscape-fixed">
+      <iframe src="img/emergencyprepareforpestoutbreak.pdf" type="application/pdf"></iframe>
+      <div class="certificate-caption">Emergency Preparedness for Pest Outbreaks</div>
+      <p class="certificate-detail">
+        I gained knowledge in developing and implementing strategic frameworks for the rapid detection, assessment, and management of pest outbreaks.
+      </p>
+    </div>
+
+    <div class="certificate-card landscape-fixed">
+      <iframe src="img/Phytosanitary capacity evaluation.pdf" type="application/pdf"></iframe>
+      <div class="certificate-caption">Phytosanitary Capacity Evaluation</div>
+      <p class="certificate-detail">
+        Evaluated national and institutional capacities for plant health compliance, quarantine procedures, and international trade standards.
+      </p>
+    </div>
+
+    <div class="certificate-card landscape-fixed">
+      <iframe src="img/mobilizing resource for plant health.pdf" type="application/pdf"></iframe>
+      <div class="certificate-caption">Mobilizing Resources for Plant Health</div>
+      <p class="certificate-detail">
+        Learned strategies to plan, allocate, and mobilize financial and human resources effectively for plant health programs.
+      </p>
+    </div>
+
+    <div class="certificate-card landscape-fixed">
+      <iframe src="img/Sustainable agriculture.pdf" type="application/pdf"></iframe>
+      <div class="certificate-caption">Sustainable Agriculture</div>
+      <p class="certificate-detail">
+        Gained knowledge on sustainable farming practices, eco-friendly techniques, and ways to enhance soil fertility and crop yield without harming the environment.
+      </p>
+    </div>
+
+    <div class="certificate-card landscape-fixed">
+      <iframe src="img/Good practice to cope with soil.pdf" type="application/pdf"></iframe>
+      <div class="certificate-caption">Good Practice to Cope with Soil</div>
+      <p class="certificate-detail">
+        Learned practical techniques for soil conservation, erosion prevention, and improving soil health through organic and mechanical methods.
+      </p>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Sujan Chapagain</p>
+</footer>
 
 </body>
 </html>

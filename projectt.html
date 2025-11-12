@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Projects – Sujan Chapagain</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: #fff;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0f766e;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      padding: 10px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      border-bottom: 2px solid #0f766e;
+      font-weight: bold;
+      color: #0f766e;
+    }
+
+    .page-header {
+      background: white;
+      border-bottom: 2px solid #0f766e;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #0f766e;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: #444;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .project-wrapper {
+      max-width: 1200px;
+      margin: 60px auto;
+      position: relative;
+    }
+
+    .project-label {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0f766e;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      overflow: visible;
+      position: relative;
+      padding-top: 30px;
+    }
+
+    .title-bar {
+      border-left: 8px solid #0f766e;
+      padding-left: 15px;
+    }
+
+    .project-header {
+      padding: 20px 30px 10px 30px;
+    }
+
+    .project-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #0f766e;
+    }
+
+    .project-title a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+
+    .project-title a:hover {
+      text-decoration: underline;
+    }
+
+    .project-description {
+      background: #f0f9f8;
+      padding: 25px 30px;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      border-top: 1px solid #eee;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .details-btn {
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      line-height: 1.2;
+      padding: 0;
+      z-index: 10;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .details-btn:hover {
+      transform: scale(1.1);
+      background: #1d4ed8;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SC</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="organization.html">Organization</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-header">
+    <h1>Research Projects</h1>
+    <p>Exploring plant health, Crop protection, Botanical control,and crop resilience for sustainable agriculture</p>
+  </section>
+
+  <!-- PROJECT 1 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 1</div>
+    <div class="project-card">
+      <a href="mould.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title"><a href="mould.html">In vivo Efficacy of Botanical Extracts against <i>Penicillium digitatum</i> (Pers.: Fr.) Sacc.</a></h2>
+        </div>
+      </div>
+      <div class="project-description">
+        Investigated the antifungal potential of botanical extracts against green mould in citrus. The study demonstrated significant inhibitory effects, highlighting eco-friendly alternatives to synthetic fungicides for postharvest disease control.
+      </div>
+      <div class="project-image" style="background-image:url('img/citrus.jpg')"></div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 2</div>
+    <div class="project-card">
+      <a href="phenotypic.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title"><a href="phenotypic.html">Phenotypic Screening & Diversity Analysis of Wheat Genotypes against Leaf Rust (<i>Puccinia triticina</i>)</a></h2>
+        </div>
+      </div>
+      <div class="project-description">
+        Evaluated wheat genotypes for resistance against leaf rust, assessing phenotypic variability and genetic diversity to identify resistant lines for sustainable wheat breeding programs.
+      </div>
+      <div class="project-image" style="background-image:url('img/wheat_rust.jpg')"></div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 3</div>
+    <div class="project-card">
+      <a href="hort.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title"><a href="hort.html">Effect of Botanical Treatments and Oxalic Acid on Shelf Life and Quality of Mandarin</a></h2>
+        </div>
+      </div>
+      <div class="project-description">
+        Assessed the role of plant-based treatments and oxalic acid in reducing postharvest decay. Treatments with Aloe vera and garlic extracts minimized spoilage and maintained fruit quality during storage.
+      </div>
+      <div class="project-image" style="background-image:url('img/mandarin.jpg')"></div>
+    </div>
+  </div>
+
+  <!-- PROJECT 4 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 4</div>
+    <div class="project-card">
+      <a href="alternaria.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title"><a href="alternaria.html">Cultural Characterization of <i>Alternaria brassicicola</i> (Schw.) Wilts Infecting Cabbage</a></h2>
+        </div>
+      </div>
+      <div class="project-description">
+        Characterized colony morphology and sporulation on different media to identify the optimal growth conditions of <i>A. brassicicola</i>. Findings aid in pathogen isolation and integrated disease management strategies.
+      </div>
+      <div class="project-image" style="background-image:url('img/cabbage_fungus.jpg')"></div>
+    </div>
+  </div>
+
+  <!-- PROJECT 5 -->
+  <div class="project-wrapper">
+    <div class="project-label">Project 5</div>
+    <div class="project-card">
+      <a href="stingbug.html" class="details-btn">Details</a>
+      <div class="project-header">
+        <div class="title-bar">
+          <h2 class="project-title"><a href="stingbug.html">Infestation Status of Stink Bug and Its Impact on Mandarin Farmers: A Case of Tanahu, Nepal</a></h2>
+        </div>
+      </div>
+      <div class="project-description">
+        Surveyed citrus orchards to assess stink bug infestation levels and associated economic losses. Results revealed significant yield reduction, emphasizing the need for integrated pest management in mandarin cultivation.
+      </div>
+      <div class="project-image" style="background-image:url('img/stinkbug.jpg')"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sujan Chapagain • IAAS Lamjung</p>
+  </footer>
+
+</body>
+</html>

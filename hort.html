@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botanical Treatments in Mandarin – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; padding: 0 40px;
+    }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+
+    .return-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background-color: transparent; color: #333; padding: 10px 18px;
+      border-radius: 8px; font-size: 16px; font-weight: bold; text-decoration: none;
+      border: 1px solid #333; transition: all 0.3s ease;
+    }
+    .return-btn:hover { background-color: #333; color: #fff; transform: scale(1.05); }
+    .return-btn i { font-size: 16px; }
+
+    /* Hero */
+    .project-hero {
+      position: relative;
+      background: url('img/Horticultureandcropprotectionlab.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 150px 20px 50px;
+    }
+    .project-hero::before {
+      content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45);
+    }
+    .project-hero > * { position: relative; z-index: 2; }
+    .project-hero h1 { font-size: 44px; margin-bottom: 15px; font-weight: 500; color: #fff; }
+    .project-hero p { font-size: 20px; color: #fff; }
+
+    /* Background + Research Info side by side */
+    .background-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 60px; /* increased gap to shift research box slightly right */
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .background-text {
+      max-width: 650px;
+      line-height: 1.85;
+      font-size: 20px; /* increased text size */
+      color: #333;
+      text-align: justify;
+    }
+
+    .research-box {
+      flex-shrink: 0;
+      width: 340px; /* slightly wider to balance the shift */
+      background-color: rgba(245, 255, 247, 0.95);
+      padding: 20px 22px; /* slightly more padding */
+      border-left: 6px solid #0b7a3f;
+      border-radius: 0 10px 10px 0;
+      font-size: 18px; /* increased font size */
+      color: #333;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    .research-box h3 {
+      color: #0b7a3f;
+      margin-bottom: 10px;
+      font-size: 20px; /* slightly bigger heading */
+    }
+
+    /* Content */
+    .content { max-width: 1000px; margin: 60px auto; padding: 0 20px; text-align: justify; }
+    .content h2 {
+      font-size: 30px; /* increased heading size */
+      margin: 40px 0 20px;
+      border-left: 6px solid #0b7a3f;
+      padding-left: 12px;
+      color: #0b7a3f;
+    }
+    .content p {
+      font-size: 20px; /* increased paragraph text */
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      background-color: #f1f8f4;
+      padding: 22px; 
+      border-left: 6px solid #0b7a3f;
+      margin: 30px 0;
+      font-size: 20px; /* larger highlight text */
+      border-radius: 0 8px 8px 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    /* Gallery */
+    .gallery { max-width: 1200px; margin: 60px auto; padding: 0 20px; text-align: center; }
+    .gallery h2 {
+      font-size: 36px; margin-bottom: 40px; color: #0b7a3f;
+      border-bottom: 4px solid #0b7a3f; display: inline-block; padding-bottom: 10px;
+    }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 25px;
+    }
+    .gallery-item {
+      border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item img {
+      width: 100%; height: 350px; object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); filter: brightness(1.05); }
+    .gallery-caption { font-size: 16px; margin-top: 10px; color: #444; }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; font-size: 16px; }
+
+    @media (max-width: 900px) {
+      .background-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .research-box {
+        width: 90%;
+        border-left: none;
+        border-top: 6px solid #0b7a3f;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      .background-text { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">SC — IAAS Horticulture</a>
+      <a href="projectt.html" class="return-btn"><i class="fa-solid fa-arrow-left"></i> Return</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <h1>Effect of Botanical Treatments and Oxalic Acid on Shelf Life and Quality of Mandarin</h1>
+    <p>In vivo evaluation of postharvest botanicals to reduce spoilage and fungal decay in Nepalese mandarins</p>
+  </section>
+
+  <!-- Background + Research Info -->
+  <section class="background-section">
+    <div class="background-text">
+      <h2>Background</h2>
+      <p>Mandarin, Nepal’s national fruit, plays a major role in the country’s fruit industry but suffers 15–20% post-harvest losses due to fungal diseases and poor handling. To address this, an experiment was conducted at the Horticulture Lab of Lamjung Campus, Nepal, to evaluate botanical extracts and oxalic acid in extending mandarin shelf life, maintaining quality, and reducing postharvest spoilage.</p>
+    </div>
+
+    <div class="research-box">
+      <h3>Research Info</h3>
+      <p><strong>Undergraduate Research</strong></p>
+      <p><strong>PI:</strong> Suraj Bhatta</p>
+      <p><strong>CO-PI:</strong> Sujan Chapagain</p>
+      <p><strong>Supervisor:</strong> Dipendra Rana and Sanu Krishna Maharjan</p>
+      <p><strong>Department:</strong> Horticulture and Crop Protection</p>
+      <p><strong>Institution:</strong> Lamjung Campus, IAAS</p>
+      <p><strong>Funding:</strong> Self Funded</p>
+      <p><strong>Duration:</strong> Jun 6–22, 2025</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <h2>Materials & Methods</h2>
+    <p>The study followed a single-factor Randomized Completely Block Design (RCBD) with eight treatments (control, hot water 50°C, eucalyptus oil 1000 ppm, citronella oil 1000 ppm, oxalic acid 5%, garlic extract 10%, neem leaf extract 10%, and Aloe vera extract 10%) replicated three times. Parameters assessed included physiological weight loss (PWL), TSS, TA, firmness, decay loss, pH, fruit-to-juice ratio, TSS:TA, and consumer preference.</p>
+
+    <h2>Results</h2>
+    <p>Garlic extract (10%) resulted in the lowest physiological weight loss (3.19–2.84% across storage days), while Aloe vera extract maintained the highest TSS:TA and fruit-to-juice ratio. Decay loss was lowest in Aloe vera and garlic treatments, indicating strong antifungal and preservative properties.</p>
+
+    <div class="highlight-box">
+      <strong>Key Finding:</strong> Pre-dipping in Aloe vera and garlic extracts significantly improved mandarin shelf life, fruit quality, and disease control compared to other treatments.
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>This study highlights the potential of locally available botanical extracts as eco-friendly postharvest alternatives to synthetic fungicides. Aloe vera and garlic dips effectively reduced spoilage and quality deterioration, supporting sustainable citrus handling practices in Nepal.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Research Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="img/cleandried.jpg" alt="Clean and dried mandarins">
+        <div class="gallery-caption">Mandarins cleaned and air-dried before applying treatments.</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/experimentsetup.jpg" alt="Experiment setup">
+        <div class="gallery-caption">Experiment setup with treated fruits under controlled lab conditions.</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/Horticultureandcropprotectionlab.jpg" alt="Horticulture and Crop Protection Lab">
+        <div class="gallery-caption">Research conducted at the Horticulture and Crop Protection Laboratory, Lamjung Campus.</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/sample.jpg" alt="Sample evaluation">
+        <div class="gallery-caption">Sample evaluation during storage for physical and biochemical parameters.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 Sujan Chapagain — IAAS Horticulture and Crop Protection Lab
+  </footer>
+
+</body>
+</html>

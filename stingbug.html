@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stink Bug Infestation in Mandarin – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+
+    /* Return Button */
+    .return-btn { display: inline-flex; align-items: center; gap: 8px; background-color: transparent; color: #333; padding: 10px 18px; border-radius: 8px; font-size: 16px; font-weight: bold; text-decoration: none; border: 1px solid #333; transition: all 0.3s ease; }
+    .return-btn:hover { background-color: #333; color: #fff; transform: scale(1.05); }
+    .return-btn i { font-size: 16px; }
+
+    /* Hero */
+    .project-hero { position: relative; background: url('img/stinghero.jpg') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px 50px; }
+    .project-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+    .project-hero > * { position: relative; z-index: 2; }
+    .project-hero h1 { font-size: 48px; margin-bottom: 15px; font-weight: 500; color: #fff; }
+    .project-hero p { font-size: 20px; color: #fff; }
+
+    /* Background + Research */
+    .background-section { display: flex; justify-content: center; align-items: flex-start; gap: 40px; max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+    .background-text { max-width: 650px; line-height: 1.75; font-size: 17.5px; color: #333; text-align: justify; }
+    .research-box { flex-shrink: 0; width: 320px; background-color: rgba(245, 255, 247, 0.95); padding: 18px 20px; border-left: 6px solid #0b7a3f; border-radius: 0 10px 10px 0; font-size: 15.5px; color: #333; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .research-box h3 { color: #0b7a3f; margin-bottom: 10px; font-size: 18px; }
+
+    /* Highlight Boxes */
+    .highlight-box { padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center; font-style: italic; font-size: 18px; }
+    .highlight-box.green { background-color: #f1f8f4; border-left: 6px solid #0b7a3f; color: #333; }
+    .highlight-box.orange { background-color: #fff4e5; border-left: 6px solid #ff9800; color: #333; }
+
+    /* Gallery */
+    .gallery { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+    .gallery h2 { text-align: center; margin-bottom: 30px; font-size: 28px; }
+    .gallery-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .gallery-item { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 15px; width: 300px; text-align: center; transition: transform 0.3s ease; display: flex; flex-direction: column; }
+    .gallery-item img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; transition: transform 0.3s ease; }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-caption { font-size: 16px; color: #555; flex-grow: 1; }
+
+    /* Charts Section */
+    .charts-section { max-width: 1000px; margin: 50px auto; display: flex; flex-wrap: wrap; gap: 50px; justify-content: center; }
+    .chart-container { width: 400px; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; font-size: 16px; }
+
+    @media (max-width: 900px) {
+      .background-section { flex-direction: column; align-items: center; }
+      .research-box { width: 90%; border-left: none; border-top: 6px solid #0b7a3f; border-radius: 8px; margin-top: 20px; }
+      .background-text { max-width: 100%; }
+      .charts-section { flex-direction: column; align-items: center; }
+      .gallery-item { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">Research Project: Survey</a>
+      <a href="projectt.html" class="return-btn"><i class="fas fa-arrow-left"></i> Return</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <h1>Infestation status of stink bug and its impact on mandarin farmers: a case of Tanahu, Nepal</h1>
+    <p>Survey on prevalence, economic impact, and control measures in Tanahun, Nepal</p>
+  </section>
+
+  <!-- Background + Research Info -->
+  <section class="background-section">
+    <div class="background-text">
+      <h2>Background</h2>
+      <p>Mandarin orange contributes about 26.84% of total fruit production in the mid-hills of Nepal. However, the prevalence of Green Stink Bugs (<em>Nezara viridula</em>) in mandarin orchards has adversely affected both yield and fruit quality. Infestations lead to significant fruit deformation, discoloration, and premature fruit drop, which directly impact farmers' income.</p>
+      <p>Farmers have reported difficulties in managing the pest due to its rapid population increase and the lack of awareness on integrated pest management. Chemical controls are widely used, but concerns regarding environmental and pollinator safety are emerging.</p>
+      <p>This study aimed to assess the infestation status of stink bugs, its economic impact on local farmers, and the control measures adopted by farmers in Tanahun district. A convenience sampling followed by simple random sampling was employed where 75 farmers from 5 different wards of Byas and Bhan municipalities were interviewed using a semi-structured questionnaire.</p>
+
+      <!-- Farmer Quotes -->
+      <div class="highlight-box green">
+        "The stink bug has caused major problems for us this season. Our mandarin yield dropped significantly, and we suffered considerable losses." – Ram Shrestha
+      </div>
+
+      <div class="highlight-box orange">
+        "We are using Malathion and other chemicals from the local agrovet. Municipal agriculture officer suggested that this might affect pollinators in the long run." – Local Farmer 
+      </div>
+    </div>
+
+    <div class="research-box">
+      <h3>Survey Info</h3>
+      <p><strong>Sample Size:</strong> 75 farmers</p>
+      <p><strong>Location:</strong> Byas and Bhan Municipalities, Tanahun</p>
+      <p><strong>Surveyers:</strong> Sujan Chapagain, Suyog Paudel, Sushanta Shrestha</p>
+      <p><strong>Data Collection:</strong> Semi-structured questionnaire and personal interviews</p>
+      <p><strong>Infestation Severity:</strong> Most severe (64% of respondents)</p>
+      <p><strong>Economic Loss:</strong> Mostly > NPR 50,000</p>
+      <p><strong>Control Measures:</strong> Cultural, Chemical, Biological</p>
+    </div>
+  </section>
+
+  <!-- Charts Section -->
+  <section class="charts-section">
+    <div class="chart-container">
+      <h3>Infestation Severity Distribution</h3>
+      <canvas id="severityChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h3>Economic Losses Reported</h3>
+      <canvas id="lossChart"></canvas>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Survey Images & Field Observations</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="img/tanahu1.jpeg" alt="Mandarin orchard in Tanahun">
+        <p class="gallery-caption">Mandarin orchard affected by stink bugs in Tanahun.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/tanahu2.jpeg" alt="Farmer interview">
+        <p class="gallery-caption">stink bug internally infestation.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/tanahu.jpg" alt="Survey data collection">
+        <p class="gallery-caption">Ripe mandarin in citrus orchad.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/tanahu4.jpg" alt="Lure trap observed in 1 house during survey">
+        <p class="gallery-caption">Lure trap observed during survey.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Sujan Chapagain. All rights reserved.
+  </footer>
+
+  <!-- Chart.js Script -->
+  <script>
+    const severityCtx = document.getElementById('severityChart').getContext('2d');
+    const severityChart = new Chart(severityCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Most Severe', 'Moderate', 'Low'],
+        datasets: [{
+          label: 'Infestation Severity',
+          data: [64, 20, 16],
+          backgroundColor: ['#ff5722', '#ffc107', '#8bc34a'],
+          borderColor: '#fff',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' },
+          tooltip: { callbacks: { label: ctx => `${ctx.label}: ${ctx.raw}%` } }
+        }
+      }
+    });
+
+    const lossCtx = document.getElementById('lossChart').getContext('2d');
+    const lossChart = new Chart(lossCtx, {
+      type: 'bar',
+      data: {
+        labels: ['<50k NPR', '50k–100k NPR', '>100k NPR'],
+        datasets: [{
+          label: 'Number of Farmers',
+          data: [25, 40, 10],
+          backgroundColor: ['#ff9800', '#ff5722', '#4caf50'],
+          borderRadius: 6
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, title: { display: true, text: 'Number of Farmers' } },
+          x: { title: { display: true, text: 'Economic Loss' } }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
