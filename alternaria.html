@@ -18,7 +18,7 @@
     .return-btn i { font-size: 16px; }
 
     /* Hero */
-    .project-hero { position: relative; background: url('img/alternaria_hero.jpg') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px 50px; }
+    .project-hero { position: relative; background: url('img/alternaria.png') center/cover no-repeat; color: white; text-align: center; padding: 150px 20px 50px; }
     .project-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
     .project-hero > * { position: relative; z-index: 2; }
     .project-hero h1 { font-size: 48px; margin-bottom: 15px; font-weight: 500; color: #fff; }
@@ -42,15 +42,67 @@
 
     /* Highlight Box */
     .highlight-box { background-color: #f1f8f4; padding: 20px; border-left: 6px solid #0b7a3f; margin: 30px 0; font-size: 18px; border-radius: 0 8px 8px 0; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center; }
+/* Gallery */
+.gallery {
+  max-width: 900px; /* slightly wider to fit 3 images neatly */
+  margin: 40px auto;
+  padding: 0 15px;
+  text-align: center;
+}
 
-    /* Gallery */
-    .gallery { max-width: 1200px; margin: 60px auto; padding: 0 20px; text-align: center; }
-    .gallery h2 { font-size: 36px; margin-bottom: 40px; color: #0b7a3f; border-bottom: 4px solid #0b7a3f; display: inline-block; padding-bottom: 10px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; }
-    .gallery-item { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-    .gallery-item img { width: 100%; height: 350px; object-fit: cover; transition: transform 0.4s ease, filter 0.4s ease; }
-    .gallery-item:hover img { transform: scale(1.05); filter: brightness(1.05); }
-    .gallery-caption { font-size: 16px; margin-top: 10px; color: #444; }
+.gallery h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #0b7a3f;
+  border-bottom: 3px solid #0b7a3f;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+  gap: 20px;
+}
+
+.gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px; /* smaller frame */
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.05);
+}
+
+.gallery-caption {
+  font-size: 15px;
+  margin-top: 8px;
+  color: #444;
+}
+
+/* Make it responsive for smaller screens */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* 1 per row on phones */
+  }
+}
+
 
     /* Footer */
     .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; font-size: 16px; }
@@ -58,7 +110,7 @@
     @media (max-width: 768px) {
       .project-hero h1 { font-size: 32px; }
       .project-hero p { font-size: 16px; }
-      .gallery-item img { height: 250px; }
+      .gallery-item img { height: 200px; }
       .research-box { position: static; width: auto; margin: 20px auto; }
       .background-text { max-width: 100%; }
     }
@@ -104,20 +156,16 @@
     <h2>Results</h2>
     <div class="results-grid">
       <div class="result-card">
-        <img src="img/psa_culture.jpg" alt="PSA Culture Media">
-        <p>PSA showed fastest growth: 2d-29.77mm, 4d-44.25mm, 12d-90mm with maximum sporulation 1.72×10⁶ spores/ml.</p>
+        <img src="img/alternaria1.png" alt="PSA Culture Media">
+        <p>Dorsal view of radial expansion at 12 DAI</p>
       </div>
       <div class="result-card">
-        <img src="img/pda_culture.jpg" alt="PDA Culture Media">
-        <p>PDA supported rapid growth but lower sporulation: 2d-25.34mm, 4d-38.67mm, 12d-80mm, sporulation 0.305×10⁶ spores/ml.</p>
+        <img src="img/alternaria2.png" alt="PDA Culture Media">
+        <p>Radial growth of pathogen at different days of incubation (mean followed by same letter are statistically similar to each other)</p>
       </div>
       <div class="result-card">
-        <img src="img/cda_culture.jpg" alt="CDA Culture Media">
-        <p>CDA showed slower growth: 2d-22.11mm, 4d-34.50mm, 12d-70mm; sporulation 1.37×10⁶ spores/ml.</p>
-      </div>
-      <div class="result-card">
-        <img src="img/leaf_extract.jpg" alt="HLEA Culture Media">
-        <p>HLEA supported moderate growth: 2d-24.2mm, 4d-37.9mm, 12d-78mm; sporulation 1.20×10⁶ spores/ml.</p>
+        <img src="img/alternaria3.png" alt="CDA Culture Media">
+        <p>Among 5 different treatments highest sporulation was observed in PSA (1.725×106 spore/ml) followed by CDA (1.37×106  spores/ml)  and least in PDA (3.05 ×105 spores/ml).</p>
       </div>
     </div>
 
@@ -127,11 +175,13 @@
 
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="img/psa_culture.jpg" alt="PSA Colony"><div class="gallery-caption">PSA colony showing dense mycelial growth and pigmentation.</div></div>
-      <div class="gallery-item"><img src="img/pda_culture.jpg" alt="PDA Colony"><div class="gallery-caption">PDA colony morphology.</div></div>
-      <div class="gallery-item"><img src="img/cda_culture.jpg" alt="CDA Colony"><div class="gallery-caption">CDA colony with slower radial expansion.</div></div>
-      <div class="gallery-item"><img src="img/leaf_extract.jpg" alt="HLEA Colony"><div class="gallery-caption">Host Leaf Extract Agar showing moderate growth.</div></div>
-    </div>
+      <div class="gallery-item"><img src="img/alter6.png" alt="PSA Colony"><div class="gallery-caption">Full plate radial expansion of PSA</div></div>
+      <div class="gallery-item"><img src="img/alter3.png" alt="PDA Colony"><div class="gallery-caption">Infected cabbage</div></div>
+      <div class="gallery-item"><img src="img/alter1.png" alt="CDA Colony"><div class="gallery-caption">Alternaria brassicicola under microscope</div></div>
+      <div class="gallery-item"><img src="img/alter2.png" alt="HLEA Colony"><div class="gallery-caption">Prepared media.</div></div>
+    <div class="gallery-item"><img src="img/alter4.png" alt="PDA Colony"><div class="gallery-caption">Incubation at 27°C</div></div>
+      <div class="gallery-item"><img src="img/alter5.png" alt="CDA Colony"><div class="gallery-caption">Colony with slower radial expansion.</div></div>
+  </section></div>
   </section>
 
   <!-- Footer -->
