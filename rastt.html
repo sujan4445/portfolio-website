@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RPS Symposium – Sujan Chapagain</title>
+  <title>Mandarin Citrus Research – Sujan Chapagain</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
@@ -40,44 +40,42 @@
       color: #064a3d;
       padding: 8px 18px;
     }
+/* Hero */
+.conference-hero {
+  background: url("img/symposium team.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 150px 20px;
+  position: relative;
+  transition: none; /* prevent any background transitions */
+}
+.conference-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.conference-hero > * { 
+  position: relative; 
+  z-index: 2; 
+}
+.conference-hero h1 { 
+  font-size: 56px; 
+  margin-bottom: 15px; 
+  font-weight: 600; 
+  letter-spacing: 1px; 
+}
+.conference-hero p { 
+  font-size: 20px; 
+  max-width: 800px; 
+  margin: 0 auto; 
+}
 
-    /* Hero */
-    .conference-hero {
-      background: url("img/symposiumhero.jpg") center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 150px 20px;
-      position: relative;
-    }
-    .conference-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
-    .conference-hero > * { position: relative; z-index: 2; }
-    .conference-hero h1 {
-      font-size: 56px;
-      margin-bottom: 15px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    .conference-hero p {
-      font-size: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+    /* Sections */
+    section { transition: background 0.3s ease; }
+    section:hover { background: #eef3f9; }
 
-    /* Generic Section Styling */
-    section {
-      transition: background 0.3s ease;
-    }
-    section:not(.certificate-section):hover {
-      background: #eef3f9;
-    }
-
-    /* Symposium Section */
-    .symposium-section {
+    .section-flex {
       display: flex;
       align-items: flex-start;
       gap: 40px;
@@ -85,16 +83,15 @@
       margin: 60px auto;
       padding: 20px;
     }
-    .symposium-logo img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      border: 8px solid #0b6b5a;
+    .section-flex img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 6px solid #0b6b5a;
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      display: block;
-      object-fit: cover;
     }
-    .symposium-text {
+    .section-text {
       flex: 1;
       font-size: 18px;
       text-align: justify;
@@ -103,38 +100,10 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
+    .section-text h2 { color: #0b6b5a; margin-bottom: 15px; }
+    .section-text ul { padding-left: 20px; margin-top: 10px; }
 
-    /* Profile Section */
-    .profile-section {
-      display: flex;
-      align-items: flex-start;
-      gap: 40px;
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 20px;
-    }
-    .profile-photo img {
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .profile-text {
-      flex: 1;
-      font-size: 18px;
-      text-align: justify;
-      background: #f9f9f9;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    .profile-text h2 {
-      color: #0b6b5a;
-      margin-bottom: 15px;
-    }
-
-    /* Award Section */
+    /* Awards */
     .award-section {
       display: flex;
       align-items: center;
@@ -152,89 +121,22 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     .award-text h3 { color: #e69500; margin-bottom: 10px; }
-    .award-photo img {
-      width: 260px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    /* Certificate Sections */
-    .certificate-section {
-      max-width: 900px;
-      margin: 40px auto;
-      text-align: center;
-      padding: 20px;
-      background: #fdfdfd;
-    }
-    .certificate-section h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, #0b6b5a, #1e90ff, #e69500);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-    .certificate-section img {
-      width: 100%;
-      max-width: 800px;
-      border: 10px solid #ddd;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-      margin-bottom: 20px;
-    }
-    .certificate-section p {
-      font-size: 18px;
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* Gallery */
-    .gallery {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    .gallery h2 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 30px;
-      color: #0b6b5a;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .gallery-item {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-    .gallery-item img:hover { transform: scale(1.05); }
-    .gallery-caption {
-      padding: 15px;
-      font-size: 16px;
-      text-align: center;
+    .award-photo img { 
+      width: 400px;
+      border-radius: 12px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
     }
 
     /* Testimonials */
-    .section {
+    .testimonial-section {
       max-width: 1100px;
       margin: 60px auto;
       padding: 20px;
+    }
+    .testimonial-section h2 {
+      text-align: center;
+      color: #0b6b5a;
+      margin-bottom: 30px;
     }
     .testimonial {
       display: flex;
@@ -246,10 +148,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
-    .testimonial:hover {
-      background: #eef3f9;
-      transform: translateY(-3px);
-    }
+    .testimonial:hover { background: #eef3f9; transform: translateY(-3px); }
     .testimonial img {
       width: 80px;
       height: 80px;
@@ -257,11 +156,39 @@
       object-fit: cover;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
-    .testimonial strong {
-      font-size: 18px;
-      color: #0b6b5a;
+    .testimonial strong { font-size: 18px; color: #0b6b5a; }
+    .testimonial .meta { font-size: 15px; color: #555; margin-top: 8px; }
+
+    /* Gallery */
+    .gallery-section {
+      flex-direction: column;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
     }
-    .testimonial .meta {
+    .gallery-section h2 {
+      text-align: center;
+      color: #0b6b5a;
+      margin-bottom: 30px;
+    }
+    .gallery-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery-item {
+      flex: 1 1 30%;
+      max-width: 30%;
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .gallery-item p {
+      margin-top: 8px;
       font-size: 15px;
       color: #555;
     }
@@ -275,7 +202,7 @@
       margin-top: 60px;
     }
 
-    /* Scroll to Top Button */
+    /* Scroll to Top */
     .scroll-top {
       position: fixed;
       bottom: 20px;
@@ -289,17 +216,15 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       font-size: 18px;
     }
-    .scroll-top:hover {
-      background: #064a3d;
-    }
+    .scroll-top:hover { background: #064a3d; }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .conference-hero h1 { font-size: 36px; }
       .conference-hero p { font-size: 16px; }
-      .symposium-section, .profile-section, .award-section { flex-direction: column; text-align: center; }
-      .symposium-logo img, .profile-photo img, .award-photo img { margin: 0 auto; }
+      .section-flex, .award-section, .gallery-grid { flex-direction: column; text-align: center; }
+      .section-flex img, .award-photo img, .gallery-item img { margin: 0 auto; }
       .testimonial { flex-direction: column; text-align: center; }
+      .gallery-item { flex: 1 1 100%; max-width: 100%; }
     }
   </style>
 </head>
@@ -307,27 +232,29 @@
 
   <!-- Header -->
   <header class="header">
-    <a href="conferences.html" class="back-link">Return to Conferences <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="conferences.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Return to conferences</a>
   </header>
 
   <!-- Hero -->
   <section class="conference-hero">
-    <h1>12th RPS Symposium</h1>
-    <p>Diversity Assessment of Nepalese Finger Millet Landraces · Best Presenter (Dept. of Agronomy & Plant Breeding)</p>
+    <h1>12th Research Practice and Seminar Symposium</h1>
+    <p>Shaping rural prosperity through Agri-Entrepreneurship: Building Soil Health, Maintaining Crop Diversity, and Safe Food Production</p>
   </section>
 
-  <!-- Symposium Description -->
-  <section class="symposium-section">
-    <div class="symposium-logo">
-      <img src="img/symposiumlogo.png" alt="Symposium Logo">
+  <!-- Research Practice & Symposium -->
+  <section class="section-flex">
+    <div>
+      <img src="img/symposiumlogo.png" alt="RPS Symposium Logo">
     </div>
-    <div class="symposium-text">
-      <h2 style="color:#0b6b5a; margin-bottom:15px;">Lamjung Campus – Research, Practices & Seminar (RPS)</h2>
+    <div class="section-text">
+      <h2>Research Practice & Symposium</h2>
       <p>
-        The <strong>12th RPS Symposium</strong> at <em>IAAS Lamjung Campus</em> provided an invaluable platform 
-        for undergraduate researchers to transform classroom knowledge into practical application. Supported 
-        by the <strong>Research Development-Training and Extension Center (RD-TEC)</strong>, the event emphasized 
-        the principle of <em>“Learning by Doing”</em>.
+        This research was conducted as part of the <strong>Research, Practices & Seminar (RPS)</strong> platform 
+        at <em>IAAS Lamjung Campus</em>, encouraging students to transform classroom knowledge into applied research.
+      </p>
+      <p>
+        The RPS symposium emphasizes <em>“learning by doing”</em>, offering mentorship and practical guidance 
+        to address real agricultural challenges.
       </p>
       <p>Key <strong>thematic areas</strong> of research included:</p>
       <ul>
@@ -340,34 +267,42 @@
     </div>
   </section>
 
-  <!-- Sujan Profile -->
-  <section class="profile-section">
-    <div class="profile-photo">
-      <img src="img/symposiumsujan.jpg" alt="Sujan Chapagain">
-    </div>
-    <div class="profile-text">
-      <h2>Sujan Chapagain – Research Presenter</h2>
+  <!-- Research Section -->
+  <section class="section-flex">
+    <div class="section-text">
+      <h2>Botanical Control for Citrus Green Mould</h2>
       <p>
-        I am <strong>Sujan Chapagain</strong>, an undergraduate researcher at 
-        <em>IAAS Lamjung Campus</em>. At the <strong>12th RPS Symposium</strong>, I presented my study on the 
-        <em>Diversity assessment and agro-morphological characterization of Nepalese finger millet landraces</em>. 
+        This study explores <strong>botanical extracts</strong> as an eco-friendly alternative to synthetic fungicides 
+        for controlling <em>green mould</em> in mandarin citrus caused by <em>Penicillium digitatum</em>.
       </p>
       <p>
-        My research highlighted the genetic variability of local landraces and emphasized their role in 
-        strengthening food security, promoting climate resilience, and conserving agrobiodiversity. 
+        Chilli and ginger extracts at 15% concentration significantly reduced disease incidence, lowering 
+        Percent Disease Index (PDI) and disease severity (%), demonstrating practical post-harvest applications.
       </p>
     </div>
   </section>
 
-  <!-- Award Section -->
+  <!-- Sujan Chapagain Presenter -->
+  <section class="award-section">
+    <div class="award-photo">
+      <img src="img/Sujan Chapagain Presenter.HEIC" alt="Sujan Chapagain Presenter">
+    </div>
+    <div class="award-text">
+      <h3>Sujan Chapagain – Presenter</h3>
+      <p>
+        Presented research on <strong>Botanical Control for Citrus Green Mould</strong> at the 12th RPS Symposium.
+        Recognized by the symposium team for clarity, scientific rigor, and practical relevance.
+      </p>
+    </div>
+  </section>
+
+  <!-- Best Presenter Award -->
   <section class="award-section">
     <div class="award-text">
       <h3><i class="fa-solid fa-award"></i> Best Presenter Award</h3>
       <p>
-        For my presentation and research contribution, I was honored with the 
-        <strong>Best Presenter Award</strong> by the <em>Department of Agronomy and Plant Breeding</em>. 
-        This recognition reflects the importance of promoting indigenous crops like finger millet in modern 
-        agricultural research.
+        For this research presentation at the RPS symposium, I was honored with the <strong>Best Presenter Award</strong> 
+        by the Department of Plant Protection. Presented thesis research findings and received the award for exceptional delivery and scientific communication.
       </p>
     </div>
     <div class="award-photo">
@@ -375,71 +310,59 @@
     </div>
   </section>
 
-  <!-- Certificate: Best Presenter -->
-  <section class="certificate-section">
-    <h2><strong>Best Presenter Certificate</strong></h2>
-    <img src="img/symposiumbestcert.png" alt="Best Presenter Certificate">
-    <p>This certificate was awarded to <strong>Sujan Chapagain</strong> for outstanding research presentation at the 
-      <em>12th RPS Symposium</em>, Department of Agronomy & Plant Breeding.</p>
+  <!-- Testimonials -->
+  <section class="testimonial-section">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+      <div>
+        <strong>Ankur Poudel PhD</strong>
+        <div class="meta">Former Vice Campus Chief and Supervisor</div>
+        <p class="meta">"An innovative study that promotes sustainable disease control and reduces dependency on chemical fungicides."</p>
+      </div>
+    </div>
+    <div class="testimonial" style="margin-top:12px">
+      <div>
+        <strong>Dipendra Rana</strong>
+        <div class="meta">Teaching Assistant, Dept. of Plant Protection</div>
+        <p class="meta">"Excellent demonstration of botanical efficacy against green mould — a practical approach for farmers."</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Certificate: Research Defense -->
-  <section class="certificate-section">
-    <h2><strong>Research Defense Recognition</strong></h2>
-    <img src="img/symposiumbestcert.png" alt="Research Defense Certificate">
-    <p>This certificate acknowledges the <strong>successful defense of my research</strong> on the diversity assessment 
-      and agro-morphological characterization of Nepalese finger millet landraces at 
-      <em>IAAS Lamjung Campus</em>.</p>
-  </section>
-
-  <!-- Gallery -->
-  <section class="gallery">
-    <h2>Research Highlights</h2>
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <h2>Gallery</h2>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="img/symposiumbestpresenter.png" alt="Experimental site">
-        <div class="gallery-caption"><strong>Map:</strong> Experimental site (IAAS Lamjung)</div>
+        <img src="img/taking best presenter award.jpg" alt="Taking Best Presenter Award">
+        <p>Taking Best Presenter Award</p>
       </div>
       <div class="gallery-item">
-        <img src="img/symposiumsujan.jpg" alt="Ear head diversity">
-        <div class="gallery-caption"><strong>Diversity:</strong> Ear head shapes</div>
+        <img src="img/award.jpg" alt="Award Ceremony">
+        <p>Award Ceremony</p>
       </div>
       <div class="gallery-item">
-        <img src="img/symposiumdepartmentofbreeding.jpg" alt="Grain color variation">
-        <div class="gallery-caption"><strong>Variation:</strong> Grain color among landraces</div>
+        <img src="img/Dipendra Rana.png" alt="With Dipendra Rana">
+        <p>With Supervisor Dipendra Rana</p>
       </div>
       <div class="gallery-item">
-        <img src="img/symposiumdipendra.jpg" alt="Award Moment">
-        <div class="gallery-caption">Best Presenter Award — RPS 12th Symposium</div>
+        <img src="img/peace corps volunter.jpg" alt="Peace Corps Volunteer">
+        <p>With Peace Corps Volunteer</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/presenters.jpg" alt="Presenters">
+        <p>Symposium Presenters</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/symposium team.jpg" alt="Symposium Team">
+        <p>With Symposium Team</p>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="section">
-    <h2 style="text-align:center; color:#0b6b5a; margin-bottom:30px;">Testimonials</h2>
-    <div class="card testimonial">
-      <img src="assets/test1.jpg" alt="Ankur Poudel — mentor">
-      <div>
-        <strong>Ankur Poudel</strong>
-        <div class="meta">Former Vice Campus Chief</div>
-        <p class="meta" style="margin-top:8px">"A thorough, well-structured study that documented essential traits and provided practical recommendations for conservation and breeding."</p>
-      </div>
-    </div>
-
-    <div class="card testimonial" style="margin-top:12px">
-      <img src="assets/test2.jpg" alt="Sudikshya Shrestha">
-      <div>
-        <strong>Sudikshya Shrestha</strong>
-        <div class="meta">Teaching Assistant, Dept. of Agronomy</div>
-        <p class="meta" style="margin-top:8px">"Clear presentation and excellent synthesis of results — deserving of Best Presenter."</p>
-      </div>
-    </div>
-  </section>
-    
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 Sujan Chapagain. RPS Symposium 12 — Lamjung Campus.</p>
+    <p>&copy; 2025 Sujan Chapagain. Mandarin Citrus Research.</p>
   </footer>
 
   <!-- Scroll to Top -->
