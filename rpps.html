@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPS Symposium – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+      background: #fdfdfd;
+    }
+
+    /* Header */
+    .header {
+      background: #f8f8f8;
+      padding: 15px 30px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .back-link {
+      text-decoration: none;
+      color: #0b6b5a;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.3s ease, padding 0.3s ease;
+    }
+    .back-link:hover {
+      background: rgba(11, 107, 90, 0.08);
+      padding: 8px 18px;
+      color: #064a3d;
+    }
+
+    /* Hero Section */
+    .conference-hero {
+      background: url("img/symposiumteam.jpg") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 150px 20px;
+      position: relative;
+    }
+    .conference-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .conference-hero * { position: relative; z-index: 2; }
+    .conference-hero h1 {
+      font-size: 56px;
+      margin-bottom: 15px;
+    }
+    .conference-hero p {
+      font-size: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    section {
+      transition: background 0.3s ease;
+    }
+    section:not(.certificate-section):hover {
+      background: #eef3f9;
+    }
+
+    /* RPS Section */
+    .rps-section,
+    .symposium-section,
+    .profile-section,
+    .award-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .rps-logo img {
+      width: 260px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .rps-text {
+      flex: 1;
+      font-size: 18px;
+      text-align: justify;
+      background: #f9f9f9;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .rps-text h2 {
+      color: #0b6b5a;
+      margin-bottom: 15px;
+    }
+
+    /* Profile Section */
+    .profile-photo img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .profile-text {
+      flex: 1;
+      font-size: 18px;
+      text-align: justify;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .profile-text h2 {
+      color: #0b6b5a;
+      margin-bottom: 15px;
+    }
+
+    /* Award Section */
+    .award-text {
+      flex: 1;
+      background: #fff7e6;
+      padding: 25px;
+      font-size: 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .award-text h3 {
+      color: #e69500;
+      margin-bottom: 15px;
+    }
+    .award-photo img {
+      width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Certificate Sections */
+    .certificate-section {
+      max-width: 900px;
+      margin: 50px auto;
+      text-align: center;
+      padding: 20px;
+    }
+    .certificate-section h2 {
+      font-size: 30px;
+      background: linear-gradient(90deg, #0b6b5a, #1e90ff, #e69500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+    .certificate-section img {
+      width: 100%;
+      max-width: 800px;
+      border: 10px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      margin: 20px 0;
+    }
+
+    /* Gallery */
+    .gallery-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .gallery-section h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #0b6b5a;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+    .gallery-caption {
+      padding: 15px;
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0b6b5a;
+      color: white;
+      margin-top: 60px;
+    }
+
+    /* Scroll to Top */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0b6b5a;
+      color: white;
+      border: none;
+      font-size: 22px;
+      padding: 10px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      transition: 0.3s;
+    }
+    .scroll-top:hover {
+      background: #064a3d;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back</a>
+  </div>
+
+ 
+
+  <!-- RPS Section -->
+  <section class="rps-section">
+    <div class="rps-logo">
+      <img src="img/symposiumlogo.png" alt="RPS Symposium Logo">
+    </div>
+    <div class="rps-text">
+      <h2>Research Practice & Symposium</h2>
+      <p>
+        This study was part of the <strong>Research, Practices & Seminar (RPS)</strong> platform at 
+        <em>IAAS Lamjung Campus</em>, where students apply scientific research methodology to real-world challenges.
+      </p>
+      <p>
+        The symposium emphasizes <em>learning by doing</em>, fostering mentorship, analytical thinking 
+        and professional scientific communication.
+      </p>
+      <p><strong>Core thematic categories:</strong></p>
+      <ul>
+        <li>Agronomy and Plant Breeding</li>
+        <li>Animal Science and Aquaculture</li>
+        <li>Plant Protection</li>
+        <li>Soil Science and Horticulture</li>
+        <li>Social Science and Agro-Ecology</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <section class="profile-section">
+    <div class="profile-photo">
+      <img src="img/Sujan Chapagain Presenter.HEIC" alt="Sujan Chapagain">
+    </div>
+    <div class="profile-text">
+      <h2>Sujan Chapagain – Research Presenter</h2>
+      <p>
+        I presented my research entitled <em>Diversity assessment and agro-morphological characterization 
+        of Nepalese finger millet landraces</em> focusing on conserving indigenous crop resources and 
+        improving climate resilience.
+      </p>
+      <p>
+        The study provides valuable insights for future breeding programs and agro-biodiversity conservation initiatives.
+      </p>
+    </div>
+  </section>
+
+  <!-- Award -->
+  <section class="award-section">
+    <div class="award-text">
+      <h3><i class="fa-solid fa-award"></i> Best Presenter Award</h3>
+      <p>
+        Recognized for excellence in scientific communication, clarity in research delivery, 
+        well-structured visual presentation, strong interpretation of results, and confident response 
+        to expert queries. This honor reflects dedication to promoting indigenous crops through 
+        high-quality academic dissemination.
+      </p>
+    </div>
+    <div class="award-photo">
+      <img src="img/symposiumbestpresenter.png" alt="Best Presenter Award">
+    </div>
+  </section>
+
+  <!-- Certificate 1 -->
+  <section class="certificate-section">
+    <h2>Best Presenter Certificate</h2>
+    <img src="img/symposiumbestcert.png" alt="Best Presenter Certificate">
+    <p>Awarded for exceptional presentation at the 12th RPS Symposium.</p>
+  </section>
+
+  <!-- Certificate 2 -->
+  <section class="certificate-section">
+    <h2>Research Defense Recognition</h2>
+    <img src="img/symposiumbestcert.png" alt="Research Defense Certificate">
+    <p>Honored for successfully defending research findings with competence and scientific rigor.</p>
+  </section>
+
+ <!-- Gallery -->
+  <section class="gallery-section">
+    <h2>Gallery Moments</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="img/taking best presenter award.jpg" alt="Award Receiving">
+        <p class="gallery-caption">Receiving the Best Presenter Award</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/award.jpg" alt="Award Ceremony">
+        <p class="gallery-caption">Award Ceremony Highlights</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/bishnusir.jpg" alt="With Supervisor">
+        <p class="gallery-caption">With Supervisor Assistant Professor Bishnu P. Kandel</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/peace corps volunter.jpg" alt="Peace Corps Volunteer">
+        <p class="gallery-caption">Academic Interaction with Peace Corps Volunteer</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/presenters.jpg" alt="Plant Breeding Group">
+        <p class="gallery-caption">Plant Breeding Presenters Group Photo</p>
+      </div>
+      <div class="gallery-item">
+        <img src="img/symposium team.jpg" alt="Symposium Team">
+        <p class="gallery-caption">Celebrating Team Effort and Collaboration</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Sujan Chapagain — All Rights Reserved
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+</body>
+</html>
