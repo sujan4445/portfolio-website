@@ -15,16 +15,26 @@
     .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
 
     /* Hero */
-    .project-hero { background: url('img/rice-hero.jpg') center/cover no-repeat; color: white; text-align: center; padding: 180px 20px; position: relative; }
-    .project-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+    .project-hero {
+      background: url('img/rice1.jpg') center/cover no-repeat;
+      color: white; text-align: center;
+      padding: 180px 20px; position: relative;
+    }
+    .project-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
     .project-hero > * { position: relative; z-index: 2; }
     .project-hero h1 { font-size: 56px; margin-bottom: 15px; font-weight: 500; color: #fff; }
     .project-hero p { font-size: 20px; color: #fff; }
 
     /* Content */
     .content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-    .content h2 { font-size: 28px; margin: 40px 0 20px; border-left: 6px solid #009966; padding-left: 12px; color: #006633; }
-    .details ul { list-style: none; padding: 0; margin: 0; }
+    .content h2 {
+      font-size: 28px; margin: 40px 0 20px;
+      border-left: 6px solid #009966; padding-left: 12px; color: #006633;
+    }
+    .details ul { list-style: none; }
     .details li { margin: 10px 0; font-size: 18px; }
     .content p { font-size: 18px; text-align: justify; color: #444; margin-bottom: 20px; }
     .details-section { margin-top: 15px; }
@@ -33,15 +43,29 @@
 
     /* Contact */
     .contact-inline { margin-top: 20px; font-size: 18px; color: #006600; }
-    .contact-inline a { text-decoration: none; color: #444; margin-right: 15px; transition: color 0.3s; }
-    .contact-inline a:hover { color: #0073e6; }
+    .contact-inline a { text-decoration: none; color: #444; margin-right: 15px; }
 
     /* Gallery */
     .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
-    .gallery h2 { text-align:center; font-size:32px; margin-bottom:30px; color:#009966; border-bottom:3px solid #009966; display:inline-block; padding-bottom:5px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .gallery-item { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .gallery-item img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s ease, filter 0.4s ease; }
+    .gallery h2 {
+      text-align:center; font-size:32px; margin-bottom:30px;
+      color:#009966; border-bottom:3px solid #009966;
+      display:inline-block; padding-bottom:5px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      background: #fff; border-radius: 12px;
+      overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery-item img {
+      width: 100%; height: 320px; object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
     .gallery-item:hover img { transform: scale(1.08); filter: brightness(1.1); }
     .gallery-caption { padding: 15px; font-size: 16px; text-align: center; }
 
@@ -57,50 +81,47 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header class="header">
     <nav class="nav-container">
       <a href="index.html" class="logo">SC</a>
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="project-hero">
     <h1>Diversity Assessment and Drought Screening of Nepalese Rice Landraces</h1>
-    <p>Screening rice genotypes for drought tolerance and agro-morphological characterization</p>
+    <p>Evaluating drought tolerance and agro-morphological diversity in rice</p>
   </section>
 
-  <!-- Content -->
   <section class="content">
     <h2>Project Details</h2>
     <div class="details">
       <ul>
         <li><strong>Funding Agency:</strong> Nepal Academy of Science and Technology (NAST)</li>
-        <li><strong>Researcher:</strong> Sujan Chapagain, Sangita Chapagain, Itsa Bogati and Sonia K.C.</li>
-        <li><strong>Project Supervisors:</strong> Ankur Poudel, Bishnu Prasad Kandel</li>
+        <li><strong>Research Team:</strong> Sujan Chapagain, Sangita Chapagain, Itsa Bogati, Sonia K.C.</li>
+        <li><strong>Supervisors:</strong> Ankur Poudel, Bishnu Prasad Kandel</li>
       </ul>
     </div>
 
     <h2>Description</h2>
     <p>
-      Nepalese rice landraces are highly adapted to diverse agro-ecologies and drought-prone environments. 
-      This project focuses on evaluating genotypes for drought tolerance under controlled water stress and characterizing their agro-morphological diversity to inform breeding and conservation.
+      Nepalese rice landraces are adapted to diverse environments including drought-prone uplands.
+      This project evaluates drought-resilient traits under controlled water stress while
+      characterizing agro-morphological diversity to support conservation and breeding.
     </p>
 
     <div class="details-section">
       <h3>Background</h3>
       <p>
-        Rice is a staple crop in Nepal, yet drought stress significantly limits yield in upland and rainfed areas. 
-        Local landraces hold unique genetic traits for adaptation, resilience, and yield stability. 
-        Agro-morphological characterization and drought screening are essential to conserve genetic diversity and select superior genotypes.
+        Drought stress remains one of the major yield-limiting factors in rainfed rice systems in Nepal.
+        Indigenous landraces contain valuable genes for climate resilience, yield stability, and grain quality.
       </p>
     </div>
 
     <div class="details-section">
       <h3>Objectives</h3>
       <ul>
-        <li>Screen rice landraces for drought tolerance under CRD conditions.</li>
-        <li>Characterize agro-morphological diversity using Row–Row design.</li>
+        <li>Screen landraces for drought tolerance in controlled environment.</li>
+        <li>Evaluate agro-morphological diversity under field conditions.</li>
         <li>Identify promising genotypes for breeding and on-farm conservation.</li>
       </ul>
     </div>
@@ -108,37 +129,36 @@
     <div class="details-section">
       <h3>Methods</h3>
       <p>
-        <strong>Drought Screening:</strong> Conducted using CRD with two moisture regimes: Well-watered (70% field capacity) and Water-stressed (35% field capacity). 
-        Physiological traits such as Relative Water Content (RWC), leaf rolling, chlorophyll content, and SPAD were measured. Morphological, phenological, and yield traits were also recorded.
+        <strong>Drought Screening:</strong> Conducted in Completely Randomized Design with
+        two water regimes: well-watered (70% FC) and water-stressed (35% FC).
+        Traits recorded included RWC, leaf rolling, chlorophyll content (SPAD),
+        morphological and yield attributes.
       </p>
       <p>
-        <strong>Agro-morphological Characterization:</strong> Conducted using Row–Row design to evaluate landrace diversity in the field. Traits assessed included plant height, tiller number, panicle length, grain size, and qualitative descriptors as per IBPGR and UPOV standards.
+        <strong>Field Characterization:</strong> Evaluated in Row–Row layout following IBPGR and UPOV descriptors
+        for quantitative and qualitative traits.
       </p>
-      <p><strong>Data Analysis:</strong> ANOVA, correlation analysis, Principal Component Analysis (PCA), and cluster analysis were performed for both drought screening and characterization.</p>
+      <p><strong>Data Analysis:</strong> ANOVA, correlation, PCA, and cluster analysis.</p>
     </div>
 
-   
-
     <div class="contact-inline">
-      For more details, contact: 
-      <a href="mailto:chapagainsuajn45@gmail.com"><i class="fa-solid fa-envelope"></i> PI</a>
+      For inquiries: 
+      <a href="mailto:chapagainsujan45@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
     </div>
   </section>
 
-  <!-- Gallery -->
   <section class="gallery">
     <h2>Project Highlights</h2>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="img/rice1.jpg" alt="Rice field"><div class="gallery-caption">Documenting Panicle traits</div></div>
-      <div class="gallery-item"><img src="img/rice2.jpg" alt="Plant measurement"><div class="gallery-caption">Documenting phenotypic diversity</div></div>
-      <div class="gallery-item"><img src="img/rice3.jpg" alt="Leaf rolling"><div class="gallery-caption">Trial setup for drought screening</div></div>
-      <div class="gallery-item"><img src="img/rice4.jpg" alt="Row characterization"><div class="gallery-caption">Clip attachmnet fluorescence data</div></div>
-      <div class="gallery-item"><img src="img/rice5.jpg" alt="Grain sample"><div class="gallery-caption">Plant breeding group data collection</div></div>
-      <div class="gallery-item"><img src="img/rice6.jpg" alt="Data collection"><div class="gallery-caption">Handheld Chlorophyll Fluorometer</div></div>
+      <div class="gallery-item"><img src="img/rice1.jpg"><div class="gallery-caption">Panicle morphology observation</div></div>
+      <div class="gallery-item"><img src="img/rice2.jpg"><div class="gallery-caption">Phenotypic trait measurement</div></div>
+      <div class="gallery-item"><img src="img/rice3.jpg"><div class="gallery-caption">Drought screening setup</div></div>
+      <div class="gallery-item"><img src="img/rice4.jpg"><div class="gallery-caption">Chlorophyll fluorescence data recording</div></div>
+      <div class="gallery-item"><img src="img/rice5.jpg"><div class="gallery-caption">Field evaluation by plant breeding team</div></div>
+      <div class="gallery-item"><img src="img/rice6.jpg"><div class="gallery-caption">Handheld SPAD measurement</div></div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
   </footer>
