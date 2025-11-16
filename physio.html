@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheat Drought Screening – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; background: #fff; }
+
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; padding: 0 40px; }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+
+    /* Hero */
+    .project-hero { background: url('img/wheat.jpg') center/cover no-repeat; color: white; text-align: center; padding: 180px 20px; position: relative; }
+    .project-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+    .project-hero > * { position: relative; z-index: 2; }
+    .project-hero h1 { font-size: 56px; margin-bottom: 15px; font-weight: 500; color: #fff; }
+    .project-hero p { font-size: 20px; color: #fff; }
+
+    /* Content */
+    .content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    .content h2 { font-size: 28px; margin: 40px 0 20px; border-left: 6px solid #009966; padding-left: 12px; color: #006633; }
+    .details ul { list-style: none; padding: 0; margin: 0; }
+    .details li { margin: 10px 0; font-size: 18px; }
+    .content p { font-size: 18px; text-align: justify; color: #444; margin-bottom: 20px; }
+    .details-section { margin-top: 15px; }
+    .details-section h3 { font-size: 20px; font-weight: 600; color: #006633; margin-bottom: 5px; }
+    .details-section p, .details-section ul { font-size: 17px; color: #444; margin-left: 20px; }
+
+    /* Results Section */
+    .results { max-width: 1000px; margin: 60px auto; padding: 0 20px; text-align: center; }
+    .results h2 { font-size: 32px; color: #009966; margin-bottom: 30px; }
+    .results img { width: 100%; max-width: 900px; display: block; margin: 20px auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+    /* Contact */
+    .contact-inline { margin-top: 20px; font-size: 18px; color: #006600; }
+    .contact-inline a { text-decoration: none; color: #444; margin-right: 15px; transition: color 0.3s; }
+    .contact-inline a:hover { color: #0073e6; }
+
+    /* Gallery */
+    .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+    .gallery h2 { text-align:center; font-size:32px; margin-bottom:30px; color:#009966; border-bottom:3px solid #009966; display:inline-block; padding-bottom:5px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .gallery-item { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .gallery-item img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s ease, filter 0.4s ease; }
+    .gallery-item:hover img { transform: scale(1.08); filter: brightness(1.1); }
+    .gallery-caption { padding: 15px; font-size: 16px; text-align: center; }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      .project-hero h1 { font-size: 36px; }
+      .project-hero p { font-size: 16px; }
+      .gallery-item img { height: 220px; }
+      .results img { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SC</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <h1>Morpho-Physiological Screening of Wheat under Drought</h1>
+    <p>Evaluated drought tolerance of wheat genotypes using RWC, leaf rolling, and yield stability</p>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <h2>Project Details</h2>
+    <div class="details">
+      <ul>
+        <li><strong>Funding Agency:</strong> Self Funded and Departmental Support</li>
+        <li><strong>Principal Investigator:</strong> Sujan Chapagain</li>
+        <li><strong>Co-Principal Investigator:</strong> Samir Nepal and Sancheet Gautam</li>
+        <li><strong>Project Supervisors:</strong> Ankur Poudel, Bishnu Prasad Kandel, and Mahesh Subedi</li>
+      </ul>
+    </div>
+
+    <h2>Description</h2>
+    <p>
+      Frequent terminal droughts constrain wheat productivity in mid-hills. This project screened genotypes under irrigated and rainfed conditions to identify drought-tolerant lines. Traits such as relative water content (RWC), leaf rolling index, plant height, harvest index, and grain yield were measured, and multivariate analyses including AMMI, GGE, and cluster analysis were conducted to identify stable and superior genotypes.
+    </p>
+
+    <div class="details-section">
+      <h3>Background</h3>
+      <p>This study addresses the yield losses in wheat due to drought by evaluating physiological and morpho-agronomic traits under controlled water stress.</p>
+    </div>
+
+    <div class="details-section">
+      <h3>Objectives</h3>
+      <ul>
+        <li>Screen wheat genotypes for drought tolerance.</li>
+        <li>Identify stable and high-yielding lines under drought conditions.</li>
+        <li>Support breeding programs for stress-resilient wheat varieties.</li>
+      </ul>
+    </div>
+
+    <div class="details-section">
+      <h3>Methods</h3>
+      <p>
+        A two-factor factorial experiment was conducted using a Completely Randomized Design (CRD), involving 40 genotypes and two moisture regimes: 
+        <strong>Well-watered</strong> (70% Field Capacity) and <strong>Water-stressed</strong> (35% Field Capacity).
+      </p>
+      <p><strong>Data Collection:</strong></p>
+      <ul>
+        <li><strong>Physiological Traits:</strong> RWC, Canopy Temperature, SPAD, Chlorophyll Content, Leaf Succulence, Water Saturation Deficit (%), Fv/Fm, Fv/Fo, and Leaf Rolling.</li>
+        <li><strong>Morphological Traits:</strong> Plant Height, Flag Leaf Area, Harvest Index (%).</li>
+        <li><strong>Phenological Traits:</strong> Days to Booting, Anthesis, Heading, Maturity.</li>
+        <li><strong>Yield-related Traits:</strong> Thousand Grain Weight, Grain Yield.</li>
+      </ul>
+      <p><strong>Data Analysis:</strong> ANOVA, Post Hoc, Correlation, AMMI, GGE Biplot, Cluster Analysis.</p>
+    </div>
+
+    <div class="details-section">
+      <h3>Funding & Timeline</h3>
+      <p>Self Funded and Departmental support; 1-year trial</p>
+    </div>
+
+    <div class="contact-inline">
+      For more details, contact: 
+      <a href="mailto:chapagainsuajn45@gmail.com"><i class="fa-solid fa-envelope"></i> PI</a>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results">
+    <h2>Results</h2>
+    <img src="img/phy.png" alt="Physiological Results">
+    <img src="img/trait.png" alt="Trait Results">
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Project Highlights</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="img/leaf roll.jpg" alt="Wheat image 1"><div class="gallery-caption">Leaf rolling </div></div>
+      <div class="gallery-item"><img src="img/wheat2.jpg" alt="Wheat image 2"><div class="gallery-caption">75% FC</div></div>
+      <div class="gallery-item"><img src="img/wheat3.jpg" alt="Wheat image 3"><div class="gallery-caption">Controlled environment Greenhouse</div></div>
+      <div class="gallery-item"><img src="img/wheat4.jpg" alt="Wheat image 4"><div class="gallery-caption">Data Collection at vegetative stage</div></div>
+      <div class="gallery-item"><img src="img/wheat5.jpg" alt="Wheat image 5"><div class="gallery-caption">Handheld Chlorophyll Fluorometer</div></div>
+      <div class="gallery-item"><img src="img/rwc.jpg" alt="Wheat image 6"><div class="gallery-caption">Relative Water Content determination in Lab</div></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
