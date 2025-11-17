@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wheat Genotype Evaluation – Sujan Chapagain</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; background: #fff; }
+
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+      align-items: center; padding: 0 40px;
+    }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+
+    /* Hero */
+    .project-hero {
+      background: url('img/wh1.jpg') center/cover no-repeat;
+      color: white; text-align: center; padding: 180px 20px;
+      position: relative;
+    }
+    .project-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .project-hero > * { position: relative; z-index: 2; }
+    .project-hero h1 { font-size: 56px; margin-bottom: 15px; font-weight: 500; color: #fff; }
+    .project-hero p { font-size: 20px; color: #fff; }
+
+    /* Research Details Overlay */
+    .research-container { 
+      display: flex; 
+      justify-content: center; 
+      gap: 24px; 
+      flex-wrap: wrap; 
+      position: relative; 
+      top: -40px; 
+      z-index: 3;
+    }
+    .research-box { 
+      background-color: rgba(249, 253, 249, 0.98); 
+      padding: 16px 18px; 
+      border-left: 6px solid #0b7a3f; 
+      border-radius: 8px; 
+      font-size: 15px; 
+      width: 340px; 
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08); 
+    }
+
+    /* Content */
+    .content {
+      max-width: 1000px; margin: 60px auto; padding: 0 20px;
+    }
+    .content h2 { 
+      font-size: 28px; margin: 40px 0 20px; 
+      border-left: 6px solid #ff6600; padding-left: 12px; 
+      color: #cc3300;
+    }
+    .details ul { list-style: none; padding: 0; margin: 0; }
+    .details li { margin: 10px 0; font-size: 18px; }
+    .content p { font-size: 18px; text-align: justify; color: #444; }
+
+    .details-section { margin-top: 15px; }
+    .details-section h3 { font-size: 20px; font-weight: 600; color: #cc3300; margin-bottom: 5px; }
+    .details-section p, .details-section ul { font-size: 17px; color: #444; margin-left: 20px; }
+
+    /* Results Section */
+    .results {
+      max-width: 1000px; margin: 60px auto; padding: 0 20px;
+    }
+    .results h2 { text-align: center; font-size: 32px; color: #0066cc; margin-bottom: 30px; }
+    .results img {
+      width: 100%; max-width: 900px; display: block; margin: 20px auto; border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Contact */
+    .contact-inline {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #006600;
+    }
+    .contact-inline a {
+      text-decoration: none;
+      color: #444;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+    .contact-inline a:hover { color: #0073e6; }
+
+    /* Gallery */
+    .gallery { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+    .gallery h2 {
+      text-align:center; font-size:32px; margin-bottom:30px; 
+      color:#0066cc; border-bottom:3px solid #0066cc; display:inline-block; padding-bottom:5px;
+    }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item { 
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+      transition: transform 0.3s;
+    }
+    .gallery-item img { 
+      width: 100%; height: 320px; object-fit: cover;
+      display: block; image-rendering: auto; 
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.08); filter: brightness(1.1); }
+    .gallery-caption { padding: 15px; font-size: 16px; text-align: center; }
+
+    /* Footer */
+    .footer { background: #333; color: white; text-align: center; padding: 40px; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      .project-hero h1 { font-size: 36px; }
+      .project-hero p { font-size: 16px; }
+      .gallery-item img { height: 220px; }
+      .results img { max-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SC</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <h1>Physiological response and agronomic performance of wheat genotypes under drought stress</h1>
+    <p>Characterization and performance evaluation under contrasting environments</p>
+  </section>
+
+  <!-- Research Overlay -->
+  <div class="research-container">
+    <div class="research-box">
+      <p><strong>Study Type:</strong> Field phenotypic screening</p>
+      <p><strong>Location:</strong> Lamjung Mid-hill, Nepal </p>
+      <p><strong>Genotypes:</strong> 24 (released cultivars, landraces, breeding lines)</p>
+      <p><strong>Key metrics:</strong> Yield, NDVI, Canpoy Temperature, RWC</p>
+    </div>
+
+    <div class="research-box">
+      <p><strong>Funding agency:</strong> Champadevi Rural Municipality</p>
+      <p><strong>Amount:</strong> NRs 3,00,000 (USD 2200)</p>
+      <p><strong>PI:</strong> Sujan Chapagain</p>
+      <p><strong>Co-PI:</strong> Sandesh Subedi, Samir Nepal</p>
+      <p><strong>Supervisors:</strong> Dipendra Rana, Ankur Poudel PhD, Bishnu P. Kandel</p>
+    </div>
+  </div>
+
+  <!-- Content Section -->  <section class="content">
+    <div class="background-text">
+
+    <h2>Background</h2>
+    <p>
+      Wheat (<i>Triticum aestivum</i> L.) is a key staple in Nepal, crucial for <b>food security</b> and rural livelihoods.
+      Most research focuses on the <b>Terai</b>, while the <b>mid-hill</b> region, largely rainfed and prone to <b>moisture stress</b>,
+      has limited suitable varieties.
+    </p>
+    <p>
+      This study evaluated landraces, genotypes, and released varieties under contrasting environments, including 
+      two new genotypes, <strong>AFU W01</strong> and <strong>AFU W02</strong>, developed by Professor Madhav Ghimire.
+    </p>
+    <p>
+      Enhancing wheat with high adaptability, yield stability, and <b>drought tolerance</b> can strengthen
+      <b>food security and resilience</b> in the mid-hills.
+    </p>
+
+    <div class="details-section">
+      <h3>Objectives</h3>
+      <ul>
+        <li>Assess performance of local and improved wheat genotypes.</li>
+        <li>Identify genotypes suitable for contrasting environments.</li>
+        <li>Support wheat breeding programs and future variety release.</li>
+      </ul>
+    </div>
+
+    <div class="details-section">
+      <h3>Methods</h3>
+      <p>
+        A field experiment was conducted using an Alpha Lattice Design under two environmental conditions: 
+        <strong>Irrigated</strong> and <strong>Drought-stressed</strong>, with two replications per environment.
+      </p>
+      <p><strong>Data Collection:</strong></p>
+      <ul>
+        <li><strong>Phenological Traits:</strong> Booting, Heading, Anthesis, Maturity.</li>
+        <li><strong>Yield Traits:</strong> Spike length, Grain yield, Harvest Index, etc.</li>
+        <li><strong>Physiological Traits:</strong> NDVI, Canopy Temperature, FV/FM, and OJIP measurements.</li>
+      </ul>
+      <p><strong>Data Analysis:</strong> ANOVA, GGE Biplot, PCA, Cluster Analysis.</p>
+    </div>
+
+    <div class="details-section">
+      <h3>Funding & Timeline</h3>
+      <p>Champadevi Rural Municipality — 1-year trial</p>
+    </div>
+
+    <div class="contact-inline">
+      For more details, contact: 
+      <a href="mailto:chapagainsuajn45@gmail.com"><i class="fa-solid fa-envelope"></i> PI</a>
+    </div>
+  </section>
+
+
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>Project Highlights</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="img/afuw1.jpg" alt="Highlight 1"><div class="gallery-caption">Phenotypic variation of AFU W01</div></div>
+      <div class="gallery-item"><img src="img/suj.jpg" alt="Highlight 2"><div class="gallery-caption">Chlorophyll Fluorometer Measurements</div></div>
+      <div class="gallery-item"><img src="img/wh2.jpg" alt="Highlight 3"><div class="gallery-caption">Awned & Awnless wheat</div></div>
+      <div class="gallery-item"><img src="img/wh3.jpg" alt="Highlight 4"><div class="gallery-caption">Wheat heading stage</div></div>
+      <div class="gallery-item"><img src="img/ndvi.jpg" alt="Highlight 5"><div class="gallery-caption">NDVI measurement</div></div>
+      <div class="gallery-item"><img src="img/wh6.jpg" alt="Highlight 6"><div class="gallery-caption">Handheld Chlorophyll Fluorometer</div></div>
+      <div class="gallery-item"><img src="img/probe clip.jpg" alt="Highlight 7"><div class="gallery-caption">Probe clip</div></div>
+      <div class="gallery-item"><img src="img/wh5.jpg" alt="Highlight 8"><div class="gallery-caption">Vegetative stage</div></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
