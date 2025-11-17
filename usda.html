@@ -17,16 +17,19 @@
 
     /* Hero Section */
     .hero {
-      background: url('img/sujan-hero.jpg') center/cover no-repeat;
-      height: 55vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-    }
+  background: url('img/usda1.jpg') no-repeat;
+  background-size: cover;
+  background-position: center 65%; /* horizontal center, vertical 70% down */
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
 
     .hero::after {
       content: "";
@@ -34,7 +37,6 @@
       top: 0; left: 0;
       width: 100%; height: 100%;
       background: rgba(0,0,0,0.35);
-      border-radius: 0;
     }
 
     .hero h1,
@@ -137,18 +139,32 @@
       margin: 30px 0 10px 0;
     }
 
-    .gallery img {
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gallery-item img {
       width: 100%;
-      height: 220px;
-      object-fit: cover;
+      height: auto; /* maintain full image */
+      max-height: 220px;
+      object-fit: contain;
       border-radius: 12px;
       transition: transform .3s, box-shadow .3s;
     }
 
-    .gallery img:hover {
+    .gallery-item img:hover {
       cursor: pointer;
       transform: scale(1.06);
       box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .caption {
+      font-size: 16px;
+      color: #555;
+      margin-top: 6px;
+      text-align: center;
     }
 
     footer {
@@ -168,7 +184,7 @@
   <!-- Hero Section -->
   <section class="hero">
     <h1>Impact of cover crops on plant yield, insect pests, weeds, and soil health in organic vegetable production</h1>
-    <h3>Research Project  Assistant </h3>
+    <h3>Research Project Assistant</h3>
     <p>Cover Crops & Soil Health | Tanahu, Nepal</p>
   </section>
 
@@ -192,13 +208,12 @@
       I contributed to the collaborative project titled 
       <em>“Impact of Cover Crops on Plant Yield, Insect Pests, Weeds, and Soil Health in Organic Vegetable and Rice Production in Nepal.”</em>
       I was responsible for agronomic data collection, soil evaluations, growth measurements, and documenting crop performance under different cover crop treatments.
-    Evaluate the role of cover crops in improving soil fertility and structure
-
-Reduce weed pressure and pest incidence naturally
-
-Enhance crop yield and resilience to heat stress
-
-Promote organic and sustainable production systems in Nepal</p>
+      <br><br>
+      Evaluate the role of cover crops in improving soil fertility and structure
+      <br>Reduce weed pressure and pest incidence naturally
+      <br>Enhance crop yield and resilience to heat stress
+      <br>Promote organic and sustainable production systems in Nepal
+    </p>
 
     <!-- Highlights Boxes -->
     <div class="boxes">
@@ -232,10 +247,26 @@ Promote organic and sustainable production systems in Nepal</p>
     <!-- Gallery -->
     <h2 class="section-title">Field Gallery</h2>
     <div class="gallery">
-      <img src="img/covercrop1.jpg" alt="Field Image">
-      <img src="img/covercrop2.jpg" alt="Field Image">
-      <img src="img/workshop1.jpg" alt="Training Workshop">
-      <img src="img/team-field.jpg" alt="Team Photo">
+      <div class="gallery-item">
+        <img src="img/usda1.jpg" alt="Field Image 1">
+        <div class="caption">Cabbage Field with Cover Crops</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/usda2.jpg" alt="Field Image 2">
+        <div class="caption">Soil Sampling in Progress</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/usda3.jpg" alt="Training Workshop">
+        <div class="caption">Training Workshop with Farmers</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/usda4.jpg" alt="Team Photo">
+        <div class="caption">Research Team in the Field</div>
+      </div>
+      <div class="gallery-item">
+        <img src="img/usda5.jpg" alt="Team Photo">
+        <div class="caption">Field Observation Notes</div>
+      </div>
     </div>
 
   </div>
