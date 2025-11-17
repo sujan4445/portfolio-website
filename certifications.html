@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Certificates Gallery — Two-per-row PDF viewer</title>
+  <style>
+    :root {
+      --gap: 18px;
+      --card-bg: #ffffff;
+      --accent: #0b74de;
+      --shadow: 0 6px 18px rgba(12,24,40,0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body { 
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+      margin: 0; 
+      background: #f6f8fb; 
+      color: #0b1020; 
+    }
+
+    .wrap { max-width: 1100px; margin: 36px auto; padding: 20px; }
+    h1 { font-size: 20px; margin: 0 0 18px; }
+
+    /* grid layout */
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap); }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+
+    .card { 
+      background: var(--card-bg); 
+      border-radius: 12px; 
+      padding: 12px; 
+      box-shadow: var(--shadow); 
+      display: flex; 
+      flex-direction: column; 
+      gap: 12px; 
+      cursor: pointer;
+    }
+
+    .thumb { 
+      width: 100%; 
+      height: 420px; 
+      border-radius: 10px; 
+      overflow: hidden; 
+      background: #111; /* default background for PDFs */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* first and last JPG thumbnails white background */
+    .card:first-child .thumb,
+    .card:last-child .thumb {
+      background: #fff;
+    }
+
+    .thumb iframe, .thumb img {
+      width: 100%; 
+      height: 100%; 
+      border: 0; 
+      display: block; 
+      object-fit: contain; /* ensures full image is visible */
+    }
+
+    .small { font-size: 12px; color: #6b7280; }
+    
+    /* modal viewer */
+    .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(2,6,23,0.55); z-index: 60; }
+    .modal.open { display: flex; }
+    .modal-inner { width: 92%; max-width: 1000px; height: 86vh; background: white; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+    .modal-toolbar { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid #eef2f8; }
+    .modal-toolbar .title { font-size: 14px; }
+    .modal-body { flex: 1; display: flex; align-items: center; justify-content: center; background: #f6f8fb; }
+    .modal-body iframe, .modal-body img { width: 100%; height: 100%; object-fit: contain; border: 0; }
+
+    /* accessibility focus */
+    .btn:focus { outline: 3px solid rgba(11,116,222,0.18); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Certificates</h1>
+    <p class="small">
+      Click a card to view the full PDF/image in a modal. Place the PDF/image files in the same folder as this HTML file or update the <code>data-pdf</code> paths.
+    </p>
+
+    <div class="grid">
+      <!-- First JPG image -->
+      <article class="card" data-pdf="img/genomics.jpg">
+        <div class="thumb">
+          <img src="img/genomics.jpg" alt="Genomics Certificate">
+        </div>
+      </article>
+
+      <!-- PDF -->
+      <article class="card" data-pdf="img/Data analysis with R Programming.pdf">
+        <div class="thumb">
+          <iframe src="img/Data analysis with R Programming.pdf#view=FitH"></iframe>
+        </div>
+      </article>
+
+      <article class="card" data-pdf="img/Introduction to Python.pdf">
+        <div class="thumb">
+          <iframe src="img/Introduction to Python.pdf#view=FitH"></iframe>
+        </div>
+      </article>
+
+      <article class="card" data-pdf="img/Python for Data Science.pdf">
+        <div class="thumb">
+          <iframe src="img/Python for Data Science.pdf#view=FitH"></iframe>
+        </div>
+      </article>
+
+      <article class="card" data-pdf="img/ArcGIS.pdf">
+        <div class="thumb">
+          <iframe src="img/ArcGIS.pdf#view=FitH"></iframe>
+        </div>
+      </article>
+
+      <!-- Last JPG image -->
+      <article class="card" data-pdf="img/GIS CTS.jpg">
+        <div class="thumb">
+          <img src="img/GIS CTS.jpg" alt="GIS CTS Certificate">
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script>
+    // Modal viewer
+    const cards = document.querySelectorAll('.card');
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+      <div class="modal-inner">
+        <div class="modal-toolbar">
+          <span class="title">Viewer</span>
+          <button class="btn close">Close</button>
+        </div>
+        <div class="modal-body"><iframe src=""></iframe></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const modalBody = modal.querySelector('.modal-body');
+
+    modal.querySelector('.close').addEventListener('click', () => modal.classList.remove('open'));
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const file = card.getAttribute('data-pdf');
+        if(file.toLowerCase().endsWith('.pdf')) {
+          modalBody.innerHTML = `<iframe src="${file}#view=FitH"></iframe>`;
+        } else {
+          modalBody.innerHTML = `<img src="${file}" alt="Certificate">`;
+        }
+        modal.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
