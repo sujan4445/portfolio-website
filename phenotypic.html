@@ -23,7 +23,7 @@
     .project-hero h1 { font-size: 40px; margin-bottom: 10px; font-weight: 600; color: #fff; }
     .project-hero p { font-size: 18px; color: #fff; max-width: 900px; margin: 0 auto; }
 
-    /* Research Overlay */
+    /* Research Details Overlay */
     .research-container { 
       display: flex; 
       justify-content: center; 
@@ -47,16 +47,17 @@
     .content { max-width: 1100px; margin: 60px auto; padding: 0 20px; text-align: justify; }
     .content h2 { font-size: 26px; margin: 36px 0 16px; border-left: 6px solid #0b7a3f; padding-left: 12px; color: #0b7a3f; }
     .content p { font-size: 16px; color: #444; margin-bottom: 18px; }
+    .background-text { max-width: 760px; margin-bottom: 20px; }
 
-    .highlight-box { 
-      background-color: #f1f8f4; 
-      padding: 18px; 
-      border-left: 6px solid #0b7a3f; 
-      margin: 22px auto; 
-      font-size: 16px; 
-      border-radius: 0 8px 8px 0; 
-      max-width: 900px; 
-      text-align: center; 
+    .highlight-box {
+      background-color: #f1f8f4;
+      padding: 18px;
+      border-left: 6px solid #0b7a3f;
+      margin: 22px auto;
+      font-size: 16px;
+      border-radius: 0 8px 8px 0;
+      max-width: 900px;
+      text-align: center;
     }
 
     /* Gallery */
@@ -90,21 +91,21 @@
 
 <section class="project-hero">
   <h1>Phenotypic screening & diversity analysis of wheat genotypes against leaf rust (<em>Puccinia triticina</em>)</h1>
-  <p>Field evaluation of 24 wheat genotypes in Nepal mid-hills using AUDPC, rAUDPC, CI and grain yield.</p>
+  <p>Field evaluation of 24 wheat genotypes in Nepal mid-hills using AUDPC, rAUDPC, coefficient of infection, r–value and grain yield to identify rust-resistant lines.</p>
 </section>
 
 <div class="research-container">
   <div class="research-box">
     <p><strong>Study Type:</strong> Field phenotypic screening</p>
-    <p><strong>Location:</strong> Mid-hill, Nepal</p>
-    <p><strong>Genotypes:</strong> 24</p>
+    <p><strong>Location:</strong> Mid-hill, Nepal (leaf rust hotspot)</p>
+    <p><strong>Genotypes:</strong> 24 (released cultivars, landraces, breeding lines)</p>
     <p><strong>Susceptible check:</strong> WK1204</p>
-    <p><strong>Key metrics:</strong> AUDPC, rAUDPC, CI, Grain yield</p>
+    <p><strong>Key metrics:</strong> AUDPC, rAUDPC, CI, r-value, Grain yield</p>
   </div>
 
   <div class="research-box">
     <p><strong>Funding agency:</strong> Champadevi Rural Municipality</p>
-    <p><strong>Amount:</strong> NRs 3,00,000</p>
+    <p><strong>Amount:</strong> NRs 3,00,000 (€1,900)</p>
     <p><strong>PI:</strong> Sujan Chapagain</p>
     <p><strong>Co-PI:</strong> Sandesh Subedi, Samir Nepal</p>
     <p><strong>Supervisors:</strong> Dipendra Rana, Ankur Poudel PhD, Bishnu P. Kandel</p>
@@ -113,19 +114,38 @@
 
 <section class="content">
 
-  <h2>Gallery — Research Highlights</h2>
+  <div class="background-text">
+    <h2>Background</h2>
+    <p>Leaf rust caused by <em>Puccinia triticina</em> is a major constraint to wheat production worldwide and in Nepal's mid-hill region. Durable adult plant resistance (APR) is a key breeding objective. This study screened local and advanced genotypes under natural infection to identify lines showing low disease progress and acceptable grain yield.</p>
+  </div>
 
+  <div class="background-text">
+    <h2>Why this research and Grant?</h2>
+    <p>During one of our field visits, we observed an intensive prevalence of leaf rust disease in wheat crops, significantly affecting yield and plant health. In response, a project grant of NRs. 3,00,000 (approximately €1,900) was funded by Champadevi Rural Municipality to identify leaf rust–resistant wheat genotypes. Since genetic resistance provides a more reliable and sustainable solution compared to repeated fungicide applications, the project focused on developing and screening resistant varieties to minimize fungicide dependency and promote sustainable agricultural practices.</p>
+  </div>
+
+  <h2>Materials & Methods</h2>
+  <p>Twenty-four genotypes were evaluated in an alpha lattice design with two replications. Disease was recorded at 7-day intervals on the Modified Cobb scale; AUDPC was calculated following Duveiller (1997). Infection types (O, R, MR, MR–MS, MS, S) were scored and used to compute the coefficient of infection. rAUDPC and rate of disease increase (r-value) were also estimated.</p>
+
+  <div class="highlight-box">
+    <strong>Key takeaway:</strong> Chyakhura, AFU W01 and AFU W02 are promising resistant genotypes. AFU W01 and AFU W02 also recorded high grain yield (≈3.5–3.97 t/ha). Molecular marker validation (QTL/Lr gene detection) is recommended before release.
+  </div>
+
+  <h2>Gallery — Research Highlights</h2>
   <div class="gallery">
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="img/rust1.jpeg" alt=""><div class="gallery-caption">Early pustule formation</div></div>
-      <div class="gallery-item"><img src="img/rust2.jpeg" alt=""><div class="gallery-caption">Urediniospores under magnification</div></div>
-      <div class="gallery-item"><img src="img/rust3.jpeg" alt=""><div class="gallery-caption">Wheat leaf infection</div></div>
-      <div class="gallery-item"><img src="img/rust4.jpeg" alt=""><div class="gallery-caption">Canopy-level disease symptoms</div></div>
-      <div class="gallery-item"><img src="img/rust5.jpeg" alt=""><div class="gallery-caption">Close-up of rust pustules</div></div>
-      <div class="gallery-item"><img src="img/rust6.jpeg" alt=""><div class="gallery-caption">Severe rust infection</div></div>
-      <div class="gallery-item"><img src="img/rust7.jpeg" alt=""><div class="gallery-caption">Advanced disease stage</div></div>
+      <div class="gallery-item"><img src="img/rust1.jpeg"><div class="gallery-caption">Field symptom: early pustule formation (79 DAS).</div></div>
+      <div class="gallery-item"><img src="img/rust2.jpeg"><div class="gallery-caption">Showing numerous spherical, yellow-orange spores (urediniospores) under magnification.</div></div>
+      <div class="gallery-item"><img src="img/rust3.jpeg"><div class="gallery-caption">Wheat Rust Infection on Leaf</div></div>
+      <div class="gallery-item"><img src="img/rust4.jpeg"><div class="gallery-caption">Showing general canopy symptoms and disease progression in a wheat field.</div></div>
+      <div class="gallery-item"><img src="img/rust5.jpeg"><div class="gallery-caption">Close-up of Rust Pustules on Leaf</div></div>
+      <div class="gallery-item"><img src="img/rust6.jpeg"><div class="gallery-caption">Severe wheat rust infection</div></div>
+      <div class="gallery-item"><img src="img/rust7.jpeg"><div class="gallery-caption">Severe wheat rust infection</div></div>
     </div>
   </div>
+
+  <h2>Future recommendation</h2>
+  <p>Validate resistance with molecular markers (QTL mapping / diagnostic Lr markers), perform multi-location trials in other rust-prone zones, and consider combining APR sources for durable resistance.</p>
 
 </section>
 
