@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UAV-Based Precision Nitrogen Management – Sujan Chapagain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; background: #fff; }
+
+    /* Header */
+    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+    .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
+
+    /* Hero */
+    .project-hero {
+      position: relative;
+      background: url('img/UAV1.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 140px 20px 80px;
+    }
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .project-hero > * { position: relative; z-index: 2; }
+    .project-hero h1 { font-size: 46px; margin-bottom: 15px; font-weight: 500; }
+    .project-hero p { font-size: 20px; }
+
+    /* Layout for content + sidebar */
+    .content-container {
+      display: flex;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .content {
+      flex: 1;
+      text-align: justify;
+    }
+
+    .content h2 {
+      font-size: 28px;
+      margin: 40px 0 20px;
+      border-left: 6px solid #0b7a3f;
+      padding-left: 12px;
+      color: #000000;
+    }
+
+    .content p, 
+    .content li {
+      font-size: 18px;
+      margin-bottom: 14px;
+      color: #000000;
+    }
+
+    /* Sidebar box */
+    .research-box {
+      width: 300px;
+      background-color: #f1f8f4;
+      border-left: 6px solid #0b7a3f;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+      position: sticky;
+      top: 100px; /* stays visible while scrolling */
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+
+    .research-box p { margin-bottom: 8px; }
+    .research-box strong { display: inline-block; width: 120px; }
+
+    /* Highlight box */
+    .highlight-box {
+      background-color: #f1f8f4;
+      padding: 22px;
+      border-left: 6px solid #0b7a3f;
+      margin: 40px 0;
+      font-size: 18px;
+      border-radius: 0 8px 8px 0;
+      text-align: center;
+    }
+
+    /* Gallery */
+    .gallery {
+      max-width: 900px;
+      margin: 60px auto;
+      text-align: center;
+    }
+    .gallery h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: #0b7a3f;
+      border-bottom: 3px solid #0b7a3f;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    figure {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    figure img {
+      width: 100%;
+      height: 260px;
+      object-fit: contain;
+      background: #f4f4f4;
+    }
+
+    figcaption {
+      padding: 10px;
+      font-size: 15px;
+      background: #f1f8f4;
+      color: #0b7a3f;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      font-size: 16px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .content-container { flex-direction: column; }
+      .research-box { width: 90%; position: static; max-height: none; margin-bottom: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <nav class="nav-container">
+    <a href="#" class="logo">SC — UAV & Precision Agriculture</a>
+  </nav>
+</header>
+
+<section class="project-hero">
+  <h1>UAV-Based Precision Nitrogen Management in Rice</h1>
+  <p>Multispectral remote sensing for site-specific fertilizer recommendations</p>
+</section>
+
+<!-- Content + sidebar layout -->
+<div class="content-container">
+
+  <div class="content">
+    <h2>Background</h2>
+    <p>
+      Precision nitrogen management is critical for improving rice productivity while reducing excessive fertilizer use and environmental pollution. Conventional blanket fertilizer recommendations fail to account for within-field variability in crop nitrogen status.
+    </p>
+    <p>
+      Rice fields often exhibit significant spatial variability in soil fertility, topography, and plant growth patterns, which can lead to both under- and over-application of nitrogen. This not only affects crop yield but also increases the risk of nitrate leaching into groundwater and emissions of nitrous oxide, a potent greenhouse gas.
+    </p>
+    <p>
+      Recent advances in unmanned aerial vehicles (UAVs) and multispectral imaging provide an opportunity to capture high-resolution data across entire fields rapidly and efficiently. Vegetation indices derived from UAV imagery, such as NDVI, NDRE, and GNDVI, can serve as proxies for plant nitrogen content, chlorophyll levels, and biomass. 
+    </p>
+    <p>
+      Integrating these remote sensing indicators with ground-based measurements enables precise, site-specific nitrogen recommendations. The adoption of UAV-based nitrogen management can optimize input use efficiency, reduce production costs, and minimize environmental impacts. Additionally, it provides a foundation for scalable digital agriculture platforms that can be deployed in diverse agroecological settings.
+    </p>
+
+    <h2>Objective</h2>
+    <p>
+      To develop a UAV-based, site-specific nitrogen management approach using multispectral imagery and field measurements, supporting a scalable decision support system for rice farmers.
+    </p>
+
+    <h2>Materials and Methods</h2>
+    <p>
+      A DJI Phantom 4 RTK multispectral UAV was deployed at key rice growth stages to capture high-resolution imagery. Vegetation indices such as NDVI, NDRE, and GNDVI were generated to assess crop health, biomass, and nitrogen status.
+    </p>
+    <p>
+      UAV-derived indices were correlated with ground-based observations including SPAD chlorophyll readings, measured chlorophyll content, and final grain yield. Spatial maps were produced to identify nutrient-deficient zones and guide variable-rate fertilizer application.
+    </p>
+
+    <h2>Activities</h2>
+    <ul>
+      <li>Worked in close collaboration with agronomists, soil scientists, and UAV operators.</li>
+      <li>Served as technical lead for UAV data processing, vegetation index generation, and spatial analysis.</li>
+      <li>Coordinated UAV flight timing with field data collection teams to ensure accurate data integration.</li>
+      <li>Participated in experimental design discussions and interpretation of analytical results.</li>
+    </ul>
+
+    <h2>Outcomes</h2>
+    <ul>
+      <li>Identified spatial variability in crop nitrogen status across rice fields.</li>
+      <li>Supported development of site-specific fertilizer recommendation models.</li>
+      <li>Contributed to a scalable decision support framework aimed at reducing input costs and environmental impacts.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <strong>Key Contribution:</strong> Integration of multispectral UAV data with field-based nitrogen indicators to enable variable-rate fertilizer management in rice cultivation.
+    </div>
+
+  </div>
+
+  <!-- Sidebar box -->
+  <div class="research-box">
+    <p><strong>Research Project:</strong> UAV-Based Precision Nitrogen Management</p>
+    <p><strong>Role:</strong> Volunteer Researcher & Technical Lead (UAV Data)</p>
+    <p><strong>Institution:</strong> Nepal Agricultural Research Council (NARC)</p>
+    <p><strong>Location:</strong> Khumaltar, Lalitpur, Nepal</p>
+  </div>
+
+</div>
+
+<section class="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+
+    <figure>
+      <img src="img/UAV1.jpg" alt="UAV flight over rice field">
+      <figcaption>UAV flight over experimental rice field</figcaption>
+    </figure>
+
+    <figure>
+      <img src="img/UAV3.jfif" alt="NDVI vegetation index map">
+      <figcaption>NDVI vegetation index map</figcaption>
+    </figure>
+
+    <figure>
+      <img src="img/UAV4.jfif" alt="Field data collection">
+      <figcaption>Ground-based field data collection</figcaption>
+    </figure>
+
+    <figure>
+      <img src="img/UAV5.jpg" alt="Drone in operation">
+      <figcaption>Drone operation during rice growth stage</figcaption>
+    </figure>
+
+    <figure>
+      <img src="img/UAV6.jpg" alt="Variable rate nitrogen zones">
+      <figcaption>Variable-rate nitrogen management zones</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<footer class="footer">
+  &copy; 2025 Sujan Chapagain — UAV-Based Precision Agriculture Research
+</footer>
+
+</body>
+</html>
