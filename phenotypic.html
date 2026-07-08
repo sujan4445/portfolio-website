@@ -1,157 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phenotypic screening & diversity analysis — Leaf Rust (Puccinia triticina)</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; background: #fff; }
-
-    /* Header */
-    .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; }
-    .logo { font-size: 20px; font-weight: bold; color: #0b7a3f; text-decoration: none; }
-    .return-btn { display: inline-flex; align-items: center; gap: 8px; background-color: transparent; color: #333; padding: 8px 14px; border-radius: 8px; font-size: 14px; font-weight: bold; text-decoration: none; border: 1px solid #333; transition: all 0.25s ease; }
-    .return-btn:hover { background-color: #333; color: #fff; transform: scale(1.03); }
-
-    /* Hero */
-    .project-hero { position: relative; background: url('img/rusthero.jpg') center/cover no-repeat; color: white; text-align: center; padding: 140px 20px 60px; }
-    .project-hero::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
-    .project-hero > * { position: relative; z-index: 2; }
-    .project-hero h1 { font-size: 40px; margin-bottom: 10px; font-weight: 600; color: #fff; }
-    .project-hero p { font-size: 18px; color: #fff; max-width: 900px; margin: 0 auto; }
-
-    /* Research Details Overlay */
-    .research-container { 
-      display: flex; 
-      justify-content: center; 
-      gap: 24px; 
-      flex-wrap: wrap; 
-      position: relative; 
-      top: -40px; 
-      z-index: 3;
-    }
-    .research-box { 
-      background-color: rgba(249, 253, 249, 0.98); 
-      padding: 16px 18px; 
-      border-left: 6px solid #0b7a3f; 
-      border-radius: 8px; 
-      font-size: 15px; 
-      width: 340px; 
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08); 
-    }
-
-    /* Content */
-    .content { max-width: 1100px; margin: 60px auto; padding: 0 20px; text-align: justify; }
-    .content h2 { font-size: 26px; margin: 36px 0 16px; border-left: 6px solid #0b7a3f; padding-left: 12px; color: #0b7a3f; }
-    .content p { font-size: 16px; color: #444; margin-bottom: 18px; }
-    .background-text { max-width: 760px; margin-bottom: 20px; }
-
-    .highlight-box {
-      background-color: #f1f8f4;
-      padding: 18px;
-      border-left: 6px solid #0b7a3f;
-      margin: 22px auto;
-      font-size: 16px;
-      border-radius: 0 8px 8px 0;
-      max-width: 900px;
-      text-align: center;
-    }
-
-    /* Gallery */
-    .gallery { max-width: 1200px; margin: 60px auto; padding: 0 20px; text-align: center; }
-    .gallery h2 { font-size: 34px; margin-bottom: 30px; color: #0b7a3f; border-bottom: 3px solid #0b7a3f; display: inline-block; padding-bottom: 8px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .gallery-item { border-radius: 12px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-    .gallery-item img { width: 100%; height: 260px; object-fit: cover; }
-    .gallery-caption { font-size: 14px; margin: 10px; color: #444; }
-
-    /* Footer */
-    .footer { background: #333; color: white; text-align: center; padding: 30px; margin-top: 60px; font-size: 14px; }
-
-    @media (max-width: 900px) {
-      .research-container { flex-direction: column; align-items: center; top: 0; }
-      .project-hero { padding: 100px 20px 40px; }
-      .project-hero h1 { font-size: 28px; }
-      .project-hero p { font-size: 15px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screening Leaf Rust Resistance and High-Throughput Assessment of NDVI and Canopy Temperature in Wheat Genotypes</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,serif;line-height:1.6;color:#333;background:#fff}
+.header{background:#f8f8f8;padding:20px 0;border-bottom:1px solid #ddd}
+.nav-container{max-width:1200px;margin:auto;display:flex;justify-content:center}
+.logo{font-size:22px;font-weight:bold;color:#0b7a3f;text-decoration:none}
+.project-hero{position:relative;background:url('img/rusthero.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:140px 20px 70px}
+.project-hero:before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.project-hero>*{position:relative;z-index:2}
+.project-hero h1{font-size:42px;margin-bottom:15px}
+.project-hero p{max-width:900px;margin:auto;font-size:18px}
+.research-container{display:flex;gap:25px;justify-content:center;flex-wrap:wrap;position:relative;top:-40px}
+.research-box{background:#f9fdf9;padding:18px;border-left:6px solid #0b7a3f;border-radius:8px;width:360px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.content{max-width:1100px;margin:40px auto;padding:0 20px;text-align:justify}
+.content h2{font-size:28px;color:#0b7a3f;border-left:6px solid #0b7a3f;padding-left:12px;margin:35px 0 18px}
+.highlight-box{background:#eef8f2;border-left:6px solid #0b7a3f;padding:18px;border-radius:0 8px 8px 0;margin:30px 0}
+.gallery{text-align:center}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.gallery-item{border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.gallery-item img{width:100%;height:250px;object-fit:cover}
+.gallery-caption{padding:10px;font-size:14px}
+.large-gallery{display:flex;flex-direction:column;gap:40px;margin-top:40px}
+.large-item img{width:100%;height:520px;object-fit:cover;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.large-item .gallery-caption{text-align:center;font-size:16px;padding:12px}
+.footer{background:#333;color:#fff;text-align:center;padding:30px;margin-top:60px}
+</style>
 </head>
-
 <body>
-
-<header class="header">
-  <nav class="nav-container">
-    <a href="#" class="logo">S. Chapagain — Wheat Pathology</a>
-    <a href="projectt.html" class="return-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
-  </nav>
-</header>
+<header class="header"><nav class="nav-container"><a class="logo" href="#">S. Chapagain — Wheat Phenotyping & Precision Agriculture</a></nav></header>
 
 <section class="project-hero">
-  <h1>Phenotypic screening & diversity analysis of wheat genotypes against leaf rust (<em>Puccinia triticina</em>)</h1>
-  <p>Field evaluation of 24 wheat genotypes in Nepal mid-hills using AUDPC, rAUDPC, coefficient of infection, r–value and grain yield to identify rust-resistant lines.</p>
+<h1>Screening Leaf Rust Resistance and High-Throughput Assessment of NDVI and Canopy Temperature in Wheat Genotypes</h1>
+<p>Integrating conventional disease phenotyping with high-throughput physiological assessment to identify resilient, high-yielding wheat genotypes for climate-smart breeding.</p>
 </section>
 
 <div class="research-container">
-  <div class="research-box">
-    <p><strong>Study Type:</strong> Field phenotypic screening</p>
-    <p><strong>Location:</strong> Mid-hill, Nepal (leaf rust hotspot)</p>
-    <p><strong>Genotypes:</strong> 24 (released cultivars, landraces, breeding lines)</p>
-    <p><strong>Susceptible check:</strong> WK1204</p>
-    <p><strong>Key metrics:</strong> AUDPC, rAUDPC, CI, r-value, Grain yield</p>
-  </div>
+<div class="research-box">
+<p><strong>Study Type:</strong> Integrated field phenotyping</p>
+<p><strong>Location:</strong> Mid-hills of Nepal</p>
+<p><strong>Design:</strong> Alpha lattice (24 wheat genotypes)</p>
+<p><strong>Traits:</strong> NDVI, Canopy Temperature, Leaf Rust, Grain Yield</p>
+<p><strong>Sensors:</strong> GreenSeeker NDVI & Infrared Thermometer</p>
+</div>
 
-  <div class="research-box">
-    <p><strong>Funding agency:</strong> Champadevi Rural Municipality</p>
-    <p><strong>Amount:</strong> NRs 3,00,000 (€1,900)</p>
-    <p><strong>PI:</strong> Sujan Chapagain</p>
-    <p><strong>Co-PI:</strong> Sandesh Subedi, Samir Nepal</p>
-    <p><strong>Supervisors:</strong> Dipendra Rana, Ankur Poudel PhD, Bishnu P. Kandel</p>
-  </div>
+<div class="research-box">
+<p><strong>Funding:</strong> Champadevi Rural Municipality</p>
+<p><strong>Grant:</strong> NRs. 300,000 (€1,900)</p>
+<p><strong>Principal Investigator:</strong> Sujan Chapagain</p>
+<p><strong>Research Team:</strong> Sandesh Subedi & Samir Nepal</p>
+<p><strong>Supervisors:</strong> Dipendra Rana, Ankur Poudel, Bishnu P. Kandel</p>
+</div>
 </div>
 
 <section class="content">
+<h2>Background</h2>
+<p>Wheat production is increasingly threatened by both biotic and abiotic stresses. Leaf rust reduces grain yield, whereas drought stress accelerates canopy senescence and limits photosynthesis. High-throughput phenotyping tools such as NDVI and canopy temperature provide rapid, objective, and non-destructive measurements of crop vigor and stress response. Integrating these physiological traits with disease assessment improves the efficiency of selecting superior wheat genotypes.</p>
 
-  <div class="background-text">
-    <h2>Background</h2>
-    <p>Leaf rust caused by <em>Puccinia triticina</em> is a major constraint to wheat production worldwide and in Nepal's mid-hill region. Durable adult plant resistance (APR) is a key breeding objective. This study screened local and advanced genotypes under natural infection to identify lines showing low disease progress and acceptable grain yield.</p>
-  </div>
+<h2>Why this Research?</h2>
+<p>Field observations revealed substantial variation in leaf rust severity, canopy greenness, and canopy temperature among wheat genotypes. Supported by a research grant from Champadevi Rural Municipality, this study combined conventional pathology with sensor-based phenotyping to identify wheat lines possessing superior disease resistance, physiological performance, and grain yield.</p>
 
-  <div class="background-text">
-    <h2>Why this research and Grant?</h2>
-    <p>During one of our field visits, we observed an intensive prevalence of leaf rust disease in wheat crops, significantly affecting yield and plant health. In response, a project grant of NRs. 3,00,000 (approximately €1,900) was funded by Champadevi Rural Municipality to identify leaf rust–resistant wheat genotypes. Since genetic resistance provides a more reliable and sustainable solution compared to repeated fungicide applications, the project focused on developing and screening resistant varieties to minimize fungicide dependency and promote sustainable agricultural practices.</p>
-  </div>
+<h2>Materials & Methods</h2>
+<p>Twenty-four wheat genotypes were evaluated under an alpha lattice design with two replications. Leaf rust severity was recorded using the Modified Cobb Scale to estimate AUDPC, relative AUDPC, coefficient of infection, and disease progress rate. NDVI was measured using a GreenSeeker sensor, while canopy temperature was recorded using a handheld infrared thermometer during grain filling. Grain yield was measured at harvest.</p>
 
-  <h2>Materials & Methods</h2>
-  <p>Twenty-four genotypes were evaluated in an alpha lattice design with two replications. Disease was recorded at 7-day intervals on the Modified Cobb scale; AUDPC was calculated following Duveiller (1997). Infection types (O, R, MR, MR–MS, MS, S) were scored and used to compute the coefficient of infection. rAUDPC and rate of disease increase (r-value) were also estimated.</p>
+<div class="highlight-box"><strong>Key Findings:</strong> Wheat genotypes maintaining higher NDVI and lower canopy temperature generally exhibited improved stress tolerance, reduced disease severity, and superior grain yield, demonstrating the value of integrating physiological phenotyping with conventional disease screening.</div>
 
-  <div class="highlight-box">
-    <strong>Key takeaway:</strong> Chyakhura, AFU W01 and AFU W02 are promising resistant genotypes. AFU W01 and AFU W02 also recorded high grain yield (≈3.5–3.97 t/ha). Molecular marker validation (QTL/Lr gene detection) is recommended before release.
-  </div>
+<h2>Research Highlights</h2>
 
-  <h2>Gallery — Research Highlights</h2>
-  <div class="gallery">
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="img/rust1.jpeg"><div class="gallery-caption">Field symptom: early pustule formation (79 DAS).</div></div>
-      <div class="gallery-item"><img src="img/rust2.jpeg"><div class="gallery-caption">Showing numerous spherical, yellow-orange spores (urediniospores) under magnification.</div></div>
-      <div class="gallery-item"><img src="img/rust3.jpeg"><div class="gallery-caption">Wheat Rust Infection on Leaf</div></div>
-      <div class="gallery-item"><img src="img/rust4.jpeg"><div class="gallery-caption">Showing general canopy symptoms and disease progression in a wheat field.</div></div>
-      <div class="gallery-item"><img src="img/rust5.jpeg"><div class="gallery-caption">Close-up of Rust Pustules on Leaf</div></div>
-      <div class="gallery-item"><img src="img/rust6.jpeg"><div class="gallery-caption">Severe wheat rust infection</div></div>
-      <div class="gallery-item"><img src="img/rust7.jpeg"><div class="gallery-caption">Severe wheat rust infection</div></div>
-    </div>
-  </div>
+<div class="gallery">
+<div class="gallery-grid">
+<div class="gallery-item"><img src="img/rust1.jpeg"><div class="gallery-caption">Early leaf rust symptoms.</div></div>
+<div class="gallery-item"><img src="img/rust2.jpeg"><div class="gallery-caption">Rust urediniospores under magnification.</div></div>
+<div class="gallery-item"><img src="img/rust3.jpeg"><div class="gallery-caption">Leaf rust infection.</div></div>
+<div class="gallery-item"><img src="img/rust4.jpeg"><div class="gallery-caption">Disease progression in field.</div></div>
+<div class="gallery-item"><img src="img/rust5.jpeg"><div class="gallery-caption">Close-up of rust pustules.</div></div>
+</div>
 
-  <h2>Future recommendation</h2>
-  <p>Validate resistance with molecular markers (QTL mapping / diagnostic Lr markers), perform multi-location trials in other rust-prone zones, and consider combining APR sources for durable resistance.</p>
+<div class="large-gallery">
+<div class="large-item">
+<img src="img/NDVI11.jpg">
+<div class="gallery-caption">High-throughput NDVI assessment using the GreenSeeker sensor to quantify canopy greenness and crop vigor.</div>
+</div>
+
+<div class="large-item">
+<img src="img/CanopyTemperature.jpg">
+<div class="gallery-caption">Canopy temperature measurement using an infrared thermometer for rapid assessment of plant stress and drought response.</div>
+</div>
+</div>
+
+</div>
+
+<h2>Future Recommendations</h2>
+<p>Future studies should integrate UAV-based multispectral imaging, thermal cameras, genomic selection, and multi-location validation to accelerate breeding for climate-resilient, disease-resistant, and high-yielding wheat cultivars.</p>
 
 </section>
 
-<footer class="footer">
-  &copy; 2025 Sujan Chapagain — IAAS Central Plant Pathology Lab
-</footer>
-
+<footer class="footer">© 2025 Sujan Chapagain — Wheat Phenotyping & Precision Agriculture</footer>
 </body>
 </html>
