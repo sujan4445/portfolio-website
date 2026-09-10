@@ -1,373 +1,2064 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sujan Chapagain - Academic Profile</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<style>
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    font-family: 'Georgia', serif;
-    line-height: 1.7;
-    color: #333;
-    background: #f9f9f9;
-}
+    <meta name="description"
+        content="Sujan Chapagain — Agricultural Researcher specializing in plant pathology, crop stress, sustainable disease management and crop health assessment.">
 
-/* Header / Navigation */
-.header {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
+    <meta name="author" content="Sujan Chapagain">
 
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <title>Sujan Chapagain | Agricultural Researcher</title>
 
-.nav-container .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #0a66c2;
-    text-decoration: none;
-}
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-.nav-menu li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: 0.3s;
-}
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-.nav-menu li a:hover,
-.nav-menu li a.active {
-    color: #0a66c2;
-}
+    <style>
 
-/* Container */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+        /* =========================================================
+           GLOBAL
+           ========================================================= */
 
-/* Section Titles */
-.section-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #0a66c2;
-    padding-bottom: 10px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Profile Sidebar */
-.profile-sidebar {
-    text-align: center;
-    margin-bottom: 50px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.profile-photo {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background-image: url('img/profile.png');
-    background-size: cover;
-    background-position: center;
-    margin: 0 auto 20px auto;
-}
+        body {
+            background: #f8f5f2;
+            color: #5a3b2e;
+            line-height: 1.7;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
 
-.contact-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+        img {
+            display: block;
+            width: 100%;
+        }
 
-.contact-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-.contact-row i { color: #0a66c2; }
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
 
-.contact-row a { 
-    text-decoration: none; 
-    color: #0a66c2; 
-    font-weight: 500; 
-}
 
-.contact-row a:hover { text-decoration: underline; }
+        /* =========================================================
+           NAVIGATION
+           ========================================================= */
 
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-}
+        .header {
+            background: #f7f3ef;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            width: 100%;
+            position: relative;
+            z-index: 1000;
+        }
 
-.contact-links a {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    color: #111;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: 0.3s;
-}
+        .nav-container {
+            width: 100%;
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+        }
 
-.contact-links a:hover { transform: scale(1.1); }
+        .nav-menu {
+            width: 100%;
+            max-width: 1320px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+        }
 
-.contact-links a.linkedin:hover { background:#0a66c2; color:#fff; }
-.contact-links a.researchgate:hover { background:#00ccbb; color:#fff; }
-.contact-links a.orcid:hover { background:#a6ce39; color:#fff; }
-.contact-links a.linktree:hover { background:#39e09b; color:#111; }
+        .nav-menu a {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 26px;
+            font-weight: 650;
+            color: #13100f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            padding: 10px 12px;
+            transition: color 0.25s ease, opacity 0.25s ease;
+            white-space: nowrap;
+        }
 
-/* About Section */
-.about-text {
-    background: #fff;
-    padding: 25px 30px;
-    border-radius: 12px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    font-family: 'Times New Roman', serif;
-}
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #a95229;
+        }
 
-.about-text p {
-    font-size: 18px;
-    margin-bottom: 18px;
-    text-align: justify;
-}
 
-/* Education */
-.education-item {
-    background: #fff;
-    padding: 20px 25px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
+        /* =========================================================
+           HERO — SINGLE LARGE IMAGE
+           ========================================================= */
 
-.education-item img {
-    vertical-align: middle;
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
-}
+        .hero {
+            width: min(1420px, calc(100% - 60px));
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
 
-.education-item h4 {
-    margin: 5px 0;
-    font-weight: 600;
-    color: #0a66c2;
-}
+            background-image:
+                linear-gradient(
+                    rgba(35, 27, 20, 0.38),
+                    rgba(35, 27, 20, 0.38)
+                ),
+                url("Website/Image/aa.webp");
 
-.education-item p {
-    margin: 4px 0;
-    font-size: 16px;
-}
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
 
-/* Card Sections */
-.card-section h4 {
-    color: #0a66c2;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
+            color: white;
+        }
 
-.card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
 
-.card p {
-    margin-bottom: 8px;
-    font-size: 16px;
-    line-height: 1.7;
-}
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.30),
+                    rgba(0, 0, 0, 0.05)
+                );
 
-.card a { color: #0a66c2; text-decoration: none; }
-.card a:hover { text-decoration: underline; }
+            pointer-events: none;
+        }
 
-/* Responsive */
-@media (max-width: 768px){
-    .container { padding: 20px; }
-    .profile-photo { width: 180px; height: 180px; }
-    .nav-menu {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-</style>
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+            max-width: 1320px;
+            height: 100%;
+
+            margin: 0 auto;
+
+            padding: 45px 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .hero h1 {
+            font-family: "Cinzel", Georgia, serif;
+
+            font-size: clamp(45px, 5vw, 68px);
+            font-weight: 500;
+
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            line-height: 1.05;
+
+            margin-bottom: 24px;
+
+            text-shadow:
+                2px 2px 5px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-subtitle {
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 23px;
+            font-weight: 600;
+
+            line-height: 1.6;
+            letter-spacing: 0.2px;
+
+            text-shadow:
+                1px 1px 3px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-subtitle span {
+            display: block;
+        }
+
+
+        /* =========================================================
+           RESEARCH PROFILE / INTRO
+           ========================================================= */
+
+        .about-section {
+            background: #f8f5f2;
+            padding: 42px 24px 50px;
+        }
+
+        .container {
+            width: min(820px, 100%);
+            margin: 0 auto;
+        }
+
+        .about-section .container {
+            width: min(820px, 100%);
+            margin: 0 auto;
+        }
+
+        .about-text {
+            width: 100%;
+            max-width: 820px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 20px;
+            font-weight: 400;
+
+            line-height: 1.55;
+
+            color: #6c4637;
+        }
+
+        .about-text p {
+            max-width: 780px;
+            margin: 0 auto 17px;
+        }
+
+        .about-text strong {
+            font-weight: 600;
+            color: #914723;
+        }
+
+
+        /* =========================================================
+           SECTION TITLES
+           ========================================================= */
+
+        .section-title {
+            text-align: center;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 42px;
+            line-height: 1;
+
+            font-weight: 500;
+
+            color: #4a2f26;
+
+            margin-bottom: 27px;
+        }
+
+        .section-title::after {
+            content: "";
+
+            display: block;
+
+            width: 52px;
+            height: 1px;
+
+            background: #b98972;
+
+            margin: 13px auto 0;
+        }
+
+
+        /* =========================================================
+           LEARN MORE
+           ========================================================= */
+
+        .learn-more-btn {
+            display: inline-block;
+
+            margin-top: 8px;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 19px;
+            font-weight: 600;
+
+            color: #9e4d27;
+
+            text-decoration: underline;
+            text-underline-offset: 4px;
+
+            transition: color 0.25s ease;
+        }
+
+        .learn-more-btn:hover {
+            color: #62351f;
+        }
+
+
+        /* =========================================================
+           THREE PERSONAL PHOTOS
+           ========================================================= */
+
+        .personal-showcase {
+            width: min(1420px, calc(100% - 60px));
+
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 7px;
+
+            padding: 7px 0 0;
+
+            background: #f7f3ef;
+        }
+
+        .personal-photo-card {
+            position: relative;
+
+            height: 390px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ded0c5,
+                    #eee5de 50%,
+                    #d7c5b8
+                );
+
+            isolation: isolate;
+        }
+
+        .personal-photo-card img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            transition:
+                transform 0.7s cubic-bezier(.2, .7, .2, 1),
+                filter 0.45s ease;
+        }
+
+        .personal-photo-card::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            z-index: 2;
+
+            background: rgba(24, 18, 14, 0);
+
+            transition: background 0.45s ease;
+
+            pointer-events: none;
+        }
+
+        .photo-hover-icons {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            z-index: 4;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 14px;
+
+            transform:
+                translate(-50%, -40%)
+                scale(0.82);
+
+            opacity: 0;
+
+            filter: blur(7px);
+
+            transition:
+                opacity 0.45s ease,
+                transform 0.5s cubic-bezier(.2, .7, .2, 1),
+                filter 0.5s ease;
+
+            pointer-events: none;
+        }
+
+        .photo-hover-icons i {
+            width: 58px;
+            height: 58px;
+
+            display: grid;
+            place-items: center;
+
+            border: 1px solid rgba(255, 255, 255, 0.58);
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.13);
+
+            color: rgba(255, 248, 241, 0.94);
+
+            font-size: 24px;
+
+            text-shadow:
+                0 0 14px rgba(255, 255, 255, 0.85);
+
+            box-shadow:
+                0 0 24px rgba(255, 255, 255, 0.18);
+
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .personal-photo-card:hover img {
+            transform: scale(1.045);
+            filter: saturate(0.9) brightness(0.72);
+        }
+
+        .personal-photo-card:hover::after {
+            background: rgba(24, 18, 14, 0.25);
+        }
+
+        .personal-photo-card:hover .photo-hover-icons {
+            opacity: 1;
+
+            transform:
+                translate(-50%, -50%)
+                scale(1);
+
+            filter: blur(1.2px);
+        }
+
+        .photo-label {
+            position: absolute;
+
+            left: 20px;
+            bottom: 18px;
+
+            z-index: 5;
+
+            padding: 7px 13px;
+
+            background: rgba(55, 35, 27, 0.72);
+
+            color: #fffaf5;
+
+            font-size: 16px;
+
+            letter-spacing: 0.3px;
+
+            transition: background 0.35s ease;
+        }
+
+        .personal-photo-card:hover .photo-label {
+            background: rgba(55, 35, 27, 0.82);
+        }
+
+
+        /* =========================================================
+           IDENTITY BANNER
+           ========================================================= */
+
+        .identity {
+            width: min(1420px, calc(100% - 60px));
+
+            margin: 0 auto;
+
+            background: #eee4eb;
+
+            border-top: 1px solid #ddced8;
+            border-bottom: 1px solid #ddced8;
+
+            text-align: center;
+
+            padding: 31px 30px 34px;
+        }
+
+        .identity h1 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 48px;
+
+            line-height: 1;
+
+            font-weight: 500;
+
+            letter-spacing: 0.2px;
+
+            color: #4b2e26;
+        }
+
+        .identity .role {
+            margin-top: 7px;
+
+            font-size: 27px;
+
+            line-height: 1.1;
+
+            font-weight: 500;
+
+            color: #65463a;
+        }
+
+        .identity .tagline {
+            margin-top: 5px;
+
+            font-size: 21px;
+
+            color: #806154;
+        }
+
+        .identity-button {
+            display: inline-block;
+
+            margin-top: 14px;
+
+            padding: 6px 25px 7px;
+
+            border: 1px solid #bca395;
+
+            font-size: 18px;
+
+            line-height: 1;
+
+            color: #81472e;
+
+            background: rgba(255, 255, 255, 0.20);
+
+            transition: all 0.25s ease;
+        }
+
+        .identity-button:hover {
+            background: #fffdfb;
+
+            border-color: #9d7b6a;
+
+            color: #632f1b;
+        }
+
+
+        /* =========================================================
+           COMMON SECTION
+           ========================================================= */
+
+        .section {
+            width: min(1420px, calc(100% - 60px));
+
+            margin: 0 auto;
+
+            padding: 42px 28px 46px;
+        }
+
+
+        /* =========================================================
+           ONGOING PROJECTS
+           ========================================================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+
+            align-items: start;
+        }
+
+        .project {
+            text-align: center;
+        }
+
+        .project-image {
+            height: 245px;
+
+            overflow: hidden;
+
+            border: 1px solid #e0d3cb;
+
+            background: #e5d9d1;
+
+            box-shadow:
+                0 8px 24px rgba(70, 43, 32, 0.08);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+        }
+
+        .project:hover img {
+            transform: scale(1.035);
+        }
+
+        .project h3 {
+            margin: 13px auto 0;
+
+            max-width: 390px;
+
+            font-size: 22px;
+
+            line-height: 1.15;
+
+            font-weight: 500;
+
+            color: #674438;
+        }
+
+        .project p {
+            max-width: 390px;
+
+            margin: 6px auto 0;
+
+            font-size: 17px;
+
+            line-height: 1.25;
+
+            color: #86695b;
+        }
+
+
+        /* =========================================================
+           RESEARCH PROFILE
+           ========================================================= */
+
+        .profile {
+            width: 100%;
+
+            background: #f1e9e4;
+
+            border-top: 1px solid #ded1c9;
+            border-bottom: 1px solid #ded1c9;
+        }
+
+        .profile-inner {
+            width: min(1050px, calc(100% - 70px));
+
+            margin: auto;
+
+            text-align: center;
+
+            padding: 35px 20px 39px;
+        }
+
+        .profile-lead {
+            font-size: 24px !important;
+
+            color: #6c4637 !important;
+        }
+
+        .profile p {
+            margin: 0 auto 14px;
+
+            max-width: 1000px;
+
+            font-size: 19px;
+
+            line-height: 1.43;
+
+            font-weight: 400;
+
+            color: #5c3b30;
+        }
+
+        .profile strong {
+            color: #914723;
+
+            font-weight: 600;
+        }
+
+        .profile p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+           PORTFOLIO
+           ========================================================= */
+
+        .portfolio {
+            padding-top: 38px;
+        }
+
+        .portfolio-grid {
+            width: min(1080px, 100%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px 34px;
+        }
+
+        .portfolio-item {
+            text-align: center;
+        }
+
+        .portfolio-image {
+            position: relative;
+
+            height: 210px;
+
+            overflow: hidden;
+
+            background: #e6dad2;
+
+            border: 1px solid #e1d5ce;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.45s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.04);
+        }
+
+        .portfolio-label {
+            margin-top: 10px;
+
+            font-size: 22px;
+
+            line-height: 1.05;
+
+            font-weight: 500;
+
+            color: #8b4329;
+        }
+
+
+        /* =========================================================
+           PROFILE HIGHLIGHTS
+           ========================================================= */
+
+        .profile-highlights {
+            width: 100%;
+            max-width: 1380px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            background: #f7f3ef;
+
+            border-top: 1px solid #8d5a43;
+            border-bottom: 1px solid #8d5a43;
+        }
+
+        .highlight-box {
+            min-height: 300px;
+
+            padding: 24px 35px 35px;
+
+            text-align: center;
+
+            border-right: 1px solid #8d5a43;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+        }
+
+        .highlight-box:last-child {
+            border-right: none;
+        }
+
+        .quote-mark {
+            font-family: Georgia, serif;
+
+            font-size: 105px;
+
+            font-weight: bold;
+
+            line-height: 0.7;
+
+            height: 82px;
+
+            color: #b35b27;
+
+            margin-top: 2px;
+
+            transform: scaleX(0.85);
+        }
+
+        .highlight-box h2 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 27px;
+
+            font-weight: 500;
+
+            color: #3e281f;
+
+            margin: 15px 0 10px;
+
+            line-height: 1.1;
+        }
+
+        .highlight-box p {
+            max-width: 400px;
+
+            margin: 0 auto;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 19px;
+
+            font-weight: 400;
+
+            line-height: 1.65;
+
+            color: #4b2e24;
+
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           CONTACT PROFILE
+           ========================================================= */
+
+        .contact-profile {
+            width: 100%;
+            max-width: 1380px;
+
+            margin: 0 auto;
+
+            min-height: 188px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr 2fr;
+
+            background: #f7f3ef;
+
+            border-bottom: 1px solid #8d5a43;
+        }
+
+        .contact-column {
+            padding: 28px 30px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            border-right: 1px solid #8d5a43;
+        }
+
+        .contact-column:last-child {
+            border-right: none;
+        }
+
+        .contact-column h3 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 27px;
+
+            font-weight: 500;
+
+            color: #3d281f;
+
+            margin-bottom: 5px;
+        }
+
+        .email-link {
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 17px;
+
+            line-height: 1.25;
+
+            color: #8c4527;
+
+            transition: 0.2s ease;
+        }
+
+        .email-link:hover {
+            color: #b35b27;
+        }
+
+        .location-column {
+            align-items: flex-start;
+        }
+
+        .location-column p {
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 18px;
+
+            line-height: 1.3;
+
+            color: #4b2e24;
+
+            margin: 2px 0;
+        }
+
+        .social-column {
+            justify-content: center;
+
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .social-icons {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-start;
+
+            gap: 13px;
+
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 57px;
+            height: 57px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 29px;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 5px 12px rgba(70, 40, 25, 0.22);
+        }
+
+        .scholar {
+            background: #4285c5;
+        }
+
+        .scholar i {
+            font-size: 27px;
+        }
+
+        .github {
+            background: #242424;
+        }
+
+        .x-twitter {
+            background: #111;
+        }
+
+        .linkedin {
+            background: #1477b8;
+        }
+
+        .facebook {
+            background: #315b83;
+        }
+
+        .instagram {
+            background:
+                linear-gradient(
+                    135deg,
+                    #405de6,
+                    #833ab4,
+                    #e1306c,
+                    #fd1d1d,
+                    #f77737,
+                    #fcaf45
+                );
+        }
+
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .footer {
+            border-top: 1px solid #ded1c9;
+
+            background: #eee8e3;
+
+            text-align: center;
+
+            padding: 13px 20px 18px;
+
+            font-size: 17px;
+
+            color: #755649;
+        }
+
+
+        /* =========================================================
+           TABLET
+           ========================================================= */
+
+        @media (max-width: 1450px) {
+
+            .hero,
+            .personal-showcase,
+            .identity,
+            .section,
+            .contact {
+                width: calc(100% - 30px);
+            }
+
+            .nav-menu {
+                gap: 17px;
+            }
+
+            .nav-menu a {
+                font-size: 19px;
+            }
+        }
+
+
+        /* =========================================================
+           TABLET / SMALL LAPTOP
+           ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-container {
+                overflow-x: auto;
+
+                justify-content: flex-start;
+
+                padding: 0 10px;
+            }
+
+            .nav-menu {
+                width: max-content;
+
+                min-width: 100%;
+
+                justify-content: flex-start;
+
+                gap: 8px;
+            }
+
+            .nav-menu a {
+                font-size: 17px;
+
+                padding: 9px 10px;
+
+                white-space: nowrap;
+            }
+
+
+            /* Hero remains a SINGLE image */
+            .hero {
+                width: 100%;
+
+                height: 310px;
+
+                min-height: 310px;
+            }
+
+            .hero-content {
+                padding: 40px 25px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+
+            .personal-showcase {
+                width: min(100% - 30px, 1420px);
+
+                grid-template-columns: 1fr;
+
+                gap: 7px;
+            }
+
+            .personal-photo-card {
+                height: 360px;
+            }
+
+
+            .projects,
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .profile-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-box {
+                min-height: auto;
+
+                border-right: none;
+
+                border-bottom: 1px solid #8d5a43;
+
+                padding: 25px 30px 32px;
+            }
+
+            .highlight-box:last-child {
+                border-bottom: none;
+            }
+
+
+            .contact-profile {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-column {
+                border-right: none;
+
+                border-bottom: 1px solid #8d5a43;
+
+                align-items: center;
+
+                text-align: center;
+            }
+
+            .contact-column:last-child {
+                border-bottom: none;
+            }
+
+            .location-column {
+                align-items: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+
+            .about-section {
+                padding: 34px 20px 42px;
+            }
+
+            .about-text {
+                font-size: 18px;
+
+                line-height: 1.55;
+            }
+
+
+            .section,
+            .contact {
+                width: 100%;
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                font-size: 17px;
+            }
+
+            .nav-menu {
+                gap: 20px;
+            }
+
+            .nav-menu a {
+                font-size: 18px;
+            }
+
+
+            /* SINGLE HERO ON MOBILE */
+            .hero {
+                width: 100%;
+
+                height: 245px;
+
+                min-height: 245px;
+            }
+
+            .hero-content {
+                padding: 35px 20px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+
+                letter-spacing: 0.5px;
+
+                margin-bottom: 18px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
+
+            .about-text {
+                font-size: 17px;
+
+                line-height: 1.55;
+            }
+
+            .about-section .container {
+                width: calc(100% - 10px);
+            }
+
+
+            .personal-showcase {
+                width: calc(100% - 20px);
+
+                padding-top: 5px;
+            }
+
+            .personal-photo-card {
+                height: 300px;
+            }
+
+            .photo-hover-icons i {
+                width: 50px;
+                height: 50px;
+
+                font-size: 21px;
+            }
+
+            .photo-label {
+                left: 14px;
+
+                bottom: 14px;
+
+                font-size: 14px;
+            }
+
+
+            .identity {
+                width: 100%;
+
+                padding: 25px 14px 28px;
+            }
+
+            .identity h1 {
+                font-size: 36px;
+            }
+
+            .identity .role {
+                font-size: 22px;
+            }
+
+            .identity .tagline {
+                font-size: 18px;
+            }
+
+
+            .section {
+                padding: 32px 15px 38px;
+            }
+
+            .section-title {
+                font-size: 35px;
+            }
+
+
+            .projects,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+
+                gap: 24px;
+            }
+
+            .project-image,
+            .portfolio-image {
+                height: 230px;
+            }
+
+
+            .profile-inner {
+                width: calc(100% - 30px);
+
+                padding: 30px 8px;
+            }
+
+            .profile p {
+                font-size: 18px;
+            }
+
+            .profile-lead {
+                font-size: 21px !important;
+            }
+
+
+            .profile-highlights {
+                width: 100%;
+            }
+
+            .contact-profile {
+                width: 100%;
+            }
+        }
+
+
+        /* =========================================================
+           VERY SMALL MOBILE
+           ========================================================= */
+
+        @media (max-width: 500px) {
+
+            .highlight-box {
+                padding: 22px 20px 28px;
+            }
+
+            .quote-mark {
+                font-size: 85px;
+
+                height: 68px;
+            }
+
+            .highlight-box h2 {
+                font-size: 25px;
+            }
+
+            .highlight-box p {
+                font-size: 18px;
+            }
+
+            .contact-column {
+                padding: 24px 20px;
+            }
+
+            .social-icon {
+                width: 50px;
+                height: 50px;
+
+                font-size: 25px;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
 
-<!-- Navigation Bar -->
-<header class="header">
-    <nav class="nav-container">
-        <a href="index.html" class="logo">SC</a>
-        <ul class="nav-menu">
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blogs</a></li>
-            <li><a href="conferences.html">Conferences</a></li>
-            <li><a href="organization.html">Organization</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- =========================================================
+         HEADER / NAVIGATION
+         ========================================================= -->
 
-<div class="container">
+    <header class="header">
 
-    <!-- Profile Photo & Contact -->
-    <aside class="profile-sidebar">
-        <div class="profile-photo" aria-label="Profile Photo"></div>
-        <div class="contact-card">
-            <div class="contact-row"><i class="fa-solid fa-envelope"></i><a href="mailto:chapagainsujan45@gmail.com">chapagainsujan45@gmail.com</a></div>
-            <div class="contact-row"><i class="fa-solid fa-phone"></i><a href="tel:+9779865532285">+977 9865532285</a></div>
-            <div class="contact-row"><i class="fa-solid fa-university"></i><span>Tribhuvan University, Institute of Agriculture and Animal Science (IAAS)</span></div>
-            <div class="contact-row"><i class="fa-solid fa-location-dot"></i><span>Lamjung Campus, Nepal</span></div>
-            <div class="contact-links">
-                <a class="linkedin" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a class="researchgate" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                <a class="orcid" href="https://orcid.org/0000-0002-2037-3491" target="_blank" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
-                <a class="linktree" href="https://linktr.ee/Sujan_Chapagain" target="_blank" aria-label="Linktree"><i class="fa-solid fa-tree"></i></a>
+        <nav class="nav-container">
+
+            <ul class="nav-menu">
+
+                <li>
+                    <a href="index.html" class="active">Home</a>
+                </li>
+
+                <li>
+                    <a href="Education.html">Education</a>
+                </li>
+
+                <li>
+                    <a href="publications.html">Publications</a>
+                </li>
+
+                <li>
+                    <a href="projects.html">Projects</a>
+                </li>
+
+                <li>
+                    <a href="conferences.html">Conferences</a>
+                </li>
+
+                <li>
+                    <a href="blog.html">Blogs</a>
+                </li>
+
+                <li>
+                    <a href="organization.html">Organization</a>
+                </li>
+
+                <li>
+                    <a href="mould.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO — SINGLE LARGE IMAGE
+         ========================================================= -->
+
+    <section class="hero" aria-label="Sujan Chapagain introduction">
+
+        <div class="hero-content">
+
+            <h1>SUJAN CHAPAGAIN</h1>
+
+            <div class="hero-subtitle">
+
+                <span>Agricultural Researcher</span>
+
+                <span>
+                    Plant Pathology · Crop Stress · Sustainable Agriculture
+                </span>
+
             </div>
-        </div>
-    </aside>
 
-    <!-- About / Biography -->
-    <section class="about-text">
-          <p>
-                        I am an agriculture graduate with a strong research focus on plant pathology, sustainable disease management, and crop health assessment. My academic and research training integrates fungal pathogen biology, botanical-based disease control, and field-level stress phenotyping. I have hands-on experience in pathogen isolation, cultural and morphological characterization of phytopathogenic fungi, phytochemical extraction, and in vivo evaluation of botanical extracts against postharvest and field diseases.
-                    </p>
-                    <p>
-                        My research work emphasizes eco-friendly alternatives to synthetic pesticides, with particular attention to the physiological and biochemical responses of crops to biotic and abiotic stresses. In field-based studies, I have applied NDVI and canopy temperature measurements to quantify plant vigor, disease severity, and stress tolerance in wheat genotypes, supporting data-driven selection of resilient cultivars.
-                    </p>
-                    <p>
-                        I am proficient in quantitative data analysis using R, experimental design, and scientific writing, with peer-reviewed publications in crop improvement, disease management, and agronomy. My long-term academic goal is to advance expertise in plant health, molecular diagnostics, and integrated disease management to contribute to sustainable and climate-resilient agricultural systems.
-                    </p>
+        </div>
+
     </section>
 
-    <!-- Education -->
-    <section>
-        <div class="section-title">Education</div>
-        <div class="education-item">
-            <img src="img/TU.png" alt="TU Logo">
-            <img src="img/iaas.png" alt="IAAS Logo">
-            <h4>Bachelor of Agriculture – 83.86%</h4>
-            <p>Tribhuvan University, Institute of Agriculture and Animal Science (IAAS)</p>
-            <p>Lamjung Campus, Lamjung, Nepal</p>
-            <p>2021 – 2025</p>
-            <p><a href="https://iaas.tu.edu.np/" target="_blank">Official Website</a></p>
+
+    <!-- =========================================================
+         RESEARCH PROFILE
+         ========================================================= -->
+
+    <section class="about-section" id="research-profile">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Research Profile
+            </h2>
+
+            <div class="about-text">
+
+                <p>
+                    I am an agriculture graduate with a strong research focus on
+                    plant pathology, sustainable disease management, and crop health
+                    assessment. My academic and research training integrates fungal
+                    pathogen biology, botanical-based disease control, and
+                    field-level stress phenotyping.
+                </p>
+
+                <p>
+                    I have hands-on experience in pathogen isolation, cultural and
+                    morphological characterization of phytopathogenic fungi,
+                    phytochemical extraction, and in vivo evaluation of botanical
+                    extracts against postharvest and field diseases.
+                </p>
+
+                <p>
+                    My research work emphasizes eco-friendly alternatives to
+                    synthetic pesticides, with particular attention to the
+                    physiological and biochemical responses of crops to biotic and
+                    abiotic stresses. In field-based studies, I have applied NDVI and
+                    canopy temperature measurements to quantify plant vigor, disease
+                    severity, and stress tolerance in wheat genotypes.
+                </p>
+
+                <p>
+                    I am proficient in quantitative data analysis using R,
+                    experimental design, and scientific writing, with peer-reviewed
+                    publications in crop improvement, disease management, and
+                    agronomy.
+                </p>
+
+                <p>
+                    My long-term academic goal is to advance expertise in plant
+                    health, molecular diagnostics, and integrated disease management
+                    to contribute to sustainable and climate-resilient agricultural
+                    systems.
+                </p>
+
+                <a href="Education.html" class="learn-more-btn">
+                    Learn More about Sujan Chapagain
+                </a>
+
+            </div>
+
         </div>
-        <div class="education-item">
-            <img src="img/bsamv.png" alt="SAMV Logo" style="border-radius:50%;">
-            <h4>NATIONAL EXAMINATIONS BOARD – 3.90 /4.00 GPA</h4>
-            <p>Sainik Awasiya Mahavidhyalaya (SAMV), Sallaghari, Bhaktapur</p>
-            <p>December 2018 – December 2020</p>
-            <p><a href="https://bsamv.edu.np/" target="_blank">Official Website</a></p>
-        </div>
+
     </section>
 
-    <!-- Non-Credential Courses -->
-    <section>
-        <div class="section-title">Non-Credential Courses</div>
-        <div class="card-section">
-            <div class="card">
-                <h4>Sustainable Agricultural Land Management</h4>
-                <p>University of Florida | Agriculture | Final Grade: 93.21% | January 2024</p>
-                <p>Completed advanced modules on sustainable land management, soil conservation, and resource-efficient agricultural practices. Certificate available in gallery (Sustainable.pdf).</p>
+
+    <!-- =========================================================
+         THREE PERSONAL PHOTOS
+         ========================================================= -->
+
+    <section
+        class="personal-showcase"
+        aria-label="Sujan Chapagain personal photographs">
+
+        <article class="personal-photo-card">
+
+            <img
+                src="Website/Image/ss1.JPG"
+                alt="Sujan Chapagain photograph 1">
+
+            <div class="photo-hover-icons" aria-hidden="true">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <i class="fa-solid fa-lightbulb"></i>
+
             </div>
-            <div class="card">
-                <h4>Data Analysis with R Programming</h4>
-                <p>Google | Agriculture | Final Grade: 89.89% | August 2023</p>
-                <p>Acquired skills in data analysis, visualization, and statistical modeling using R programming, applied to agricultural datasets. Certificate available in gallery (Rprogram.pdf).</p>
+
+            <div class="photo-label">
+                Plant Health &amp; Research
             </div>
-            <div class="card">
-                <h4>Crop Pest Diagnosis and Management Foundation Certificate</h4>
-                <p>Centre for Agriculture and Bioscience International (CABI)</p>
-                <p>Gained expertise in crop pest identification, diagnostic techniques, and integrated pest management strategies. Certificates available in gallery (management.png, foundation.png).</p>
+
+        </article>
+
+
+        <article class="personal-photo-card">
+
+            <img
+                src="Website/Image/wheat4.jpg"
+                alt="Sujan Chapagain photograph 2">
+
+            <div class="photo-hover-icons" aria-hidden="true">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <i class="fa-solid fa-lightbulb"></i>
+
             </div>
-        </div>
+
+            <div class="photo-label">
+                Crop Stress &amp; Phenotyping
+            </div>
+
+        </article>
+
+
+        <article class="personal-photo-card">
+
+            <img
+                src="Website/Image/Sujan Chapagain Presenter.HEIC"
+                alt="Sujan Chapagain photograph 3">
+
+            <div class="photo-hover-icons" aria-hidden="true">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+            </div>
+
+            <div class="photo-label">
+                Sustainable Agriculture
+            </div>
+
+        </article>
+
     </section>
 
-    <!-- Research Grants -->
-    <section>
-        <div class="section-title">Research Grants</div>
-        <div class="card-section">
-            <div class="card">
-                <h4>Agriculture Research Mini Grant</h4>
-                <p>Funding Agency: Champa Devi Rural Municipality | Duration: 1 Year | Grant Amount: NPR 300,000 / USD 2,196.76</p>
-                <p>Project Title: Screening leaf rust resistance and high-throughput assessment of NDVI and canopy temperature in
-wheat genotypes.</p>
-        
-            </div>
+
+    <!-- =========================================================
+         AGRICULTURAL RESEARCHER IDENTITY
+         ========================================================= -->
+
+    <section class="identity">
+
+        <h1>
+            Agricultural Researcher
+        </h1>
+
+        <div class="role">
+            Plant Pathology · Crop Stress · Sustainable Agriculture
         </div>
+
+        <div class="tagline">
+            Research-driven approaches to plant health and resilient cropping systems
+        </div>
+
+        <a class="identity-button" href="Education.html">
+            Sujan's Research
+        </a>
+
     </section>
 
-    <!-- Honors & Awards -->
-    <section>
-        <div class="section-title">Honors & Awards</div>
-        <div class="card-section">
-            <div class="card">
-                <h4>Silver Jubilee MGSS Scholarship</h4>
-                <p>Embassy of India, July 2020</p>
-                <p>Awarded to outstanding Nepali students based on exceptional SLC/SEE performance, supporting higher education studies.</p>
-            </div>
-            <div class="card">
-                <h4>Golden Jubilee MGSS Scholarship</h4>
-                <p>Embassy of India, July 2022</p>
-                <p>Granted to 200 meritorious Nepali students annually to pursue undergraduate studies, encouraging academic excellence and India-Nepal educational collaboration.</p>
-            </div>
-            <div class="card">
-                <h4>Gandaki Provincial Scholarship</h4>
-                <p>Ministry of Social Development, Youth, and Sports – July 2022</p>
-                <p>Awarded to dedicated students in Gandaki province pursuing bachelor degrees, providing full scholarship support.</p>
-            </div>
-            <div class="card">
-                <h4>University Full Merit Scholarship</h4>
-                <p>Tribhuvan University, July 2020</p>
-                <p>Granted to students with the highest scores in the university-level entrance exam among 4000+ candidates, ensuring academic merit recognition.</p>
-            </div>
+
+    <!-- =========================================================
+         ONGOING PROJECTS
+         ========================================================= -->
+
+    <section class="section" id="projects">
+
+        <h2 class="section-title">
+            Ongoing Projects
+        </h2>
+
+        <div class="projects">
+
+
+            <article class="project">
+
+                <div class="project-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=1200&q=85"
+                        alt="Citrus pathology and plant disease research">
+
+                </div>
+
+                <h3>
+                    Citrus Pathology &amp; Sustainable Disease Management
+                </h3>
+
+                <p>
+                    Pathogen characterization, disease assessment and eco-friendly
+                    approaches to citrus health.
+                </p>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1200&q=85"
+                        alt="Wheat crop research">
+
+                </div>
+
+                <h3>
+                    Wheat Drought, Rust &amp; Stress Phenotyping
+                </h3>
+
+                <p>
+                    Drought tolerance, disease response, NDVI, canopy temperature
+                    and field-level crop assessment.
+                </p>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1200&q=85"
+                        alt="Cereal crop diversity research">
+
+                </div>
+
+                <h3>
+                    Finger Millet Characterization &amp; Diversity
+                </h3>
+
+                <p>
+                    Agromorphological characterization, diversity analysis and
+                    trait-based crop improvement.
+                </p>
+
+            </article>
+
+
         </div>
+
     </section>
 
-</div>
+
+    <!-- =========================================================
+         PORTFOLIO
+         ========================================================= -->
+
+    <section class="section portfolio" id="portfolio">
+
+        <h2 class="section-title">
+            My Portfolio
+        </h2>
+
+        <div class="portfolio-grid">
+
+
+            <a class="portfolio-item" href="publications.html">
+
+                <div class="portfolio-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1000&q=85"
+                        alt="Research articles">
+
+                </div>
+
+                <div class="portfolio-label">
+                    Research Articles
+                </div>
+
+            </a>
+
+
+            <a class="portfolio-item" href="Education.html">
+
+                <div class="portfolio-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&fit=crop&w=1000&q=85"
+                        alt="Academic journey">
+
+                </div>
+
+                <div class="portfolio-label">
+                    Academic Journey
+                </div>
+
+            </a>
+
+
+            <a class="portfolio-item" href="organization.html">
+
+                <div class="portfolio-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
+                        alt="Professional affiliation and teamwork">
+
+                </div>
+
+                <div class="portfolio-label">
+                    Professional Affiliation
+                </div>
+
+            </a>
+
+
+            <a class="portfolio-item" href="awards.html">
+
+                <div class="portfolio-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=1000&q=85"
+                        alt="Awards grants and achievements">
+
+                </div>
+
+                <div class="portfolio-label">
+                    Awards / Grants / Certification
+                </div>
+
+            </a>
+
+
+            <a class="portfolio-item" href="conferences.html">
+
+                <div class="portfolio-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=85"
+                        alt="Academic conference">
+
+                </div>
+
+                <div class="portfolio-label">
+                    Conference
+                </div>
+
+            </a>
+
+
+            <a class="portfolio-item" href="volunteer.html">
+
+                <div class="portfolio-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1000&q=85"
+                        alt="Volunteer and mentorship">
+
+                </div>
+
+                <div class="portfolio-label">
+                    Volunteer / Mentorship
+                </div>
+
+            </a>
+
+
+            <a class="portfolio-item" href="software.html">
+
+                <div class="portfolio-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85"
+                        alt="Research data analysis and software">
+
+                </div>
+
+                <div class="portfolio-label">
+                    Software
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SKILLS / PERSONAL SKILLS / INTERESTS
+         ========================================================= -->
+
+    <section
+        class="profile-highlights"
+        aria-label="Skills and interests">
+
+
+        <div class="highlight-box">
+
+            <div class="quote-mark" aria-hidden="true">
+                “
+            </div>
+
+            <h2>
+                Professional Skills
+            </h2>
+
+            <p>
+                DNA Extraction, PCR, Marker Design, Disease Screening, Field Work,
+                Experimental Design, Data Analysis, R, Python, GIS, Scientific
+                Writing, and Research Methodology
+            </p>
+
+        </div>
+
+
+        <div class="highlight-box">
+
+            <div class="quote-mark" aria-hidden="true">
+                “
+            </div>
+
+            <h2>
+                Personal Skills
+            </h2>
+
+            <p>
+                Creativity, Teamwork, Hard Work, Leadership, Communication,
+                Adaptability, and Problem Solving
+            </p>
+
+        </div>
+
+
+        <div class="highlight-box">
+
+            <div class="quote-mark" aria-hidden="true">
+                “
+            </div>
+
+            <h2>
+                Interests
+            </h2>
+
+            <p>
+                Plant Pathology, Crop Health, Disease Management, Plant Breeding,
+                Genetics and Genomics, Crop Stress, Sustainable Agriculture,
+                Climate-Resilient Agriculture, and Molecular Diagnostics
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTACT / SOCIAL MEDIA
+         ========================================================= -->
+
+    <section
+        class="contact-profile"
+        aria-label="Contact and social media">
+
+
+        <div class="contact-column">
+
+            <h3>
+                Sujan Chapagain
+            </h3>
+
+            <a
+                href="mailto:your-email@example.com"
+                class="email-link">
+
+                your-email@example.com
+
+            </a>
+
+        </div>
+
+
+        <div class="contact-column location-column">
+
+            <p>
+                Kathmandu, Nepal
+            </p>
+
+            <p>
+                Agricultural Researcher
+            </p>
+
+        </div>
+
+
+        <div class="contact-column social-column">
+
+            <div class="social-icons">
+
+
+                <a
+                    href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Google Scholar"
+                    class="social-icon scholar">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </a>
+
+
+                <a
+                    href="https://github.com/sujan4445"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="GitHub"
+                    class="social-icon github">
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+
+                <a
+                    href="https://x.com/Iamsujan45"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="X"
+                    class="social-icon x-twitter">
+
+                    <i class="fa-brands fa-x-twitter"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/sujan-chapagain-240617140/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="LinkedIn"
+                    class="social-icon linkedin">
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Facebook"
+                    class="social-icon facebook">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/sujan_chapagain45/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Instagram"
+                    class="social-icon instagram">
+
+                    <i class="fab fa-instagram"></i>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Sujan Chapagain. All rights reserved.
+        </p>
+
+    </footer>
+
 
 </body>
+
 </html>
