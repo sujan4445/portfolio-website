@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Sujan Chapagain — Grants, Awards and Certifications">
+    <meta name="author" content="Sujan Chapagain">
+
+    <title>Grants, Awards & Certifications | Sujan Chapagain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+    /* =========================================================
+       GLOBAL & RESET
+    ========================================================= */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    html{
+        scroll-behavior:smooth;
+    }
+
+    body{
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+
+        background:#f8f5f2;
+        color:#5a3b2e;
+
+        font-family:"Montserrat",sans-serif;
+        line-height:1.6;
+    }
+
+    a{
+        color:inherit;
+    }
+
+
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================= */
+
+    .header{
+        width:100%;
+        background:#f7f3ef;
+
+        border-top:1px solid #000;
+        border-bottom:1px solid #000;
+    }
+
+    .nav-container{
+        min-height:52px;
+        padding:0 20px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .nav-menu{
+        width:100%;
+        max-width:1320px;
+
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+
+        list-style:none;
+    }
+
+    .nav-menu a{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:19px;
+        font-weight:510;
+
+        color:#13100f;
+
+        text-decoration:underline;
+        text-underline-offset:3px;
+
+        padding:8px 12px;
+
+        transition:.25s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active a{
+        color:#4c78a8;
+    }
+
+
+    /* =========================================================
+       MAIN LAYOUT
+    ========================================================= */
+
+    .page-content{
+        flex:1;
+    }
+
+
+    /* =========================================================
+       PAGE HEADING
+    ========================================================= */
+
+    .page-heading{
+        width:min(1080px,92%);
+        margin:45px auto 28px;
+
+        text-align:center;
+    }
+
+    .small-title{
+        font-family:"Cinzel",Georgia,serif;
+        font-size:13px;
+
+        letter-spacing:3.5px;
+        text-transform:uppercase;
+
+        color:#8a6a59;
+
+        margin-bottom:7px;
+    }
+
+    .page-heading h1{
+        font-family:"Cormorant Garamond",Georgia,serif;
+
+        font-size:clamp(45px,5vw,64px);
+        font-weight:500;
+        line-height:1;
+
+        color:#5a3b2e;
+    }
+
+    .heading-line{
+        width:70px;
+        height:1px;
+
+        background:#4c78a8;
+
+        margin:15px auto 11px;
+    }
+
+    .page-heading p{
+        max-width:750px;
+        margin:auto;
+
+        font-family:"Cormorant Garamond",Georgia,serif;
+
+        font-size:18px;
+        line-height:1.5;
+
+        color:#73594b;
+    }
+
+
+    /* =========================================================
+       SECTION LAYOUTS
+    ========================================================= */
+
+    .content-container{
+        width:min(1080px,92%);
+        margin:0 auto 60px;
+        display:flex;
+        flex-direction:column;
+        gap:50px;
+    }
+
+    .section-title{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:32px;
+        font-weight:600;
+        color:#5a3b2e;
+        margin-bottom:20px;
+        border-bottom:1px solid #ded5ce;
+        padding-bottom:8px;
+        display:flex;
+        align-items:center;
+        gap:12px;
+    }
+
+    .section-title i{
+        color:#4c78a8;
+        font-size:24px;
+    }
+
+    .list-stack{
+        display:flex;
+        flex-direction:column;
+        gap:16px;
+    }
+
+    .cards-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+        gap:20px;
+    }
+
+
+    /* =========================================================
+       1. RESEARCH GRANTS CARDS
+    ========================================================= */
+
+    .grant-card{
+        background:#fffdfb;
+        border:1px solid #ded5ce;
+        border-left:4px solid #2e7d32;
+        padding:24px;
+        box-shadow:0 5px 16px rgba(77,55,43,.04);
+        transition:transform .25s ease, box-shadow .25s ease;
+    }
+
+    .grant-card:hover{
+        transform:translateY(-2px);
+        box-shadow:0 9px 22px rgba(77,55,43,.08);
+    }
+
+    .grant-top{
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-start;
+        flex-wrap:wrap;
+        gap:10px;
+        margin-bottom:12px;
+    }
+
+    .grant-title{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:24px;
+        font-weight:700;
+        color:#222;
+    }
+
+    .grant-amount{
+        background:#e8f5e9;
+        color:#1b5e20;
+        font-weight:700;
+        font-size:14px;
+        padding:4px 10px;
+        border-radius:4px;
+        border:1px solid #a5d6a7;
+    }
+
+    .grant-details{
+        font-size:14px;
+        color:#60483b;
+        margin-bottom:12px;
+    }
+
+    .grant-details strong{
+        color:#222;
+    }
+
+    .project-box{
+        background:#f7f3ef;
+        padding:12px 16px;
+        border-radius:4px;
+        border-left:3px solid #8a6a59;
+        font-size:14px;
+        color:#4a352a;
+    }
+
+
+    /* =========================================================
+       2. HONORS & AWARDS STACK
+    ========================================================= */
+
+    .award-item{
+        display:grid;
+        grid-template-columns:120px 1fr;
+        background:#fffdfb;
+        border:1px solid #ded5ce;
+        box-shadow:0 4px 12px rgba(77,55,43,.03);
+        transition:transform .25s ease;
+    }
+
+    .award-item:hover{
+        transform:translateX(4px);
+    }
+
+    .award-date{
+        background:#f2ece6;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-family:"Cinzel",Georgia,serif;
+        font-size:13px;
+        font-weight:600;
+        color:#73594b;
+        border-right:1px solid #ded5ce;
+        padding:10px;
+        text-align:center;
+    }
+
+    .award-content{
+        padding:16px 20px;
+    }
+
+    .award-title{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:21px;
+        font-weight:700;
+        color:#222;
+        margin-bottom:2px;
+    }
+
+    .award-issuer{
+        font-size:12px;
+        font-weight:600;
+        text-transform:uppercase;
+        color:#4c78a8;
+        letter-spacing:.5px;
+        margin-bottom:6px;
+    }
+
+    .award-desc{
+        font-size:13.5px;
+        color:#60483b;
+    }
+
+
+    /* =========================================================
+       3. NON-CREDENTIAL COURSES (CERTIFICATIONS)
+    ========================================================= */
+
+    .custom-card{
+        background:#fffdfb;
+        border:1px solid #ded5ce;
+        border-left:4px solid #4c78a8;
+        padding:22px 24px;
+        box-shadow:0 5px 16px rgba(77,55,43,.04);
+        transition:transform .25s ease, box-shadow .25s ease;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+    }
+
+    .custom-card:hover{
+        transform:translateY(-3px);
+        box-shadow:0 9px 22px rgba(77,55,43,.09);
+    }
+
+    .card-header-meta{
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-start;
+        margin-bottom:10px;
+    }
+
+    .institution-tag{
+        font-size:12px;
+        font-weight:600;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        color:#8a6a59;
+    }
+
+    .grade-badge{
+        background:#eef4fa;
+        color:#2b588c;
+        font-size:12px;
+        font-weight:600;
+        padding:3px 8px;
+        border-radius:4px;
+        border:1px solid #c0d4e8;
+    }
+
+    .card-title{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:22px;
+        font-weight:700;
+        color:#222;
+        line-height:1.25;
+        margin-bottom:8px;
+    }
+
+    .card-description{
+        font-size:14px;
+        color:#60483b;
+        line-height:1.5;
+        margin-bottom:15px;
+    }
+
+    .card-footer-meta{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding-top:12px;
+        border-top:1px dashed #e6ded8;
+        font-size:13px;
+        color:#73594b;
+    }
+
+    .cert-link{
+        color:#6759e7;
+        font-weight:600;
+        text-decoration:none;
+        display:inline-flex;
+        align-items:center;
+        gap:5px;
+        transition:.2s ease;
+    }
+
+    .cert-link:hover{
+        text-decoration:underline;
+    }
+
+
+    /* =========================================================
+       CONTACT PROFILE
+    ========================================================= */
+
+    .contact-profile{
+        width:100%;
+        background:#f7f3ef;
+        border-top:1px solid #ddd6d0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:30px;
+        padding:34px 7%;
+    }
+
+    .contact-column{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    .contact-column h3{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:25px;
+        font-weight:600;
+        color:#5a3b2e;
+    }
+
+    .email-link{
+        font-family:"Montserrat",sans-serif;
+        font-size:11px;
+        color:#73594b;
+        text-decoration:none;
+    }
+
+    .email-link:hover{
+        color:#4c78a8;
+    }
+
+    .location-column{
+        text-align:center;
+    }
+
+    .location-column p{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:17px;
+        color:#73594b;
+    }
+
+    .social-column{
+        align-items:flex-end;
+    }
+
+    .social-icons{
+        display:flex;
+        align-items:center;
+        gap:9px;
+    }
+
+    .social-icon{
+        width:38px;
+        height:38px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        border:1px solid #cfc4bc;
+        border-radius:50%;
+        color:#5a3b2e;
+        text-decoration:none;
+        transition:.25s ease;
+    }
+
+    .social-icon:hover{
+        transform:translateY(-3px);
+        background:#4c78a8;
+        color:#fff;
+        border-color:#4c78a8;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer{
+        width:100%;
+        background:#5a3b2e;
+        color:#f7f3ef;
+        text-align:center;
+        padding:16px 20px;
+    }
+
+    .footer p{
+        font-size:11px;
+        letter-spacing:.4px;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+    ========================================================= */
+
+    @media(max-width:850px){
+
+        .nav-menu{
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:2px 8px;
+        }
+
+        .nav-menu a{
+            padding:7px 8px;
+        }
+
+        .cards-grid{
+            grid-template-columns:1fr;
+        }
+
+        .award-item{
+            grid-template-columns:100px 1fr;
+        }
+    }
+
+    @media(max-width:650px){
+
+        .page-heading{
+            margin-top:38px;
+            margin-bottom:23px;
+        }
+
+        .page-heading h1{
+            font-size:44px;
+        }
+
+        .award-item{
+            grid-template-columns:1fr;
+        }
+
+        .award-date{
+            border-right:none;
+            border-bottom:1px solid #ded5ce;
+            padding:6px;
+        }
+
+        .contact-profile{
+            grid-template-columns:1fr;
+            text-align:center;
+            padding:30px 20px;
+        }
+
+        .contact-column,
+        .social-column{
+            align-items:center;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================= -->
+
+<header class="header">
+    <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Education.html">Education</a></li>
+            <li><a href="Publications.html">Publications</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="Conferences.html">Conferences</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+            <li><a href="Organization.html">Organization</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="page-content">
+
+    <section class="page-heading">
+        <div class="small-title">Funding, Honors & Training</div>
+        <h1>Grants, Awards & Certifications</h1>
+        <div class="heading-line"></div>
+        <p>A comprehensive record of research funding support, academic honors, and specialized non-credential training programs.</p>
+    </section>
+
+    <div class="content-container">
+
+        <!-- FIRST SECTION: RESEARCH GRANTS -->
+        <section>
+            <h2 class="section-title">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                Research Grants
+            </h2>
+
+            <div class="list-stack">
+
+                <!-- Grant 1 -->
+                <article class="grant-card">
+                    <div class="grant-top">
+                        <h3 class="grant-title">Agriculture Research Mini Grant</h3>
+                        <span class="grant-amount">NPR 300,000 / USD 2,196.76</span>
+                    </div>
+                    <p class="grant-details">
+                        <strong>Funding Agency:</strong> Champa Devi Rural Municipality &nbsp;|&nbsp; 
+                        <strong>Duration:</strong> 1 Year
+                    </p>
+                    <div class="project-box">
+                        <strong>Project Title:</strong> Screening leaf rust resistance and high-throughput assessment of NDVI and canopy temperature in wheat genotypes.
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECOND SECTION: HONORS & AWARDS -->
+        <section>
+            <h2 class="section-title">
+                <i class="fa-solid fa-trophy"></i>
+                Honors & Awards
+            </h2>
+
+            <div class="list-stack">
+
+                <!-- Award 1 -->
+                <article class="award-item">
+                    <div class="award-date">Jul 2022</div>
+                    <div class="award-content">
+                        <h3 class="award-title">Golden Jubilee MGSS Scholarship</h3>
+                        <div class="award-issuer">Embassy of India</div>
+                        <p class="award-desc">Granted to 200 meritorious Nepali students annually to pursue undergraduate studies, encouraging academic excellence and India-Nepal educational collaboration.</p>
+                    </div>
+                </article>
+
+                <!-- Award 2 -->
+                <article class="award-item">
+                    <div class="award-date">Jul 2022</div>
+                    <div class="award-content">
+                        <h3 class="award-title">Gandaki Provincial Scholarship</h3>
+                        <div class="award-issuer">Ministry of Social Development, Youth, and Sports</div>
+                        <p class="award-desc">Awarded to dedicated students in Gandaki province pursuing bachelor degrees, providing full scholarship support.</p>
+                    </div>
+                </article>
+
+                <!-- Award 3 -->
+                <article class="award-item">
+                    <div class="award-date">Jul 2020</div>
+                    <div class="award-content">
+                        <h3 class="award-title">Silver Jubilee MGSS Scholarship</h3>
+                        <div class="award-issuer">Embassy of India</div>
+                        <p class="award-desc">Awarded to outstanding Nepali students based on exceptional SLC/SEE performance, supporting higher education studies.</p>
+                    </div>
+                </article>
+
+                <!-- Award 4 -->
+                <article class="award-item">
+                    <div class="award-date">Jul 2020</div>
+                    <div class="award-content">
+                        <h3 class="award-title">University Full Merit Scholarship</h3>
+                        <div class="award-issuer">Tribhuvan University</div>
+                        <p class="award-desc">Granted to students with the highest scores in the university-level entrance exam among 4000+ candidates, ensuring academic merit recognition.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- LAST SECTION: NON-CREDENTIAL COURSES (CERTIFICATIONS) -->
+        <section>
+            <h2 class="section-title">
+                <i class="fa-solid fa-certificate"></i>
+                Non-Credential Courses & Training
+            </h2>
+
+            <div class="cards-grid">
+
+                <!-- Course 1 -->
+                <article class="custom-card">
+                    <div>
+                        <div class="card-header-meta">
+                            <span class="institution-tag">University of Florida</span>
+                            <span class="grade-badge">Grade: 93.21%</span>
+                        </div>
+                        <h3 class="card-title">Sustainable Agricultural Land Management</h3>
+                        <p class="card-description">Completed advanced modules on sustainable land management, soil conservation, and resource-efficient agricultural practices.</p>
+                    </div>
+                    <div class="card-footer-meta">
+                        <span><i class="fa-regular fa-calendar-alt"></i> Jan 2024</span>
+                        <a href="Gallery/Sustainable.pdf" target="_blank" class="cert-link">
+                            <i class="fa-solid fa-file-pdf"></i> Certificate
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Course 2 -->
+                <article class="custom-card">
+                    <div>
+                        <div class="card-header-meta">
+                            <span class="institution-tag">Google</span>
+                            <span class="grade-badge">Grade: 89.89%</span>
+                        </div>
+                        <h3 class="card-title">Data Analysis with R Programming</h3>
+                        <p class="card-description">Acquired skills in data analysis, visualization, and statistical modeling using R programming, applied to agricultural datasets.</p>
+                    </div>
+                    <div class="card-footer-meta">
+                        <span><i class="fa-regular fa-calendar-alt"></i> Aug 2023</span>
+                        <a href="Gallery/Rprogram.pdf" target="_blank" class="cert-link">
+                            <i class="fa-solid fa-file-pdf"></i> Certificate
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Course 3 -->
+                <article class="custom-card">
+                    <div>
+                        <div class="card-header-meta">
+                            <span class="institution-tag">CABI</span>
+                            <span class="grade-badge">Foundation</span>
+                        </div>
+                        <h3 class="card-title">Crop Pest Diagnosis and Management</h3>
+                        <p class="card-description">Gained expertise in crop pest identification, diagnostic techniques, and integrated pest management strategies.</p>
+                    </div>
+                    <div class="card-footer-meta">
+                        <span><i class="fa-solid fa-award"></i> CABI Certificate</span>
+                        <div>
+                            <a href="Gallery/management.png" target="_blank" class="cert-link" style="margin-right:8px;">Cert 1</a>
+                            <a href="Gallery/foundation.png" target="_blank" class="cert-link">Cert 2</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<!-- =========================================================
+     CONTACT / SOCIAL PROFILE
+========================================================= -->
+
+<section class="contact-profile" aria-label="Contact and social media">
+    <div class="contact-column">
+        <h3>Sujan Chapagain</h3>
+        <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
+    </div>
+
+    <div class="contact-column location-column">
+        <p>Kathmandu, Nepal</p>
+        <p>Agricultural Researcher</p>
+    </div>
+
+    <div class="contact-column social-column">
+        <div class="social-icons">
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" class="social-icon" aria-label="Research Gate">
+                <i class="fab fa-researchgate"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+    <p>© 2026 Sujan Chapagain. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

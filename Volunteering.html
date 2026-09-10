@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Sujan Chapagain — Organizations & Leadership">
+    <meta name="author" content="Sujan Chapagain">
+
+    <title>Organizations | Sujan Chapagain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+    /* =========================================================
+       GLOBAL & RESET
+    ========================================================= */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    html{
+        scroll-behavior:smooth;
+    }
+
+    body{
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+        background:#fbf8f3;
+        color:#332923;
+        font-family:"Cormorant Garamond", Georgia, serif;
+        line-height:1.6;
+    }
+
+    a{
+        color:inherit;
+    }
+
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================= */
+
+    .header{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #000000;
+        border-bottom:1px solid #000000;
+    }
+
+    .nav-container{
+        min-height:52px;
+        padding:0 20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .nav-menu{
+        width:100%;
+        max-width:1320px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        list-style:none;
+    }
+
+    .nav-menu a{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:20px;
+        font-weight:600;
+        color:#13100f;
+        text-decoration:underline;
+        text-underline-offset:3px;
+        padding:8px 12px;
+        transition:color .25s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active a{
+        color:#4c78a8;
+    }
+
+    /* =========================================================
+       MAIN LAYOUT & HEADING
+    ========================================================= */
+
+    .page-content{
+        flex:1;
+        width:min(1080px, 90%);
+        margin:50px auto 60px;
+    }
+
+    .main-title{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:clamp(38px, 4vw, 50px);
+        font-weight:500;
+        color:#4a2306;
+        margin-bottom:40px;
+    }
+
+    .section-title{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:clamp(30px, 3vw, 40px);
+        font-weight:600;
+        color:#4a2306;
+        margin:50px 0 25px 0;
+        border-bottom:2px solid #4a2306;
+        padding-bottom:8px;
+    }
+
+    /* =========================================================
+       ORGANIZATION SECTIONS
+    ========================================================= */
+
+    .org-container{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .divider{
+        border:none;
+        border-top:1px solid #c2b2a3;
+        margin:35px 0;
+    }
+
+    .org-card{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+        align-items:center;
+        padding:10px 0;
+    }
+
+    /* =========================================================
+       ALTERNATING IMAGE POSITION
+    ========================================================= */
+
+    .org-card.img-left .org-image-box{
+        order:1;
+    }
+
+    .org-card.img-left .org-text-box{
+        order:2;
+    }
+
+    .org-card.img-right .org-text-box{
+        order:1;
+    }
+
+    .org-card.img-right .org-image-box{
+        order:2;
+    }
+
+    /* =========================================================
+       IMAGE BOX
+    ========================================================= */
+
+    .org-image-box{
+        width:100%;
+        min-height:180px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow:hidden;
+    }
+
+    .org-image-box img{
+        display:block;
+        max-width:280px;
+        max-height:160px;
+        width:auto;
+        height:auto;
+        object-fit:contain;
+    }
+
+    /* =========================================================
+       ORGANIZATION TEXT & BULLETS
+    ========================================================= */
+
+    .org-text-box{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        text-align:justify;
+    }
+
+    .org-number{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:22px;
+        font-weight:600;
+        color:#4a2306;
+        margin-bottom:2px;
+    }
+
+    .org-title{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:28px;
+        font-weight:600;
+        color:#111111;
+        margin-bottom:12px;
+        line-height:1.25;
+    }
+
+    .role-list{
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+
+    .role-list li{
+        position:relative;
+        font-size:21px;
+        color:#332923;
+        margin-bottom:8px;
+        line-height:1.5;
+        padding-left:20px;
+    }
+
+    /* BLACK DOT BULLET */
+    .role-list li::before{
+        content:"•";
+        position:absolute;
+        left:0;
+        top:0;
+        color:#000000;
+        font-size:18px;
+        font-weight:700;
+        line-height:1.5;
+    }
+
+    .role-list li strong{
+        font-weight:600;
+    }
+
+    /* =========================================================
+       CONTACT PROFILE
+    ========================================================= */
+
+    .contact-profile{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #e2dad0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:30px;
+        padding:34px 7%;
+    }
+
+    .contact-column{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    .contact-column h3{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:25px;
+        font-weight:600;
+        color:#4a2306;
+    }
+
+    .email-link{
+        font-family:"Montserrat",sans-serif;
+        font-size:12px;
+        color:#73594b;
+        text-decoration:none;
+    }
+
+    .email-link:hover{
+        color:#4c78a8;
+    }
+
+    .location-column{
+        text-align:center;
+    }
+
+    .location-column p{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:18px;
+        color:#73594b;
+    }
+
+    .social-column{
+        align-items:flex-end;
+    }
+
+    .social-icons{
+        display:flex;
+        align-items:center;
+        gap:9px;
+    }
+
+    .social-icon{
+        width:38px;
+        height:38px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        border:1px solid #cfc4bc;
+        border-radius:50%;
+        color:#5a3b2e;
+        text-decoration:none;
+        transition:
+            transform .25s ease,
+            background .25s ease,
+            color .25s ease,
+            border-color .25s ease;
+    }
+
+    .social-icon:hover{
+        transform:translateY(-3px);
+        background:#4c78a8;
+        color:#ffffff;
+        border-color:#4c78a8;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer{
+        width:100%;
+        background:#4a2306;
+        color:#f7f3ef;
+        text-align:center;
+        padding:16px 20px;
+    }
+
+    .footer p{
+        font-family:"Montserrat",sans-serif;
+        font-size:12px;
+        letter-spacing:.4px;
+    }
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+    ========================================================= */
+
+    @media(max-width:768px){
+
+        .nav-container{
+            padding:8px 12px;
+        }
+
+        .nav-menu{
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:3px 8px;
+        }
+
+        .nav-menu a{
+            font-size:18px;
+            padding:5px 7px;
+        }
+
+        .page-content{
+            width:90%;
+            margin:35px auto 50px;
+        }
+
+        .main-title{
+            font-size:38px;
+            margin-bottom:30px;
+        }
+
+        .org-card{
+            grid-template-columns:1fr;
+            gap:20px;
+            text-align:center;
+        }
+
+        .org-text-box{
+            text-align:center;
+        }
+
+        .org-card.img-left .org-image-box,
+        .org-card.img-right .org-image-box{
+            order:1;
+        }
+
+        .org-card.img-left .org-text-box,
+        .org-card.img-right .org-text-box{
+            order:2;
+        }
+
+        .org-image-box{
+            min-height:150px;
+        }
+
+        .org-image-box img{
+            max-width:240px;
+            max-height:150px;
+        }
+
+        .role-list{
+            display:inline-block;
+            text-align:left;
+        }
+
+        .contact-profile{
+            grid-template-columns:1fr;
+            text-align:center;
+            padding:30px 20px;
+        }
+
+        .contact-column,
+        .social-column{
+            align-items:center;
+        }
+
+        .social-column{
+            justify-content:center;
+        }
+    }
+
+    @media(max-width:480px){
+
+        .nav-menu a{
+            font-size:17px;
+            padding:4px 5px;
+        }
+
+        .main-title{
+            font-size:34px;
+        }
+
+        .org-title{
+            font-size:25px;
+        }
+
+        .role-list li{
+            font-size:18px;
+        }
+
+        .contact-column h3{
+            font-size:23px;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================= -->
+
+<header class="header">
+    <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-menu">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="Education.html">Education</a>
+            </li>
+
+            <li>
+                <a href="Publications.html">Publications</a>
+            </li>
+
+            <li>
+                <a href="Projects.html">Projects</a>
+            </li>
+
+            <li>
+                <a href="Conferences.html">Conferences</a>
+            </li>
+
+            <li>
+                <a href="Blogs.html">Blogs</a>
+            </li>
+
+            <li class="active">
+                <a href="Organization.html">Organization</a>
+            </li>
+
+            <li>
+                <a href="Contact.html">Contact</a>
+            </li>
+
+        </ul>
+    </nav>
+</header>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="page-content">
+
+    <h1 class="main-title">
+        Undergraduate Organizations & Volunteering
+    </h1>
+
+    <!-- =========================================================
+         ORGANIZATIONS
+    ========================================================= -->
+
+    <div class="org-container">
+
+        <!-- 01. GeoKrishi -->
+        <div class="org-card img-left">
+
+            <div class="org-image-box">
+                <img
+                    src="Website/Image/ss1.JPG"
+                    alt="GeoKrishi Logo"
+                    loading="eager"
+                >
+            </div>
+
+            <div class="org-text-box">
+
+                <div class="org-number">
+                    01
+                </div>
+
+                <h2 class="org-title">
+                    GeoKrishi
+                </h2>
+
+                <ul class="role-list">
+
+                    <li>
+                        <strong>Intern</strong> — (3 months)
+                    </li>
+
+                    <li>
+                        Bridged traditional farming with modern technology, empowering farmers with digital tools for increased productivity.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <hr class="divider">
+
+
+        <!-- 02. IAAS Nepal -->
+        <div class="org-card img-right">
+
+            <div class="org-text-box">
+
+                <div class="org-number">
+                    02
+                </div>
+
+                <h2 class="org-title">
+                    IAAS Nepal
+                </h2>
+
+                <ul class="role-list">
+
+                    <li>
+                        <strong>National Campaign Coordinator</strong> (Jan 2023 – Jan 2024)
+                    </li>
+
+                    <li>
+                        Led national campaign-driven volunteering focused on climate education, mobilizing students and curating digital content.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="org-image-box">
+
+                <img
+                    src="Website/Image/iaasnepal.jpg"
+                    alt="IAAS Nepal Logo"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </div>
+
+
+        <hr class="divider">
+
+
+        <!-- 03. Amnesty International KCYN -->
+        <div class="org-card img-left">
+
+            <div class="org-image-box">
+
+                <img
+                    src="Website/Image/amn.png"
+                    alt="Amnesty International Logo"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="org-text-box">
+
+                <div class="org-number">
+                    03
+                </div>
+
+                <h2 class="org-title">
+                    Amnesty International Krishi Campus Youth Network
+                </h2>
+
+                <ul class="role-list">
+
+                    <li>
+                        <strong>Coordinator</strong> (Jan 2024 – Jan 2025)
+                    </li>
+
+                    <li>
+                        <strong>Finance Head</strong> (Jan 2023 – Jan 2024)
+                    </li>
+
+                    <li>
+                        <strong>HRE Coordinator</strong> (Jan 2022 – Jan 2023)
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <hr class="divider">
+
+
+        <!-- 04. IAAS LC Lamjung -->
+        <div class="org-card img-right">
+
+            <div class="org-text-box">
+
+                <div class="org-number">
+                    04
+                </div>
+
+                <h2 class="org-title">
+                    IAAS Local Committee Lamjung
+                </h2>
+
+                <ul class="role-list">
+
+                    <li>
+                        <strong>Local Director</strong> (Jan 2023 – Jan 2024)
+                    </li>
+
+                    <li>
+                        <strong>Quality Board Member</strong> (Jan 2022 – Jan 2023)
+                    </li>
+
+                    <li>
+                        Coordinated local outreach and supported quality assurance across virtual programming and exchanges.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="org-image-box">
+
+                <img
+                    src="Website/Image/iaaslamjung.jpg"
+                    alt="IAAS Lamjung Logo"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </div>
+
+
+        <hr class="divider">
+
+
+        <!-- 05. ClimatEducate Project -->
+        <div class="org-card img-left">
+
+            <div class="org-image-box">
+
+                <img
+                    src="Website/Image/cliamateeducate.jpeg"
+                    alt="ClimatEducate Logo"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="org-text-box">
+
+                <div class="org-number">
+                    05
+                </div>
+
+                <h2 class="org-title">
+                    ClimatEducate Project
+                </h2>
+
+                <ul class="role-list">
+
+                    <li>
+                        <strong>Research & Awareness Dept Member</strong> (Nov 2021 – Jan 2024)
+                    </li>
+
+                    <li>
+                        Contributed to research briefs and educational materials to translate climate science into practical learning resources.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         VOLUNTEERING & TRAINING LEADERSHIP
+    ========================================================= -->
+
+    <h2 class="section-title">Volunteering & Training Leadership</h2>
+
+    <ul class="role-list">
+
+        <li>
+            <strong>Resource Person — ArcGIS Training</strong> | Organized by Technical Students’ Association of Nepal, Lamjung Campus (4th – 8th August 2020). Delivered hands-on GIS training on spatial mapping and geographic data handling for agriculture students.
+        </li>
+
+        <li>
+            <strong>Resource Person — Technical Bootcamp</strong> | Organized by Technical Students’ Association of Nepal, Gauradaha Campus (17th – 20th March 2020). Instructed participants in essential software including MS Word, PowerPoint, Adobe Photoshop, InDesign, Audition, and Vegas Pro.
+        </li>
+
+        <li>
+            <strong>Resource Person — Data Analysis using R & RStudio</strong> | Delivered technical training session at Institute of Agriculture and Animal Science (IAAS), Khairahani Campus. Covered statistical modeling, experimental data analysis, and visualization techniques in R.
+        </li>
+
+        <li>
+            <strong>Resource Person — Biochar Preparation & Application Workshop</strong> | Facilitated field demonstration and training organized by IAAS Local Committee Lamjung on sustainable soil amendment through biochar production techniques.
+        </li>
+
+    </ul>
+
+</main>
+
+
+<!-- =========================================================
+     CONTACT / SOCIAL PROFILE
+========================================================= -->
+
+<section class="contact-profile" aria-label="Contact and social media">
+
+    <div class="contact-column">
+
+        <h3>
+            Sujan Chapagain
+        </h3>
+
+        <a
+            href="mailto:chapagainsujan45@gmail.com"
+            class="email-link"
+        >
+            chapagainsujan45@gmail.com
+        </a>
+
+    </div>
+
+
+    <div class="contact-column location-column">
+
+        <p>
+            Kathmandu, Nepal
+        </p>
+
+        <p>
+            Agricultural Researcher
+        </p>
+
+    </div>
+
+
+    <div class="contact-column social-column">
+
+        <div class="social-icons">
+
+            <a
+                href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en"
+                class="social-icon"
+                aria-label="Google Scholar"
+                target="_blank"
+                rel="noopener"
+            >
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+
+
+            <a
+                href="https://github.com/sujan4445"
+                class="social-icon"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+
+
+            <a
+                href="https://x.com/Iamsujan45"
+                class="social-icon"
+                aria-label="X"
+                target="_blank"
+                rel="noopener"
+            >
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/sujan-chapagain-240617140/"
+                target="_blank"
+                rel="noopener"
+                class="social-icon"
+                aria-label="LinkedIn"
+            >
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+
+            <a
+                href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf"
+                target="_blank"
+                rel="noopener"
+                class="social-icon"
+                aria-label="Research Gate"
+            >
+                <i class="fab fa-researchgate"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Sujan Chapagain. All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     IMAGE PATH CHECK
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const images = document.querySelectorAll(".org-image-box img");
+
+    images.forEach(function (img) {
+
+        img.addEventListener("error", function () {
+
+            const currentSrc = img.getAttribute("src");
+
+            if (currentSrc.startsWith("Website/Image/")) {
+
+                const filename = currentSrc.replace("Website/Image/", "");
+
+                img.src = "Image/" + filename;
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>

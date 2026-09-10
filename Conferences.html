@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Sujan Chapagain — Conferences & Symposia">
+    <meta name="author" content="Sujan Chapagain">
+
+    <title>Conferences attended | Sujan Chapagain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+    /* =========================================================
+       GLOBAL & RESET
+    ========================================================= */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    html{
+        scroll-behavior:smooth;
+    }
+
+    body{
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+
+        background:#fbf8f3;
+        color:#4a3b32;
+
+        font-family:"Cormorant Garamond", Georgia, serif;
+        line-height:1.65;
+    }
+
+    a{
+        color:inherit;
+    }
+
+
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================= */
+
+    .header{
+        width:100%;
+        background:#f5efe6;
+
+        border-top:1px solid #000000;
+        border-bottom:1px solid #000000;
+    }
+
+    .nav-container{
+        min-height:52px;
+        padding:0 20px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .nav-menu{
+        width:100%;
+        max-width:1320px;
+
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+
+        list-style:none;
+    }
+
+    .nav-menu a{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:20px;
+        font-weight:500;
+
+        color:#13100f;
+
+        text-decoration:underline;
+        text-underline-offset:3px;
+
+        padding:8px 12px;
+
+        transition:.25s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active a{
+        color:#4c78a8;
+    }
+
+
+    /* =========================================================
+       MAIN LAYOUT & HEADING
+    ========================================================= */
+
+    .page-content{
+        flex:1;
+        width:min(1080px, 90%);
+        margin:50px auto 60px;
+    }
+
+    .main-title{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:clamp(40px, 4.5vw, 54px);
+        font-weight:500;
+        color:#4a2306;
+        margin-bottom:30px;
+    }
+
+
+    /* =========================================================
+       CONFERENCES LIST
+    ========================================================= */
+
+    .conf-list{
+        list-style-type:disc;
+        padding-left:24px;
+        display:flex;
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .conf-item{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:21px;
+        color:#2c221e;
+        line-height:1.6;
+        text-align:justify; /* Justified text alignment */
+    }
+
+    .conf-item strong{
+        color:#111;
+        font-weight:700;
+        text-decoration:underline; /* Underlines bold content */
+        text-underline-offset:2px;
+    }
+
+    .paper-link{
+        color:#4c78a8;
+        font-weight:600;
+        text-decoration:none;
+        margin-left:5px;
+        display:inline-flex;
+        align-items:center;
+        gap:4px;
+    }
+
+    .paper-link:hover{
+        text-decoration:underline;
+    }
+
+
+
+    /* =========================================================
+       CONTACT PROFILE
+    ========================================================= */
+
+    .contact-profile{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #e2dad0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:30px;
+        padding:34px 7%;
+    }
+
+    .contact-column{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    .contact-column h3{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:25px;
+        font-weight:600;
+        color:#4a2306;
+    }
+
+    .email-link{
+        font-family:"Montserrat",sans-serif;
+        font-size:12px;
+        color:#73594b;
+        text-decoration:none;
+    }
+
+    .email-link:hover{
+        color:#4c78a8;
+    }
+
+    .location-column{
+        text-align:center;
+    }
+
+    .location-column p{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:18px;
+        color:#73594b;
+    }
+
+    .social-column{
+        align-items:flex-end;
+    }
+
+    .social-icons{
+        display:flex;
+        align-items:center;
+        gap:9px;
+    }
+
+    .social-icon{
+        width:38px;
+        height:38px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        border:1px solid #cfc4bc;
+        border-radius:50%;
+        color:#5a3b2e;
+        text-decoration:none;
+        transition:.25s ease;
+    }
+
+    .social-icon:hover{
+        transform:translateY(-3px);
+        background:#4c78a8;
+        color:#fff;
+        border-color:#4c78a8;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer{
+        width:100%;
+        background:#4a2306;
+        color:#f7f3ef;
+        text-align:center;
+        padding:16px 20px;
+    }
+
+    .footer p{
+        font-family:"Montserrat", sans-serif;
+        font-size:12px;
+        letter-spacing:.4px;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+    ========================================================= */
+
+    @media(max-width:900px){
+        .gallery-grid-3{
+            grid-template-columns:repeat(2, 1fr);
+        }
+    }
+
+    @media(max-width:650px){
+        .nav-menu{
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:2px 8px;
+        }
+
+        .gallery-grid-3{
+            grid-template-columns:1fr;
+        }
+
+        .contact-profile{
+            grid-template-columns:1fr;
+            text-align:center;
+            padding:30px 20px;
+        }
+
+        .contact-column,
+        .social-column{
+            align-items:center;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================= -->
+
+<header class="header">
+    <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Education.html">Education</a></li>
+            <li><a href="Publications.html">Publications</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li class="active"><a href="Conferences.html">Conferences</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+            <li><a href="Organization.html">Organization</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="page-content">
+
+    <h1 class="main-title">Conferences attended</h1>
+
+    <ul class="conf-list">
+
+        <!-- CONFERENCE 1 -->
+        <li class="conf-item">
+            Chapagain, S., Kandel, B. P., Poudel, A., & Subedi, M. (2025, January 13). Morpho physiological screening of wheat genotypes under water deficit conditions. 1st National Convention of Plant Breeding, Genetics and Seed Science, Lalitpur, Nepal. <strong>(Poster Presentation)</strong>
+            <a href="https://doi.org/10.13140/RG.2.2.28442.50885" target="_blank" rel="noopener" class="paper-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI Link
+            </a>
+
+        <!-- CONFERENCE 2 -->
+        <li class="conf-item">
+            Chapagain, S., Kandel, B. P., Poudel, A., & Subedi, M. (2025, November). Drought tolerance screening of wheat accessions at mid-hills of Nepal. 13th Research Practice and Seminar Symposium (RPS), Lamjung Campus, Nepal. <strong>(Best Presenter Award)</strong>
+
+
+        <!-- CONFERENCE 3 -->
+        <li class="conf-item">
+            Chapagain, S. (2023, August). Activities of International Association of Agriculture and Related Science, Local Committee Lamjung. Food & Agriculture Youth Institute (FAYI) International Symposium. <strong>(Speaker)</strong>
+
+
+</main>
+
+<!-- =========================================================
+     CONTACT / SOCIAL PROFILE
+========================================================= -->
+
+<section class="contact-profile" aria-label="Contact and social media">
+    <div class="contact-column">
+        <h3>Sujan Chapagain</h3>
+        <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
+    </div>
+
+    <div class="contact-column location-column">
+        <p>Kathmandu, Nepal</p>
+        <p>Agricultural Researcher</p>
+    </div>
+
+    <div class="contact-column social-column">
+        <div class="social-icons">
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" class="social-icon" aria-label="Research Gate">
+                <i class="fab fa-researchgate"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+    <p>© 2026 Sujan Chapagain. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
