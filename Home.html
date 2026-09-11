@@ -70,49 +70,46 @@
            NAVIGATION
            ========================================================= */
 
-        .header {
-            background: #f7f3ef;
-            border-top: 1px solid #000;
-            border-bottom: 1px solid #000;
-            width: 100%;
-            position: relative;
-            z-index: 1000;
-        }
+      
+    .header{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #000000;
+        border-bottom:1px solid #000000;
+    }
 
-        .nav-container {
-            width: 100%;
-            min-height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 20px;
-        }
+    .nav-container{
+        min-height:52px;
+        padding:0 20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
 
-        .nav-menu {
-            width: 100%;
-            max-width: 1320px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            list-style: none;
-        }
+    .nav-menu{
+        width:100%;
+        max-width:1320px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        list-style:none;
+    }
 
-        .nav-menu a {
-            font-family: "Cormorant Garamond", Georgia, serif;
-            font-size: 26px;
-            font-weight: 650;
-            color: #13100f;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            padding: 10px 12px;
-            transition: color 0.25s ease, opacity 0.25s ease;
-            white-space: nowrap;
-        }
+    .nav-menu a{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:20px;
+        font-weight:600;
+        color:#13100f;
+        text-decoration:underline;
+        text-underline-offset:3px;
+        padding:8px 12px;
+        transition:color .25s ease;
+    }
 
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: #a95229;
-        }
+    .nav-menu a:hover,
+    .nav-menu .active a{
+        color:#4c78a8;
+    }
 
 
         /* =========================================================
@@ -318,252 +315,245 @@
            THREE PERSONAL PHOTOS
            ========================================================= */
 
-        .personal-showcase {
-            width: min(1420px, calc(100% - 60px));
-
-            margin: 0 auto;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 7px;
-
-            padding: 7px 0 0;
-
-            background: #f7f3ef;
-        }
-
-        .personal-photo-card {
-            position: relative;
-
-            height: 390px;
-
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ded0c5,
-                    #eee5de 50%,
-                    #d7c5b8
-                );
-
-            isolation: isolate;
-        }
-
-        .personal-photo-card img {
-            display: block;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-            object-position: center;
-
-            transition:
-                transform 0.7s cubic-bezier(.2, .7, .2, 1),
-                filter 0.45s ease;
-        }
-
-        .personal-photo-card::after {
-            content: "";
-
-            position: absolute;
-            inset: 0;
-
-            z-index: 2;
-
-            background: rgba(24, 18, 14, 0);
-
-            transition: background 0.45s ease;
-
-            pointer-events: none;
-        }
-
-        .photo-hover-icons {
-            position: absolute;
-
-            top: 50%;
-            left: 50%;
-
-            z-index: 4;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 14px;
-
-            transform:
-                translate(-50%, -40%)
-                scale(0.82);
-
-            opacity: 0;
-
-            filter: blur(7px);
-
-            transition:
-                opacity 0.45s ease,
-                transform 0.5s cubic-bezier(.2, .7, .2, 1),
-                filter 0.5s ease;
-
-            pointer-events: none;
-        }
-
-        .photo-hover-icons i {
-            width: 58px;
-            height: 58px;
-
-            display: grid;
-            place-items: center;
-
-            border: 1px solid rgba(255, 255, 255, 0.58);
-
-            border-radius: 50%;
-
-            background: rgba(255, 255, 255, 0.13);
-
-            color: rgba(255, 248, 241, 0.94);
-
-            font-size: 24px;
-
-            text-shadow:
-                0 0 14px rgba(255, 255, 255, 0.85);
-
-            box-shadow:
-                0 0 24px rgba(255, 255, 255, 0.18);
-
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-
-        .personal-photo-card:hover img {
-            transform: scale(1.045);
-            filter: saturate(0.9) brightness(0.72);
-        }
-
-        .personal-photo-card:hover::after {
-            background: rgba(24, 18, 14, 0.25);
-        }
-
-        .personal-photo-card:hover .photo-hover-icons {
-            opacity: 1;
-
-            transform:
-                translate(-50%, -50%)
-                scale(1);
-
-            filter: blur(1.2px);
-        }
-
-        .photo-label {
-            position: absolute;
-
-            left: 20px;
-            bottom: 18px;
-
-            z-index: 5;
-
-            padding: 7px 13px;
-
-            background: rgba(55, 35, 27, 0.72);
-
-            color: #fffaf5;
-
-            font-size: 16px;
-
-            letter-spacing: 0.3px;
-
-            transition: background 0.35s ease;
-        }
-
-        .personal-photo-card:hover .photo-label {
-            background: rgba(55, 35, 27, 0.82);
-        }
-
-
         /* =========================================================
-           IDENTITY BANNER
-           ========================================================= */
+   PERSONAL SHOWCASE (GALLERY GRID)
+========================================================= */
+/* =========================================================
+   PERSONAL SHOWCASE (GALLERY GRID)
+========================================================= */
 
-        .identity {
-            width: min(1420px, calc(100% - 60px));
+.personal-showcase {
+    /* Reduced container width to bring images closer into the center */
+    width: min(1000px, calc(100% - 60px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 0; /* Ensures no bottom gap before banner */
+    background: transparent;
+}
 
-            margin: 0 auto;
+.personal-photo-card {
+    position: relative;
+    /* Reduced frame height for a more compact proportions */
+    height: 320px;
+    overflow: hidden;
+    background: #ded0c5;
+    isolation: isolate;
+}
 
-            background: #eee4eb;
+.personal-photo-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(.2, .7, .2, 1), filter 0.45s ease;
+}
 
-            border-top: 1px solid #ddced8;
-            border-bottom: 1px solid #ddced8;
+/* Dark overlay on hover */
+.personal-photo-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.4s ease;
+    pointer-events: none;
+}
 
-            text-align: center;
+/* Single Centered Heart Icon on Hover */
+.photo-hover-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+    transition: opacity 0.35s ease, transform 0.4s cubic-bezier(.2, .7, .2, 1);
+    pointer-events: none;
+}
 
-            padding: 31px 30px 34px;
-        }
+.photo-hover-icons i {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 16px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
 
-        .identity h1 {
-            font-family: "Cormorant Garamond", Georgia, serif;
+/* Hover Animations */
+.personal-photo-card:hover img {
+    transform: scale(1.03);
+    filter: brightness(0.85);
+}
 
-            font-size: 48px;
+.personal-photo-card:hover::after {
+    background: rgba(0, 0, 0, 0.2);
+}
 
-            line-height: 1;
+.personal-photo-card:hover .photo-hover-icons {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
 
-            font-weight: 500;
+/* Label at bottom-left */
+.photo-label {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    z-index: 5;
+    padding: 5px 11px;
+    background: rgba(45, 30, 22, 0.75);
+    color: #fffaf5;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    transition: background 0.35s ease;
+}
 
-            letter-spacing: 0.2px;
+.personal-photo-card:hover .photo-label {
+    background: rgba(45, 30, 22, 0.88);
+}
 
-            color: #4b2e26;
-        }
+/* =========================================================
+   IDENTITY BANNER (ATTACHED DIRECTLY BELOW SHOWCASE)
+========================================================= */
 
-        .identity .role {
-            margin-top: 7px;
+.identity {
+    /* Matches width with showcase container for uniform alignment */
+    width: min(1000px, calc(100% - 60px));
+    margin: 0 auto;
+    background: #eee4eb;
+    border-top: 1px solid #ddced8;
+    border-bottom: 1px solid #ddced8;
+    text-align: center;
+    padding: 35px 30px 38px;
+}
 
-            font-size: 27px;
+.identity h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: #4b2e26;
+}
 
-            line-height: 1.1;
+.identity .role {
+    margin-top: 8px;
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 500;
+    color: #65463a;
+}
 
-            font-weight: 500;
+.identity .tagline {
+    margin-top: 6px;
+    font-size: 18px;
+    color: #806154;
+}
 
-            color: #65463a;
-        }
+.identity-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 25px 7px;
+    border: 1px solid #bca395;
+    font-size: 16px;
+    line-height: 1;
+    color: #81472e;
+    background: rgba(255, 255, 255, 0.20);
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
 
-        .identity .tagline {
-            margin-top: 5px;
+.identity-button:hover {
+    background: #fffdfb;
+    border-color: #9d7b6a;
+    color: #632f1b;
+}
 
-            font-size: 21px;
+/* =========================================================
+   RESPONSIVE ADJUSTMENTS
+========================================================= */
 
-            color: #806154;
-        }
+@media (max-width: 768px) {
+    .personal-showcase {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 
-        .identity-button {
-            display: inline-block;
+    .personal-photo-card {
+        height: 280px;
+    }
 
-            margin-top: 14px;
+    .identity {
+        width: 90%;
+    }
+}
 
-            padding: 6px 25px 7px;
 
-            border: 1px solid #bca395;
+/* =========================================================
+   IDENTITY BANNER (ATTACHED DIRECTLY BELOW SHOWCASE)
+========================================================= */
 
-            font-size: 18px;
+.identity {
+    width: min(1420px, calc(100% - 60px));
+    margin: 0 auto;
+    background: #eee4eb;
+    border-top: 1px solid #ddced8;
+    border-bottom: 1px solid #ddced8;
+    text-align: center;
+    padding: 35px 30px 38px;
+}
 
-            line-height: 1;
+.identity h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 46px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: #4b2e26;
+}
 
-            color: #81472e;
+.identity .role {
+    margin-top: 8px;
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 500;
+    color: #65463a;
+}
 
-            background: rgba(255, 255, 255, 0.20);
+.identity .tagline {
+    margin-top: 6px;
+    font-size: 19px;
+    color: #806154;
+}
 
-            transition: all 0.25s ease;
-        }
+.identity-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 25px 7px;
+    border: 1px solid #bca395;
+    font-size: 17px;
+    line-height: 1;
+    color: #81472e;
+    background: rgba(255, 255, 255, 0.20);
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
 
-        .identity-button:hover {
-            background: #fffdfb;
-
-            border-color: #9d7b6a;
-
-            color: #632f1b;
-        }
-
+.identity-button:hover {
+    background: #fffdfb;
+    border-color: #9d7b6a;
+    color: #632f1b;
+}
 
         /* =========================================================
            COMMON SECTION
@@ -663,7 +653,7 @@
         }
 
         .profile-inner {
-            width: min(1050px, calc(100% - 70px));
+            width: min(1150px, calc(100% - 70px));
 
             margin: auto;
 
@@ -673,7 +663,7 @@
         }
 
         .profile-lead {
-            font-size: 24px !important;
+            font-size: 25px !important;
 
             color: #6c4637 !important;
         }
@@ -1426,19 +1416,19 @@
                 </li>
 
                 <li>
-                    <a href="blog.html">Blogs</a>
+                    <a href="Award.html">Awards</a>
                 </li>
 
                 <li>
-                    <a href="Volunteering.html">Organization</a>
+                    <a href="Affilations.html">Affiliations</a>
                 </li>
 
                 <li>
-                    <a href="mould.html">Gallery</a>
+                    <a href="Volunteering.html">Volunteering</a>
                 </li>
 
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.html">Contact & Galley </a>
                 </li>
 
             </ul>
@@ -1463,7 +1453,7 @@
                 <span>Agricultural Researcher</span>
 
                 <span>
-                    Plant Pathology · Crop Stress · Sustainable Agriculture
+                    Plant Breeding · Horticulture · Plant Pathology
                 </span>
 
             </div>
@@ -1479,59 +1469,23 @@
 
     <section class="about-section" id="research-profile">
 
-        <div class="container">
+    <div class="container">
 
-            <h2 class="section-title">
-                Research Profile
-            </h2>
+        <h2 class="section-title">
+            Research Profile
+        </h2>
 
-            <div class="about-text">
+        <div class="about-text" style="text-align: justify;">
 
-                <p>
-                    I am an agriculture graduate with a strong research focus on
-                    plant pathology, sustainable disease management, and crop health
-                    assessment. My academic and research training integrates fungal
-                    pathogen biology, botanical-based disease control, and
-                    field-level stress phenotyping.
-                </p>
-
-                <p>
-                    I have hands-on experience in pathogen isolation, cultural and
-                    morphological characterization of phytopathogenic fungi,
-                    phytochemical extraction, and in vivo evaluation of botanical
-                    extracts against postharvest and field diseases.
-                </p>
-
-                <p>
-                    My research work emphasizes eco-friendly alternatives to
-                    synthetic pesticides, with particular attention to the
-                    physiological and biochemical responses of crops to biotic and
-                    abiotic stresses. In field-based studies, I have applied NDVI and
-                    canopy temperature measurements to quantify plant vigor, disease
-                    severity, and stress tolerance in wheat genotypes.
-                </p>
-
-                <p>
-                    I am proficient in quantitative data analysis using R,
-                    experimental design, and scientific writing, with peer-reviewed
-                    publications in crop improvement, disease management, and
-                    agronomy.
-                </p>
-
-                <p>
-                    My long-term academic goal is to advance expertise in plant
-                    health, molecular diagnostics, and integrated disease management
-                    to contribute to sustainable and climate-resilient agricultural
-                    systems.
-                </p>
-
-                <a href="Education.html" class="learn-more-btn">
-                    Learn More about Sujan Chapagain
-                </a>
-
-            </div>
+            <p>
+Sujan Chapagain is an agriculture graduate and researcher specializing in plant breeding, horticulture, plant pathology, and crop stress physiology. His research experience spans abiotic and biotic stress screening, field phenotyping, postharvest pathology, and sustainable disease management. He has contributed to projects on drought tolerance in wheat, NDVI and canopy temperature-based phenotyping, wheat leaf rust screening, and citrus postharvest green mold management using botanical extracts. His work also includes characterization and diversity analysis of crop genetic resources, particularly finger millet landraces. His technical expertise includes DNA extraction, PCR, marker design, disease phenotyping, experimental design, R, Python, GIS, and scientific writing. His long-term research goal is to advance crop improvement, molecular plant–pathogen interactions, and integrated disease management for climate-resilient agriculture.
+<p>
 
         </div>
+
+    </div>
+
+</section>
 
     </section>
 
@@ -1554,8 +1508,6 @@
 
                 <i class="fa-solid fa-heart"></i>
 
-                <i class="fa-solid fa-lightbulb"></i>
-
             </div>
 
             <div class="photo-label">
@@ -1575,7 +1527,6 @@
 
                 <i class="fa-solid fa-heart"></i>
 
-                <i class="fa-solid fa-lightbulb"></i>
 
             </div>
 
@@ -1595,8 +1546,6 @@
             <div class="photo-hover-icons" aria-hidden="true">
 
                 <i class="fa-solid fa-heart"></i>
-
-                <i class="fa-solid fa-lightbulb"></i>
 
             </div>
 
