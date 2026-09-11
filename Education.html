@@ -29,44 +29,47 @@
 
         a { color: inherit; }
 
-        .header {
-            background: #f7f3ef;
-            border-top: 1px solid #000;
-            border-bottom: 1px solid #000;
-            width: 100%;
-        }
+       
+    .header{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #000000;
+        border-bottom:1px solid #000000;
+    }
 
-        .nav-container {
-            width: 100%;
-            min-height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 20px;
-        }
+    .nav-container{
+        min-height:52px;
+        padding:0 20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
 
-        .nav-menu {
-            width: 100%;
-            max-width: 1320px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            list-style: none;
-        }
+    .nav-menu{
+        width:100%;
+        max-width:1320px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        list-style:none;
+    }
 
-        .nav-menu a {
-            font-family: "Cormorant Garamond", Georgia, serif;
-            font-size: 19px;
-            font-weight: 510;
-            color: #3d302a;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            padding: 8px 12px;
-            transition: color .25s ease, opacity .25s ease;
-        }
+    .nav-menu a{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:20px;
+        font-weight:600;
+        color:#13100f;
+        text-decoration:underline;
+        text-underline-offset:3px;
+        padding:8px 12px;
+        transition:color .25s ease;
+    }
 
-        .nav-menu a:hover,
-        .nav-menu .active a { color: #4c78a8; }
+    .nav-menu a:hover,
+    .nav-menu .active a{
+        color:#4c78a8;
+    }
+
 
         .page-content { flex: 1; }
 
@@ -461,14 +464,39 @@
 <header class="header">
     <nav class="nav-container" aria-label="Main navigation">
         <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="Education.html">Education</a></li>
-            <li><a href="Publications.html">Publications</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="Conferences.html">Conferences</a></li>
-            <li><a href="Blogs.html">Blogs</a></li>
-            <li><a href="Organization.html">Organization</a></li>
-            <li><a href="Contact.html">Contact</a></li>
+                     <a href="index.html" >Home</a>
+                </li>
+
+                <li>
+                    <a href="Education.html"class="active">Education</a>
+                </li>
+
+                <li>
+                    <a href="Publications.html">Publications</a>
+                </li>
+
+                <li>
+                    <a href="projects.html">Projects</a>
+                </li>
+
+                <li>
+                    <a href="Conferences.html">Conferences</a>
+                </li>
+
+                <li>
+                    <a href="Award.html" >Awards</a>
+                </li>
+
+                <li>
+                    <a href="Affilations.html">Affiliations</a>
+                </li>
+
+                <li>
+                    <a href="Volunteering.html">Volunteering</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact & Galley </a>
         </ul>
     </nav>
 </header>
