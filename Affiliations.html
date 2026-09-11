@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Sujan Chapagain — Professional Affiliations">
+    <meta name="author" content="Sujan Chapagain">
+
+    <title>Affiliations | Sujan Chapagain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+    /* =========================================================
+       GLOBAL & RESET
+    ========================================================= */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    html{
+        scroll-behavior:smooth;
+    }
+
+    body{
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+        background:#fbf8f3;
+        color:#332923;
+        font-family:"Cormorant Garamond", Georgia, serif;
+        line-height:1.6;
+    }
+
+    a{
+        color:inherit;
+    }
+
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================= */
+
+    .header{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #000000;
+        border-bottom:1px solid #000000;
+    }
+
+    .nav-container{
+        min-height:52px;
+        padding:0 20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .nav-menu{
+        width:100%;
+        max-width:1320px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        list-style:none;
+    }
+
+    .nav-menu a{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:20px;
+        font-weight:600;
+        color:#13100f;
+        text-decoration:underline;
+        text-underline-offset:3px;
+        padding:8px 12px;
+        transition:color .25s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active a{
+        color:#4c78a8;
+    }
+
+    /* =========================================================
+       MAIN LAYOUT & HEADING
+    ========================================================= */
+
+    .page-content{
+        flex:1;
+        width:min(1080px, 90%);
+        margin:50px auto 60px;
+    }
+
+    .main-title{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:clamp(38px, 4vw, 50px);
+        font-weight:500;
+        color:#4a2306;
+        margin-bottom:40px;
+    }
+
+    /* =========================================================
+       ORGANIZATION / AFFILIATION SECTIONS
+    ========================================================= */
+
+    .org-container{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .org-card{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+        align-items:center;
+        padding:10px 0;
+    }
+
+    /* =========================================================
+       ALTERNATING IMAGE POSITION
+    ========================================================= */
+
+    .org-card.img-left .org-image-box{
+        order:1;
+    }
+
+    .org-card.img-left .org-text-box{
+        order:2;
+    }
+
+    /* =========================================================
+       IMAGE BOX
+    ========================================================= */
+
+    .org-image-box{
+        width:100%;
+        min-height:180px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow:hidden;
+    }
+
+    .org-image-box img{
+        display:block;
+        max-width:280px;
+        max-height:200px;
+        width:auto;
+        height:auto;
+        object-fit:contain;
+    }
+
+    /* =========================================================
+       TEXT & BULLETS
+    ========================================================= */
+
+    .org-text-box{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        text-align:justify;
+    }
+
+    .org-number{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:22px;
+        font-weight:600;
+        color:#4a2306;
+        margin-bottom:2px;
+    }
+
+    .org-title{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:28px;
+        font-weight:600;
+        color:#111111;
+        margin-bottom:12px;
+        line-height:1.25;
+    }
+
+    .role-list{
+        list-style:none;
+        padding:0;
+        margin:0;
+    }
+
+    .role-list li{
+        position:relative;
+        font-size:21px;
+        color:#332923;
+        margin-bottom:8px;
+        line-height:1.5;
+        padding-left:20px;
+    }
+
+    /* BLACK DOT BULLET */
+    .role-list li::before{
+        content:"•";
+        position:absolute;
+        left:0;
+        top:0;
+        color:#000000;
+        font-size:18px;
+        font-weight:700;
+        line-height:1.5;
+    }
+
+    .role-list li strong{
+        font-weight:600;
+    }
+
+    /* =========================================================
+       CONTACT PROFILE
+    ========================================================= */
+
+    .contact-profile{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #e2dad0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:30px;
+        padding:34px 7%;
+    }
+
+    .contact-column{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    .contact-column h3{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:25px;
+        font-weight:600;
+        color:#4a2306;
+    }
+
+    .email-link{
+        font-family:"Montserrat",sans-serif;
+        font-size:12px;
+        color:#73594b;
+        text-decoration:none;
+    }
+
+    .email-link:hover{
+        color:#4c78a8;
+    }
+
+    .location-column{
+        text-align:center;
+    }
+
+    .location-column p{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:18px;
+        color:#73594b;
+    }
+
+    .social-column{
+        align-items:flex-end;
+    }
+
+    .social-icons{
+        display:flex;
+        align-items:center;
+        gap:9px;
+    }
+
+    .social-icon{
+        width:38px;
+        height:38px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        border:1px solid #cfc4bc;
+        border-radius:50%;
+        color:#5a3b2e;
+        text-decoration:none;
+        transition:
+            transform .25s ease,
+            background .25s ease,
+            color .25s ease,
+            border-color .25s ease;
+    }
+
+    .social-icon:hover{
+        transform:translateY(-3px);
+        background:#4c78a8;
+        color:#ffffff;
+        border-color:#4c78a8;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer{
+        width:100%;
+        background:#4a2306;
+        color:#f7f3ef;
+        text-align:center;
+        padding:16px 20px;
+    }
+
+    .footer p{
+        font-family:"Montserrat",sans-serif;
+        font-size:12px;
+        letter-spacing:.4px;
+    }
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+    ========================================================= */
+
+    @media(max-width:768px){
+
+        .nav-container{
+            padding:8px 12px;
+        }
+
+        .nav-menu{
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:3px 8px;
+        }
+
+        .nav-menu a{
+            font-size:18px;
+            padding:5px 7px;
+        }
+
+        .page-content{
+            width:90%;
+            margin:35px auto 50px;
+        }
+
+        .main-title{
+            font-size:38px;
+            margin-bottom:30px;
+        }
+
+        .org-card{
+            grid-template-columns:1fr;
+            gap:20px;
+            text-align:center;
+        }
+
+        .org-text-box{
+            text-align:center;
+        }
+
+        .org-card.img-left .org-image-box{
+            order:1;
+        }
+
+        .org-card.img-left .org-text-box{
+            order:2;
+        }
+
+        .org-image-box{
+            min-height:150px;
+        }
+
+        .org-image-box img{
+            max-width:240px;
+            max-height:150px;
+        }
+
+        .role-list{
+            display:inline-block;
+            text-align:left;
+        }
+
+        .contact-profile{
+            grid-template-columns:1fr;
+            text-align:center;
+            padding:30px 20px;
+        }
+
+        .contact-column,
+        .social-column{
+            align-items:center;
+        }
+
+        .social-column{
+            justify-content:center;
+        }
+    }
+
+    @media(max-width:480px){
+
+        .nav-menu a{
+            font-size:17px;
+            padding:4px 5px;
+        }
+
+        .main-title{
+            font-size:34px;
+        }
+
+        .org-title{
+            font-size:25px;
+        }
+
+        .role-list li{
+            font-size:18px;
+        }
+
+        .contact-column h3{
+            font-size:23px;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================= -->
+
+<header class="header">
+    <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-menu">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="Education.html">Education</a>
+            </li>
+
+            <li>
+                <a href="Publications.html">Publications</a>
+            </li>
+
+            <li>
+                <a href="projects.html">Projects</a>
+            </li>
+
+            <li>
+                <a href="Conferences.html">Conferences</a>
+            </li>
+
+            <li>
+                <a href="Award.html">Awards</a>
+            </li>
+
+            <li class="active">
+                <a href="Affilations.html">Affiliations</a>
+            </li>
+
+            <li>
+                <a href="Volunteering.html">Volunteering</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact & Gallery</a>
+            </li>
+
+        </ul>
+    </nav>
+</header>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="page-content">
+
+    <h1 class="main-title">
+        Professional Affiliations
+    </h1>
+
+    <!-- =========================================================
+         AFFILIATIONS
+    ========================================================= -->
+
+    <div class="org-container">
+
+        <!-- 01. American Phytopathological Society -->
+        <div class="org-card img-left">
+
+            <div class="org-image-box">
+                <img
+                    src="Website/Images/APS.png"
+                    alt="American Phytopathological Society Logo"
+                    loading="eager"
+                >
+            </div>
+
+            <div class="org-text-box">
+
+                <div class="org-number">
+                    01
+                </div>
+
+                <h2 class="org-title">
+                    American Phytopathological Society (APS)
+                </h2>
+
+                <ul class="role-list">
+
+                    <li>
+                        <strong>Member</strong> — (Mar 5, 2026 – Present)
+                    </li>
+
+                    <li>
+                        Engaged in global plant pathology networks, participating in scientific exchanges and advancing research in sustainable crop protection and plant health.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     CONTACT / SOCIAL PROFILE
+========================================================= -->
+
+<section class="contact-profile" aria-label="Contact and social media">
+
+    <div class="contact-column">
+
+        <h3>
+            Sujan Chapagain
+        </h3>
+
+        <a
+            href="mailto:chapagainsujan45@gmail.com"
+            class="email-link"
+        >
+            chapagainsujan45@gmail.com
+        </a>
+
+    </div>
+
+
+    <div class="contact-column location-column">
+
+        <p>
+            Kathmandu, Nepal
+        </p>
+
+        <p>
+            Agricultural Researcher
+        </p>
+
+    </div>
+
+
+    <div class="contact-column social-column">
+
+        <div class="social-icons">
+
+            <a
+                href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en"
+                class="social-icon"
+                aria-label="Google Scholar"
+                target="_blank"
+                rel="noopener"
+            >
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+
+
+            <a
+                href="https://github.com/sujan4445"
+                class="social-icon"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener"
+            >
+                <i class="fab fa-github"></i>
+            </a>
+
+
+            <a
+                href="https://x.com/Iamsujan45"
+                class="social-icon"
+                aria-label="X"
+                target="_blank"
+                rel="noopener"
+            >
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/sujan-chapagain-240617140/"
+                target="_blank"
+                rel="noopener"
+                class="social-icon"
+                aria-label="LinkedIn"
+            >
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+
+            <a
+                href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf"
+                target="_blank"
+                rel="noopener"
+                class="social-icon"
+                aria-label="Research Gate"
+            >
+                <i class="fab fa-researchgate"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Sujan Chapagain. All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     IMAGE PATH CHECK
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const images = document.querySelectorAll(".org-image-box img");
+
+    images.forEach(function (img) {
+
+        img.addEventListener("error", function () {
+
+            const currentSrc = img.getAttribute("src");
+
+            if (currentSrc.startsWith("Website/Image/")) {
+
+                const filename = currentSrc.replace("Website/Image/", "");
+
+                img.src = "Image/" + filename;
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
