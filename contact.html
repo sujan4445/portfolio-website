@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Gallery & Contact — Sujan Chapagain">
+    <meta name="author" content="Sujan Chapagain">
+
+    <title>Gallery & Contact | Sujan Chapagain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+       })();
+    </script>
+
+    <style>
+
+    /* =========================================================
+       GLOBAL & RESET
+    ========================================================= */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    html{
+        scroll-behavior:smooth;
+    }
+
+    body{
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+        background:#fbf8f3;
+        color:#332923;
+        font-family:"Cormorant Garamond", Georgia, serif;
+        line-height:1.6;
+    }
+
+    a{
+        color:inherit;
+    }
+
+    /* =========================================================
+       HEADER / NAVIGATION
+    ========================================================= */
+
+    .header{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #000000;
+        border-bottom:1px solid #000000;
+        position:sticky;
+        top:0;
+        z-index:100;
+    }
+
+    .nav-container{
+        min-height:52px;
+        padding:0 20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .nav-menu{
+        width:100%;
+        max-width:1320px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        list-style:none;
+    }
+
+    .nav-menu a{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:20px;
+        font-weight:600;
+        color:#13100f;
+        text-decoration:underline;
+        text-underline-offset:3px;
+        padding:8px 12px;
+        transition:color .25s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active a,
+    .nav-menu a.active{
+        color:#4c78a8;
+    }
+
+    /* =========================================================
+       HERO / PROFILE BANNER
+    ========================================================= */
+
+    .profile-header-banner{
+        background:#f5efe6;
+        border-bottom:1px solid #e2dad0;
+        padding:50px 20px 40px;
+        text-align:center;
+    }
+
+    .profile-container{
+        max-width:800px;
+        margin:0 auto;
+    }
+
+    .profile-img{
+        width:160px;
+        height:160px;
+        border-radius:50%;
+        border:4px solid #4a2306;
+        object-fit:cover;
+        margin:0 auto 18px;
+        display:block;
+        box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .profile-header-banner h1{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:clamp(34px, 4vw, 46px);
+        font-weight:600;
+        color:#4a2306;
+        margin-bottom:4px;
+    }
+
+    .profile-header-banner p{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:22px;
+        color:#73594b;
+        margin-bottom:20px;
+    }
+
+    .contact-links-grid{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    .social-badge{
+        width:42px;
+        height:42px;
+        border-radius:50%;
+        background:#ffffff;
+        border:1px solid #cfc4bc;
+        color:#4a2306;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        font-size:18px;
+        text-decoration:none;
+        transition:all .25s ease;
+    }
+
+    .social-badge:hover{
+        background:#4c78a8;
+        color:#ffffff;
+        border-color:#4c78a8;
+        transform:translateY(-3px);
+    }
+
+    /* =========================================================
+       MAIN CONTENT CONTAINER
+    ========================================================= */
+
+    .page-content{
+        flex:1;
+        width:min(1080px, 90%);
+        margin:40px auto 60px;
+    }
+
+    .section-title{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:clamp(34px, 4vw, 44px);
+        font-weight:600;
+        color:#4a2306;
+        margin-bottom:6px;
+    }
+
+    .section-subtitle{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:21px;
+        color:#73594b;
+        margin-bottom:35px;
+    }
+
+    .section-divider{
+        border:none;
+        border-top:1px solid #c2b2a3;
+        margin:60px 0;
+    }
+
+    /* =========================================================
+       CONTACT FORM & INFO SECTION
+    ========================================================= */
+
+    .contact-grid{
+        display:grid;
+        grid-template-columns:1fr 1.3fr;
+        gap:45px;
+        align-items:start;
+    }
+
+    .info-box p{
+        font-size:20px;
+        color:#332923;
+        margin-bottom:25px;
+        line-height:1.6;
+    }
+
+    .detail-item{
+        display:flex;
+        align-items:center;
+        gap:15px;
+        font-size:19px;
+        margin-bottom:15px;
+        color:#332923;
+    }
+
+    .detail-item i{
+        font-size:20px;
+        color:#4a2306;
+        width:24px;
+        text-align:center;
+    }
+
+    .contact-form-card{
+        background:#f5efe6;
+        border:1px solid #e2dad0;
+        padding:35px;
+        border-radius:4px;
+    }
+
+    .form-group{
+        margin-bottom:20px;
+    }
+
+    .form-row{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:20px;
+    }
+
+    .form-group label{
+        display:block;
+        font-family:"Montserrat", sans-serif;
+        font-size:12px;
+        font-weight:600;
+        text-transform:uppercase;
+        letter-spacing:.5px;
+        color:#4a2306;
+        margin-bottom:8px;
+    }
+
+    .form-control{
+        width:100%;
+        padding:12px 14px;
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:18px;
+        background:#ffffff;
+        border:1px solid #cfc4bc;
+        border-radius:2px;
+        color:#332923;
+        outline:none;
+        transition:border-color .25s ease;
+    }
+
+    .form-control:focus{
+        border-color:#4c78a8;
+    }
+
+    textarea.form-control{
+        resize:vertical;
+        min-height:130px;
+    }
+
+    .button-group{
+        display:flex;
+        gap:15px;
+        margin-top:25px;
+    }
+
+    .btn-submit{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        font-family:"Montserrat", sans-serif;
+        font-size:13px;
+        font-weight:600;
+        color:#ffffff;
+        background:#4a2306;
+        padding:12px 26px;
+        border:none;
+        border-radius:30px;
+        cursor:pointer;
+        transition:background .25s ease, transform .25s ease;
+    }
+
+    .btn-submit:hover{
+        background:#4c78a8;
+        transform:translateY(-2px);
+    }
+
+    .btn-reset{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        font-family:"Montserrat", sans-serif;
+        font-size:13px;
+        font-weight:600;
+        color:#4a2306;
+        background:#e2dad0;
+        padding:12px 24px;
+        border:none;
+        border-radius:30px;
+        cursor:pointer;
+        transition:background .25s ease;
+    }
+
+    .btn-reset:hover{
+        background:#cfc4bc;
+    }
+
+    #formMessage{
+        margin-top:18px;
+        font-family:"Montserrat", sans-serif;
+        font-size:13px;
+        text-align:center;
+    }
+
+    /* =========================================================
+       GALLERY SECTIONS
+    ========================================================= */
+
+    .org-container{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .gallery-divider{
+        border:none;
+        border-top:1px solid #c2b2a3;
+        margin:35px 0;
+    }
+
+    .org-card{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+        align-items:center;
+        padding:10px 0;
+    }
+
+    .org-card.img-left .org-image-box{ order:1; }
+    .org-card.img-left .org-text-box{ order:2; }
+
+    .org-card.img-right .org-text-box{ order:1; }
+    .org-card.img-right .org-image-box{ order:2; }
+
+    .org-image-box{
+        width:100%;
+        min-height:220px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow:hidden;
+        background:#f5efe6;
+        border:1px solid #dfd5c8;
+        border-radius:4px;
+        padding:10px;
+    }
+
+    .org-image-box img{
+        display:block;
+        max-width:100%;
+        max-height:240px;
+        width:auto;
+        height:auto;
+        object-fit:cover;
+    }
+
+    .org-text-box{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        text-align:justify;
+    }
+
+    .org-number{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:22px;
+        font-weight:600;
+        color:#4a2306;
+        margin-bottom:2px;
+    }
+
+    .org-title{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:30px;
+        font-weight:600;
+        color:#111111;
+        margin-bottom:12px;
+        line-height:1.25;
+    }
+
+    .org-title a{
+        text-decoration:none;
+        transition:color .25s ease;
+    }
+
+    .org-title a:hover{
+        color:#4c78a8;
+    }
+
+    .gallery-desc{
+        font-size:21px;
+        color:#332923;
+        margin-bottom:20px;
+        line-height:1.5;
+    }
+
+    .more-btn{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        font-family:"Montserrat", sans-serif;
+        font-size:13px;
+        font-weight:600;
+        color:#ffffff;
+        background:#4a2306;
+        padding:10px 22px;
+        border-radius:30px;
+        text-decoration:none;
+        transition:background .25s ease, transform .25s ease;
+        width:fit-content;
+    }
+
+    .more-btn:hover{
+        background:#4c78a8;
+        transform:translateY(-2px);
+    }
+
+    /* =========================================================
+       CONTACT PROFILE BLOCK (BOTTOM)
+    ========================================================= */
+
+    .contact-profile{
+        width:100%;
+        background:#f5efe6;
+        border-top:1px solid #e2dad0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:30px;
+        padding:34px 7%;
+    }
+
+    .contact-column{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    .contact-column h3{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:25px;
+        font-weight:600;
+        color:#4a2306;
+    }
+
+    .email-link{
+        font-family:"Montserrat",sans-serif;
+        font-size:12px;
+        color:#73594b;
+        text-decoration:none;
+    }
+
+    .email-link:hover{
+        color:#4c78a8;
+    }
+
+    .location-column{
+        text-align:center;
+    }
+
+    .location-column p{
+        font-family:"Cormorant Garamond",Georgia,serif;
+        font-size:18px;
+        color:#73594b;
+    }
+
+    .social-column{
+        align-items:flex-end;
+    }
+
+    .social-icons{
+        display:flex;
+        align-items:center;
+        gap:9px;
+    }
+
+    .social-icon{
+        width:38px;
+        height:38px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        border:1px solid #cfc4bc;
+        border-radius:50%;
+        color:#5a3b2e;
+        text-decoration:none;
+        transition:transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    }
+
+    .social-icon:hover{
+        transform:translateY(-3px);
+        background:#4c78a8;
+        color:#ffffff;
+        border-color:#4c78a8;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer{
+        width:100%;
+        background:#4a2306;
+        color:#f7f3ef;
+        text-align:center;
+        padding:16px 20px;
+    }
+
+    .footer p{
+        font-family:"Montserrat",sans-serif;
+        font-size:12px;
+        letter-spacing:.4px;
+    }
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+    ========================================================= */
+
+    @media(max-width:768px){
+
+        .nav-container{ padding:8px 12px; }
+
+        .nav-menu{
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:3px 8px;
+        }
+
+        .nav-menu a{
+            font-size:18px;
+            padding:5px 7px;
+        }
+
+        .page-content{
+            width:90%;
+            margin:30px auto 45px;
+        }
+
+        .contact-grid{
+            grid-template-columns:1fr;
+            gap:30px;
+        }
+
+        .form-row{
+            grid-template-columns:1fr;
+            gap:0;
+        }
+
+        .org-card{
+            grid-template-columns:1fr;
+            gap:20px;
+            text-align:center;
+        }
+
+        .org-text-box{ text-align:center; }
+
+        .org-card.img-left .org-image-box,
+        .org-card.img-right .org-image-box{ order:1; }
+
+        .org-card.img-left .org-text-box,
+        .org-card.img-right .org-text-box{ order:2; }
+
+        .more-btn{ margin:0 auto; }
+
+        .contact-profile{
+            grid-template-columns:1fr;
+            text-align:center;
+            padding:30px 20px;
+        }
+
+        .contact-column,
+        .social-column{ align-items:center; }
+
+        .social-column{ justify-content:center; }
+    }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER / NAVIGATION -->
+<header class="header">
+    <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Education.html">Education</a></li>
+            <li><a href="Publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Conferences.html">Conferences</a></li>
+            <li><a href="Award.html">Awards</a></li>
+            <li><a href="Affilations.html">Affiliations</a></li>
+            <li><a href="Volunteering.html">Volunteering</a></li>
+            <li><a href="#contact" class="active">Gallery & Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- PROFILE HEADER BANNER -->
+<section class="profile-header-banner">
+    <div class="profile-container">
+        <img src="img/profile.png" alt="Sujan Chapagain" class="profile-img">
+        <h1>Sujan Chapagain</h1>
+        <p>Agriculture Student • Researcher • Climate Justice Activist</p>
+
+        <div class="contact-links-grid" aria-label="Profile links">
+            <a class="social-badge" href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a class="social-badge" href="https://www.researchgate.net/profile/Sujan-Chapagain-2" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+            <a class="social-badge" href="https://orcid.org/0000-0002-2037-3491" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+            <a class="social-badge" href="https://linktr.ee/Sujan_Chapagain" target="_blank" title="Linktree"><i class="fa-solid fa-tree"></i></a>
+            <a class="social-badge" href="https://wa.me/9779865532285" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a class="social-badge" href="mailto:chapagainsujan45@gmail.com" target="_blank" title="Email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main class="page-content">
+
+    <!-- 1. CONTACT SECTION -->
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">Whether it’s a project idea, collaboration, or just a friendly hello, feel free to drop a message!</p>
+
+        <div class="contact-grid">
+            <!-- Info Box -->
+            <div class="info-box">
+                <p>Feel free to reach out directly using the details below or by submitting the contact form.</p>
+                
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>chapagainsujan45@gmail.com</span>
+                </div>
+                
+                <div class="detail-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+977 9865532285</span>
+                </div>
+            </div>
+
+            <!-- Form Card -->
+            <div class="contact-form-card">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required class="form-control"></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send
+                        </button>
+                        <button type="reset" class="btn-reset">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                    </div>
+
+                    <p id="formMessage" style="display:none;"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <hr class="section-divider">
+
+    <!-- 2. GALLERY SECTION -->
+    <section id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">Explore my Academic, Research, and Organizational journeys.</p>
+
+        <div class="org-container">
+
+            <!-- Card 1 -->
+            <div class="org-card img-left">
+                <div class="org-image-box">
+                    <img src="images/academic.jpg" alt="Academic & Trainings" loading="eager">
+                </div>
+                <div class="org-text-box">
+                    <div class="org-number">01</div>
+                    <h3 class="org-title">
+                        <a href="gallery-academic.html">Academic & Trainings</a>
+                    </h3>
+                    <p class="gallery-desc">
+                        Workshops, seminars, trainings, and academic events that enhanced my skills and knowledge.
+                    </p>
+                    <a href="gallery-academic.html" class="more-btn">View More <i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <hr class="gallery-divider">
+
+            <!-- Card 2 -->
+            <div class="org-card img-right">
+                <div class="org-text-box">
+                    <div class="org-number">02</div>
+                    <h3 class="org-title">
+                        <a href="gallery-research.html">Research & Projects</a>
+                    </h3>
+                    <p class="gallery-desc">
+                        Research field visits, experiments, and projects showcasing scientific exploration and innovation.
+                    </p>
+                    <a href="gallery-research.html" class="more-btn">View More <i class="fa fa-arrow-right"></i></a>
+                </div>
+                <div class="org-image-box">
+                    <img src="images/research.jpg" alt="Research & Projects" loading="lazy">
+                </div>
+            </div>
+
+            <hr class="gallery-divider">
+
+            <!-- Card 3 -->
+            <div class="org-card img-left">
+                <div class="org-image-box">
+                    <img src="images/sports.jpg" alt="Sports & Organizational Activities" loading="lazy">
+                </div>
+                <div class="org-text-box">
+                    <div class="org-number">03</div>
+                    <h3 class="org-title">
+                        <a href="gallery-sports.html">Sports & Organizational Activities</a>
+                    </h3>
+                    <p class="gallery-desc">
+                        Sports events, leadership roles, and organizational activities that foster teamwork and growth.
+                    </p>
+                    <a href="gallery-sports.html" class="more-btn">View More <i class="fa fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- CONTACT PROFILE BLOCK (BOTTOM) -->
+<section class="contact-profile" aria-label="Contact and social media">
+    <div class="contact-column">
+        <h3>Sujan Chapagain</h3>
+        <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
+    </div>
+
+    <div class="contact-column location-column">
+        <p>Kathmandu, Nepal</p>
+        <p>IAAS Lamjung</p>
+    </div>
+
+    <div class="contact-column social-column">
+        <div class="social-icons">
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i></a>
+            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" target="_blank" rel="noopener" class="social-icon" aria-label="Research Gate"><i class="fab fa-researchgate"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Sujan Chapagain • IAAS Lamjung. All rights reserved.</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+    const form = document.getElementById("contactForm");
+    const msg = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        msg.style.display = "block";
+        msg.textContent = "⏳ Sending...";
+        msg.style.color = "#4c78a8";
+
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        })
+        .then(() => {
+            msg.textContent = "✅ Message sent successfully!";
+            msg.style.color = "#2e7d32";
+            form.reset();
+        }, (error) => {
+            msg.textContent = "❌ Failed to send message. Try again.";
+            msg.style.color = "#c62828";
+            console.error("EmailJS Error:", error);
+        });
+    });
+</script>
+
+</body>
+</html>
