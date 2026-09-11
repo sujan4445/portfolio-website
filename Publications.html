@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sujan Chapagain — Publications and Research">
+    <meta name="author" content="Sujan Chapagain">
 
-```
-<meta name="description" content="Sujan Chapagain — Publications and Research">
-<meta name="author" content="Sujan Chapagain">
+    <title>Publications | Sujan Chapagain</title>
 
-<title>Publications | Sujan Chapagain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-```
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -32,7 +26,9 @@
     box-sizing:border-box;
 }
 
-html{
+html, body{
+    margin: 0;
+    padding: 0;
     scroll-behavior:smooth;
 }
 
@@ -57,12 +53,11 @@ a{
    HEADER / NAVIGATION
 ========================================================= */
 
-
     .header{
         width:100%;
         background:#f5efe6;
-        border-top:1px solid #000000;
-        border-bottom:1px solid #000000;
+        border-top: none; /* Removed top border causing extra space */
+        border-bottom:1px solid #d8cfc4;
     }
 
     .nav-container{
@@ -87,15 +82,16 @@ a{
         font-size:20px;
         font-weight:600;
         color:#13100f;
-        text-decoration:underline;
-        text-underline-offset:3px;
+        text-decoration:none;
         padding:8px 12px;
         transition:color .25s ease;
     }
 
     .nav-menu a:hover,
-    .nav-menu .active a{
+    .nav-menu .active{
         color:#4c78a8;
+        text-decoration:underline;
+        text-underline-offset:3px;
     }
 
 
@@ -175,7 +171,7 @@ a{
 .publication-list{
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:16px;
 }
 
 
@@ -217,8 +213,8 @@ a{
 .pub-image{
     position:relative;
 
-    width:113px;
-    height:135px;
+    width:135px;
+    height:100%;
 
     overflow:hidden;
 
@@ -238,7 +234,7 @@ a{
     width:100%;
     height:100%;
 
-    object-fit:contain;
+    object-fit:cover;
 
     object-position:center;
 
@@ -262,7 +258,7 @@ a{
 ========================================================= */
 
 .pub-content{
-    padding:15px 21px 14px;
+    padding:16px 21px;
 
     display:flex;
     flex-direction:column;
@@ -272,7 +268,6 @@ a{
 
 /* =========================================================
    PUBLICATION CITATION
-   NO ITALIC TEXT
 ========================================================= */
 
 .pub-citation{
@@ -308,8 +303,7 @@ a{
 
 
 /* =========================================================
-   PAPER TITLE
-   NORMAL — NO ITALIC
+   PAPER TITLE & DETAILS
 ========================================================= */
 
 .pub-citation .paper-title{
@@ -319,12 +313,6 @@ a{
     color:#222;
 }
 
-
-/* =========================================================
-   JOURNAL
-   BLACK + NORMAL — NO ITALIC
-========================================================= */
-
 .pub-citation .journal{
     font-style:normal;
 
@@ -333,22 +321,11 @@ a{
     color:#222;
 }
 
-
-/* =========================================================
-   YEAR
-   BLACK + NORMAL
-========================================================= */
-
 .pub-citation .year{
     font-style:normal;
 
     color:#222;
 }
-
-
-/* =========================================================
-   FORCE ALL INLINE ELEMENTS TO NORMAL
-========================================================= */
 
 .pub-citation i,
 .pub-citation em{
@@ -357,39 +334,35 @@ a{
 
 
 /* =========================================================
-   DOI LINK
+   DOI LINK WITH SOFT COLOR
 ========================================================= */
 
 .pub-doi{
-    margin-top:7px;
+    margin-top:8px;
 }
 
+.paper-link,
 .pub-doi a{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:6px;
-
-    font-family:"Montserrat",sans-serif;
-
-    font-size:15px;
-
-    font-weight:500;
-
-    color:#6759e7;
-
+    color:#2b6cb0;
+    background-color:#f0f5fa;
+    border:1px solid #d0e1f9;
+    font-size:12px;
+    font-weight:600;
     text-decoration:none;
-
-    transition:.25s ease;
+    padding:3px 10px;
+    border-radius:4px;
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    transition:all 0.2s ease;
 }
 
+.paper-link:hover,
 .pub-doi a:hover{
-    text-decoration:underline;
-}
-
-.pub-doi i{
-    font-size:9px;
+    background-color:#2b6cb0;
+    color:#ffffff;
+    border-color:#2b6cb0;
+    text-decoration:none;
 }
 
 
@@ -557,7 +530,7 @@ a{
 
 
 /* =========================================================
-   TABLET
+   RESPONSIVE MEDIA QUERIES
 ========================================================= */
 
 @media(max-width:850px){
@@ -582,7 +555,6 @@ a{
 
     .pub-image{
         width:115px;
-        height:115px;
     }
 
     .pub-content{
@@ -597,11 +569,6 @@ a{
         font-size:19px;
     }
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media(max-width:650px){
 
@@ -627,7 +594,6 @@ a{
 
     .pub-image{
         width:90px;
-        height:105px;
     }
 
     .pub-content{
@@ -642,14 +608,6 @@ a{
 
     .pub-citation strong{
         font-size:17px;
-    }
-
-    .pub-doi{
-        margin-top:5px;
-    }
-
-    .pub-doi a{
-        font-size:9px;
     }
 
     .contact-profile{
@@ -681,51 +639,19 @@ a{
 ========================================================= -->
 
 <header class="header">
-
-<nav class="nav-container" aria-label="Main navigation">
-
-<ul class="nav-menu">
-
-<li>
-                    <a href="index.html" >Home</a>
-                </li>
-
-                <li>
-                    <a href="Education.html">Education</a>
-                </li>
-
-                <li>
-                    <a href="Publications.html"class="active" >Publications</a>
-                </li>
-
-                <li>
-                    <a href="projects.html">Projects</a>
-                </li>
-
-                <li>
-                    <a href="Conferences.html">Conferences</a>
-                </li>
-
-                <li>
-                    <a href="Award.html">Awards</a>
-                </li>
-
-                <li>
-                    <a href="Affilations.html">Affiliations</a>
-                </li>
-
-                <li>
-                    <a href="Volunteering.html">Volunteering</a>
-                </li>
-
-                <li>
-                    <a href="contact.html">Contact & Galley </a>
-</li>
-
-</ul>
-
-</nav>
-
+    <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Education.html">Education</a></li>
+            <li><a href="Publications.html" class="active">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Conferences.html">Conferences</a></li>
+            <li><a href="Award.html">Awards</a></li>
+            <li><a href="Affilations.html">Affiliations</a></li>
+            <li><a href="Volunteering.html">Volunteering</a></li>
+            <li><a href="contact.html">Contact & Gallery</a></li>
+        </ul>
+    </nav>
 </header>
 
 <!-- =========================================================
@@ -734,481 +660,191 @@ a{
 
 <main class="page-content">
 
-<section class="publications-heading">
-
-<div class="small-title">
-Research & Publications
-</div>
-
-<h1>
-Selected Publications
-</h1>
-
-<div class="heading-line"></div>
-
-<p>
-</p>
-
-</section>
-
-<section class="publications-section">
-
-<div class="publication-list">
-
-<!-- PUBLICATION 1 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/CABI.jpg"
-alt="Wheat research">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-<strong>Chapagain, S.</strong>, Shrestha, S., Kandel, B. P., & Rana, D.
-
-<span class="paper-title">
-Integrating NDVI and Canopy Temperature Across Phenological Stages for Drought Phenotyping and Grain Yield Prediction.
-</span>
-
-<span class="journal">
-Under 2nd Revision.
-</span>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- PUBLICATION 2 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/advance.jfif"
-alt="Wheat crop">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-<strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., et al.
-
-<span class="paper-title">
-Screening drought tolerance capacity in wheat genotypes using physiological traits and drought tolerance indices in the mid-hills of Nepal.
-</span>
-
-<span class="journal">
-Advances in Agriculture
-</span>
-
-<span class="year">
-(2026).
-</span>
-
-</div>
-
-<div class="pub-doi">
-
-<a
-href="https://onlinelibrary.wiley.com/doi/10.1155/aia/4020245"
-target="_blank"
-rel="noopener">
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-DOI / Paper
-
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- PUBLICATION 3 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/CABI.jpg"
-alt="CABI publication">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-<strong>Chapagain, S.</strong>, Shrestha, S., Kandel, B. P., Rana, D., & Poudel, A.
-
-<span class="paper-title">
-Characterization of phenotypic diversity and trait associations in Nepalese finger millet landraces.
-</span>
-
-<span class="journal">
-CABI Agriculture and Bioscience
-</span>
-
-<span class="year">
-(2026), 7(1).
-</span>
-
-</div>
-
-<div class="pub-doi">
-
-<a
-href="https://doi.org/10.1079/ab.2026.0044"
-target="_blank"
-rel="noopener">
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-DOI / Paper
-
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- PUBLICATION 4 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/discover.png"
-alt="Finger millet research">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-<strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., et al.
-
-<span class="paper-title">
-Deciphering genetic variability and trait associations in Nepalese finger millet landraces for yield improvement.
-</span>
-
-<span class="journal">
-Discover Agriculture
-</span>,
-
-4, 130
-
-<span class="year">
-(2026).
-</span>
-
-</div>
-
-<div class="pub-doi">
-
-<a
-href="https://link.springer.com/article/10.1007/s44279-026-00587-3"
-target="_blank"
-rel="noopener">
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-DOI / Paper
-
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- PUBLICATION 5 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/applied.jfif"
-alt="Drought wheat research">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-<strong>Chapagain, S.</strong>, Kandel, B. P., Poudel, A., et al.
-
-<span class="paper-title">
-Assessment of early seedling stage indices for the selection of potential drought-tolerant bread wheat genotypes.
-</span>
-
-<span class="journal">
-Discover Applied Sciences
-</span>,
-
-8, 248
-
-<span class="year">
-(2026).
-</span>
-
-</div>
-
-<div class="pub-doi">
-
-<a
-href="https://link.springer.com/article/10.1007/s42452-026-08252-6"
-target="_blank"
-rel="noopener">
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-DOI / Paper
-
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- PUBLICATION 6 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/cogent.jpg"
-alt="Cogent publication">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-<strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., Poudel, A., & Yadav, S. P. S.
-
-<span class="paper-title">
-Identifying superior finger millet (Eleusine coracana L.) landraces using the multi-trait genotype-ideotype distance index (MGIDI).
-</span>
-
-<span class="journal">
-Cogent Food & Agriculture
-</span>,
-
-11(1), 2592358
-
-<span class="year">
-(2025).
-</span>
-
-</div>
-
-<div class="pub-doi">
-
-<a
-href="https://www.tandfonline.com/doi/full/10.1080/23311932.2025.2592358"
-target="_blank"
-rel="noopener">
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-DOI / Paper
-
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- PUBLICATION 7 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/iaastu.png"
-alt="Wheat research">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-<strong>Chapagain, S.</strong>, Kandel, B. P., Adhikari, A., Poudel, A., & Kandel, M.
-
-<span class="paper-title">
-Estimation of genetic parameters and trait association in wheat (Triticum aestivum L.) genotypes.
-</span>
-
-<span class="journal">
-Journal of the Institute of Agriculture and Animal Science
-</span>,
-
-39(1), 151–155
-
-<span class="year">
-(2025).
-</span>
-
-</div>
-
-<div class="pub-doi">
-
-<a
-href="https://doi.org/10.3126/jiaas.v39i1.88144"
-target="_blank"
-rel="noopener">
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-DOI / Paper
-
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- PUBLICATION 8 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/agrivita.png"
-alt="Maize research">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-Ghimire, U., Kandel, B. P., Poudel, A., Poudel, R., Tripathi, A., Gurung, R., &
-
-<strong>Chapagain, S.</strong>
-
-<span class="paper-title">
-Agro-morphological characterization of maize (Zea mays) accessions in Lamjung, Nepal.
-</span>
-
-<span class="journal">
-AGRIVITA, Journal of Agricultural Science
-</span>,
-
-48(3), Article 4966
-
-<span class="year">
-(2025).
-</span>
-
-</div>
-
-<div class="pub-doi">
-
-<a
-href="https://doi.org/10.17503/agrivita.v48i3.4966"
-target="_blank"
-rel="noopener">
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-DOI / Paper
-
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-<!-- PUBLICATION 9 -->
-
-<article class="publication-card">
-
-<div class="pub-image">
-
-<img
-src="Website/Image/iaas.png"
-alt="Proso millet research">
-
-</div>
-
-<div class="pub-content">
-
-<div class="pub-citation">
-
-Kandel, B. P., Regmi, A.,
-
-<strong>Chapagain, S.</strong>, & Sharma, S.
-
-<span class="paper-title">
-Diversity assessment and farmer participatory selection of proso millet (Panicum miliaceum L.) accessions in Lamjung, Nepal.
-</span>
-
-<span class="journal">
-Nepal Agriculture Research Journal
-</span>,
-
-17(1), 122–137
-
-<span class="year">
-(2026).
-</span>
-
-</div>
-
-<div class="pub-doi">
-
-<a
-href="https://doi.org/10.3126/narj.v17i1.99183"
-target="_blank"
-rel="noopener">
-
-<i class="fa-solid fa-arrow-up-right-from-square"></i>
-DOI / Paper
-
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-</div>
-
-<div class="publication-note">
-</div>
-
-</section>
+    <section class="publications-heading">
+        <div class="small-title">Research & Publications</div>
+        <h1>Selected Publications</h1>
+        <div class="heading-line"></div>
+    </section>
+
+    <section class="publications-section">
+        <div class="publication-list">
+
+            <!-- PUBLICATION 1 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/CABI.jpg" alt="Wheat research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Shrestha, S., Kandel, B. P., & Rana, D.
+                        <span class="paper-title">Integrating NDVI and Canopy Temperature Across Phenological Stages for Drought Phenotyping and Grain Yield Prediction.</span>
+                        <span class="journal">Under 2nd Revision.</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 2 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/advance.jfif" alt="Wheat crop">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., et al.
+                        <span class="paper-title">Screening drought tolerance capacity in wheat genotypes using physiological traits and drought tolerance indices in the mid-hills of Nepal.</span>
+                        <span class="journal">Advances in Agriculture</span>
+                        <span class="year">(2026).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://onlinelibrary.wiley.com/doi/10.1155/aia/4020245" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 3 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/CABI.jpg" alt="CABI publication">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Shrestha, S., Kandel, B. P., Rana, D., & Poudel, A.
+                        <span class="paper-title">Characterization of phenotypic diversity and trait associations in Nepalese finger millet landraces.</span>
+                        <span class="journal">CABI Agriculture and Bioscience</span>
+                        <span class="year">(2026), 7(1).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://doi.org/10.1079/ab.2026.0044" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 4 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/discover.png" alt="Finger millet research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., et al.
+                        <span class="paper-title">Deciphering genetic variability and trait associations in Nepalese finger millet landraces for yield improvement.</span>
+                        <span class="journal">Discover Agriculture</span>, 4, 130
+                        <span class="year">(2026).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://link.springer.com/article/10.1007/s44279-026-00587-3" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 5 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/applied.jfif" alt="Drought wheat research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Poudel, A., et al.
+                        <span class="paper-title">Assessment of early seedling stage indices for the selection of potential drought-tolerant bread wheat genotypes.</span>
+                        <span class="journal">Discover Applied Sciences</span>, 8, 248
+                        <span class="year">(2026).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://link.springer.com/article/10.1007/s42452-026-08252-6" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 6 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/cogent.jpg" alt="Cogent publication">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., Poudel, A., & Yadav, S. P. S.
+                        <span class="paper-title">Identifying superior finger millet (Eleusine coracana L.) landraces using the multi-trait genotype-ideotype distance index (MGIDI).</span>
+                        <span class="journal">Cogent Food & Agriculture</span>, 11(1), 2592358
+                        <span class="year">(2025).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://www.tandfonline.com/doi/full/10.1080/23311932.2025.2592358" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 7 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/iaastu.png" alt="Wheat research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Adhikari, A., Poudel, A., & Kandel, M.
+                        <span class="paper-title">Estimation of genetic parameters and trait association in wheat (Triticum aestivum L.) genotypes.</span>
+                        <span class="journal">Journal of the Institute of Agriculture and Animal Science</span>, 39(1), 151–155
+                        <span class="year">(2025).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://doi.org/10.3126/jiaas.v39i1.88144" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 8 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/agrivita.png" alt="Maize research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        Ghimire, U., Kandel, B. P., Poudel, A., Poudel, R., Tripathi, A., Gurung, R., & <strong>Chapagain, S.</strong>
+                        <span class="paper-title">Agro-morphological characterization of maize (Zea mays) accessions in Lamjung, Nepal.</span>
+                        <span class="journal">AGRIVITA, Journal of Agricultural Science</span>, 48(3), Article 4966
+                        <span class="year">(2025).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://doi.org/10.17503/agrivita.v48i3.4966" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 9 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/iaas.png" alt="Proso millet research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        Kandel, B. P., Regmi, A., <strong>Chapagain, S.</strong>, & Sharma, S.
+                        <span class="paper-title">Diversity assessment and farmer participatory selection of proso millet (Panicum miliaceum L.) accessions in Lamjung, Nepal.</span>
+                        <span class="journal">Nepal Agriculture Research Journal</span>, 17(1), 122–137
+                        <span class="year">(2026).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://doi.org/10.3126/narj.v17i1.99183" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
 
 </main>
 
@@ -1217,89 +853,35 @@ DOI / Paper
 ========================================================= -->
 
 <section class="contact-profile" aria-label="Contact and social media">
+    <div class="contact-column">
+        <h3>Sujan Chapagain</h3>
+        <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
+    </div>
 
-<div class="contact-column">
+    <div class="contact-column location-column">
+        <p>Bharatpur, Nepal</p>
+        <p>Agricultural Researcher</p>
+    </div>
 
-<h3>
-Sujan Chapagain
-</h3>
-
-<a
-href="mailto:chapagainsujan45@gmail.com"
-class="email-link">
-
-chapagainsujan45@gmail.com
-</a>
-
-</div>
-
-<div class="contact-column location-column">
-
-<p>
-Kathmandu, Nepal
-</p>
-
-<p>
-Agricultural Researcher
-</p>
-
-</div>
-
-<div class="contact-column social-column">
-
-<div class="social-icons">
-
-<a
-href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en"
-class="social-icon"
-aria-label="Google Scholar">
-
-<i class="fa-solid fa-graduation-cap"></i>
-
-</a>
-
-<a
-href="https://github.com/sujan4445"
-class="social-icon"
-aria-label="GitHub">
-
-<i class="fab fa-github"></i>
-
-</a>
-
-<a
-href="https://x.com/Iamsujan45"
-class="social-icon"
-aria-label="X">
-
-<i class="fa-brands fa-x-twitter"></i>
-
-</a>
-
-<a
-href="https://www.linkedin.com/in/sujan-chapagain-240617140/"
-target="_blank"
-rel="noopener"
-class="social-icon"
-aria-label="LinkedIn">
-
-<i class="fab fa-linkedin-in"></i>
-
-</a>
-
-<a
-href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf"
-class="social-icon"
-aria-label="Research Gate">
-
-<i class="fab fa-researchgate"></i>
-
-</a>
-
-</div>
-
-</div>
-
+    <div class="contact-column social-column">
+        <div class="social-icons">
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" class="social-icon" aria-label="Research Gate">
+                <i class="fab fa-researchgate"></i>
+            </a>
+        </div>
+    </div>
 </section>
 
 <!-- =========================================================
@@ -1307,11 +889,7 @@ aria-label="Research Gate">
 ========================================================= -->
 
 <footer class="footer">
-
-<p>
-© 2026 Sujan Chapagain. All rights reserved.
-</p>
-
+    <p>© 2026 Sujan Chapagain. All rights reserved.</p>
 </footer>
 
 </body>
