@@ -215,18 +215,18 @@
         }
 
         .container {
-            width: min(820px, 100%);
+            width: min(1000px, 100%);
             margin: 0 auto;
         }
 
         .about-section .container {
-            width: min(820px, 100%);
+            width: min(1000px, 100%);
             margin: 0 auto;
         }
 
         .about-text {
-            width: 100%;
-            max-width: 820px;
+            width: 130%;
+            max-width: 1000px;
 
             margin: 0 auto;
 
@@ -242,7 +242,7 @@
         }
 
         .about-text p {
-            max-width: 780px;
+            max-width: 1000px;
             margin: 0 auto 17px;
         }
 
@@ -312,248 +312,163 @@
 
 
         /* =========================================================
-           THREE PERSONAL PHOTOS
-           ========================================================= */
+           PERSONAL SHOWCASE (GALLERY GRID)
+        ========================================================= */
+
+        .personal-showcase {
+            width: min(900px, calc(100% - 60px));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 0;
+            background: transparent;
+        }
+
+        .personal-photo-card {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            background: #ded0c5;
+            isolation: isolate;
+        }
+
+        .personal-photo-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s cubic-bezier(.2, .7, .2, 1), filter 0.45s ease;
+        }
+
+        /* Dark overlay on hover */
+        .personal-photo-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.4s ease;
+            pointer-events: none;
+        }
+
+        /* Single Centered Heart Icon on Hover */
+        .photo-hover-icons {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 4;
+            transform: translate(-50%, -50%) scale(0.7);
+            opacity: 0;
+            transition: opacity 0.35s ease, transform 0.4s cubic-bezier(.2, .7, .2, 1);
+            pointer-events: none;
+        }
+
+        .photo-hover-icons i {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 16px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        /* Hover Animations */
+        .personal-photo-card:hover img {
+            transform: scale(1.03);
+            filter: brightness(0.85);
+        }
+
+        .personal-photo-card:hover::after {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .personal-photo-card:hover .photo-hover-icons {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Label at bottom-left */
+        .photo-label {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            z-index: 5;
+            padding: 5px 11px;
+            background: rgba(45, 30, 22, 0.75);
+            color: #fffaf5;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            transition: background 0.35s ease;
+        }
+
+        .personal-photo-card:hover .photo-label {
+            background: rgba(45, 30, 22, 0.88);
+        }
+
 
         /* =========================================================
-   PERSONAL SHOWCASE (GALLERY GRID)
-========================================================= */
-/* =========================================================
-   PERSONAL SHOWCASE (GALLERY GRID)
-========================================================= */
+           IDENTITY BANNER (ATTACHED DIRECTLY BELOW SHOWCASE)
+        ========================================================= */
 
-.personal-showcase {
-    /* Reduced container width to bring images closer into the center */
-    width: min(900px, calc(100% - 60px));
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    padding: 0; /* Ensures no bottom gap before banner */
-    background: transparent;
-}
+        .identity {
+            width: min(1420px, calc(100% - 60px));
+            margin: 18px auto;
+            background: #eee4eb;
+            border-top: 1px solid #ddced8;
+            border-bottom: 1px solid #ddced8;
+            text-align: center;
+            padding: 35px 30px 38px;
+        }
 
-.personal-photo-card {
-    position: relative;
-    /* Reduced frame height for a more compact proportions */
-    height: 420px;
-    overflow: hidden;
-    background: #ded0c5;
-    isolation: isolate;
-}
+        .identity h1 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 46px;
+            line-height: 1;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            color: #4b2e26;
+        }
 
-.personal-photo-card img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.6s cubic-bezier(.2, .7, .2, 1), filter 0.45s ease;
-}
+        .identity .role {
+            margin-top: 8px;
+            font-size: 24px;
+            line-height: 1.1;
+            font-weight: 500;
+            color: #65463a;
+        }
 
-/* Dark overlay on hover */
-.personal-photo-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0);
-    transition: background 0.4s ease;
-    pointer-events: none;
-}
+        .identity .tagline {
+            margin-top: 6px;
+            font-size: 19px;
+            color: #806154;
+        }
 
-/* Single Centered Heart Icon on Hover */
-.photo-hover-icons {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 4;
-    transform: translate(-50%, -50%) scale(0.7);
-    opacity: 0;
-    transition: opacity 0.35s ease, transform 0.4s cubic-bezier(.2, .7, .2, 1);
-    pointer-events: none;
-}
+        .identity-button {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 25px 7px;
+            border: 1px solid #bca395;
+            font-size: 17px;
+            line-height: 1;
+            color: #81472e;
+            background: rgba(255, 255, 255, 0.20);
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
 
-.photo-hover-icons i {
-    width: 42px;
-    height: 42px;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    font-size: 16px;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-}
+        .identity-button:hover {
+            background: #fffdfb;
+            border-color: #9d7b6a;
+            color: #632f1b;
+        }
 
-/* Hover Animations */
-.personal-photo-card:hover img {
-    transform: scale(1.03);
-    filter: brightness(0.85);
-}
-
-.personal-photo-card:hover::after {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.personal-photo-card:hover .photo-hover-icons {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-}
-
-/* Label at bottom-left */
-.photo-label {
-    position: absolute;
-    left: 12px;
-    bottom: 12px;
-    z-index: 5;
-    padding: 5px 11px;
-    background: rgba(45, 30, 22, 0.75);
-    color: #fffaf5;
-    font-size: 14px;
-    letter-spacing: 0.3px;
-    transition: background 0.35s ease;
-}
-
-.personal-photo-card:hover .photo-label {
-    background: rgba(45, 30, 22, 0.88);
-}
-
-/* =========================================================
-   IDENTITY BANNER (ATTACHED DIRECTLY BELOW SHOWCASE)
-========================================================= */
-
-.identity {
-    /* Matches width with showcase container for uniform alignment */
-    width: min(1000px, calc(100% - 60px));
-    margin: 0 auto;
-    background: #eee4eb;
-    border-top: 1px solid #ddced8;
-    border-bottom: 1px solid #ddced8;
-    text-align: center;
-    padding: 35px 30px 38px;
-}
-
-.identity h1 {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 42px;
-    line-height: 1;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    color: #4b2e26;
-}
-
-.identity .role {
-    margin-top: 8px;
-    font-size: 22px;
-    line-height: 1.1;
-    font-weight: 500;
-    color: #65463a;
-}
-
-.identity .tagline {
-    margin-top: 6px;
-    font-size: 18px;
-    color: #806154;
-}
-
-.identity-button {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 6px 25px 7px;
-    border: 1px solid #bca395;
-    font-size: 16px;
-    line-height: 1;
-    color: #81472e;
-    background: rgba(255, 255, 255, 0.20);
-    transition: all 0.25s ease;
-    text-decoration: none;
-}
-
-.identity-button:hover {
-    background: #fffdfb;
-    border-color: #9d7b6a;
-    color: #632f1b;
-}
-
-/* =========================================================
-   RESPONSIVE ADJUSTMENTS
-========================================================= */
-
-@media (max-width: 768px) {
-    .personal-showcase {
-        width: 90%;
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .personal-photo-card {
-        height: 280px;
-    }
-
-    .identity {
-        width: 90%;
-    }
-}
-
-
-/* =========================================================
-   IDENTITY BANNER (ATTACHED DIRECTLY BELOW SHOWCASE)
-========================================================= */
-
-.identity {
-    width: min(1420px, calc(100% - 60px));
-    margin: 0 auto;
-    background: #eee4eb;
-    border-top: 1px solid #ddced8;
-    border-bottom: 1px solid #ddced8;
-    text-align: center;
-    padding: 35px 30px 38px;
-}
-
-.identity h1 {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 46px;
-    line-height: 1;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    color: #4b2e26;
-}
-
-.identity .role {
-    margin-top: 8px;
-    font-size: 24px;
-    line-height: 1.1;
-    font-weight: 500;
-    color: #65463a;
-}
-
-.identity .tagline {
-    margin-top: 6px;
-    font-size: 19px;
-    color: #806154;
-}
-
-.identity-button {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 6px 25px 7px;
-    border: 1px solid #bca395;
-    font-size: 17px;
-    line-height: 1;
-    color: #81472e;
-    background: rgba(255, 255, 255, 0.20);
-    transition: all 0.25s ease;
-    text-decoration: none;
-}
-
-.identity-button:hover {
-    background: #fffdfb;
-    border-color: #9d7b6a;
-    color: #632f1b;
-}
 
         /* =========================================================
            COMMON SECTION
@@ -561,9 +476,7 @@
 
         .section {
             width: min(1420px, calc(100% - 60px));
-
             margin: 0 auto;
-
             padding: 42px 28px 46px;
         }
 
@@ -574,11 +487,8 @@
 
         .projects {
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 30px;
-
             align-items: start;
         }
 
@@ -588,23 +498,16 @@
 
         .project-image {
             height: 245px;
-
             overflow: hidden;
-
             border: 1px solid #e0d3cb;
-
             background: #e5d9d1;
-
-            box-shadow:
-                0 8px 24px rgba(70, 43, 32, 0.08);
+            box-shadow: 0 8px 24px rgba(70, 43, 32, 0.08);
         }
 
         .project-image img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
             transition: transform 0.5s ease;
         }
 
@@ -614,27 +517,18 @@
 
         .project h3 {
             margin: 13px auto 0;
-
             max-width: 390px;
-
             font-size: 22px;
-
             line-height: 1.15;
-
             font-weight: 500;
-
             color: #674438;
         }
 
         .project p {
             max-width: 390px;
-
             margin: 6px auto 0;
-
             font-size: 17px;
-
             line-height: 1.25;
-
             color: #86695b;
         }
 
@@ -645,46 +539,34 @@
 
         .profile {
             width: 100%;
-
             background: #f1e9e4;
-
             border-top: 1px solid #ded1c9;
             border-bottom: 1px solid #ded1c9;
         }
 
         .profile-inner {
             width: min(1150px, calc(100% - 70px));
-
             margin: auto;
-
             text-align: center;
-
             padding: 35px 20px 39px;
         }
 
         .profile-lead {
             font-size: 25px !important;
-
             color: #6c4637 !important;
         }
 
         .profile p {
             margin: 0 auto 14px;
-
             max-width: 1000px;
-
             font-size: 19px;
-
             line-height: 1.43;
-
             font-weight: 400;
-
             color: #5c3b30;
         }
 
         .profile strong {
             color: #914723;
-
             font-weight: 600;
         }
 
@@ -703,13 +585,9 @@
 
         .portfolio-grid {
             width: min(1080px, 100%);
-
             margin: auto;
-
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 30px 34px;
         }
 
@@ -719,22 +597,16 @@
 
         .portfolio-image {
             position: relative;
-
             height: 210px;
-
             overflow: hidden;
-
             background: #e6dad2;
-
             border: 1px solid #e1d5ce;
         }
 
         .portfolio-image img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
             transition: transform 0.45s ease;
         }
 
@@ -744,13 +616,9 @@
 
         .portfolio-label {
             margin-top: 10px;
-
             font-size: 22px;
-
             line-height: 1.05;
-
             font-weight: 500;
-
             color: #8b4329;
         }
 
@@ -762,32 +630,21 @@
         .profile-highlights {
             width: 100%;
             max-width: 1380px;
-
             margin: 0 auto;
-
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             background: #f7f3ef;
-
             border-top: 1px solid #8d5a43;
             border-bottom: 1px solid #8d5a43;
         }
 
         .highlight-box {
             min-height: 300px;
-
             padding: 24px 35px 35px;
-
             text-align: center;
-
             border-right: 1px solid #8d5a43;
-
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
         }
 
@@ -797,51 +654,32 @@
 
         .quote-mark {
             font-family: Georgia, serif;
-
             font-size: 105px;
-
             font-weight: bold;
-
             line-height: 0.7;
-
             height: 82px;
-
             color: #b35b27;
-
             margin-top: 2px;
-
             transform: scaleX(0.85);
         }
 
         .highlight-box h2 {
             font-family: "Cormorant Garamond", Georgia, serif;
-
             font-size: 27px;
-
             font-weight: 500;
-
             color: #3e281f;
-
             margin: 15px 0 10px;
-
             line-height: 1.1;
         }
 
         .highlight-box p {
             max-width: 400px;
-
             margin: 0 auto;
-
             font-family: "Cormorant Garamond", Georgia, serif;
-
             font-size: 19px;
-
             font-weight: 400;
-
             line-height: 1.65;
-
             color: #4b2e24;
-
             text-align: center;
         }
 
@@ -853,29 +691,19 @@
         .contact-profile {
             width: 100%;
             max-width: 1380px;
-
             margin: 0 auto;
-
             min-height: 188px;
-
             display: grid;
-
             grid-template-columns: 1fr 1fr 2fr;
-
             background: #f7f3ef;
-
             border-bottom: 1px solid #8d5a43;
         }
 
         .contact-column {
             padding: 28px 30px;
-
             display: flex;
-
             flex-direction: column;
-
             justify-content: center;
-
             border-right: 1px solid #8d5a43;
         }
 
@@ -885,25 +713,17 @@
 
         .contact-column h3 {
             font-family: "Cormorant Garamond", Georgia, serif;
-
             font-size: 27px;
-
             font-weight: 500;
-
             color: #3d281f;
-
             margin-bottom: 5px;
         }
 
         .email-link {
             font-family: "Cormorant Garamond", Georgia, serif;
-
             font-size: 17px;
-
             line-height: 1.25;
-
             color: #8c4527;
-
             transition: 0.2s ease;
         }
 
@@ -917,53 +737,36 @@
 
         .location-column p {
             font-family: "Cormorant Garamond", Georgia, serif;
-
             font-size: 18px;
-
             line-height: 1.3;
-
             color: #4b2e24;
-
             margin: 2px 0;
         }
 
         .social-column {
             justify-content: center;
-
             padding-left: 30px;
             padding-right: 30px;
         }
 
         .social-icons {
             display: flex;
-
             align-items: center;
-
             justify-content: flex-start;
-
             gap: 13px;
-
             flex-wrap: wrap;
         }
 
         .social-icon {
             width: 57px;
             height: 57px;
-
             border-radius: 50%;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             color: #fff;
-
             text-decoration: none;
-
             font-size: 29px;
-
             transition:
                 transform 0.25s ease,
                 box-shadow 0.25s ease;
@@ -971,9 +774,7 @@
 
         .social-icon:hover {
             transform: translateY(-4px);
-
-            box-shadow:
-                0 5px 12px rgba(70, 40, 25, 0.22);
+            box-shadow: 0 5px 12px rgba(70, 40, 25, 0.22);
         }
 
         .scholar {
@@ -1013,6 +814,14 @@
                 );
         }
 
+        .researchgate {
+            background: #00CCBB;
+        }
+
+        .orcid {
+            background: #A6CE39;
+        }
+
 
         /* =========================================================
            FOOTER
@@ -1020,25 +829,19 @@
 
         .footer {
             border-top: 1px solid #ded1c9;
-
             background: #eee8e3;
-
             text-align: center;
-
             padding: 13px 20px 18px;
-
             font-size: 17px;
-
             color: #755649;
         }
 
 
         /* =========================================================
-           TABLET
+           MEDIA QUERIES
            ========================================================= */
 
         @media (max-width: 1450px) {
-
             .hero,
             .personal-showcase,
             .identity,
@@ -1056,46 +859,29 @@
             }
         }
 
-
-        /* =========================================================
-           TABLET / SMALL LAPTOP
-           ========================================================= */
-
         @media (max-width: 900px) {
-
             .nav-container {
                 overflow-x: auto;
-
                 justify-content: flex-start;
-
                 padding: 0 10px;
             }
 
             .nav-menu {
                 width: max-content;
-
                 min-width: 100%;
-
                 justify-content: flex-start;
-
                 gap: 8px;
             }
 
             .nav-menu a {
                 font-size: 17px;
-
                 padding: 9px 10px;
-
                 white-space: nowrap;
             }
 
-
-            /* Hero remains a SINGLE image */
             .hero {
                 width: 100%;
-
                 height: 310px;
-
                 min-height: 310px;
             }
 
@@ -1111,12 +897,9 @@
                 font-size: 18px;
             }
 
-
             .personal-showcase {
                 width: min(100% - 30px, 1420px);
-
                 grid-template-columns: 1fr;
-
                 gap: 7px;
             }
 
@@ -1124,12 +907,10 @@
                 height: 360px;
             }
 
-
             .projects,
             .portfolio-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
 
             .profile-highlights {
                 grid-template-columns: 1fr;
@@ -1137,11 +918,8 @@
 
             .highlight-box {
                 min-height: auto;
-
                 border-right: none;
-
                 border-bottom: 1px solid #8d5a43;
-
                 padding: 25px 30px 32px;
             }
 
@@ -1149,18 +927,14 @@
                 border-bottom: none;
             }
 
-
             .contact-profile {
                 grid-template-columns: 1fr;
             }
 
             .contact-column {
                 border-right: none;
-
                 border-bottom: 1px solid #8d5a43;
-
                 align-items: center;
-
                 text-align: center;
             }
 
@@ -1176,17 +950,14 @@
                 justify-content: center;
             }
 
-
             .about-section {
                 padding: 34px 20px 42px;
             }
 
             .about-text {
                 font-size: 18px;
-
                 line-height: 1.55;
             }
-
 
             .section,
             .contact {
@@ -1194,13 +965,7 @@
             }
         }
 
-
-        /* =========================================================
-           MOBILE
-           ========================================================= */
-
         @media (max-width: 600px) {
-
             body {
                 font-size: 17px;
             }
@@ -1213,13 +978,9 @@
                 font-size: 18px;
             }
 
-
-            /* SINGLE HERO ON MOBILE */
             .hero {
                 width: 100%;
-
                 height: 245px;
-
                 min-height: 245px;
             }
 
@@ -1229,9 +990,7 @@
 
             .hero h1 {
                 font-size: 34px;
-
                 letter-spacing: 0.5px;
-
                 margin-bottom: 18px;
             }
 
@@ -1239,10 +998,8 @@
                 font-size: 17px;
             }
 
-
             .about-text {
                 font-size: 17px;
-
                 line-height: 1.55;
             }
 
@@ -1250,10 +1007,8 @@
                 width: calc(100% - 10px);
             }
 
-
             .personal-showcase {
                 width: calc(100% - 20px);
-
                 padding-top: 5px;
             }
 
@@ -1264,22 +1019,17 @@
             .photo-hover-icons i {
                 width: 50px;
                 height: 50px;
-
                 font-size: 21px;
             }
 
             .photo-label {
                 left: 14px;
-
                 bottom: 14px;
-
                 font-size: 14px;
             }
 
-
             .identity {
                 width: 100%;
-
                 padding: 25px 14px 28px;
             }
 
@@ -1295,7 +1045,6 @@
                 font-size: 18px;
             }
 
-
             .section {
                 padding: 32px 15px 38px;
             }
@@ -1304,11 +1053,9 @@
                 font-size: 35px;
             }
 
-
             .projects,
             .portfolio-grid {
                 grid-template-columns: 1fr;
-
                 gap: 24px;
             }
 
@@ -1317,10 +1064,8 @@
                 height: 230px;
             }
 
-
             .profile-inner {
                 width: calc(100% - 30px);
-
                 padding: 30px 8px;
             }
 
@@ -1332,7 +1077,6 @@
                 font-size: 21px !important;
             }
 
-
             .profile-highlights {
                 width: 100%;
             }
@@ -1342,20 +1086,13 @@
             }
         }
 
-
-        /* =========================================================
-           VERY SMALL MOBILE
-           ========================================================= */
-
         @media (max-width: 500px) {
-
             .highlight-box {
                 padding: 22px 20px 28px;
             }
 
             .quote-mark {
                 font-size: 85px;
-
                 height: 68px;
             }
 
@@ -1374,7 +1111,6 @@
             .social-icon {
                 width: 50px;
                 height: 50px;
-
                 font-size: 25px;
             }
         }
@@ -1469,23 +1205,21 @@
 
     <section class="about-section" id="research-profile">
 
-    <div class="container">
+        <div class="container">
 
-        <h2 class="section-title">
-            Research Profile
-        </h2>
+            <h2 class="section-title">
+                Research Profile
+            </h2>
 
-        <div class="about-text" style="text-align: justify;">
+            <div class="about-text" style="text-align: justify;">
 
-            <p>
-Sujan Chapagain is an agriculture graduate and researcher specializing in plant breeding, horticulture, plant pathology, and crop stress physiology. His research experience spans abiotic and biotic stress screening, field phenotyping, postharvest pathology, and sustainable disease management. He has contributed to projects on drought tolerance in wheat, NDVI and canopy temperature-based phenotyping, wheat leaf rust screening, and citrus postharvest green mold management using botanical extracts. His work also includes characterization and diversity analysis of crop genetic resources, particularly finger millet landraces. His technical expertise includes DNA extraction, PCR, marker design, disease phenotyping, experimental design, R, Python, GIS, and scientific writing. His long-term research goal is to advance crop improvement, molecular plant–pathogen interactions, and integrated disease management for climate-resilient agriculture.
-<p>
+                <p>
+                    Sujan Chapagain is an agriculture graduate and researcher specializing in plant breeding, horticulture, plant pathology, and crop stress physiology. His research experience spans abiotic and biotic stress screening, field phenotyping, postharvest pathology, and sustainable disease management. He has contributed to projects on drought tolerance in wheat, NDVI and canopy temperature-based phenotyping, wheat leaf rust screening, and citrus postharvest green mold management using botanical extracts. His work also includes characterization and diversity analysis of crop genetic resources, particularly finger millet landraces. His technical expertise includes DNA extraction, PCR, marker design, disease phenotyping, experimental design, R, Python, GIS, and scientific writing. His long-term research goal is to advance crop improvement, molecular plant–pathogen interactions, and integrated disease management for climate-resilient agriculture.
+                </p>
+
+            </div>
 
         </div>
-
-    </div>
-
-</section>
 
     </section>
 
@@ -1493,7 +1227,8 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
     <!-- =========================================================
          THREE PERSONAL PHOTOS
          ========================================================= -->
- <section
+
+    <section
         class="personal-showcase"
         aria-label="Sujan Chapagain personal photographs">
 
@@ -1526,7 +1261,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
 
                 <i class="fa-solid fa-heart"></i>
 
-
             </div>
 
             <div class="photo-label">
@@ -1556,6 +1290,7 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
 
     </section>
 
+
     <!-- =========================================================
          AGRICULTURAL RESEARCHER IDENTITY
          ========================================================= -->
@@ -1584,91 +1319,93 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
     <!-- =========================================================
          ONGOING PROJECTS
          ========================================================= -->
-<section class="section" id="projects">
 
-    <h2 class="section-title">
-        Ongoing Projects
-    </h2>
+    <section class="section" id="projects">
 
-    <div class="projects">
+        <h2 class="section-title">
+            Ongoing Projects
+        </h2>
 
-        <!-- PROJECT 1 -->
-        <article class="project">
+        <div class="projects">
 
-            <div class="project-image">
-                <a href="project2.html">
-                    <img
-                        src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=800&q=80"
-                        alt="Citrus pathology and plant disease research">
-                </a>
-            </div>
+            <!-- PROJECT 1 -->
+            <article class="project">
 
-            <h3>
-                <a href="project2.html">
-                    Citrus Pathology &amp; Post Harvest
-                </a>
-            </h3>
+                <div class="project-image">
+                    <a href="project2.html">
+                        <img
+                            src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=800&q=80"
+                            alt="Citrus pathology and plant disease research">
+                    </a>
+                </div>
 
-            <p>
-                Pathogen characterization, disease assessment and eco-friendly
-                approaches to citrus health.
-            </p>
+                <h3>
+                    <a href="project2.html">
+                        Citrus Pathology &amp; Post Harvest
+                    </a>
+                </h3>
 
-        </article>
+                <p>
+                    Pathogen characterization, disease assessment and eco-friendly
+                    approaches to citrus health.
+                </p>
 
-
-        <!-- PROJECT 2 -->
-        <article class="project">
-
-            <div class="project-image">
-                <a href="project1.html">
-                    <img
-                        src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80"
-                        alt="Wheat crop research">
-                </a>
-            </div>
-
-            <h3>
-                <a href="project1.html">
-                    Wheat Drought, Rust &amp; Stress Phenotyping
-                </a>
-            </h3>
-
-            <p>
-                Drought tolerance, disease response, NDVI, canopy temperature
-                and field-level crop assessment.
-            </p>
-
-        </article>
+            </article>
 
 
-        <!-- PROJECT 3 -->
-        <article class="project">
+            <!-- PROJECT 2 -->
+            <article class="project">
 
-            <div class="project-image">
-                <a href="project3.html">
-                    <img
-                        src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80"
-                        alt="Finger millet crop diversity research">
-                </a>
-            </div>
+                <div class="project-image">
+                    <a href="project1.html">
+                        <img
+                            src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80"
+                            alt="Wheat crop research">
+                    </a>
+                </div>
 
-            <h3>
-                <a href="project3.html">
-                    Finger Millet Characterization &amp; Diversity
-                </a>
-            </h3>
+                <h3>
+                    <a href="project1.html">
+                        Wheat Drought, Rust &amp; Stress Phenotyping
+                    </a>
+                </h3>
 
-            <p>
-                Agromorphological characterization, diversity analysis and
-                trait-based crop improvement.
-            </p>
+                <p>
+                    Drought tolerance, disease response, NDVI, canopy temperature
+                    and field-level crop assessment.
+                </p>
 
-        </article>
+            </article>
 
-    </div>
 
-</section>
+            <!-- PROJECT 3 -->
+            <article class="project">
+
+                <div class="project-image">
+                    <a href="project3.html">
+                        <img
+                            src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80"
+                            alt="Finger millet crop diversity research">
+                    </a>
+                </div>
+
+                <h3>
+                    <a href="project3.html">
+                        Finger Millet Characterization &amp; Diversity
+                    </a>
+                </h3>
+
+                <p>
+                    Agromorphological characterization, diversity analysis and
+                    trait-based crop improvement.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
 
     <!-- =========================================================
          PORTFOLIO
@@ -1681,7 +1418,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
         </h2>
 
         <div class="portfolio-grid">
-
 
             <a class="portfolio-item" href="Publications.html">
 
@@ -1797,7 +1533,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
         class="profile-highlights"
         aria-label="Skills and interests">
 
-
         <div class="highlight-box">
 
             <div class="quote-mark" aria-hidden="true">
@@ -1853,7 +1588,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
 
         </div>
 
-
     </section>
 
 
@@ -1865,7 +1599,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
         class="contact-profile"
         aria-label="Contact and social media">
 
-
         <div class="contact-column">
 
             <h3>
@@ -1873,7 +1606,7 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
             </h3>
 
             <a
-                href="mailto:your-email@example.com"
+                href="mailto:chapagainsujan45@gmail.com"
                 class="email-link">
 
                 chapagainsujan45@gmail.com
@@ -1900,7 +1633,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
 
             <div class="social-icons">
 
-
                 <a
                     href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en"
                     target="_blank"
@@ -1911,7 +1643,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
                     <i class="fa-solid fa-graduation-cap"></i>
 
                 </a>
-
 
                 <a
                     href="https://github.com/sujan4445"
@@ -1924,7 +1655,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
 
                 </a>
 
-
                 <a
                     href="https://x.com/Iamsujan45"
                     target="_blank"
@@ -1935,7 +1665,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
                     <i class="fa-brands fa-x-twitter"></i>
 
                 </a>
-
 
                 <a
                     href="https://www.linkedin.com/in/sujan-chapagain-240617140/"
@@ -1948,30 +1677,27 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
 
                 </a>
 
-
                 <a
-                    href="#"
+                    href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf"
                     target="_blank"
                     rel="noopener"
-                    aria-label="Facebook"
-                    class="social-icon facebook">
+                    aria-label="ResearchGate"
+                    class="social-icon researchgate">
 
-                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-researchgate"></i>
 
                 </a>
 
-
                 <a
-                    href="https://www.instagram.com/sujan_chapagain45/"
+                    href="https://orcid.org/0000-0002-2037-3491"
                     target="_blank"
                     rel="noopener"
-                    aria-label="Instagram"
-                    class="social-icon instagram">
+                    aria-label="ORCID"
+                    class="social-icon orcid">
 
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-orcid"></i>
 
                 </a>
-
 
             </div>
 
@@ -1991,7 +1717,6 @@ Sujan Chapagain is an agriculture graduate and researcher specializing in plant 
         </p>
 
     </footer>
-
 
 </body>
 
