@@ -128,7 +128,7 @@
     }
 
     /* =========================================================
-       CAROUSEL SECTION
+       CAROUSEL SECTION WITH SLIDE ANIMATION
     ========================================================= */
 
     .carousel-section{
@@ -148,12 +148,15 @@
         display:none;
         width:100%;
         height:100%;
-        position:relative;
+        position:absolute;
+        top:0;
+        left:0;
         text-align:center;
     }
 
     .carousel-slide.active{
         display:block;
+        z-index:1;
     }
 
     .carousel-slide img{
@@ -209,6 +212,41 @@
         padding:3px 8px;
         border-radius:3px;
         z-index:11;
+    }
+
+    /* Animation keyframes for Right-to-Left and Left-to-Right sliding */
+    .slide-next-in {
+        display: block;
+        animation: slideNextIn 0.4s ease-in-out forwards;
+    }
+    .slide-next-out {
+        display: block;
+        animation: slideNextOut 0.4s ease-in-out forwards;
+    }
+    .slide-prev-in {
+        display: block;
+        animation: slidePrevIn 0.4s ease-in-out forwards;
+    }
+    .slide-prev-out {
+        display: block;
+        animation: slidePrevOut 0.4s ease-in-out forwards;
+    }
+
+    @keyframes slideNextIn {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+    @keyframes slideNextOut {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+    }
+    @keyframes slidePrevIn {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+    }
+    @keyframes slidePrevOut {
+        from { transform: translateX(0); }
+        to { transform: translateX(100%); }
     }
 
     /* =========================================================
@@ -468,100 +506,52 @@
 
 <body>
 
-<!-- =========================================================
-     HEADER / NAVIGATION
-========================================================= -->
-
 <header class="header">
     <nav class="nav-container" aria-label="Main navigation">
         <ul class="nav-menu">
-
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-
-            <li>
-                <a href="Education.html">Education</a>
-            </li>
-
-            <li>
-                <a href="Publications.html">Publications</a>
-            </li>
-
-            <li class="active">
-                <a href="projects.html">Projects</a>
-            </li>
-
-            <li>
-                <a href="Conferences.html">Conferences</a>
-            </li>
-
-            <li>
-                <a href="Award.html">Awards</a>
-            </li>
-
-            <li>
-                <a href="Affilations.html">Affiliations</a>
-            </li>
-
-            <li>
-                <a href="Volunteering.html">Volunteering</a>
-            </li>
-
-            <li>
-                <a href="contact.html">Contact & Gallery</a>
-            </li>
-
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Education.html">Education</a></li>
+            <li><a href="Publications.html">Publications</a></li>
+            <li class="active"><a href="projects.html">Projects</a></li>
+            <li><a href="Conferences.html">Conferences</a></li>
+            <li><a href="Award.html">Awards</a></li>
+            <li><a href="Affilations.html">Affiliations</a></li>
+            <li><a href="Volunteering.html">Volunteering</a></li>
+            <li><a href="contact.html">Contact & Gallery</a></li>
         </ul>
     </nav>
 </header>
-
-
-<!-- =========================================================
-     MAIN CONTENT
-========================================================= -->
 
 <main class="page-content">
 
     <h1 class="main-title">
         Characterization of Phenotypic Diveristy, Genetic Variability and MGIDI in Nepalese Finger Millet Landraces
     </h1>
-    </p>
 
-    <!-- Image Viewer / Carousel -->
     <div class="carousel-section">
         <button class="arrow-btn arrow-left" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
         
         <div class="carousel-slide active">
-            <img src="img/fm1.jpg" alt="Phenotypic Diversity" loading="eager">
-            <div class="carousel-caption">Phenotypic diversity among evaluated landraces</div>
+            <img src="Image/fi1.jpg" alt="Phenotypic Diversity" loading="eager">
+            <div class="carousel-caption">Phenotypic diversity in grain and glume color</div>
         </div>
         <div class="carousel-slide">
-            <img src="img/fm2.jpg" alt="Field Trial Plots" loading="lazy">
-            <div class="carousel-caption">Field trial plots in RCBD layout</div>
+            <img src="Image/fi3.jpg" alt="Field Trial Plots" loading="lazy">
+            <div class="carousel-caption">Diveristy in landraces grain color</div>
         </div>
         <div class="carousel-slide">
-            <img src="img/fm3.jpg" alt="Landrace Evaluation" loading="lazy">
-            <div class="carousel-caption">Landrace evaluation and field observation</div>
+            <img src="Image/fi2.jpg" alt="Landrace Evaluation" loading="lazy">
+            <div class="carousel-caption">Diversity in landraces ear head</div>
         </div>
         <div class="carousel-slide">
-            <img src="img/fm4.jpg" alt="Cluster Variation" loading="lazy">
-            <div class="carousel-caption">Cluster analysis and trait variation visualizer</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="img/fm5.jpg" alt="Grain Samples" loading="lazy">
-            <div class="carousel-caption">Grain samples and 1000-grain weight analysis</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="img/fm6.jpg" alt="On-farm Conservation" loading="lazy">
-            <div class="carousel-caption">On-farm conservation and local landrace selection</div>
+            <img src="Image/fi4.jpg" alt="Cluster Variation" loading="lazy">
+            <div class="carousel-caption">Diversity in anther color and clum branching</div>
         </div>
 
         <button class="arrow-btn arrow-right" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
-        <div class="slide-counter" id="slideCounter">1/6</div>
+        <div class="slide-counter" id="slideCounter">1/4</div>
     </div>
 
-    <!-- Metadata Section -->
     <ul class="meta-list">
         <li><strong>Principal Investigator:</strong> Sujan Chapagain</li>
         <li><strong>Project Supervisors:</strong> Ankur Poudel, Bishnu Prasad Kandel, and Sudikshya Shrestha</li>
@@ -569,13 +559,11 @@
         <li><strong>Timeline:</strong> March 2025 – September 2025</li>
     </ul>
 
-    <!-- Background -->
     <h2 class="section-title">Background</h2>
     <p class="project-description">
         Nepal harbors significant finger millet (<i>Eleusine coracana</i> L.) landrace diversity adapted to hilly and mountain agro-ecologies. Finger millet landraces in Nepal are a vital part of the country’s agricultural heritage, valued for their resilience to harsh climates and poor soils. They provide essential nutrients, supporting food security and healthy diets in rural communities. Beyond nutrition, these landraces hold deep cultural significance, forming the basis of traditional foods and rituals. They also represent rich genetic diversity, which is crucial for breeding, adaptation, and long-term crop resilience. However, many of these landraces are now on the verge of extinction due to modern agricultural practices and shifting cropping patterns. Their characterization and documentation have become essential for ensuring their conservation and promoting agricultural sustainability.
     </p>
 
-    <!-- Objectives -->
     <h2 class="section-title">Objectives</h2>
     <ul class="role-list">
         <li>Characterize landrace diversity using key agro-morphological traits.</li>
@@ -584,7 +572,6 @@
         <li>Promote on-farm conservation and sustainable utilization of local genetic resources.</li>
     </ul>
 
-    <!-- Design & Methodology -->
     <h2 class="section-title">Design & Methodology</h2>
     <p class="project-description">
         The experiment was conducted using a <strong>Randomized Complete Block Design (RCBD)</strong> with three replications. A total of 18 landraces collected from the mid-hills of Nepal along with one released check variety, <i>Kavre Kodo-2</i>, were evaluated in the field.
@@ -592,7 +579,6 @@
    Statistical evaluation included Analysis of Variance (ANOVA), frequency distribution, Chi-square test, Correlation Analysis, Principal Component Analysis (PCA), Cluster Analysis, and the Multi-Trait Genotype-Ideotype Distance Index (MGIDI).
     </p>
 
-    <!-- Outcomes & Significance -->
     <h2 class="section-title">Outcomes & Significance</h2>
     <ul class="role-list">
         <li>Comprehensive baseline documentation of morphological and phenological traits of Nepalese finger millet landraces.</li>
@@ -601,7 +587,6 @@
         <li>Strengthened framework for on-farm genetic conservation in mid-hill agro-ecosystems.</li>
     </ul>
 
-    <!-- Publications -->
     <h2 class="section-title">Publications</h2>
 
     <div class="publication-item">
@@ -621,164 +606,94 @@
 
 </main>
 
-
-<!-- =========================================================
-     CONTACT / SOCIAL PROFILE
-========================================================= -->
-
 <section class="contact-profile" aria-label="Contact and social media">
 
     <div class="contact-column">
-
-        <h3>
-            Sujan Chapagain
-        </h3>
-
-        <a
-            href="mailto:chapagainsujan45@gmail.com"
-            class="email-link"
-        >
-            chapagainsujan45@gmail.com
-        </a>
-
+        <h3>Sujan Chapagain</h3>
+        <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
     </div>
-
 
     <div class="contact-column location-column">
-
-        <p>
-            Kathmandu, Nepal
-        </p>
-
-        <p>
-            Agricultural Researcher
-        </p>
-
+        <p>Kathmandu, Nepal</p>
+        <p>Agricultural Researcher</p>
     </div>
 
-
     <div class="contact-column social-column">
-
         <div class="social-icons">
-
-            <a
-                href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en"
-                class="social-icon"
-                aria-label="Google Scholar"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="fa-solid fa-graduation-cap"></i>
-            </a>
-
-
-            <a
-                href="https://github.com/sujan4445"
-                class="social-icon"
-                aria-label="GitHub"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="fab fa-github"></i>
-            </a>
-
-
-            <a
-                href="https://x.com/Iamsujan45"
-                class="social-icon"
-                aria-label="X"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="fa-brands fa-x-twitter"></i>
-            </a>
-
-
-            <a
-                href="https://www.linkedin.com/in/sujan-chapagain-240617140/"
-                target="_blank"
-                rel="noopener"
-                class="social-icon"
-                aria-label="LinkedIn"
-            >
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-
-
-            <a
-                href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf"
-                target="_blank"
-                rel="noopener"
-                class="social-icon"
-                aria-label="Research Gate"
-            >
-                <i class="fab fa-researchgate"></i>
-            </a>
-
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i></a>
+            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" target="_blank" rel="noopener" class="social-icon" aria-label="Research Gate"><i class="fab fa-researchgate"></i></a>
         </div>
-
     </div>
 
 </section>
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
 <footer class="footer">
-
-    <p>
-        © 2026 Sujan Chapagain. All rights reserved.
-    </p>
-
+    <p>© 2026 Sujan Chapagain. All rights reserved.</p>
 </footer>
 
-
-<!-- =========================================================
-     SCRIPTS
-========================================================= -->
-
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Image Carousel Functionality
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.getElementById('prevSlide');
     const nextBtn = document.getElementById('nextSlide');
     const counter = document.getElementById('slideCounter');
     let currentIndex = 0;
+    let isAnimating = false;
 
     if (slides.length > 0) {
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
+        function changeSlide(newIndex, direction) {
+            if (isAnimating || newIndex === currentIndex) return;
+            isAnimating = true;
+
+            const currentSlide = slides[currentIndex];
+            const nextSlide = slides[newIndex];
+
+            slides.forEach(slide => {
+                slide.className = 'carousel-slide';
             });
-            if (counter) {
-                counter.textContent = `${index + 1}/${slides.length}`;
+
+            if (direction === 'next') {
+                currentSlide.classList.add('slide-next-out');
+                nextSlide.classList.add('slide-next-in');
+            } else {
+                currentSlide.classList.add('slide-prev-out');
+                nextSlide.classList.add('slide-prev-in');
             }
+
+            setTimeout(() => {
+                slides.forEach((slide, i) => {
+                    slide.className = 'carousel-slide';
+                    if (i === newIndex) {
+                        slide.classList.add('active');
+                    }
+                });
+                currentIndex = newIndex;
+                if (counter) {
+                    counter.textContent = `${currentIndex + 1}/${slides.length}`;
+                }
+                isAnimating = false;
+            }, 400);
         }
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                showSlide(currentIndex);
+                const nextIndex = (currentIndex + 1) % slides.length;
+                changeSlide(nextIndex, 'next');
             });
         }
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                showSlide(currentIndex);
+                const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                changeSlide(prevIndex, 'prev');
             });
         }
     }
-
 });
-
 </script>
-
 
 </body>
 </html>
