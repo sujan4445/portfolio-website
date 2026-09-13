@@ -120,7 +120,7 @@
     }
 
     /* =========================================================
-       CAROUSEL SECTION
+       CAROUSEL SECTION WITH SLIDE ANIMATION
     ========================================================= */
 
     .carousel-section{
@@ -140,12 +140,15 @@
         display:none;
         width:100%;
         height:100%;
-        position:relative;
+        position:absolute;
+        top:0;
+        left:0;
         text-align:center;
     }
 
     .carousel-slide.active{
         display:block;
+        z-index:1;
     }
 
     .carousel-slide img{
@@ -201,6 +204,41 @@
         padding:3px 8px;
         border-radius:3px;
         z-index:11;
+    }
+
+    /* Animation keyframes for Right-to-Left and Left-to-Right sliding */
+    .slide-next-in {
+        display: block;
+        animation: slideNextIn 0.4s ease-in-out forwards;
+    }
+    .slide-next-out {
+        display: block;
+        animation: slideNextOut 0.4s ease-in-out forwards;
+    }
+    .slide-prev-in {
+        display: block;
+        animation: slidePrevIn 0.4s ease-in-out forwards;
+    }
+    .slide-prev-out {
+        display: block;
+        animation: slidePrevOut 0.4s ease-in-out forwards;
+    }
+
+    @keyframes slideNextIn {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+    @keyframes slideNextOut {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+    }
+    @keyframes slidePrevIn {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+    }
+    @keyframes slidePrevOut {
+        from { transform: translateX(0); }
+        to { transform: translateX(100%); }
     }
 
     /* =========================================================
@@ -461,58 +499,21 @@
 
 <body>
 
-<!-- =========================================================
-     HEADER / NAVIGATION
-========================================================= -->
-
 <header class="header">
     <nav class="nav-container" aria-label="Main navigation">
         <ul class="nav-menu">
-
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-
-            <li>
-                <a href="Education.html">Education</a>
-            </li>
-
-            <li>
-                <a href="Publications.html">Publications</a>
-            </li>
-
-            <li class="active">
-                <a href="projects.html">Projects</a>
-            </li>
-
-            <li>
-                <a href="Conferences.html">Conferences</a>
-            </li>
-
-            <li>
-                <a href="Award.html">Awards</a>
-            </li>
-
-            <li>
-                <a href="Affilations.html">Affiliations</a>
-            </li>
-
-            <li>
-                <a href="Volunteering.html">Volunteering</a>
-            </li>
-
-            <li>
-                <a href="contact.html">Contact & Gallery</a>
-            </li>
-
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Education.html">Education</a></li>
+            <li><a href="Publications.html">Publications</a></li>
+            <li class="active"><a href="projects.html">Projects</a></li>
+            <li><a href="Conferences.html">Conferences</a></li>
+            <li><a href="Award.html">Awards</a></li>
+            <li><a href="Affilations.html">Affiliations</a></li>
+            <li><a href="Volunteering.html">Volunteering</a></li>
+            <li><a href="contact.html">Contact & Gallery</a></li>
         </ul>
     </nav>
 </header>
-
-
-<!-- =========================================================
-     MAIN CONTENT
-========================================================= -->
 
 <main class="page-content">
 
@@ -520,54 +521,65 @@
         Performance Evaluation and Morpho-Physiological Screening of Wheat Genotypes under Irrigated and Drought Environments
     </h1>
 
-    <!-- Image Viewer / Carousel -->
     <div class="carousel-section">
-        <button class="arrow-btn arrow-left" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
-        
+        <button class="arrow-btn arrow-left" id="prevSlide" aria-label="Previous slide">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
         <div class="carousel-slide active">
-            <img src="img/afuw1.jpg" alt="AFU W01 Genotype Trial" loading="eager">
-            <div class="carousel-caption">AFU W01 genotype in field trial evaluation</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="img/afu2.jpg" alt="AFU W02 Genotype" loading="lazy">
-            <div class="carousel-caption">AFU W02 genotype development stage</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="img/wh2.jpg" alt="Irrigated Condition" loading="lazy">
-            <div class="carousel-caption">Field performance under irrigated conditions</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="img/wh3.jpg" alt="Heading Stage" loading="lazy">
-            <div class="carousel-caption">Wheat crop heading stage</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="img/wheat4.jpg" alt="Leaf Rolling" loading="lazy">
-            <div class="carousel-caption">Morpho-physiological measurement (Leaf rolling)</div>
-        </div>
-        <div class="carousel-slide">
-            <img src="img/wheat6.jpg" alt="Cluster Analysis" loading="lazy">
-            <div class="carousel-caption">Phenotypic variation and cluster analysis visualization</div>
+            <img src="Image/1.jpg" alt="AFU W01 Genotype Trial" loading="eager">
+            <div class="carousel-caption">
+                Spike length differences under drought and irrigated conditions
+            </div>
         </div>
 
-        <button class="arrow-btn arrow-right" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
-        <div class="slide-counter" id="slideCounter">1/6</div>
+        <div class="carousel-slide">
+            <img src="Image/2.jpg" alt="AFU W02 Genotype" loading="lazy">
+            <div class="carousel-caption">
+                Grain diversity in studied wheat accessions
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img src="Image/UAV1.jpg" alt="Heading Stage" loading="lazy">
+            <div class="carousel-caption">
+                Aerial image of wheat field
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img src="Image/wheat3.jpg" alt="Cluster Analysis" loading="lazy">
+            <div class="carousel-caption">
+                Controlled environment drought screening
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img src="Image/afuw1.jpg" alt="Plant Breeding" loading="lazy">
+            <div class="carousel-caption">
+                Wheat Project Plant Breeding Team
+            </div>
+        </div>
+
+        <button class="arrow-btn arrow-right" id="nextSlide" aria-label="Next slide">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="slide-counter" id="slideCounter">1/5</div>
     </div>
 
-    <!-- Metadata Section -->
     <ul class="meta-list">
         <li><strong>Principal Investigator:</strong> Sujan Chapagain</li>
         <li><strong>Co-Principal Investigators:</strong> Sandesh Subedi, Samir Nepal, Sancheet Gautam</li>
         <li><strong>Project Supervisors:</strong> Ankur Poudel, Bishnu Prasad Kandel, Mahesh Subedi</li>
-        <li><strong>Funding:</strong> Champadevi Rural Municipality, Okhaldhunga, Self-Funded & Departmental Support</li>
+        <li><strong>Funding:</strong> Champadevi Rural Municipality, Okhaldhunga</li>
     </ul>
 
-    <!-- Background -->
     <h2 class="section-title">Background</h2>
     <p class="project-description">
         Wheat (<i>Triticum aestivum</i> L.) is a fundamental staple cereal crop contributing significantly to food security, dietary energy supply, and rural livelihoods in Nepal. Most wheat research and varietal development have historically been concentrated in the Terai region, where irrigation facilities allow high-yielding varieties to thrive. However, the mid-hill region—comprising a large portion of the nation's cultivated area—remains predominantly rainfed and faces severe constraints due to erratic rainfall and terminal drought stress. This project addresses yield losses by systematically screening diverse local landraces, improved genotypes, and newly developed lines under controlled water regimes and field conditions.
     </p>
 
-    <!-- Objectives -->
     <h2 class="section-title">Objectives</h2>
     <ul class="role-list">
         <li>To assess the phenological, agronomic, and yield performance of local and improved wheat genotypes under contrasting irrigated and drought environments.</li>
@@ -576,13 +588,11 @@
         <li>To provide actionable genetic and physiological data to support future wheat breeding programs and variety releases tailored for mid-hill ecosystems.</li>
     </ul>
 
-    <!-- Ongoing Work -->
     <h2 class="section-title">Ongoing Work</h2>
     <p class="project-description">
         Field experiments are conducted using an Alpha Lattice Design across two moisture regimes (Irrigated and Drought-stressed) with two replications. Complementary pot trials utilize a Completely Randomized Design (CRD) comparing 70% Field Capacity (Well-watered) to 35% Field Capacity (Water-stressed). Statistical analysis pipelines incorporate Analysis of Variance (ANOVA), Additive Main Effects and Multiplicative Interaction (AMMI), Genotype and Genotype × Environment interaction (GGE) Biplots, Principal Component Analysis (PCA), and Cluster Analysis.
     </p>
 
-    <!-- Outcomes -->
     <h2 class="section-title">Outcomes</h2>
     <ul class="role-list">
         <li>Identification of stable, high-yielding wheat lines resilient to moisture stress conditions in mid-hill rainfed environments.</li>
@@ -591,7 +601,6 @@
         <li>Generation of multi-environment trial datasets supporting national breeding pipelines.</li>
     </ul>
 
-    <!-- Publications -->
     <h2 class="section-title">Publications</h2>
 
     <div class="publication-item">
@@ -611,164 +620,95 @@
 
 </main>
 
-
-<!-- =========================================================
-     CONTACT / SOCIAL PROFILE
-========================================================= -->
-
 <section class="contact-profile" aria-label="Contact and social media">
 
     <div class="contact-column">
-
-        <h3>
-            Sujan Chapagain
-        </h3>
-
-        <a
-            href="mailto:chapagainsujan45@gmail.com"
-            class="email-link"
-        >
-            chapagainsujan45@gmail.com
-        </a>
-
+        <h3>Sujan Chapagain</h3>
+        <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
     </div>
-
 
     <div class="contact-column location-column">
-
-        <p>
-            Kathmandu, Nepal
-        </p>
-
-        <p>
-            Agricultural Researcher
-        </p>
-
+        <p>Kathmandu, Nepal</p>
+        <p>Agricultural Researcher</p>
     </div>
 
-
     <div class="contact-column social-column">
-
         <div class="social-icons">
-
-            <a
-                href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en"
-                class="social-icon"
-                aria-label="Google Scholar"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="fa-solid fa-graduation-cap"></i>
-            </a>
-
-
-            <a
-                href="https://github.com/sujan4445"
-                class="social-icon"
-                aria-label="GitHub"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="fab fa-github"></i>
-            </a>
-
-
-            <a
-                href="https://x.com/Iamsujan45"
-                class="social-icon"
-                aria-label="X"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="fa-brands fa-x-twitter"></i>
-            </a>
-
-
-            <a
-                href="https://www.linkedin.com/in/sujan-chapagain-240617140/"
-                target="_blank"
-                rel="noopener"
-                class="social-icon"
-                aria-label="LinkedIn"
-            >
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-
-
-            <a
-                href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf"
-                target="_blank"
-                rel="noopener"
-                class="social-icon"
-                aria-label="Research Gate"
-            >
-                <i class="fab fa-researchgate"></i>
-            </a>
-
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i></a>
+            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" target="_blank" rel="noopener" class="social-icon" aria-label="Research Gate"><i class="fab fa-researchgate"></i></a>
         </div>
-
     </div>
 
 </section>
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
 <footer class="footer">
-
-    <p>
-        © 2026 Sujan Chapagain. All rights reserved.
-    </p>
-
+    <p>© 2026 Sujan Chapagain. All rights reserved.</p>
 </footer>
 
-
-<!-- =========================================================
-     SCRIPTS
-========================================================= -->
-
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Image Carousel Functionality
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.getElementById('prevSlide');
     const nextBtn = document.getElementById('nextSlide');
     const counter = document.getElementById('slideCounter');
     let currentIndex = 0;
+    let isAnimating = false;
 
     if (slides.length > 0) {
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
+        function changeSlide(newIndex, direction) {
+            if (isAnimating || newIndex === currentIndex) return;
+            isAnimating = true;
+
+            const currentSlide = slides[currentIndex];
+            const nextSlide = slides[newIndex];
+
+            // Reset animation classes
+            slides.forEach(slide => {
+                slide.className = 'carousel-slide';
             });
-            if (counter) {
-                counter.textContent = `${index + 1}/${slides.length}`;
+
+            if (direction === 'next') {
+                currentSlide.classList.add('slide-next-out');
+                nextSlide.classList.add('slide-next-in');
+            } else {
+                currentSlide.classList.add('slide-prev-out');
+                nextSlide.classList.add('slide-prev-in');
             }
+
+            setTimeout(() => {
+                slides.forEach((slide, i) => {
+                    slide.className = 'carousel-slide';
+                    if (i === newIndex) {
+                        slide.classList.add('active');
+                    }
+                });
+                currentIndex = newIndex;
+                if (counter) {
+                    counter.textContent = `${currentIndex + 1}/${slides.length}`;
+                }
+                isAnimating = false;
+            }, 400);
         }
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                showSlide(currentIndex);
+                const nextIndex = (currentIndex + 1) % slides.length;
+                changeSlide(nextIndex, 'next');
             });
         }
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                showSlide(currentIndex);
+                const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                changeSlide(prevIndex, 'prev');
             });
         }
     }
-
 });
-
 </script>
-
 
 </body>
 </html>
