@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sports Gallery & Storytelling Journal — Sujan Chapagain">
+    <meta name="author" content="Sujan Chapagain">
+    <title>Sports | Sujan Chapagain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            min-height: 100vh;
+            color: #2c1a12;
+            line-height: 1.6;
+            font-family: "Montserrat", sans-serif;
+            display: flex;
+            flex-direction: column;
+
+            /* Full-page Background Image (mm.jpg) with 20% reduced brightness */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('Image/mm.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        a { color: inherit; }
+
+        /* Translucent Navigation Header */
+        .header {
+            width: 100%;
+            background: rgba(245, 239, 230, 0.92);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            z-index: 100;
+        }
+
+        .nav-container {
+            min-height: 52px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-menu {
+            width: 100%;
+            max-width: 1320px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #13100f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            padding: 8px 12px;
+            transition: color .25s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu .active a {
+            color: #4c78a8;
+        }
+
+        .page-content { flex: 1; display: flex; flex-direction: column; }
+
+        /* Section Heading */
+        .sports-heading {
+            width: min(1080px, 92%);
+            margin: 10px auto 9px; /* Shifted higher up */
+            text-align: center;
+            background: rgba(255, 253, 251, 0.85);
+            backdrop-filter: blur(6px);
+            padding: 14px 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(222, 213, 206, 0.6);
+        }
+
+        .sports-heading .small-title {
+            font-family: "Cinzel", Georgia, serif;
+            font-size: 13px;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: #8a6a59;
+            margin-bottom: 4px;
+        }
+
+        .sports-heading h1 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(34px, 4.5vw, 48px);
+            font-weight: 400;
+            line-height: 1;
+            color: #5a3b2e;
+        }
+
+        .heading-line {
+            width: 75px;
+            height: 1px;
+            background: #4c78a8;
+            margin: 10px auto 0;
+        }
+
+        /* Storytelling Theater Stage */
+        .theater-wrapper {
+            width: min(1000px, 92%);
+            margin: 10px auto 20px; /* Placed higher up */
+            position: relative;
+            height: 490px;
+            background: rgba(255, 253, 251, 0.93);
+            backdrop-filter: blur(10px);
+            border: 1px solid #ded5ce;
+            border-radius: 8px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        /* Animated Slide Chapter */
+        .story-frame {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.8s ease-in-out, visibility 1.8s ease-in-out;
+            padding: 25px;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .story-frame.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Image Frame Container (Original Chapter Images) */
+        .frame-image-box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            background: #f1ece6;
+            border: 1px solid #e2d9d0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .frame-image-box .bg-blur {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(12px) opacity(0.3);
+            transform: scale(1.1);
+        }
+
+        .frame-image-box img.main-img {
+            position: relative;
+            z-index: 2;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transform: scale(0.96);
+            transition: transform 6s ease-out;
+        }
+
+        .story-frame.active img.main-img {
+            transform: scale(1);
+        }
+
+        /* Story Journal Typography */
+        .frame-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 15px;
+        }
+
+        .chapter-badge {
+            font-family: "Cinzel", Georgia, serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #8a6a59;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chapter-badge i { color: #4c78a8; }
+
+        .chapter-title {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #5a3b2e;
+            margin-bottom: 14px;
+            line-height: 1.15;
+        }
+
+        .chapter-quote {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-style: italic;
+            font-size: 20px;
+            color: #73594b;
+            line-height: 1.5;
+            border-left: 2px solid #4c78a8;
+            padding-left: 16px;
+        }
+
+        /* Timeline Progress Bar */
+        .progress-line-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #ede6e0;
+        }
+
+        .progress-line-bar {
+            height: 100%;
+            width: 0%;
+            background: #4c78a8;
+            transition: width 0.1s linear;
+        }
+
+        /* Audio Control Bar */
+        .audio-status-bar {
+            width: min(1000px, 92%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            padding: 6px 14px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(6px);
+            border-radius: 20px;
+        }
+
+        .audio-status-bar i { color: #8cb5e3; }
+
+        .audio-toggle-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-family: "Montserrat", sans-serif;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+        }
+
+        .audio-toggle-btn:hover {
+            background: #4c78a8;
+            border-color: #4c78a8;
+        }
+
+        /* Contact & Social Section */
+        .contact-profile {
+            width: 100%;
+            background: rgba(247, 243, 239, 0.92);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #ddd6d0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            padding: 30px 7%;
+            margin-top: auto;
+        }
+
+        .contact-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-column h3 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 25px;
+            font-weight: 600;
+            color: #5a3b2e;
+            margin-bottom: 3px;
+        }
+
+        .email-link {
+            font-family: "Montserrat", sans-serif;
+            font-size: 11px;
+            color: #73594b;
+            text-decoration: none;
+        }
+
+        .email-link:hover { color: #4c78a8; }
+
+        .location-column { text-align: center; }
+
+        .location-column p {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 17px;
+            color: #73594b;
+        }
+
+        .social-column { align-items: flex-end; }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #cfc4bc;
+            border-radius: 50%;
+            color: #5a3b2e;
+            text-decoration: none;
+            transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: #4c78a8;
+            color: #fff;
+            border-color: #4c78a8;
+        }
+
+        .footer {
+            width: 100%;
+            background: #2c1a12;
+            color: #f7f3ef;
+            text-align: center;
+            padding: 15px 20px;
+        }
+
+        .footer p {
+            font-size: 11px;
+            letter-spacing: .4px;
+        }
+
+       @media (max-width: 850px) {
+            html, body { background-attachment: scroll; }
+            .sports-heading { width: 95%; margin: 10px auto 5px; padding: 10px 15px; }
+            .theater-wrapper { width: 95%; height: auto; min-height: 480px; margin: 8px auto 15px; }
+            .story-frame { grid-template-columns: 1fr; gap: 15px; padding: 15px; }
+            .frame-image-box { height: 220px; min-height: unset; }
+            .chapter-title { font-size: 24px; margin-bottom: 8px; }
+            .chapter-quote { font-size: 15px; }
+            .nav-container { padding: 8px 10px; }
+            .nav-menu { flex-wrap: wrap; justify-content: center; gap: 4px 6px; }
+            .nav-menu a { font-size: 16px; padding: 4px 6px; }
+            .audio-status-bar { width: 95%; flex-direction: row; gap: 8px; font-size: 11px; padding: 6px 10px; }
+            .contact-profile { grid-template-columns: 1fr; text-align: center; gap: 20px; padding: 24px 15px; }
+            .contact-column, .social-column { align-items: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Education.html">Education</a></li>
+            <li><a href="Publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Conferences.html">Conferences</a></li>
+            <li><a href="Award.html">Awards</a></li>
+            <li><a href="Affilations.html">Affiliations</a></li>
+            <li><a href="Volunteering.html">Volunteering</a></li>
+            <li><a href="contact.html" class="active">Contact & Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="page-content">
+
+    <section class="sports-heading">
+        <div class="small-title"></div>
+        <h1>Athletic Journey & Reflections</h1>
+        <div class="heading-line"></div>
+    </section>
+
+    <!-- Theater Container -->
+    <div class="theater-wrapper">
+
+        <!-- Frame 1 -->
+        <article class="story-frame active">
+            <div class="frame-image-box">
+                <img src="Image/football1.jpeg" alt="ICONICS-NSU background" class="bg-blur">
+                <img src="Image/football1.jpeg" alt="ICONICS-NSU" class="main-img">
+            </div>
+            <div class="frame-text">
+                <div class="chapter-badge"><i class="fa-solid fa-futbol"></i> Football • Chapter I</div>
+                <h2 class="chapter-title">ICONICS-NSU</h2>
+                <p class="chapter-quote">"The passion begins on the pitch—every match brings a new story of unity, determination, and camaraderie."</p>
+            </div>
+        </article>
+
+        <!-- Frame 2 -->
+        <article class="story-frame">
+            <div class="frame-image-box">
+                <img src="Image/football3.jpeg" alt="Final LineUp background" class="bg-blur">
+                <img src="Image/football3.jpeg" alt="Second Final LineUp" class="main-img">
+            </div>
+            <div class="frame-text">
+                <div class="chapter-badge"><i class="fa-solid fa-futbol"></i> Football • Chapter II</div>
+                <h2 class="chapter-title">Second Final LineUp</h2>
+                <p class="chapter-quote">"Standing together before the final whistle. Trust in your squad turns strategic effort into collective success."</p>
+            </div>
+        </article>
+
+        <!-- Frame 3 -->
+        <article class="story-frame">
+            <div class="frame-image-box">
+                <img src="Image/football4.jpeg" alt="Galactico 4 background" class="bg-blur">
+                <img src="Image/football4.jpeg" alt="Galactico 4" class="main-img">
+            </div>
+            <div class="frame-text">
+                <div class="chapter-badge"><i class="fa-solid fa-futbol"></i> Football • Chapter III</div>
+                <h2 class="chapter-title">Galactico 4</h2>
+                <p class="chapter-quote">"Wearing jersey #4 with pride—reminding us that resilience and heart define every play."</p>
+            </div>
+        </article>
+
+        <!-- Frame 4 -->
+        <article class="story-frame">
+            <div class="frame-image-box">
+                <img src="Image/cricket1.jpg" alt="Cricket Squad background" class="bg-blur">
+                <img src="Image/cricket1.jpg" alt="Cricket Squad ICONICS" class="main-img">
+            </div>
+            <div class="frame-text">
+                <div class="chapter-badge"><i class="fa-solid fa-baseball-bat-ball"></i> Cricket • Chapter IV</div>
+                <h2 class="chapter-title">Cricket Squad ICONICS</h2>
+                <p class="chapter-quote">"Stepping onto the cricket field—where patience, precision, and mutual respect pave the way forward."</p>
+            </div>
+        </article>
+
+        <!-- Frame 5 -->
+        <article class="story-frame">
+            <div class="frame-image-box">
+                <img src="Image/cricket2.jpg" alt="Team Celebration background" class="bg-blur">
+                <img src="Image/cricket2.jpg" alt="Team Celebration After Tournament" class="main-img">
+            </div>
+            <div class="frame-text">
+                <div class="chapter-badge"><i class="fa-solid fa-baseball-bat-ball"></i> Cricket • Chapter V</div>
+                <h2 class="chapter-title">Team Celebration</h2>
+                <p class="chapter-quote">"Shared achievements create timeless memories. Joy earned together after grueling tournament days."</p>
+            </div>
+        </article>
+
+        <!-- Frame 6 -->
+        <article class="story-frame">
+            <div class="frame-image-box">
+                <img src="Image/cricket3.jpg" alt="Finalist background" class="bg-blur">
+                <img src="Image/cricket3.jpg" alt="Finalist" class="main-img">
+            </div>
+            <div class="frame-text">
+                <div class="chapter-badge"><i class="fa-solid fa-baseball-bat-ball"></i> Cricket • Chapter VI</div>
+                <h2 class="chapter-title">The Finalists</h2>
+                <p class="chapter-quote">"Honoring the journey to the top. Grit, sportsmanship, and unforgettable sportsmanship along the path."</p>
+            </div>
+        </article>
+
+        <div class="progress-line-container">
+            <div class="progress-line-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <div class="audio-status-bar">
+        <span><i class="fa-solid fa-compact-disc fa-spin"></i> Playing Peaceful Background Music</span>
+        <button id="audioToggleBtn" class="audio-toggle-btn">
+            <i class="fa-solid fa-volume-high"></i> Play Sound
+        </button>
+        <span id="storyCounter">Chapter 1 of 6</span>
+    </div>
+
+</main>
+
+<!-- Peaceful Acoustic Background Music -->
+<audio id="peacefulAudio" loop preload="auto">
+    <source src="https://www.chosic.com/wp-content/uploads/2021/04/Reaching-Out.mp3" type="audio/mpeg">
+</audio>
+
+<section class="contact-profile" aria-label="Contact and social media">
+
+    <div class="contact-column">
+        <h3>Sujan Chapagain</h3>
+        <a href="mailto:chapagainsujan45@gmail.com" class="email-link">
+            chapagainsujan45@gmail.com
+        </a>
+    </div>
+
+    <div class="contact-column location-column">
+        <p>Bharatpur, Nepal</p>
+        <p>Agricultural Researcher</p>
+    </div>
+
+    <div class="contact-column social-column">
+        <div class="social-icons">
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" class="social-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/sujan4445" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/Iamsujan45" target="_blank" rel="noopener" aria-label="X" class="social-icon">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" target="_blank" rel="noopener" aria-label="ResearchGate" class="social-icon researchgate">
+                <i class="fab fa-researchgate"></i>
+            </a>
+            <a href="https://orcid.org/0000-0002-2037-3491" target="_blank" rel="noopener" aria-label="ORCID" class="social-icon orcid">
+                <i class="fab fa-orcid"></i>
+            </a>
+        </div>
+    </div>
+
+</section>
+
+<footer class="footer">
+    <p>© 2026 Sujan Chapagain. All rights reserved.</p>
+</footer>
+
+<script>
+    const frames = document.querySelectorAll('.story-frame');
+    const progressBar = document.getElementById('progressBar');
+    const storyCounter = document.getElementById('storyCounter');
+    const audio = document.getElementById('peacefulAudio');
+    const audioBtn = document.getElementById('audioToggleBtn');
+
+    let currentFrame = 0;
+    const duration = 2200;
+    let elapsedTime = 0;
+    const interval = 50;
+
+    function startStory() {
+        setInterval(() => {
+            elapsedTime += interval;
+            const progress = (elapsedTime / duration) * 100;
+            progressBar.style.width = progress + '%';
+
+            if (elapsedTime >= duration) {
+                elapsedTime = 0;
+                frames[currentFrame].classList.remove('active');
+                currentFrame = (currentFrame + 1) % frames.length;
+                frames[currentFrame].classList.add('active');
+                storyCounter.innerText = `Chapter ${currentFrame + 1} of ${frames.length}`;
+            }
+        }, interval);
+    }
+
+    // Modern Autoplay-compliant Audio Handler
+    function initAudio() {
+        const playPromise = audio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                audioBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> Mute';
+            }).catch(() => {
+                // Audio autoplay fallback for browser restrictions
+                const enableAudioOnInteraction = () => {
+                    audio.play().then(() => {
+                        audioBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> Mute';
+                    });
+                    document.removeEventListener('click', enableAudioOnInteraction);
+                    document.removeEventListener('keydown', enableAudioOnInteraction);
+                    document.removeEventListener('scroll', enableAudioOnInteraction);
+                };
+
+                document.addEventListener('click', enableAudioOnInteraction);
+                document.addEventListener('keydown', enableAudioOnInteraction);
+                document.addEventListener('scroll', enableAudioOnInteraction);
+            });
+        }
+    }
+
+    // Audio Play/Pause Button Toggle
+    audioBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (audio.paused) {
+            audio.play();
+            audioBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> Mute';
+        } else {
+            audio.pause();
+            audioBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Play Sound';
+        }
+    });
+
+    window.addEventListener('load', () => {
+        startStory();
+        initAudio();
+    });
+</script>
+
+</body>
+</html>
