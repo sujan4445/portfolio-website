@@ -16,407 +16,306 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-
-    /* =========================================================
-       GLOBAL & RESET
-    ========================================================= */
-
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    html{
-        scroll-behavior:smooth;
+    html {
+        scroll-behavior: smooth;
     }
 
-    body{
-        min-height:100vh;
-        display:flex;
-        flex-direction:column;
-        background:#fbf8f3;
-        color:#332923;
-        font-family:"Cormorant Garamond", Georgia, serif;
-        line-height:1.6;
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: #fbf8f3;
+        color: #332923;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        line-height: 1.6;
     }
 
-    a{
-        color:inherit;
+    a {
+        color: inherit;
     }
 
     /* =========================================================
        HEADER / NAVIGATION
     ========================================================= */
 
-    .header{
-        width:100%;
-        background:#f5efe6;
-        border-top:1px solid #000000;
-        border-bottom:1px solid #000000;
-        position:sticky;
-        top:0;
-        z-index:100;
+    .header {
+        width: 100%;
+        background: #f5efe6;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 
-    .nav-container{
-        min-height:52px;
-        padding:0 20px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
+    .nav-container {
+        min-height: 52px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .nav-menu{
-        width:100%;
-        max-width:1320px;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        list-style:none;
+    .nav-menu {
+        width: 100%;
+        max-width: 1320px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
     }
 
-    .nav-menu a{
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:20px;
-        font-weight:600;
-        color:#13100f;
-        text-decoration:underline;
-        text-underline-offset:3px;
-        padding:8px 12px;
-        transition:color .25s ease;
+    .nav-menu a {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #13100f;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        padding: 8px 12px;
+        transition: color .25s ease;
     }
 
     .nav-menu a:hover,
     .nav-menu .active a,
-    .nav-menu a.active{
-        color:#4c78a8;
+    .nav-menu a.active {
+        color: #4c78a8;
     }
-
 
     /* =========================================================
        HERO BANNER
     ========================================================= */
 
-    .hero-banner{
+    .hero-banner {
         background: linear-gradient(rgba(74, 35, 6, 0.7), rgba(19, 16, 15, 0.75)), url('IMAGE/usda1.jpg') center/cover no-repeat;
-        color:#ffffff;
-        text-align:center;
-        padding:35px 10px; /* Reduced from 80px to reduce hero height */
-        border-bottom:0.5px solid #e2dad0;
+        color: #ffffff;
+        text-align: center;
+        padding: 35px 10px;
+        border-bottom: 0.5px solid #e2dad0;
     }
 
-    .hero-banner h1{
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:clamp(28px, 4vw, 40px);
-        font-weight:600;
-        margin-bottom:6px;
-        letter-spacing:1px;
+    .hero-banner h1 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 600;
+        margin-bottom: 6px;
+        letter-spacing: 1px;
     }
 
-    .hero-banner p{
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:20px;
-        color:#f5efe6;
-    }
-
-    /* =========================================================
-       MAIN CONTENT CONTAINER
-    ========================================================= */
-
-    .page-content{
-        flex:1;
-        width:min(9080px, 90%);
-        margin:40px auto 50px;
-    }
-
-    .section-title{
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:clamp(32px, 4vw, 42px);
-        font-weight:600;
-        color:#4a2306;
-        margin-bottom:15px;
-        text-align:center;
-    }
-
-    .section-divider{
-        border:none;
-        border-top:1px solid #c2b2a3;
-        margin:50px 0;
+    .hero-banner p {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 20px;
+        color: #f5efe6;
     }
 
     /* =========================================================
-       PROJECT DETAILS & OVERVIEW
+       TWO-COLUMN LAYOUT WITH STICKY RIGHT IMAGE
     ========================================================= */
 
-    .project-details-grid{
-        display:grid;
-        grid-template-columns:repeat(2, 1fr);
-        gap:20px;
-        background:#f5efe6;
-        border:1px solid #dfd5c8;
-        padding:30px;
-        border-radius:4px;
-        margin-bottom:40px;
+    .page-content {
+        flex: 1;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 40px;
+        align-items: start;
     }
 
-    .detail-item{
-        font-size:20px;
-        color:#332923;
+    h2 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 26px;
+        font-weight: 600;
+        color: #4a2306;
+        margin-top: 35px;
+        margin-bottom: 10px;
     }
 
-    .detail-item strong{
-        color:#4a2306;
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:21px;
+    .content-left h2:first-child {
+        margin-top: 0;
     }
 
-    .overview-text{
-        font-size:21px;
-        color:#332923;
-        line-height:1.6;
-        text-align:justify;
-        background:#f5efe6;
-        border:1px solid #dfd5c8;
-        padding:35px;
-        border-radius:4px;
+    p, ul {
+        font-size: 20px;
+        color: #332923;
+        margin-bottom: 20px;
     }
 
-    .overview-text p{
-        margin-bottom:15px;
+    ul {
+        padding-left: 20px;
     }
 
-    .overview-text p:last-child{
-        margin-bottom:0;
+    li {
+        margin-bottom: 8px;
     }
 
-    .overview-text ul{
-        margin-left:25px;
-        margin-top:10px;
+    /* STICKY RIGHT IMAGE FRAME STYLING */
+
+    .image-right {
+        position: sticky;
+        top: 72px;
+    }
+
+    .single-photo {
+        margin: 0;
+        width: 100%;
+    }
+
+    .single-photo img {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        display: block;
+        border: 1px solid #e2dad0;
+        background-color: #f5efe6;
+        border-radius: 4px;
+    }
+
+    .single-photo figcaption {
+        font-size: 16px;
+        font-style: italic;
+        color: #666;
+        margin-top: 8px;
+        text-align: center;
     }
 
     /* =========================================================
-       CARDS / ROLES / HIGHLIGHTS
+       CONTACT PROFILE BLOCK & FOOTER
     ========================================================= */
 
-    .card-list{
-        max-width:900px;
-        margin:0 auto;
+    .contact-profile {
+        width: 100%;
+        background: #f5efe6;
+        border-top: 1px solid #e2dad0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        padding: 34px 7%;
     }
 
-    .feature-card{
-        background:#f5efe6;
-        border-left:4px solid #4a2306;
-        padding:22px 28px;
-        margin-bottom:20px;
-        border-radius:0 4px 4px 0;
+    .contact-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .card-meta{
-        font-family:"Montserrat", sans-serif;
-        font-size:13px;
-        font-weight:700;
-        text-transform:uppercase;
-        letter-spacing:.5px;
-        color:#4a2306;
-        margin-bottom:8px;
-        display:flex;
-        align-items:center;
-        gap:10px;
+    .contact-column h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 25px;
+        font-weight: 600;
+        color: #4a2306;
     }
 
-    .card-descr{
-        font-size:20px;
-        color:#332923;
-        line-height:1.5;
+    .email-link {
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        color: #73594b;
+        text-decoration: none;
     }
 
-    /* =========================================================
-       GALLERY
-    ========================================================= */
-
-    .gallery{
-        text-align:center;
+    .email-link:hover {
+        color: #4c78a8;
     }
 
-    .gallery-grid{
-        display:grid;
-        grid-template-columns:repeat(3, 1fr);
-        gap:25px;
-        margin-bottom:35px;
+    .location-column {
+        text-align: center;
     }
 
-    .gallery-item{
-        background:#f5efe6;
-        border:1px solid #dfd5c8;
-        padding:10px;
-        border-radius:4px;
-        transition:transform .25s ease, box-shadow .25s ease;
+    .location-column p {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 18px;
+        color: #73594b;
     }
 
-    .gallery-item:hover{
-        transform:translateY(-4px);
-        box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    .social-column {
+        align-items: flex-end;
     }
 
-    .gallery-item img{
-        width:100%;
-        height:240px;
-        object-fit:cover;
-        border-radius:2px;
-        display:block;
+    .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 9px;
     }
 
-    .gallery-caption{
-        margin-top:10px;
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:19px;
-        font-weight:600;
-        color:#4a2306;
+    .social-icon {
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cfc4bc;
+        border-radius: 50%;
+        color: #5a3b2e;
+        text-decoration: none;
+        transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
     }
 
-    /* =========================================================
-       CONTACT PROFILE BLOCK (BOTTOM)
-    ========================================================= */
-
-    .contact-profile{
-        width:100%;
-        background:#f5efe6;
-        border-top:1px solid #e2dad0;
-        display:grid;
-        grid-template-columns:1fr 1fr 1fr;
-        gap:30px;
-        padding:34px 7%;
+    .social-icon:hover {
+        transform: translateY(-3px);
+        background: #4c78a8;
+        color: #ffffff;
+        border-color: #4c78a8;
     }
 
-    .contact-column{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
+    .footer {
+        width: 100%;
+        background: #4a2306;
+        color: #f7f3ef;
+        text-align: center;
+        padding: 16px 20px;
     }
 
-    .contact-column h3{
-        font-family:"Cormorant Garamond",Georgia,serif;
-        font-size:25px;
-        font-weight:600;
-        color:#4a2306;
-    }
-
-    .email-link{
-        font-family:"Montserrat",sans-serif;
-        font-size:12px;
-        color:#73594b;
-        text-decoration:none;
-    }
-
-    .email-link:hover{
-        color:#4c78a8;
-    }
-
-    .location-column{
-        text-align:center;
-    }
-
-    .location-column p{
-        font-family:"Cormorant Garamond",Georgia,serif;
-        font-size:18px;
-        color:#73594b;
-    }
-
-    .social-column{
-        align-items:flex-end;
-    }
-
-    .social-icons{
-        display:flex;
-        align-items:center;
-        gap:9px;
-    }
-
-    .social-icon{
-        width:38px;
-        height:38px;
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        border:1px solid #cfc4bc;
-        border-radius:50%;
-        color:#5a3b2e;
-        text-decoration:none;
-        transition:transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
-    }
-
-    .social-icon:hover{
-        transform:translateY(-3px);
-        background:#4c78a8;
-        color:#ffffff;
-        border-color:#4c78a8;
-    }
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    .footer{
-        width:100%;
-        background:#4a2306;
-        color:#f7f3ef;
-        text-align:center;
-        padding:16px 20px;
-    }
-
-    .footer p{
-        font-family:"Montserrat",sans-serif;
-        font-size:12px;
-        letter-spacing:.4px;
+    .footer p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        letter-spacing: .4px;
+        margin-bottom: 0;
     }
 
     /* =========================================================
        RESPONSIVE DESIGN
     ========================================================= */
 
-    @media(max-width:768px){
-
-        .nav-container{ padding:8px 12px; }
-
-        .nav-menu{
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:8px;
+    @media (max-width: 850px) {
+        .page-content {
+            grid-template-columns: 1fr;
         }
 
-        .nav-menu a{
-            font-size:18px;
-            padding:5px 7px;
+        .image-right {
+            position: static;
+        }
+    }
+
+    @media(max-width:768px) {
+        .nav-menu {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
         }
 
-        .project-details-grid{
-            grid-template-columns:1fr;
-            gap:15px;
-            padding:20px;
+        .nav-menu a {
+            font-size: 18px;
+            padding: 5px 7px;
         }
 
-        .gallery-grid{
-            grid-template-columns:1fr;
-            gap:20px;
-        }
-
-        .gallery-item img{
-            height:260px;
-        }
-
-        .contact-profile{
-            grid-template-columns:1fr;
-            text-align:center;
-            padding:30px 20px;
+        .contact-profile {
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding: 30px 20px;
         }
 
         .contact-column,
-        .social-column{ align-items:center; }
+        .social-column { align-items: center; }
 
-        .social-column{ justify-content:center; }
+        .social-column { justify-content: center; }
     }
-
     </style>
 </head>
 
@@ -441,118 +340,44 @@
 
 <!-- HERO SECTION -->
 <section class="hero-banner">
-    <h1>Impact of Cover Crops on Plant Yield, Insect  Pests, Weeds and Soil Health in Organic Vegetable Production</h1>
+    <h1>Impact of Cover Crops on Plant Yield, Insect Pests, Weeds and Soil Health in Organic Vegetable Production</h1>
     <p>Research Project Assistant · Tanahu, Nepal</p>
     <p>Funded By: USDA-FAS-Tennessee State University</p>
 </section>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN CONTENT (2-COLUMN STICKY LAYOUT) -->
 <main class="page-content">
 
-    <!-- PROJECT METADATA GRID -->
-    <section class="project-details-grid">
-        <div class="detail-item"><strong>Name:</strong> Sujan Chapagain</div>
-        <div class="detail-item"><strong>Role:</strong> Field Data Collector & Research Support</div>
-        <div class="detail-item"><strong>Project Duration:</strong> 2 Years</div>
-        <div class="detail-item"><strong>Vegetable Trial Site:</strong> Tanahu</div>
-        <div class="detail-item"><strong>Funding:</strong> USDA-FAS-Tennessee State University</div>
-        <div class="detail-item"><strong>Institutions:</strong> IAAS TU & Tennessee State University</div>
-        <div class="detail-item"><strong>Collaborator:</strong> Bibek Bhatta</div>
-        <div class="detail-item"><strong>Research Focus:</strong> Yield, Soil Health, Pest & Weed Management</div>
-    </section>
-
-    <!-- PROJECT OVERVIEW -->
-    <section class="overview-text">
-        <h2 class="section-title">Project Overview</h2>
+    <!-- LEFT COLUMN: SCROLLING CONTENT -->
+    <div class="content-left">
+        <h2>Project Description</h2>
         <p>
-            I contributed to the collaborative research project titled <em>“Impact of Cover Crops on Yield, Insect Pests, Weeds, and Soil Health in Organic Vegetable and Rice Production in Nepal.”</em> In my role as Field Data Collector & Research Support, I was responsible for agronomic data collection, soil evaluations, growth measurements, and documenting crop performance under various cover crop treatments.
+            This two-year collaborative study evaluated the impact of cover crops on yield, insect pests, weeds, and soil health in organic vegetable and rice production across Nepal. The project was conducted in partnership with IAAS TU and Tennessee State University.
         </p>
-        <p>Key Project Objectives</p>
+
+        <h2>Key Activities</h2>
         <ul>
-            <li>Evaluate the role of cover crops in improving soil fertility and structure</li>
-            <li>Reduce weed pressure and pest incidence through natural ecological management</li>
-            <li>Enhance crop yield and resilience to environmental heat stress</li>
-            <li>Promote organic and sustainable agricultural production systems across Nepal</li>
+            <li>Collected field data on cabbage growth, plant vigor, and agro-morphological parameters under organic management.</li>
+            <li>Monitored soil temperature, tracked nutrient dynamics, and measured soil organic matter across treatments.</li>
+            <li>Maintained field sampling schedules and experimental trial records throughout the project duration.</li>
         </ul>
-    </section>
 
-    <hr class="section-divider">
-
-    <!-- RESEARCH HIGHLIGHTS / ROLES -->
-    <section class="card-list">
-        <h2 class="section-title">Field Work & Scope</h2>
-
-        <div class="feature-card">
-            <div class="card-meta">
-                <span>Vegetable Trials</span>
-            </div>
-            <p class="card-descr">
-                Evaluated cover crop impact on cabbage yield, overall plant vigor, and agro-morphological parameters under organic field management.
-            </p>
-        </div>
-
-        <div class="feature-card">
-            <div class="card-meta">
-                <span>Soil Evaluation</span>
-            </div>
-            <p class="card-descr">
-                Monitored and recorded soil temperatures, assessed soil organic matter, and tracked nutrient dynamics across treatments.
-            </p>
-        </div>
-
-        <div class="feature-card">
-            <div class="card-meta">
-                <span>Field Documentation</span>
-            </div>
-            <p class="card-descr">
-                Conducted systematic field sampling, growth assessments, and rigorous trial record maintenance throughout the two-year trial period.
-            </p>
-        </div>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- KEY FINDINGS -->
-    <section class="overview-text">
-        <h2 class="section-title">Key Findings</h2>
+        <h2>Key Findings</h2>
         <ul>
-            <li>Observed a 24% higher cabbage yield under cover crop treatments compared to control plots</li>
-            <li>Mung bean integration noticeably increased soil nitrogen content and soil organic matter</li>
-            <li>Cooler micro-soil conditions enhanced crop heat resilience during peak warm periods</li>
-            <li><em>Sesbania</em> and mung bean significantly enhanced rice productivity in rotational setups</li>
-            <li>Sesame and cowpea cover crops contributed substantially to long-term soil fertility enrichment</li>
+            <li>Observed a 24% higher cabbage yield under cover crop treatments compared to control plots.</li>
+            <li>Mung bean integration improved soil nitrogen levels and overall organic matter.</li>
+            <li>Cooler soil conditions enhanced crop heat resilience during peak temperatures.</li>
+            <li>Integrated <em>Sesbania</em> and cowpea cover crops significantly boosted long-term soil fertility and rotational crop yields.</li>
         </ul>
-    </section>
+    </div>
 
-    <hr class="section-divider">
-
-    <!-- GALLERY SECTION -->
-    <section class="gallery">
-        <h2 class="section-title">Field Gallery</h2>
-
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="IMAGE/usda1.jpg" alt="Prospectus for research project" loading="eager">
-                <div class="gallery-caption">Prospectus for research project</div>
-            </div>
-            <div class="gallery-item">
-                <img src="IMAGE/usda1.jpg" alt="Pre project briefing" loading="eager">
-                <div class="gallery-caption">Pre-project briefing</div>
-            </div>
-            <div class="gallery-item">
-                <img src="IMAGE/usda3.jpg" alt="First year research result sharing workshop" loading="eager">
-                <div class="gallery-caption">First year research result sharing workshop</div>
-            </div>
-            <div class="gallery-item">
-                <img src="IMAGE/usda4.jpg" alt="Cover crop in midhills" loading="lazy">
-                <div class="gallery-caption">Cover crop in midhills</div>
-            </div>
-            <div class="gallery-item">
-                <img src="IMAGE/usda5.jpg" alt="Project Team Photo" loading="lazy">
-                <div class="gallery-caption">Project Team Photo</div>
-            </div>
-        </div>
-    </section>
+    <!-- RIGHT COLUMN: STICKY IMAGE FRAME -->
+    <div class="image-right">
+        <figure class="single-photo">
+            <img src="IMAGE/usda1.jpg" alt="Prospectus for research project" loading="eager">
+            <figcaption>Prospectus for research project</figcaption>
+        </figure>
+    </div>
 
 </main>
 
