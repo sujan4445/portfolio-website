@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <title>Nepal Zebrafish in Nature Center (N-ZINC)</title>
+    
+    <!-- Typography & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --mp-teal: #006c66;
+            --mp-teal-dark: #004d48;
+            --mp-teal-light: #e6f0f0;
+            --mp-grey-dark: #222222;
+            --mp-grey-body: #2b2b2b;
+            --mp-grey-light: #f8f9fa;
+            --mp-border: #e2e8f0;
+            --white: #ffffff;
+            --font-serif: 'Merriweather', Georgia, serif;
+            --font-sans: 'Open Sans', Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            color: var(--mp-grey-body);
+            background-color: var(--white);
+            line-height: 1.8;
+            font-size: 16.5px;
+            min-width: 1200px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--mp-teal);
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--mp-teal-dark);
+        }
+
+        /* Header Layout */
+        .site-header {
+            border-bottom: 1px solid var(--mp-border);
+            padding: 15px 0;
+            background: var(--white);
+        }
+
+        .header-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            text-decoration: none;
+        }
+
+        .logo-img-wrapper {
+            width: 75px;
+            height: 75px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-family: var(--font-sans);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--mp-teal);
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 0.3px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* Navigation Bar */
+        .main-nav {
+            background-color: var(--mp-teal);
+            font-family: var(--font-sans);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 14px 18px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li.active a {
+            background-color: var(--mp-teal-dark);
+        }
+
+        .donate-nav-btn {
+            background-color: #d97706;
+            color: var(--white) !important;
+        }
+
+        .donate-nav-btn:hover {
+            background-color: #b45309 !important;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumb-bar {
+            background-color: var(--mp-grey-light);
+            border-bottom: 1px solid var(--mp-border);
+            padding: 10px 0;
+            font-family: var(--font-sans);
+            font-size: 13px;
+        }
+
+        .breadcrumb-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #666;
+        }
+
+        .breadcrumb-container a {
+            color: #555;
+            text-decoration: underline;
+        }
+
+        /* Hero Banner with Fallback Color & Background Image */
+        .hero-banner {
+            position: relative;
+            background-color: var(--mp-teal-dark);
+            background-image: linear-gradient(rgba(0, 77, 72, 0.82), rgba(0, 108, 102, 0.88)), url('Image/zebra1.jpeg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 70px 0 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 38px;
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 1.25;
+            max-width: 900px;
+        }
+
+        .hero-lead-text {
+            font-size: 19px;
+            font-weight: 300;
+            color: #f0fdf4;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            max-width: 850px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .subnav-pills {
+            display: flex;
+            gap: 12px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 600;
+            flex-wrap: wrap;
+        }
+
+        .subnav-pills a {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .subnav-pills a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+
+        /* Content Area */
+        .page-body {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        .main-column {
+            width: 100%;
+        }
+
+        .content-block {
+            margin-bottom: 40px;
+        }
+
+        .content-block h3 {
+            font-size: 24px;
+            color: var(--mp-teal);
+            margin-bottom: 18px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--mp-border);
+            padding-bottom: 8px;
+        }
+
+        .content-block p {
+            margin-bottom: 18px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .content-block ul {
+            margin: 0 0 20px 20px;
+        }
+
+        .content-block li {
+            margin-bottom: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Structured Image Display Card (Identical to reference logic) */
+        .figure-card {
+            margin: 30px 0;
+            border: 1px solid var(--mp-border);
+            background-color: var(--mp-grey-light);
+            padding: 12px;
+        }
+
+        .figure-card-image {
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+            background: #e2e8f0;
+            display: block;
+        }
+
+        .figure-card-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .figure-caption {
+            font-family: var(--font-sans);
+            font-size: 13.5px;
+            color: #555;
+            padding: 12px 4px 4px 4px;
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #2b3036;
+            color: #cccccc;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            padding: 50px 0 20px 0;
+            border-top: 3px solid var(--mp-teal);
+        }
+
+        .footer-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-col h5 {
+            color: var(--white);
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #b0b8c0;
+            text-decoration: none;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .social-links-footer {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-btn-foot {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: #444c56;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+
+        .social-btn-foot:hover {
+            background-color: var(--mp-teal);
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 40px auto 0 auto;
+            padding: 20px 20px 0 20px;
+            border-top: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .footer-office-info {
+            color: #aaa;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Logo Section -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo-area">
+                <div class="logo-img-wrapper">
+                    <img src="Image/English Logo.png" alt="Nepal Zebrafish in Nature Center Logo">
+                </div>
+                <div class="logo-text">
+                    <h1>NEPAL ZEBRAFISH IN NATURE CENTER</h1>
+                    <span>N-ZINC • Freshwater Bio-Research & Ecology</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li class="active"><a href="#about-nzinc">About N-ZINC</a></li>
+                <li><a href="#why-zebrafish">Why Zebrafish?</a></li>
+                <li><a href="#nepal-wild-populations">Wild Localities</a></li>
+                <li><a href="#genetics">Genomics & Range</a></li>
+            </ul>
+            <ul class="nav-links">
+                <li><a href="#support" class="donate-nav-btn"><i class="fa-solid fa-heart"></i> Support Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Bar -->
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-container">
+            <a href="#">Home</a> / <a href="#">Research Centers</a> / <span>Nepal Zebrafish in Nature Center</span>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-container">
+            <h2 class="hero-title">Wild Zebrafish Genomics & Aquatic Ecology in Nepal</h2>
+            <p class="hero-lead-text">
+                Nepal Zebrafish in Nature Center (N-ZINC) is a dedicated scientific initiative focused on wild <em>Danio rerio</em> as a key model for developmental biology, environmental ecotoxicology, and population genomics in Himalayan freshwater habitats.
+            </p>
+            <div class="subnav-pills">
+                <a href="#about-nzinc"><i class="fa-solid fa-angle-right"></i> About N-ZINC</a>
+                <a href="#why-zebrafish"><i class="fa-solid fa-angle-right"></i> Why Zebrafish?</a>
+                <a href="#nepal-wild-populations"><i class="fa-solid fa-angle-right"></i> Sampling Sites</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Body Content -->
+    <div class="page-body">
+        
+        <main class="main-column">
+            
+            <!-- About Section -->
+            <section id="about-nzinc" class="content-block">
+                <h3>Who is N-ZINC & What We Do</h3>
+                <p>
+                    The <strong>Nepal Zebrafish in Nature Center (N-ZINC)</strong> is an independent scientific research institution established to study native aquatic fauna across Nepal's diverse river systems. By combining field ecology with molecular genetics, N-ZINC advances understanding of local freshwater ecosystems and biodiversity conservation.
+                </p>
+                <p>
+                    N-ZINC acts as a bridge between field sampling in the lowland Terai and modern biological research. Our primary mission centers on studying wild-type <em>Danio rerio</em> to understand ecological adaptation, genetic structure, and environmental health across Himalayan river basins.
+                </p>
+
+                <!-- Figure Card 1 -->
+                <div class="figure-card">
+                    <div class="figure-card-image">
+                        <img src="Image/zebra1.jpeg" alt="Wild Zebrafish Danio rerio close-up">
+                    </div>
+                    <div class="figure-caption">
+                        <strong>Fig 1:</strong> Wild <em>Danio rerio</em> specimen. Wild populations in Nepal display high genetic diversity crucial for understanding evolutionary adaptations and environmental stress responses across Himalayan watersheds.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Model System Section -->
+            <section id="why-zebrafish" class="content-block">
+                <h3>Why the Zebrafish?</h3>
+                <p>
+                    The zebrafish (<em>Danio rerio</em>) is an ideal vertebrate model to study developmental, physiological, and pathological processes, including infectious diseases. It is genetically close to humans and shares most molecular and cellular pathways with mammals, including immune system components.
+                </p>
+                <p>
+                    Key advantages of the zebrafish model include:
+                </p>
+                <ul>
+                    <li><strong>Live Imaging:</strong> Excellent optical clarity during embryonic stages for non-invasive, high-resolution visualization of cellular processes in real time.</li>
+                    <li><strong>High-Throughput Screening:</strong> Highly suitable for large-scale genetic screens, targeted knockdowns, or gene overexpression assays in early developmental stages.</li>
+                    <li><strong>In Vivo Insights:</strong> Offers a unique system to investigate cellular responses within a fully intact vertebrate organ system.</li>
+                </ul>
+            </section>
+
+            <!-- Wild Populations Section -->
+            <section id="nepal-wild-populations" class="content-block">
+                <h3>Zebrafish in Nepal's Lowland Ecosystems</h3>
+                <p>
+                    Zebrafish (<em>Danio rerio</em>) are native to Nepal’s lowland freshwater systems, especially in the Terai and inner Terai valleys, where they occur in shallow streams, irrigation canals, ponds, and rice-field margins.
+                </p>
+                <p>
+                    While Nepal forms a key region of the species’ natural geographical range, most published scientific literature regarding Nepali populations has focused on wild population genetics, phylogeography, and environmental health rather than captive laboratory breeding within the country.
+                </p>
+                
+                <p>Documented Nepali sampling localities include:</p>
+                <ul>
+                    <li><strong>Paruwa Sota River (Western Nepal):</strong> Utilized as a primary sampling site for wild population-genomics studies.</li>
+                    <li><strong>Khair Khola (Central Nepal):</strong> A key central habitat site monitored for regional genetic variation.</li>
+                    <li><strong>Bering River (Eastern Nepal):</strong> Sampled for detailed mitochondrial and SNP-based population structure analysis.</li>
+                    <li><strong>Phattepur:</strong> Lowland riverine habitat downstream of agricultural zones, noted in historic ecological records.</li>
+                </ul>
+                <p>
+                    These habitats are predominantly restricted to low-elevation floodplains, corroborating the ecological classification of <em>Danio rerio</em> as a lowland, slow-flowing freshwater species.
+                </p>
+
+                <!-- Figure Card 2 -->
+                <div class="figure-card">
+                    <div class="figure-card-image">
+                        <img src="Image/zebra.jpg" alt="Zebrafish Habitat Specimen">
+                    </div>
+                    <div class="figure-caption">
+                        <strong>Fig 2:</strong> <em>Danio rerio</em> within aquatic vegetation. Shallow, slow-flowing freshwater environments provide essential microhabitats for native wild zebrafish populations across the Terai region.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Genomics Section -->
+            <section id="genetics" class="content-block">
+                <h3>Historical Context & Genetic Distinctiveness</h3>
+                <p>
+                    The species was originally described from the lower Ganges basin in northern India, adjacent to Nepal’s eastern Terai boundary. Historical taxonomic surveys in Nepal (e.g., Shrestha, 1978) established the species as part of the country's native freshwater fish fauna.
+                </p>
+                <p>
+                    Over recent decades, genetic sampling of Nepali zebrafish has contributed significantly to wild phylogeography studies, establishing Himalayan river networks as core regions of natural genetic variation.
+                </p>
+                <p>
+                    Genomic investigations highlight several crucial evolutionary features:
+                </p>
+                <ul>
+                    <li>Wild populations across Nepal, India, and Bangladesh segregate into distinct mitochondrial DNA clades and nuclear SNP genetic groups.</li>
+                    <li>Central Nepali populations exhibit a distinct genetic lineage separate from Eastern and Western river systems.</li>
+                    <li>Wild Nepali zebrafish display substantially higher genomic diversity compared to highly inbred, standardized laboratory strains, offering a rich resource for evolutionary biology.</li>
+                </ul>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h5>Nepal Zebrafish in Nature Center</h5>
+                <p style="color: #999; line-height: 1.6;">
+                    Advancing aquatic research, environmental ecotoxicology, and natural wild zebrafish genomics across Nepal's freshwater ecosystems.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#about-nzinc">About N-ZINC</a></li>
+                    <li><a href="#why-zebrafish">Why Zebrafish?</a></li>
+                    <li><a href="#nepal-wild-populations">Field Localities</a></li>
+                    <li><a href="#genetics">Genomics & Range</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Resources</h5>
+                <ul>
+                    <li><a href="#">Research Publications</a></li>
+                    <li><a href="#">Field Data Hub</a></li>
+                    <li><a href="#">Environmental Monitoring</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Connect With Us</h5>
+                <div class="social-links-footer">
+                    <a href="#" class="social-btn-foot" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn-foot" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-btn-foot" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn-foot" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn-foot" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-office-info">
+                <strong>Central Office:</strong> Nepal Zebrafish in Nature Center (N-ZINC)<br>
+                Bharatpur Metropolitan City-7, Srikrishna Toll, Chitwan, Bagmati Province, Nepal.<br>
+                <i class="fa-solid fa-envelope"></i> contact@n-zinc.org.np &nbsp;|&nbsp; <i class="fa-solid fa-phone"></i> +977 9845443863
+            </div>
+            <div>
+                &copy; 2026 N-ZINC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
