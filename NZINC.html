@@ -8,21 +8,25 @@
     <!-- Typography & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         :root {
-            --mp-teal: #006c66;
-            --mp-teal-dark: #004d48;
-            --mp-teal-light: #e6f0f0;
-            --mp-grey-dark: #222222;
-            --mp-grey-body: #2b2b2b;
-            --mp-grey-light: #f8f9fa;
-            --mp-border: #e2e8f0;
-            --white: #ffffff;
-            --font-serif: 'Merriweather', Georgia, serif;
-            --font-sans: 'Open Sans', Arial, sans-serif;
+            --brand-primary: #00A896;
+            --brand-vibrant: #02C39A;
+            --brand-dark: #05668D;
+            --brand-accent: #F7B801;
+            --brand-accent-hover: #E0A000;
+            --text-dark: #1E293B;
+            --text-muted: #475569;
+            --bg-light: #F0FDF4;
+            --bg-white: #FFFFFF;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 25px -5px rgba(0, 168, 150, 0.15), 0 8px 10px -6px rgba(0, 168, 150, 0.1);
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
         }
 
         * {
@@ -32,30 +36,37 @@
         }
 
         body {
-            font-family: var(--font-serif);
-            color: var(--mp-grey-body);
-            background-color: var(--white);
-            line-height: 1.8;
-            font-size: 16.5px;
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: #F8FAFC;
+            line-height: 1.7;
+            font-size: 16px;
             min-width: 1200px;
             -webkit-font-smoothing: antialiased;
         }
 
         a {
-            color: var(--mp-teal);
-            text-decoration: underline;
-            transition: color 0.2s ease;
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
 
         a:hover {
-            color: var(--mp-teal-dark);
+            color: var(--brand-dark);
+        }
+
+        /* Top Accent Bar */
+        .top-stripe {
+            height: 5px;
+            background: linear-gradient(90deg, var(--brand-dark), var(--brand-primary), var(--brand-vibrant), var(--brand-accent));
         }
 
         /* Header Layout */
         .site-header {
-            border-bottom: 1px solid var(--mp-border);
-            padding: 15px 0;
-            background: var(--white);
+            background: var(--bg-white);
+            padding: 18px 0;
+            box-shadow: var(--shadow-sm);
         }
 
         .header-container {
@@ -70,14 +81,18 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
             text-decoration: none;
         }
 
         .logo-img-wrapper {
-            width: 75px;
-            height: 75px;
-            overflow: hidden;
+            width: 80px;
+            height: 80px;
+            padding: 6px;
+            background: var(--bg-white);
+            border-radius: 16px;
+            box-shadow: 0 0 15px rgba(2, 195, 154, 0.2);
+            border: 2px solid #E6FFFA;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -90,32 +105,33 @@
         }
 
         .logo-text h1 {
-            font-family: var(--font-sans);
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: var(--mp-teal);
-            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--brand-dark), var(--brand-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             line-height: 1.2;
         }
 
         .logo-text span {
-            font-family: var(--font-sans);
-            font-size: 12px;
-            color: #666;
-            letter-spacing: 0.3px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 0.2px;
             display: block;
-            margin-top: 2px;
+            margin-top: 3px;
         }
 
         /* Navigation Bar */
         .main-nav {
-            background-color: var(--mp-teal);
-            font-family: var(--font-sans);
+            background: linear-gradient(135deg, #05668D, #00A896);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(5, 102, 141, 0.2);
         }
 
         .nav-container {
@@ -130,114 +146,161 @@
         .nav-links {
             list-style: none;
             display: flex;
+            gap: 4px;
         }
 
         .nav-links li a {
             display: block;
-            padding: 14px 18px;
-            color: var(--white);
+            padding: 16px 20px;
+            color: #FFFFFF;
             text-decoration: none;
-            font-size: 13.5px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            border-bottom: 3px solid transparent;
+            transition: all 0.25s ease;
         }
 
         .nav-links li a:hover,
         .nav-links li.active a {
-            background-color: var(--mp-teal-dark);
+            background-color: rgba(255, 255, 255, 0.12);
+            border-bottom-color: var(--brand-accent);
+            color: #FFFFFF;
         }
 
         .donate-nav-btn {
-            background-color: #d97706;
-            color: var(--white) !important;
+            background: linear-gradient(135deg, var(--brand-accent), #F59E0B) !important;
+            color: #0F172A !important;
+            border-radius: 8px;
+            padding: 10px 20px !important;
+            margin: 6px 0;
+            box-shadow: 0 4px 12px rgba(247, 184, 1, 0.35);
         }
 
         .donate-nav-btn:hover {
-            background-color: #b45309 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(247, 184, 1, 0.5);
+            border-bottom-color: transparent !important;
         }
 
         /* Breadcrumbs */
         .breadcrumb-bar {
-            background-color: var(--mp-grey-light);
-            border-bottom: 1px solid var(--mp-border);
-            padding: 10px 0;
-            font-family: var(--font-sans);
-            font-size: 13px;
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+            font-size: 13.5px;
         }
 
         .breadcrumb-container {
             max-width: 1140px;
             margin: 0 auto;
             padding: 0 20px;
-            color: #666;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
         .breadcrumb-container a {
-            color: #555;
+            color: var(--brand-dark);
+            text-decoration: none;
+        }
+
+        .breadcrumb-container a:hover {
             text-decoration: underline;
         }
 
-        /* Hero Banner with Fallback Color & Background Image */
+        /* Hero Banner */
         .hero-banner {
             position: relative;
-            background-color: var(--mp-teal-dark);
-            background-image: linear-gradient(rgba(0, 77, 72, 0.82), rgba(0, 108, 102, 0.88)), url('Image/zebra1.jpeg');
+            background: linear-gradient(135deg, rgba(5, 102, 141, 0.92), rgba(0, 168, 150, 0.88)), url('Image/zebra1.jpeg');
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            color: var(--white);
-            padding: 70px 0 60px 0;
+            color: #FFFFFF;
+            padding: 85px 0 75px 0;
             margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: linear-gradient(90deg, var(--brand-vibrant), var(--brand-accent));
         }
 
         .hero-container {
             max-width: 1140px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .hero-title {
-            font-size: 38px;
-            color: var(--white);
-            font-weight: 700;
-            margin-bottom: 18px;
-            line-height: 1.25;
-            max-width: 900px;
+            font-family: var(--font-display);
+            font-size: 44px;
+            color: #FFFFFF;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            max-width: 950px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
 
         .hero-lead-text {
-            font-size: 19px;
-            font-weight: 300;
-            color: #f0fdf4;
+            font-size: 20px;
+            font-weight: 400;
+            color: #E6FFFA;
             line-height: 1.6;
-            margin-bottom: 25px;
-            max-width: 850px;
+            margin-bottom: 30px;
+            max-width: 880px;
             text-align: justify;
-            text-justify: inter-word;
         }
 
         .subnav-pills {
             display: flex;
             gap: 12px;
-            font-family: var(--font-sans);
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             flex-wrap: wrap;
         }
 
         .subnav-pills a {
-            color: var(--white);
-            background: rgba(255, 255, 255, 0.15);
-            padding: 6px 14px;
-            border-radius: 4px;
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            padding: 10px 20px;
+            border-radius: 50px;
             text-decoration: none;
-            transition: background 0.2s;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
 
         .subnav-pills a:hover {
-            background: rgba(255, 255, 255, 0.3);
-            color: var(--white);
+            background: var(--brand-accent);
+            color: #0F172A;
+            border-color: var(--brand-accent);
+            transform: translateY(-2px);
         }
 
         /* Content Area */
@@ -252,47 +315,92 @@
         }
 
         .content-block {
-            margin-bottom: 40px;
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 35px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #E2E8F0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .content-block:hover {
+            box-shadow: var(--shadow-lg);
         }
 
         .content-block h3 {
-            font-size: 24px;
-            color: var(--mp-teal);
-            margin-bottom: 18px;
+            font-family: var(--font-display);
+            font-size: 28px;
+            color: var(--brand-dark);
+            margin-bottom: 22px;
             font-weight: 700;
-            border-bottom: 1px solid var(--mp-border);
-            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .content-block h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-vibrant));
+            border-radius: 2px;
         }
 
         .content-block p {
-            margin-bottom: 18px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
             text-align: justify;
-            text-justify: inter-word;
+            font-size: 16.5px;
         }
 
         .content-block ul {
-            margin: 0 0 20px 20px;
+            margin: 0 0 25px 20px;
+            list-style: none;
         }
 
         .content-block li {
-            margin-bottom: 10px;
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+            color: var(--text-muted);
             text-align: justify;
-            text-justify: inter-word;
+            font-size: 16.5px;
         }
 
-        /* Structured Image Display Card (Identical to reference logic) */
+        .content-block li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--brand-vibrant);
+            font-size: 14px;
+        }
+
+        /* Vibrant Figure Cards */
         .figure-card {
-            margin: 30px 0;
-            border: 1px solid var(--mp-border);
-            background-color: var(--mp-grey-light);
-            padding: 12px;
+            margin: 35px 0;
+            border-radius: 16px;
+            background-color: #F8FAFC;
+            padding: 16px;
+            border: 2px solid #E6FFFA;
+            box-shadow: 0 8px 20px rgba(0, 168, 150, 0.08);
+            overflow: hidden;
         }
 
         .figure-card-image {
             width: 100%;
             height: 480px;
             overflow: hidden;
-            background: #e2e8f0;
+            border-radius: 12px;
+            background: #CBD5E1;
             display: block;
         }
 
@@ -301,26 +409,32 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .figure-card:hover .figure-card-image img {
+            transform: scale(1.02);
         }
 
         .figure-caption {
-            font-family: var(--font-sans);
-            font-size: 13.5px;
-            color: #555;
-            padding: 12px 4px 4px 4px;
-            line-height: 1.5;
+            font-size: 14px;
+            color: var(--text-muted);
+            padding: 16px 8px 4px 8px;
+            line-height: 1.6;
             text-align: justify;
-            text-justify: inter-word;
+        }
+
+        .figure-caption strong {
+            color: var(--brand-primary);
         }
 
         /* Footer */
         .site-footer {
-            background-color: #2b3036;
-            color: #cccccc;
-            font-family: var(--font-sans);
-            font-size: 14px;
-            padding: 50px 0 20px 0;
-            border-top: 3px solid var(--mp-teal);
+            background: linear-gradient(180deg, #0F172A, #020617);
+            color: #94A3B8;
+            font-size: 14.5px;
+            padding: 60px 0 25px 0;
+            border-top: 4px solid var(--brand-vibrant);
         }
 
         .footer-container {
@@ -333,16 +447,29 @@
         }
 
         .footer-col h5 {
-            color: var(--white);
-            font-size: 15px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
+            color: #FFFFFF;
+            font-family: var(--font-display);
+            font-size: 17px;
+            margin-bottom: 20px;
             letter-spacing: 0.5px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--brand-vibrant);
+            border-radius: 2px;
         }
 
         .footer-col p {
+            line-height: 1.7;
             text-align: justify;
-            text-justify: inter-word;
         }
 
         .footer-col ul {
@@ -350,62 +477,71 @@
         }
 
         .footer-col ul li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .footer-col ul li a {
-            color: #b0b8c0;
+            color: #CBD5E1;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         .footer-col ul li a:hover {
-            color: var(--white);
-            text-decoration: underline;
+            color: var(--brand-vibrant);
         }
 
         .social-links-footer {
             display: flex;
             gap: 12px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .social-btn-foot {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background-color: #444c56;
-            color: var(--white);
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 14px;
-            transition: background 0.2s ease;
+            font-size: 15px;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .social-btn-foot:hover {
-            background-color: var(--mp-teal);
-            color: var(--white);
+            background-color: var(--brand-vibrant);
+            color: #0F172A;
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
             max-width: 1140px;
-            margin: 40px auto 0 auto;
-            padding: 20px 20px 0 20px;
-            border-top: 1px solid #444;
+            margin: 50px auto 0 auto;
+            padding: 25px 20px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
-            color: #888;
+            font-size: 13px;
+            color: #64748B;
         }
 
         .footer-office-info {
-            color: #aaa;
-            line-height: 1.6;
+            color: #94A3B8;
+            line-height: 1.7;
+        }
+
+        .footer-office-info i {
+            color: var(--brand-vibrant);
         }
     </style>
 </head>
 <body>
+
+    <!-- Top Vibrant Gradient Line -->
+    <div class="top-stripe"></div>
 
     <!-- Header & Logo Section -->
     <header class="site-header">
@@ -447,14 +583,17 @@
     <!-- Hero Banner -->
     <section class="hero-banner">
         <div class="hero-container">
+            <div class="hero-badge">
+                <i class="fa-solid fa-dna"></i> Scientific Initiative
+            </div>
             <h2 class="hero-title">Wild Zebrafish Genomics & Aquatic Ecology in Nepal</h2>
             <p class="hero-lead-text">
                 Nepal Zebrafish in Nature Center (N-ZINC) is a dedicated scientific initiative focused on wild <em>Danio rerio</em> as a key model for developmental biology, environmental ecotoxicology, and population genomics in Himalayan freshwater habitats.
             </p>
             <div class="subnav-pills">
-                <a href="#about-nzinc"><i class="fa-solid fa-angle-right"></i> About N-ZINC</a>
-                <a href="#why-zebrafish"><i class="fa-solid fa-angle-right"></i> Why Zebrafish?</a>
-                <a href="#nepal-wild-populations"><i class="fa-solid fa-angle-right"></i> Sampling Sites</a>
+                <a href="#about-nzinc"><i class="fa-solid fa-arrow-right"></i> About N-ZINC</a>
+                <a href="#why-zebrafish"><i class="fa-solid fa-arrow-right"></i> Why Zebrafish?</a>
+                <a href="#nepal-wild-populations"><i class="fa-solid fa-arrow-right"></i> Sampling Sites</a>
             </div>
         </div>
     </section>
@@ -466,7 +605,7 @@
             
             <!-- About Section -->
             <section id="about-nzinc" class="content-block">
-                <h3>Who is N-ZINC & What We Do</h3>
+                <h3><i class="fa-solid fa-flask"></i> Who is N-ZINC & What We Do</h3>
                 <p>
                     The <strong>Nepal Zebrafish in Nature Center (N-ZINC)</strong> is an independent scientific research institution established to study native aquatic fauna across Nepal's diverse river systems. By combining field ecology with molecular genetics, N-ZINC advances understanding of local freshwater ecosystems and biodiversity conservation.
                 </p>
@@ -487,7 +626,7 @@
 
             <!-- Model System Section -->
             <section id="why-zebrafish" class="content-block">
-                <h3>Why the Zebrafish?</h3>
+                <h3><i class="fa-solid fa-fish"></i> Why the Zebrafish?</h3>
                 <p>
                     The zebrafish (<em>Danio rerio</em>) is an ideal vertebrate model to study developmental, physiological, and pathological processes, including infectious diseases. It is genetically close to humans and shares most molecular and cellular pathways with mammals, including immune system components.
                 </p>
@@ -503,7 +642,7 @@
 
             <!-- Wild Populations Section -->
             <section id="nepal-wild-populations" class="content-block">
-                <h3>Zebrafish in Nepal's Lowland Ecosystems</h3>
+                <h3><i class="fa-solid fa-water"></i> Zebrafish in Nepal's Lowland Ecosystems</h3>
                 <p>
                     Zebrafish (<em>Danio rerio</em>) are native to Nepal’s lowland freshwater systems, especially in the Terai and inner Terai valleys, where they occur in shallow streams, irrigation canals, ponds, and rice-field margins.
                 </p>
@@ -511,7 +650,7 @@
                     While Nepal forms a key region of the species’ natural geographical range, most published scientific literature regarding Nepali populations has focused on wild population genetics, phylogeography, and environmental health rather than captive laboratory breeding within the country.
                 </p>
                 
-                <p>Documented Nepali sampling localities include:</p>
+                <p><strong>Documented Nepali sampling localities include:</strong></p>
                 <ul>
                     <li><strong>Paruwa Sota River (Western Nepal):</strong> Utilized as a primary sampling site for wild population-genomics studies.</li>
                     <li><strong>Khair Khola (Central Nepal):</strong> A key central habitat site monitored for regional genetic variation.</li>
@@ -535,7 +674,7 @@
 
             <!-- Genomics Section -->
             <section id="genetics" class="content-block">
-                <h3>Historical Context & Genetic Distinctiveness</h3>
+                <h3><i class="fa-solid fa-microscope"></i> Historical Context & Genetic Distinctiveness</h3>
                 <p>
                     The species was originally described from the lower Ganges basin in northern India, adjacent to Nepal’s eastern Terai boundary. Historical taxonomic surveys in Nepal (e.g., Shrestha, 1978) established the species as part of the country's native freshwater fish fauna.
                 </p>
@@ -560,8 +699,8 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col">
-                <h5>Nepal Zebrafish in Nature Center</h5>
-                <p style="color: #999; line-height: 1.6;">
+                <h5>Nepal Zebrafish Center</h5>
+                <p>
                     Advancing aquatic research, environmental ecotoxicology, and natural wild zebrafish genomics across Nepal's freshwater ecosystems.
                 </p>
             </div>
