@@ -3,120 +3,941 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications – Sujan Chapagain</title>
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* Keep styles compact and compatible with your main site */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; background: #fff; }
-        .header { background: #f8f8f8; padding: 20px 0; border-bottom: 1px solid #ddd; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
-        .logo { font-size: 24px; font-weight: bold; color: #333; text-decoration: none; }
-        .nav-menu { display: flex; list-style: none; gap: 25px; }
-        .nav-menu a { text-decoration: none; color: #333; font-size: 16px; padding: 10px 0; border-bottom: 2px solid transparent; transition: border-color 0.3s; }
-        .nav-menu a:hover, .nav-menu a.active { border-bottom: 2px solid #333; }
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        .section-title { font-size: 36px; color: #333; margin-bottom: 20px; font-weight: bold; }
+    <meta name="description" content="Sujan Chapagain — Publications and Research">
+    <meta name="author" content="Sujan Chapagain">
 
-        /* Publication card */
-        .publication-card { background: #f7f7f7; border: 1px solid #e6e6e6; border-radius: 12px; padding: 22px; margin-bottom: 18px; }
-        .pub-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-        .pub-meta { font-size: 15px; line-height: 1.5; color: #222; }
-        .pub-meta em { font-style: italic; }
-        .doi { display: inline-block; margin-top: 10px; }
-        .doi a { color: #0a66c2; text-decoration: none; }
-        .doi a:hover { text-decoration: underline; }
+    <title>Publications | Sujan Chapagain</title>
 
-        footer.footer { background: #333; color: white; text-align: center; padding: 24px; margin-top: 40px; }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 12px; padding: 20px; }
-            .nav-menu { gap: 12px; flex-wrap: wrap; justify-content: center; }
-            .section-title { font-size: 28px; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+
+    background:#f8f5f2;
+    color:#5a3b2e;
+
+    font-family:"Montserrat",sans-serif;
+    line-height:1.5;
+}
+
+a{
+    color:inherit;
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
+
+    .header{
+        width:100%;
+        background:#f5efe6;
+        border-top: none;
+        border-bottom:1px solid #d8cfc4;
+    }
+
+    .nav-container{
+        min-height:48px;
+        padding:0 20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .nav-menu{
+        width:100%;
+        max-width:1320px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        list-style:none;
+    }
+
+    .nav-menu a{
+        font-family:"Cormorant Garamond", Georgia, serif;
+        font-size:20px;
+        font-weight:600;
+        color:#13100f;
+        text-decoration:none;
+        padding:6px 10px;
+        transition:color .25s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active{
+        color:#4c78a8;
+        text-decoration:underline;
+        text-underline-offset:3px;
+    }
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.page-content{
+    flex:1;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.publications-heading{
+    width:min(1080px,92%);
+    margin:24px auto 14px;
+
+    text-align:center;
+}
+
+.small-title{
+    font-family:"Cinzel",Georgia,serif;
+    font-size:12px;
+
+    letter-spacing:3px;
+    text-transform:uppercase;
+
+    color:#8a6a59;
+
+    margin-bottom:4px;
+}
+
+.publications-heading h1{
+    font-family:"Cormorant Garamond",Georgia,serif;
+
+    font-size:clamp(38px,4.5vw,52px);
+    font-weight:500;
+    line-height:1;
+
+    color:#5a3b2e;
+}
+
+.heading-line{
+    width:60px;
+    height:1px;
+
+    background:#4c78a8;
+
+    margin:10px auto 8px;
+}
+
+
+/* =========================================================
+   PUBLICATIONS SECTION
+========================================================= */
+
+.publications-section{
+    width:min(1080px,92%);
+    margin:0 auto 30px;
+}
+
+.publication-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+
+/* =========================================================
+   UNDER REVIEW / WORKING PAPERS SECTION (NO BOX)
+========================================================= */
+
+.under-review-section{
+    background:transparent;
+    border:none;
+    padding:0;
+    margin-bottom:20px;
+    box-shadow:none;
+}
+
+.under-review-heading{
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:24px;
+    font-weight:600;
+    color:#5a3b2e;
+    margin-bottom:10px;
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:#4c78a8;
+}
+
+.under-review-list{
+    list-style:none;
+    padding-left:0;
+    margin:0;
+}
+
+.under-review-list li{
+    position:relative;
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:18px;
+    color:#60483b;
+    margin-bottom:8px;
+    line-height:1.35;
+    padding-left:18px;
+}
+
+.under-review-list li:last-child{
+    margin-bottom:0;
+}
+
+.under-review-list li::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    top:0;
+    color:#4c78a8;
+    font-size:18px;
+    font-weight:700;
+}
+
+.under-review-list strong{
+    font-size:19px;
+    font-weight:750;
+    color:#0f7aee;
+}
+
+.under-review-list .paper-title{
+    font-weight:600;
+    color:#222;
+}
+
+.under-review-list .journal{
+    font-weight:600;
+    color:#222;
+}
+
+.under-review-list .status-tag{
+    display:inline;
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:18px;
+    font-weight:600;
+    color:#eb3d04;
+    text-decoration:underline;
+    text-underline-offset:2px;
+    margin-left:4px;
+}
+
+.published-heading{
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:24px;
+    font-weight:600;
+    color:#5a3b2e;
+    margin:22px 0 10px;
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:#4c78a8;
+}
+
+
+/* =========================================================
+   PUBLICATION CARD
+========================================================= */
+
+.publication-card{
+    display:grid;
+
+    grid-template-columns:120px 1fr;
+
+    min-height:105px;
+
+    background:#fffdfb;
+
+    border:1px solid #ded5ce;
+
+    box-shadow:0 3px 10px rgba(77,55,43,.04);
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.publication-card:hover{
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 16px rgba(77,55,43,.08);
+}
+
+
+/* =========================================================
+   IMAGE FRAME
+========================================================= */
+
+.pub-image{
+    position:relative;
+
+    width:120px;
+    height:100%;
+
+    overflow:hidden;
+
+    background:#eee9e5;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.pub-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    display:block;
+
+    filter:saturate(.90);
+
+    transition:
+        transform .4s ease,
+        filter .4s ease;
+}
+
+.publication-card:hover .pub-image img{
+    transform:scale(1.02);
+    filter:saturate(1);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.pub-content{
+    padding:10px 16px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+/* =========================================================
+   PUBLICATION CITATION
+========================================================= */
+
+.pub-citation{
+    font-family:"Cormorant Garamond",Georgia,serif;
+
+    font-size:18px;
+    line-height:1.35;
+
+    font-weight:400;
+
+    font-style:normal;
+
+    color:#60483b;
+}
+
+.pub-citation strong{
+    font-family:"Cormorant Garamond",Georgia,serif;
+
+    font-size:19px;
+
+    font-weight:750;
+
+    font-style:normal;
+
+    color:#0f7aee;
+}
+
+.pub-citation .paper-title{
+    font-style:normal;
+
+    font-weight:600;
+    color:#222;
+}
+
+.pub-citation .journal{
+    font-style:normal;
+
+    font-weight:600;
+
+    color:#222;
+}
+
+.pub-citation .year{
+    font-style:normal;
+
+    color:#222;
+}
+
+.pub-citation i,
+.pub-citation em{
+    font-style:normal;
+}
+
+
+/* =========================================================
+   DOI LINK WITH SOFT COLOR
+========================================================= */
+
+.pub-doi{
+    margin-top:5px;
+}
+
+.paper-link,
+.pub-doi a{
+    color:#2b6cb0;
+    background-color:#f0f5fa;
+    border:1px solid #d0e1f9;
+    font-size:11px;
+    font-weight:600;
+    text-decoration:none;
+    padding:2px 8px;
+    border-radius:4px;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    transition:all 0.2s ease;
+}
+
+.paper-link:hover,
+.pub-doi a:hover{
+    background-color:#2b6cb0;
+    color:#ffffff;
+    border-color:#2b6cb0;
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   CONTACT PROFILE
+========================================================= */
+
+.contact-profile{
+    width:100%;
+
+    background:#f7f3ef;
+
+    border-top:1px solid #ddd6d0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr 1fr;
+
+    gap:20px;
+
+    padding:20px 7%;
+}
+
+.contact-column{
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.contact-column h3{
+    font-family:"Cormorant Garamond",Georgia,serif;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#5a3b2e;
+}
+
+.email-link{
+    font-family:"Montserrat",sans-serif;
+
+    font-size:11px;
+
+    color:#73594b;
+
+    text-decoration:none;
+}
+
+.email-link:hover{
+    color:#4c78a8;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-column{
+    text-align:center;
+}
+
+.location-column p{
+    font-family:"Cormorant Garamond",Georgia,serif;
+
+    font-size:16px;
+
+    color:#73594b;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.social-column{
+    align-items:flex-end;
+}
+
+.social-icons{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.social-icon{
+    width:34px;
+    height:34px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #cfc4bc;
+
+    border-radius:50%;
+
+    color:#5a3b2e;
+
+    text-decoration:none;
+
+    transition:.25s ease;
+}
+
+.social-icon:hover{
+    transform:translateY(-2px);
+
+    background:#4c78a8;
+
+    color:#fff;
+
+    border-color:#4c78a8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    width:100%;
+
+    background:#5a3b2e;
+
+    color:#f7f3ef;
+
+    text-align:center;
+
+    padding:12px 20px;
+}
+
+.footer p{
+    font-size:11px;
+
+    letter-spacing:.4px;
+}
+
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES
+========================================================= */
+
+@media(max-width:850px){
+
+    .nav-menu{
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:2px 6px;
+    }
+
+    .nav-menu a{
+        padding:5px 6px;
+    }
+
+    .publication-card{
+        grid-template-columns:100px 1fr;
+
+        min-height:95px;
+    }
+
+    .pub-image{
+        width:100px;
+    }
+
+    .pub-content{
+        padding:8px 12px;
+    }
+
+    .pub-citation{
+        font-size:17px;
+    }
+
+    .pub-citation strong{
+        font-size:18px;
+    }
+}
+
+@media(max-width:650px){
+
+    .publications-heading{
+        margin-top:18px;
+
+        margin-bottom:12px;
+    }
+
+    .publications-heading h1{
+        font-size:36px;
+    }
+
+    .publication-card{
+        grid-template-columns:85px 1fr;
+
+        min-height:90px;
+    }
+
+    .pub-image{
+        width:85px;
+    }
+
+    .pub-content{
+        padding:8px 10px;
+    }
+
+    .pub-citation{
+        font-size:15px;
+
+        line-height:1.3;
+    }
+
+    .pub-citation strong{
+        font-size:16px;
+    }
+
+    .contact-profile{
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding:20px;
+    }
+
+    .contact-column,
+    .social-column{
+        align-items:center;
+    }
+
+    .location-column{
+        text-align:center;
+    }
+}
+
+</style>
+
 </head>
+
 <body>
-    <!-- Header (consistent with your main site) -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo">SC</a>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="publications.html" class="active">Publications</a></li>
-                <li><a href="projectt.html">Projects</a></li>
-                <li><a href="conferences.html">Conferences</a></li>
-                <li><a href="blog.html">Blogs</a></li>
-                <li><a href="organization.html">Organization</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+    <nav class="nav-container" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Education.html">Education</a></li>
+            <li><a href="Publications.html" class="active">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Conferences.html">Conferences</a></li>
+            <li><a href="Award.html">Awards</a></li>
+            <li><a href="Affilations.html">Affiliations</a></li>
+            <li><a href="Volunteering.html">Volunteering</a></li>
+            <li><a href="contact.html">Contact & Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="page-content">
+
+    <section class="publications-heading">
+        <div class="small-title">Research & Publications</div>
+        <h1>Selected Publications</h1>
+        <div class="heading-line"></div>
+    </section>
+
+    <section class="publications-section">
+
+        <!-- UNDER REVIEW / MANUSCRIPTS UNDER REVISION (UNDERLINED NO BOX) -->
+        <section class="under-review-section">
+            <h2 class="under-review-heading">Manuscripts Under Revision</h2>
+            <ul class="under-review-list">
+                <li>
+                    <strong>Chapagain, S.</strong>, Shrestha, S., Kandel, B. P., & Rana, D. 
+                    <span class="paper-title">Integrating NDVI and Canopy Temperature Across Phenological Stages for Drought Phenotyping and Grain Yield Prediction.</span> 
+                    <span class="journal">npj Science of Plants.</span> 
+                    <span class="status-tag">(Under 2nd Revision)</span>
+                </li>
+                <li>
+                    <strong>Chapagain, S.</strong>, Kandel, B. P., et al. 
+                    <span class="paper-title">Phenotypic screening for leaf rust resistance in wheat genotypes under open-field conditions.</span> (2026). 
+                    <span class="journal">Australasian Plant Pathology.</span> 
+                    <span class="status-tag">(Under 1st Revision)</span>
+                </li>
             </ul>
-        </nav>
-    </header>
+        </section>
 
-    <main class="container">
-        <h1 class="section-title">Publications</h1>
+        <!-- PUBLISHED ARTICLES HEADING -->
+        <h2 class="published-heading">Peer-Reviewed Published Articles</h2>
 
-        <!-- Single publication entry -->
-         <!-- Finger millet publication -->
-<article class="publication-card" aria-labelledby="pub0-title">
-    <h2 id="pub0-title" class="pub-title">
-        Identifying superior finger millet (<em>Eleusine coracana</em> L.) landraces using the multi-trait genotype–ideotype distance index (MGIDI)
-    </h2>
+        <!-- PUBLISHED ARTICLES -->
+        <div class="publication-list">
 
-    <div class="pub-meta">
-        <p><strong>Authors:</strong> Chapagain, S., Kandel, B. P., Shrestha, S., Poudel, A., &amp; Yadav, S. P. S.</p>
+            <!-- PUBLICATION 1 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/advance.jfif" alt="Wheat crop">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., et al.
+                        <span class="paper-title">Screening drought tolerance capacity in wheat genotypes using physiological traits and drought tolerance indices in the mid-hills of Nepal.</span>
+                        <span class="journal">Advances in Agriculture</span>
+                        <span class="year">(2026).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://onlinelibrary.wiley.com/doi/10.1155/aia/4020245" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
 
-        <p><strong>Year / Journal:</strong> 2025 — <em>Cogent Food &amp; Agriculture</em>, 11(1).</p>
+            <!-- PUBLICATION 2 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/CABI.jpg" alt="CABI publication">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Shrestha, S., Kandel, B. P., Rana, D., & Poudel, A.
+                        <span class="paper-title">Characterization of phenotypic diversity and trait associations in Nepalese finger millet landraces.</span>
+                        <span class="journal">CABI Agriculture and Bioscience</span>
+                        <span class="year">(2026), 7(1).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://doi.org/10.1079/ab.2026.0044" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
 
-        <p><strong>Citation (APA):</strong> Chapagain, S., Kandel, B. P., Shrestha, S., Poudel, A., &amp; Yadav, S. P. S. (2025).
-        Identifying superior finger millet (<em>Eleusine coracana</em> L.) landraces using the multi-trait genotype–ideotype distance index (MGIDI).
-        <em>Cogent Food &amp; Agriculture</em>, 11(1).
-        </p>
+            <!-- PUBLICATION 3 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/discover.png" alt="Finger millet research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., et al.
+                        <span class="paper-title">Deciphering genetic variability and trait associations in Nepalese finger millet landraces for yield improvement.</span>
+                        <span class="journal">Discover Agriculture</span>, 4, 130
+                        <span class="year">(2026).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://link.springer.com/article/10.1007/s44279-026-00587-3" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
 
-        <p class="doi">
-            <strong>DOI:</strong>
-            <a href="https://doi.org/10.1080/23311932.2025.2592358" target="_blank" rel="noopener">
-                https://doi.org/10.1080/23311932.2025.2592358
-            </a>
-        </p>
+            <!-- PUBLICATION 4 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/applied.jfif" alt="Drought wheat research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Poudel, A., et al.
+                        <span class="paper-title">Assessment of early seedling stage indices for the selection of potential drought-tolerant bread wheat genotypes.</span>
+                        <span class="journal">Discover Applied Sciences</span>, 8, 248
+                        <span class="year">(2026).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://link.springer.com/article/10.1007/s42452-026-08252-6" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
 
-        <p><strong>Journal Rank:</strong> Q2 &nbsp;|&nbsp; <strong>Impact Factor:</strong> 2.3</p>
+            <!-- PUBLICATION 5 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/cogent.jpg" alt="Cogent publication">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Shrestha, S., Poudel, A., & Yadav, S. P. S.
+                        <span class="paper-title">Identifying superior finger millet (Eleusine coracana L.) landraces using the multi-trait genotype-ideotype distance index (MGIDI).</span>
+                        <span class="journal">Cogent Food & Agriculture</span>, 11(1), 2592358
+                        <span class="year">(2025).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://www.tandfonline.com/doi/full/10.1080/23311932.2025.2592358" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 6 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/iaastu.png" alt="Wheat research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        <strong>Chapagain, S.</strong>, Kandel, B. P., Adhikari, A., Poudel, A., & Kandel, M.
+                        <span class="paper-title">Estimation of genetic parameters and trait association in wheat (Triticum aestivum L.) genotypes.</span>
+                        <span class="journal">Journal of the Institute of Agriculture and Animal Science</span>, 39(1), 151–155
+                        <span class="year">(2025).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://doi.org/10.3126/jiaas.v39i1.88144" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 7 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/agrivita.png" alt="Maize research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        Ghimire, U., Kandel, B. P., Poudel, A., Poudel, R., Tripathi, A., Gurung, R., & <strong>Chapagain, S.</strong>
+                        <span class="paper-title">Agro-morphological characterization of maize (Zea mays) accessions in Lamjung, Nepal.</span>
+                        <span class="journal">AGRIVITA, Journal of Agricultural Science</span>, 48(3), Article 4966
+                        <span class="year">(2025).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://doi.org/10.17503/agrivita.v48i3.4966" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PUBLICATION 8 -->
+            <article class="publication-card">
+                <div class="pub-image">
+                    <img src="Image/iaas.png" alt="Proso millet research">
+                </div>
+                <div class="pub-content">
+                    <div class="pub-citation">
+                        Kandel, B. P., Regmi, A., <strong>Chapagain, S.</strong>, & Sharma, S.
+                        <span class="paper-title">Diversity assessment and farmer participatory selection of proso millet (Panicum miliaceum L.) accessions in Lamjung, Nepal.</span>
+                        <span class="journal">Nepal Agriculture Research Journal</span>, 17(1), 122–137
+                        <span class="year">(2026).</span>
+                    </div>
+                    <div class="pub-doi">
+                        <a href="https://doi.org/10.3126/narj.v17i1.99183" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> DOI
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- =========================================================
+     CONTACT / SOCIAL PROFILE
+========================================================= -->
+
+<section class="contact-profile" aria-label="Contact and social media">
+    <div class="contact-column">
+        <h3>Sujan Chapagain</h3>
+        <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
     </div>
-</article>
 
-        <article class="publication-card" aria-labelledby="pub1-title">
-            <h2 id="pub1-title" class="pub-title">Effect of different nitrogen levels on yield and yield attributes of okra (<em>Abelmoschus esculentus</em> L.)</h2>
+    <div class="contact-column location-column">
+        <p>Bharatpur, Nepal</p>
+        <p>Agricultural Researcher</p>
+    </div>
 
-            <div class="pub-meta">
-                <p><strong>Authors:</strong> Pokhrel, S., Neupane, B., &amp; Chapagain, S.</p>
-                <p><strong>Year / Journal:</strong> 2024 — <em>Archives of Agriculture and Environmental Science</em>, 9(1), 151–155.</p>
+    <div class="contact-column social-column">
+        <div class="social-icons">
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" class="social-icon" aria-label="Research Gate">
+                <i class="fab fa-researchgate"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
-                <p><strong>Citation (APA):</strong> Pokhrel, S., Neupane, B., &amp; Chapagain, S. (2024). Effect of different nitrogen levels on yield and yield attributes of okra (<em>Abelmoschus esculentus</em> L.). <em>Archives of Agriculture and Environmental Science</em>, 9(1), 151–155.</p>
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-                <p class="doi"><strong>DOI:</strong> <a href="https://doi.org/10.26832/24566632.2024.0901021" target="_blank" rel="noopener">https://doi.org/10.26832/24566632.2024.0901021</a></p>
-            </div>
-        </article>
+<footer class="footer">
+    <p>&copy; 2026 Sujan Chapagain</p>
+</footer>
 
-        <!-- You can duplicate the .publication-card for more entries -->
-
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2025 Sujan Chapagain. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling to local sections if needed
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
 </body>
 </html>
