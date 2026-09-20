@@ -28,7 +28,9 @@
         box-sizing: border-box;
     }
 
-    html {
+    html, body {
+        margin: 0;
+        padding: 0;
         scroll-behavior: smooth;
     }
 
@@ -36,9 +38,9 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        background: #fbf8f3;
-        color: #332923;
-        font-family: "Cormorant Garamond", Georgia, serif;
+        background: #f8f5f2;
+        color: #5a3b2e;
+        font-family: "Montserrat", sans-serif;
         line-height: 1.6;
     }
 
@@ -55,11 +57,8 @@
     .header {
         width: 100%;
         background: #f5efe6;
-        border-top: 1px solid #000000;
-        border-bottom: 1px solid #000000;
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        border-top: none;
+        border-bottom: 1px solid #d8cfc4;
     }
 
     .nav-container {
@@ -84,8 +83,7 @@
         font-size: 20px;
         font-weight: 600;
         color: #13100f;
-        text-decoration: underline;
-        text-underline-offset: 3px;
+        text-decoration: none;
         padding: 8px 12px;
         transition: color .25s ease;
     }
@@ -93,16 +91,22 @@
     .nav-menu a:hover,
     .nav-menu li.active a {
         color: #4c78a8;
+        text-decoration: underline;
+        text-underline-offset: 3px;
     }
 
 
     /* =========================================================
-       PAGE HEADING SECTION
+       PAGE CONTENT & HEADING
     ========================================================= */
 
+    .page-content-wrapper {
+        flex: 1;
+    }
+
     .projects-heading {
-        width: min(1080px, 92%);
-        margin: 52px auto 32px;
+        width: min(1200px, 92%);
+        margin: 45px auto 28px;
         text-align: center;
     }
 
@@ -112,113 +116,97 @@
         letter-spacing: 3.5px;
         text-transform: uppercase;
         color: #8a6a59;
-        margin-bottom: 8px;
+        margin-bottom: 7px;
     }
 
     .projects-heading h1 {
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: clamp(46px, 5.5vw, 68px);
-        font-weight: 300;
+        font-size: clamp(45px, 5vw, 64px);
+        font-weight: 500;
         line-height: 1;
         color: #5a3b2e;
     }
 
     .heading-line {
-        width: 75px;
+        width: 70px;
         height: 1px;
         background: #4c78a8;
-        margin: 18px auto 14px;
+        margin: 15px auto 11px;
     }
 
     .projects-heading p {
-        max-width: 720px;
+        max-width: 750px;
         margin: auto;
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 17px;
-        line-height: 1.55;
+        font-size: 18px;
+        line-height: 1.5;
         color: #73594b;
     }
 
 
     /* =========================================================
-       MAIN LAYOUT & PROJECT CARDS
+       MAIN LAYOUT & 3-COLUMN GRID CARDS
     ========================================================= */
 
     .page-content {
-        flex: 1;
-        width: min(1080px, 90%);
-        margin: 20px auto 60px;
+        width: min(1200px, 92%);
+        margin: 0 auto 50px;
     }
 
     .org-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .divider {
-        border: none;
-        border-top: 1px solid #c2b2a3;
-        margin: 30px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
     }
 
     .org-card {
-        display: grid;
-        grid-template-columns: 0.7fr 1.3fr;
-        gap: 20px;
-        align-items: flex-start;
-        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        background: #fffdfb;
+        border: 1px solid #ded5ce;
+        box-shadow: 0 5px 16px rgba(77, 55, 43, .055);
+        overflow: hidden;
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .org-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 9px 22px rgba(77, 55, 43, .09);
     }
 
 
     /* =========================================================
-       PROJECT IMAGE & CAPTION BELOW
+       PROJECT IMAGE & BOX
     ========================================================= */
 
     .org-image-column {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+        width: 100%;
     }
 
     .org-image-box {
+        position: relative;
         width: 100%;
-        height: 230px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 200px;
         overflow: hidden;
-
-        border-radius: 0;
-        background: #fbf8f3;
-        border: 1px solid #c2b2a3;
-
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        background: #eee9e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .org-image-box img {
-        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 0;
-
-        transition:
-            transform 0.5s ease,
-            filter 0.5s ease;
+        object-position: center;
+        display: block;
+        filter: saturate(.90);
+        transition: transform .4s ease, filter .4s ease;
     }
 
     .org-card:hover .org-image-box img {
-        transform: scale(1.035);
-        filter: brightness(1.02);
-    }
-
-    /* CAPTION BELOW IMAGE */
-    .image-caption-below {
-        font-family: "Montserrat", sans-serif;
-        font-size: 12px;
-        color: #73594b;
-        line-height: 1.4;
-        text-align: left;
+        transform: scale(1.02);
+        filter: saturate(1);
     }
 
 
@@ -227,48 +215,51 @@
     ========================================================= */
 
     .org-text-box {
+        padding: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        text-align: justify;
+        justify-content: space-between;
+        flex: 1;
     }
 
     .org-header-meta {
         display: flex;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 6px;
+        gap: 10px;
+        margin-bottom: 10px;
     }
 
     .org-number {
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 700;
-        color: #4a2306;
+        color: #5a3b2e;
     }
 
     .project-category-tag {
         font-family: "Montserrat", sans-serif;
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 1px;
-
-        background: #e8ded2;
-        color: #4a2306;
-
+        letter-spacing: 0.8px;
+        background: #f0f5fa;
+        color: #2b6cb0;
+        border: 1px solid #d0e1f9;
         padding: 3px 8px;
-        border-radius: 0;
+        border-radius: 4px;
+    }
+
+    .project-category-tag:empty {
+        display: none;
     }
 
     .org-title {
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 28px;
+        font-size: 22px;
         font-weight: 600;
-        color: #111111;
-
-        margin-bottom: 14px;
-        line-height: 1.25;
+        color: #222;
+        margin-bottom: 12px;
+        line-height: 1.3;
     }
 
     .org-title a {
@@ -277,81 +268,139 @@
     }
 
     .org-title a:hover {
-        color: #4c78a8;
-        text-decoration: underline;
+        color: #0f7aee;
     }
 
     .role-list {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 0 0 16px 0;
     }
 
     .role-list li {
         position: relative;
-
-        font-size: 20px;
-        color: #332923;
-
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 18px;
+        color: #60483b;
         margin-bottom: 8px;
-
-        line-height: 1.5;
-        padding-left: 20px;
+        line-height: 1.4;
+        padding-left: 18px;
     }
 
-    /* BLACK DOT BULLET */
     .role-list li::before {
         content: "•";
-
         position: absolute;
         left: 0;
         top: 0;
-
-        color: #000000;
-        font-size: 18px;
+        color: #4c78a8;
+        font-size: 16px;
         font-weight: 700;
-
-        line-height: 1.5;
+        line-height: 1.4;
     }
 
     .role-list li strong {
         font-weight: 600;
+        color: #222;
     }
 
-    /* MINOR PROJECTS SECTION */
+    /* PROJECT LINK BUTTON */
+    .project-btn-wrapper {
+        margin-top: auto;
+        padding-top: 10px;
+    }
+
+    .project-card-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        color: #2b6cb0;
+        background-color: #f0f5fa;
+        border: 1px solid #d0e1f9;
+        padding: 6px 14px;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+    }
+
+    .project-card-btn:hover {
+        background-color: #2b6cb0;
+        color: #ffffff;
+        border-color: #2b6cb0;
+    }
+
+
+    /* =========================================================
+       MINOR PROJECTS SECTION
+    ========================================================= */
+
     .minor-projects-section {
-        margin-top: 40px;
+        margin-top: 45px;
+        background: #fffdfb;
+        border: 1px solid #ded5ce;
+        padding: 28px;
+        box-shadow: 0 5px 16px rgba(77, 55, 43, .055);
     }
 
     .minor-projects-heading {
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 32px;
+        font-size: 30px;
         font-weight: 600;
-        color: #4a2306;
-        margin-bottom: 16px;
+        color: #5a3b2e;
+        margin-bottom: 14px;
+        border-bottom: 1px solid #ded5ce;
+        padding-bottom: 8px;
     }
 
     .minor-projects-list {
-        list-style: disc;
-        padding-left: 24px;
-        font-size: 22px;
-        color: #111111;
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
     }
 
     .minor-projects-list li {
-        margin-bottom: 12px;
+        position: relative;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 20px;
+        color: #60483b;
+        margin-bottom: 10px;
         line-height: 1.5;
+        padding-left: 20px;
+    }
+
+    .minor-projects-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #4c78a8;
+        font-size: 18px;
+        font-weight: 700;
     }
 
     .minor-link {
-        color: #0c4dda;
-        text-decoration: underline;
+        color: #2b6cb0;
+        background-color: #f0f5fa;
+        border: 1px solid #d0e1f9;
+        font-family: "Montserrat", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 3px 10px;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
         margin-left: 8px;
-        transition: color 0.25s ease;
+        transition: all 0.2s ease;
     }
 
     .minor-link:hover {
-        color: #4c78a8;
+        background-color: #2b6cb0;
+        color: #ffffff;
+        border-color: #2b6cb0;
     }
 
 
@@ -361,16 +410,11 @@
 
     .contact-profile {
         width: 100%;
-
-        background: #f5efe6;
-
-        border-top: 1px solid #e2dad0;
-
+        background: #f7f3ef;
+        border-top: 1px solid #ddd6d0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-
         gap: 30px;
-
         padding: 34px 7%;
     }
 
@@ -384,14 +428,12 @@
         font-family: "Cormorant Garamond", Georgia, serif;
         font-size: 25px;
         font-weight: 600;
-
-        color: #4a2306;
+        color: #5a3b2e;
     }
 
     .email-link {
         font-family: "Montserrat", sans-serif;
-        font-size: 12px;
-
+        font-size: 11px;
         color: #73594b;
         text-decoration: none;
     }
@@ -406,8 +448,7 @@
 
     .location-column p {
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 18px;
-
+        font-size: 17px;
         color: #73594b;
     }
 
@@ -424,32 +465,51 @@
     .social-icon {
         width: 38px;
         height: 38px;
-
         display: inline-flex;
         align-items: center;
         justify-content: center;
-
+        background-color: transparent;
         border: 1px solid #cfc4bc;
         border-radius: 50%;
-
         color: #5a3b2e;
-
         text-decoration: none;
-
-        transition:
-            transform .25s ease,
-            background .25s ease,
-            color .25s ease,
-            border-color .25s ease;
+        transition: transform .25s ease, background-color .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
     }
 
     .social-icon:hover {
         transform: translateY(-3px);
-
-        background: #4c78a8;
         color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
-        border-color: #4c78a8;
+    .social-icon.scholar:hover {
+        background-color: #4285f4;
+        border-color: #4285f4;
+    }
+
+    .social-icon.github:hover {
+        background-color: #24292e;
+        border-color: #24292e;
+    }
+
+    .social-icon.x-twitter:hover {
+        background-color: #000000;
+        border-color: #000000;
+    }
+
+    .social-icon.linkedin:hover {
+        background-color: #0077b5;
+        border-color: #0077b5;
+    }
+
+    .social-icon.researchgate:hover {
+        background-color: #00ccbb;
+        border-color: #00ccbb;
+    }
+
+    .social-icon.orcid:hover {
+        background-color: #a6ce39;
+        border-color: #a6ce39;
     }
 
 
@@ -459,18 +519,15 @@
 
     .footer {
         width: 100%;
-
-        background: #4a2306;
+        background: #5a3b2e;
         color: #f7f3ef;
-
         text-align: center;
-
         padding: 16px 20px;
     }
 
     .footer p {
         font-family: "Montserrat", sans-serif;
-        font-size: 12px;
+        font-size: 11px;
         letter-spacing: .4px;
     }
 
@@ -479,53 +536,44 @@
        RESPONSIVE DESIGN
     ========================================================= */
 
-    @media(max-width:768px) {
-
-        .nav-container {
-            padding: 8px 12px;
+    @media(max-width:992px) {
+        .org-container {
+            grid-template-columns: repeat(2, 1fr);
         }
+    }
 
+    @media(max-width:850px) {
         .nav-menu {
             flex-wrap: wrap;
             justify-content: center;
-            gap: 3px 8px;
+            gap: 2px 8px;
         }
 
         .nav-menu a {
-            font-size: 18px;
-            padding: 5px 7px;
-        }
-
-        .projects-heading {
-            margin: 35px auto 20px;
-        }
-
-        .page-content {
-            width: 90%;
-            margin: 20px auto 50px;
-        }
-
-        .org-card {
-            grid-template-columns: 1fr;
-            gap: 20px;
-            text-align: center;
-        }
-
-        .org-text-box {
-            text-align: center;
+            padding: 7px 8px;
         }
 
         .org-image-box {
-            height: 220px;
+            height: 180px;
+        }
+    }
+
+    @media(max-width:650px) {
+        .org-container {
+            grid-template-columns: 1fr;
         }
 
-        .image-caption-below {
-            text-align: center;
+        .projects-heading {
+            margin-top: 38px;
+            margin-bottom: 23px;
         }
 
-        .role-list {
-            display: inline-block;
-            text-align: left;
+        .projects-heading h1 {
+            font-size: 44px;
+        }
+
+        .projects-heading p {
+            font-size: 17px;
         }
 
         .contact-profile {
@@ -539,33 +587,8 @@
             align-items: center;
         }
 
-        .social-column {
-            justify-content: center;
-        }
-
-        .minor-projects-list {
-            text-align: left;
-        }
-    }
-
-
-    @media(max-width:480px) {
-
-        .nav-menu a {
-            font-size: 17px;
-            padding: 4px 5px;
-        }
-
-        .org-title {
-            font-size: 25px;
-        }
-
-        .role-list li {
-            font-size: 18px;
-        }
-
-        .contact-column h3 {
-            font-size: 23px;
+        .location-column {
+            text-align: center;
         }
     }
 
@@ -594,244 +617,234 @@
     </header>
 
     <!-- =========================================================
-         CENTERED PAGE HEADING
+         MAIN CONTENT WRAPPER
     ========================================================= -->
-    <section class="projects-heading">
-        <div class="small-title"></div>
-        <h1>Research Projects</h1>
-        <div class="heading-line"></div>
-        <p>Exploring crop resilience, plant pathology, and agricultural phenotyping through empirical field trials and data science.</p>
-    </section>
+    <div class="page-content-wrapper">
 
-    <!-- =========================================================
-         MAIN CONTENT AREA
-    ========================================================= -->
-    <main class="page-content">
-
-        <div class="org-container">
-
-            <!-- =====================================================
-                 01. DROUGHT STRESS IN WHEAT
-            ====================================================== -->
-            <div class="org-card">
-
-                <div class="org-image-column">
-                    <div class="org-image-box">
-                        <img
-                            src="Image/UAV1.jpg"
-                            alt="Wheat field evaluation under drought stress conditions">
-                    </div>
-                    <div class="image-caption-below">
-                    </div>
-                </div>
-
-                <div class="org-text-box">
-
-                    <div class="org-header-meta">
-                        <span class="org-number">01</span>
-                        <span class="project-category-tag">Plant Physiology & Phenotyping</span>
-                    </div>
-
-                    <h2 class="org-title">
-                        <a href="project1.html">
-                            Morpho-Physiological & Performance Evaluation of Wheat Genotypes Under Drought Stress
-                        </a>
-                    </h2>
-
-                    <ul class="role-list">
-                        <li>
-                            <strong>Focus:</strong>
-                            Bread Wheat (<i>Triticum aestivum</i>) Resilience
-                        </li>
-                        <li>
-                            Integrated spectral reflectance (NDVI), canopy temperature depression, and root architecture modeling to evaluate high-yielding wheat genotypes under water-deficit conditions.
-                        </li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-            <hr class="divider">
-
-            <!-- =====================================================
-                 02. CITRUS GREEN MOULD
-            ====================================================== -->
-            <div class="org-card">
-
-                <div class="org-image-column">
-                    <div class="org-image-box">
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Penicillium_digitatum_166137242.jpg/800px-Penicillium_digitatum_166137242.jpg"
-                            onerror="this.src='https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=1200&auto=format&fit=crop';"
-                            alt="Penicillium digitatum green mould on citrus">
-                    </div>
-                    <div class="image-caption-below">
-                    </div>
-                </div>
-
-                <div class="org-text-box">
-
-                    <div class="org-header-meta">
-                        <span class="org-number">02</span>
-                        <span class="project-category-tag">Crop Protection & Pathology</span>
-                    </div>
-
-                    <h2 class="org-title">
-                        <a href="project2.html">
-                            In vivo Efficacy of Botanical Extracts Against
-                            <i>Penicillium digitatum</i>
-                            Causing Green Mould in Citrus
-                        </a>
-                    </h2>
-
-                    <ul class="role-list">
-                        <li>
-                            <strong>Focus:</strong>
-                            Post-Harvest Disease Management
-                        </li>
-                        <li>
-                            Evaluated bio-degradable organic extracts (capsaicinoids & allicin) as sustainable, low-cost antifungal alternatives to synthetic chemical fungicides in mandarin citrus.
-                        </li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-            <hr class="divider">
-
-            <!-- =====================================================
-                 03. FINGER MILLET DIVERSITY
-            ====================================================== -->
-            <div class="org-card">
-
-                <div class="org-image-column">
-                    <div class="org-image-box">
-                        <img
-                            src="Image/fig7.jpg"
-                            alt="Finger millet field agro-morphological diversity">
-                    </div>
-                    <div class="image-caption-below">
-                    </div>
-                </div>
-
-                <div class="org-text-box">
-
-                    <div class="org-header-meta">
-                        <span class="org-number">03</span>
-                        <span class="project-category-tag">Biodiversity & Genetic Resources</span>
-                    </div>
-
-                    <h2 class="org-title">
-                        <a href="project3.html">
-                            Agro-Morphological Diversity Assessment in Nepalese Finger Millet Landraces
-                        </a>
-                    </h2>
-
-                    <ul class="role-list">
-                        <li>
-                            <strong>Focus:</strong>
-                            Climate-Resilient Nepalese Landraces
-                            (<i>Eleusine coracana</i>)
-                        </li>
-                        <li>
-                            Characterized phenotypic variation across indigenous landraces to pinpoint high-yielding, stress-tolerant lines suitable for climate adaptation and plant breeding.
-                        </li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- =====================================================
-             MINOR PROJECTS
-        ====================================================== -->
-        <hr class="divider">
-
-        <section class="minor-projects-section">
-            <h2 class="minor-projects-heading">Minor Projects</h2>
-            <ul class="minor-projects-list">
-                <li>
-                    Impact of Cover Crops on Plant Yield, Insect Pests, Weeds and Soil Health in Organic Vegetable Production 
-                    <a href="USDA.html" class="minor-link"> <strong>Link</strong></a>
-                </li>
-            </ul>
+        <section class="projects-heading">
+            <div class="small-title"></div>
+            <h1>Research Projects</h1>
+            <div class="heading-line"></div>
+            <p>Exploring crop resilience, plant pathology, and abiotic and biotic stress phenotyping.</p>
         </section>
 
-    </main>
+        <main class="page-content">
+
+            <div class="org-container">
+
+                <!-- 01. DROUGHT STRESS IN WHEAT -->
+                <article class="org-card">
+                    <div class="org-image-column">
+                        <div class="org-image-box">
+                            <a href="project1.html">
+                                <img src="Image/aac.jpg" alt="Wheat field evaluation under drought stress conditions">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="org-text-box">
+                        <div>
+                            <h2 class="org-title">
+                                <a href="project1.html">
+                                    Morpho-Physiological & Performance Evaluation of Wheat Genotypes Under Drought Stress
+                                </a>
+                            </h2>
+
+                            <ul class="role-list">
+                                <li>
+                                    <strong>Focus:</strong> Physiological and High-throughput under Drought Stress
+                                </li>
+                                <li>
+                                    Integrated spectral reflectance (NDVI), canopy temperature depression, and root architecture modeling to evaluate high-yielding wheat genotypes under water-deficit conditions.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project-btn-wrapper">
+                            <a href="project1.html" class="project-card-btn">
+                                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- 04. WHEAT LEAF RUST -->
+                <article class="org-card">
+                    <div class="org-image-column">
+                        <div class="org-image-box">
+                            <a href="project4.html">
+                                <img src="Image/rust.jpg" alt="Leaf Rust">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="org-text-box">
+                        <div>
+                            <h2 class="org-title">
+                                <a href="project4.html">
+                                    Screening Wheat Genotypes Against Leaf Rust (<i>Puccinia triticina</i>) in Open Field Conditions
+                                </a>
+                            </h2>
+
+                            <ul class="role-list">
+                                <li>
+                                    <strong>Focus:</strong> Disease Epidemiology & Host Resistance
+                                </li>
+                                <li>
+                                    Evaluated disease severity progression, area under disease progress curve (AUDPC), and host response metrics for diverse wheat genotypes under natural infection.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project-btn-wrapper">
+                            <a href="project4.html" class="project-card-btn">
+                                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- 02. CITRUS GREEN MOULD -->
+                <article class="org-card">
+                    <div class="org-image-column">
+                        <div class="org-image-box">
+                            <a href="project2.html">
+                                <img src="Image/mould.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="org-text-box">
+                        <div>
+                            <h2 class="org-title">
+                                <a href="project2.html">
+                                    In vivo Efficacy of Botanical Extracts Against <i>Penicillium digitatum</i> Causing Green Mould in Citrus
+                                </a>
+                            </h2>
+
+                            <ul class="role-list">
+                                <li>
+                                    <strong>Focus:</strong> Post-Harvest Disease Management
+                                </li>
+                                <li>
+                                    Evaluated bio-degradable organic extracts (capsaicinoids & allicin) as sustainable, low-cost antifungal alternatives to synthetic chemical fungicides in mandarin citrus.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project-btn-wrapper">
+                            <a href="project2.html" class="project-card-btn">
+                                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 03. FINGER MILLET DIVERSITY -->
+                <article class="org-card">
+                    <div class="org-image-column">
+                        <div class="org-image-box">
+                            <a href="project3.html">
+                                <img src="Image/fig7.jpg" alt="Finger millet field agro-morphological diversity">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="org-text-box">
+                        <div>
+                            <h2 class="org-title">
+                                <a href="project3.html">
+                                    Agro-Morphological Diversity Assessment in Nepalese Finger Millet Landraces
+                                </a>
+                            </h2>
+
+                            <ul class="role-list">
+                                <li>
+                                    <strong>Focus:</strong> Genetic Characterization of Nepalese Landraces
+                                </li>
+                                <li>
+                                    Characterized phenotypic variation across indigenous landraces to pinpoint high-yielding, stress-tolerant lines suitable for climate adaptation and plant breeding.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="project-btn-wrapper">
+                            <a href="project3.html" class="project-card-btn">
+                                View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+               
+            </div>
+
+            <!-- MINOR PROJECTS SECTION -->
+            <section class="minor-projects-section">
+                <h2 class="minor-projects-heading">Minor Projects</h2>
+                <ul class="minor-projects-list">
+                    <li>
+                        Impact of Cover Crops on Plant Yield, Insect Pests, Weeds and Soil Health in Organic Vegetable Production 
+                        <a href="USDA.html" class="minor-link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Link
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+    </div>
 
     <!-- =========================================================
          CONTACT PROFILE
     ========================================================= -->
-    <section class="contact-profile">
-
+    <section class="contact-profile" aria-label="Contact and social media">
         <div class="contact-column">
             <h3>Sujan Chapagain</h3>
-            <a href="mailto:chapagainsujan45@gmail.com" class="email-link">
-                chapagainsujan45@gmail.com
-            </a>
+            <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
         </div>
 
         <div class="contact-column location-column">
             <p>Bharatpur, Nepal</p>
+            <p>Agricultural Researcher</p>
         </div>
 
         <div class="contact-column social-column">
             <div class="social-icons">
-                 <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" target="_blank" rel="noopener"
-               aria-label="Google Scholar" class="social-icon">
-                <i class="fa-solid fa-graduation-cap"></i>
-            </a>
-
-            <a href="https://github.com/sujan4445" target="_blank" rel="noopener"
-               aria-label="GitHub" class="social-icon">
-                <i class="fab fa-github"></i>
-            </a>
-
-            <a href="https://x.com/Iamsujan45" target="_blank" rel="noopener"
-               aria-label="X" class="social-icon">
-                <i class="fa-brands fa-x-twitter"></i>
-            </a>
-
-            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/"
-               target="_blank" rel="noopener"
-               aria-label="LinkedIn" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-              <a
-                    href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="ResearchGate"
-                    class="social-icon researchgate">
-
-                    <i class="fab fa-researchgate"></i>
-
+                <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" class="social-icon scholar">
+                    <i class="fa-solid fa-graduation-cap"></i>
                 </a>
 
-                <a
-                    href="https://orcid.org/0000-0002-2037-3491"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="ORCID"
-                    class="social-icon orcid">
+                <a href="https://github.com/sujan4445" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon github">
+                    <i class="fab fa-github"></i>
+                </a>
 
+                <a href="https://x.com/Iamsujan45" target="_blank" rel="noopener" aria-label="X" class="social-icon x-twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" target="_blank" rel="noopener" aria-label="ResearchGate" class="social-icon researchgate">
+                    <i class="fab fa-researchgate"></i>
+                </a>
+
+                <a href="https://orcid.org/0000-0002-2037-3491" target="_blank" rel="noopener" aria-label="ORCID" class="social-icon orcid">
                     <i class="fab fa-orcid"></i>
-
                 </a>
             </div>
         </div>
-
     </section>
 
     <!-- =========================================================
          FOOTER
     ========================================================= -->
     <footer class="footer">
-        <p>&copy; 2026 Sujan Chapagain </p>
+        <p>&copy; 2026 Sujan Chapagain</p>
     </footer>
 
 </body>
