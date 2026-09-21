@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fixed viewport width ensures mobile devices render the layout at desktop scale -->
+    <meta name="viewport" content="width=1280">
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7589005216098712"
@@ -51,7 +52,7 @@
             line-height: 1.7;
             font-family: "Cormorant Garamond", Georgia, serif;
             font-size: 18px;
-            overflow-x: hidden;
+            min-width: 1280px; /* Force desktop minimum width */
         }
 
         img {
@@ -125,7 +126,6 @@
             position: relative;
             overflow: hidden;
 
-            /* Changed background size to 100% auto to display the wider image completely */
             background: 
                 linear-gradient(
                     rgba(35, 27, 20, 0.45),
@@ -688,161 +688,6 @@
             padding: 13px 20px 18px;
             font-size: 17px;
             color: #755649;
-        }
-
-
-        /* =========================================================
-           MEDIA QUERIES
-           ========================================================= */
-
-        @media (max-width: 1450px) {
-            .personal-showcase,
-            .identity,
-            .section,
-            .contact-profile {
-                width: calc(100% - 30px);
-            }
-
-            .nav-menu {
-                gap: 17px;
-            }
-
-            .nav-menu a {
-                font-size: 19px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .nav-container {
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding: 0 10px;
-            }
-
-            .nav-menu {
-                width: max-content;
-                min-width: 100%;
-                justify-content: flex-start;
-                gap: 8px;
-            }
-
-            .nav-menu a {
-                font-size: 17px;
-                padding: 9px 10px;
-                white-space: nowrap;
-            }
-
-            .hero {
-                min-height: 300px;
-            }
-
-            .hero-content {
-                padding: 30px 20px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-            }
-
-            .personal-showcase {
-                width: min(100% - 30px, 1420px);
-                grid-template-columns: 1fr;
-                gap: 7px;
-            }
-
-            .personal-photo-card {
-                height: 360px;
-            }
-
-            .projects,
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .profile-highlights {
-                grid-template-columns: 1fr;
-            }
-
-            .highlight-box {
-                min-height: auto;
-                border-right: none;
-                border-bottom: 1px solid #8d5a43;
-                padding: 25px 30px 32px;
-            }
-
-            .highlight-box:last-child {
-                border-bottom: none;
-            }
-
-            .contact-profile {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-column {
-                border-right: none;
-                border-bottom: 1px solid #8d5a43;
-                align-items: center;
-                text-align: center;
-            }
-
-            .contact-column:last-child {
-                border-bottom: none;
-            }
-
-            .location-column {
-                align-items: center;
-            }
-
-            .social-icons {
-                justify-content: center;
-            }
-
-            .about-section {
-                padding: 34px 20px 42px;
-            }
-
-            .about-text {
-                font-size: 18px;
-                line-height: 1.55;
-            }
-
-            .section,
-            .contact-profile {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                font-size: 17px;
-            }
-
-            .hero {
-                min-height: 250px;
-            }
-
-            .hero-content {
-                padding: 25px 15px;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-                margin-bottom: 12px;
-            }
-
-            .hero-subtitle {
-                font-size: 16px;
-            }
-
-            .projects,
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
         }
 
     </style>
