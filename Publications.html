@@ -41,7 +41,7 @@ body{
     color:#5a3b2e;
 
     font-family:"Montserrat",sans-serif;
-    line-height:1.6;
+    line-height:1.5;
 }
 
 a{
@@ -56,12 +56,12 @@ a{
     .header{
         width:100%;
         background:#f5efe6;
-        border-top: none; /* Removed top border causing extra space */
+        border-top: none;
         border-bottom:1px solid #d8cfc4;
     }
 
     .nav-container{
-        min-height:52px;
+        min-height:48px;
         padding:0 20px;
         display:flex;
         align-items:center;
@@ -83,7 +83,7 @@ a{
         font-weight:600;
         color:#13100f;
         text-decoration:none;
-        padding:8px 12px;
+        padding:6px 10px;
         transition:color .25s ease;
     }
 
@@ -110,27 +110,27 @@ a{
 
 .publications-heading{
     width:min(1080px,92%);
-    margin:45px auto 28px;
+    margin:24px auto 14px;
 
     text-align:center;
 }
 
 .small-title{
     font-family:"Cinzel",Georgia,serif;
-    font-size:13px;
+    font-size:12px;
 
-    letter-spacing:3.5px;
+    letter-spacing:3px;
     text-transform:uppercase;
 
     color:#8a6a59;
 
-    margin-bottom:7px;
+    margin-bottom:4px;
 }
 
 .publications-heading h1{
     font-family:"Cormorant Garamond",Georgia,serif;
 
-    font-size:clamp(45px,5vw,64px);
+    font-size:clamp(38px,4.5vw,52px);
     font-weight:500;
     line-height:1;
 
@@ -138,24 +138,12 @@ a{
 }
 
 .heading-line{
-    width:70px;
+    width:60px;
     height:1px;
 
     background:#4c78a8;
 
-    margin:15px auto 11px;
-}
-
-.publications-heading p{
-    max-width:750px;
-    margin:auto;
-
-    font-family:"Cormorant Garamond",Georgia,serif;
-
-    font-size:18px;
-    line-height:1.5;
-
-    color:#73594b;
+    margin:10px auto 8px;
 }
 
 
@@ -165,13 +153,105 @@ a{
 
 .publications-section{
     width:min(1080px,92%);
-    margin:0 auto 50px;
+    margin:0 auto 30px;
 }
 
 .publication-list{
     display:flex;
     flex-direction:column;
-    gap:16px;
+    gap:12px;
+}
+
+
+/* =========================================================
+   UNDER REVIEW / WORKING PAPERS SECTION (NO BOX)
+========================================================= */
+
+.under-review-section{
+    background:transparent;
+    border:none;
+    padding:0;
+    margin-bottom:20px;
+    box-shadow:none;
+}
+
+.under-review-heading{
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:24px;
+    font-weight:600;
+    color:#5a3b2e;
+    margin-bottom:10px;
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:#4c78a8;
+}
+
+.under-review-list{
+    list-style:none;
+    padding-left:0;
+    margin:0;
+}
+
+.under-review-list li{
+    position:relative;
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:18px;
+    color:#60483b;
+    margin-bottom:8px;
+    line-height:1.35;
+    padding-left:18px;
+}
+
+.under-review-list li:last-child{
+    margin-bottom:0;
+}
+
+.under-review-list li::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    top:0;
+    color:#4c78a8;
+    font-size:18px;
+    font-weight:700;
+}
+
+.under-review-list strong{
+    font-size:19px;
+    font-weight:750;
+    color:#0f7aee;
+}
+
+.under-review-list .paper-title{
+    font-weight:600;
+    color:#222;
+}
+
+.under-review-list .journal{
+    font-weight:600;
+    color:#222;
+}
+
+.under-review-list .status-tag{
+    display:inline;
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:18px;
+    font-weight:600;
+    color:#eb3d04;
+    text-decoration:underline;
+    text-underline-offset:2px;
+    margin-left:4px;
+}
+
+.published-heading{
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-size:24px;
+    font-weight:600;
+    color:#5a3b2e;
+    margin:22px 0 10px;
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:#4c78a8;
 }
 
 
@@ -182,15 +262,15 @@ a{
 .publication-card{
     display:grid;
 
-    grid-template-columns:135px 1fr;
+    grid-template-columns:120px 1fr;
 
-    min-height:130px;
+    min-height:105px;
 
     background:#fffdfb;
 
     border:1px solid #ded5ce;
 
-    box-shadow:0 5px 16px rgba(77,55,43,.055);
+    box-shadow:0 3px 10px rgba(77,55,43,.04);
 
     overflow:hidden;
 
@@ -202,7 +282,7 @@ a{
 .publication-card:hover{
     transform:translateY(-2px);
 
-    box-shadow:0 9px 22px rgba(77,55,43,.09);
+    box-shadow:0 6px 16px rgba(77,55,43,.08);
 }
 
 
@@ -213,7 +293,7 @@ a{
 .pub-image{
     position:relative;
 
-    width:135px;
+    width:120px;
     height:100%;
 
     overflow:hidden;
@@ -224,11 +304,6 @@ a{
     align-items:center;
     justify-content:center;
 }
-
-
-/* =========================================================
-   IMAGE — FULLY FITTED INSIDE FRAME
-========================================================= */
 
 .pub-image img{
     width:100%;
@@ -258,7 +333,7 @@ a{
 ========================================================= */
 
 .pub-content{
-    padding:16px 21px;
+    padding:10px 16px;
 
     display:flex;
     flex-direction:column;
@@ -273,8 +348,8 @@ a{
 .pub-citation{
     font-family:"Cormorant Garamond",Georgia,serif;
 
-    font-size:19px;
-    line-height:1.40;
+    font-size:18px;
+    line-height:1.35;
 
     font-weight:400;
 
@@ -283,16 +358,10 @@ a{
     color:#60483b;
 }
 
-
-/* =========================================================
-   SUJAN CHAPAGAIN
-   BLUE + BOLD
-========================================================= */
-
 .pub-citation strong{
     font-family:"Cormorant Garamond",Georgia,serif;
 
-    font-size:20px;
+    font-size:19px;
 
     font-weight:750;
 
@@ -300,11 +369,6 @@ a{
 
     color:#0f7aee;
 }
-
-
-/* =========================================================
-   PAPER TITLE & DETAILS
-========================================================= */
 
 .pub-citation .paper-title{
     font-style:normal;
@@ -338,7 +402,7 @@ a{
 ========================================================= */
 
 .pub-doi{
-    margin-top:8px;
+    margin-top:5px;
 }
 
 .paper-link,
@@ -346,14 +410,14 @@ a{
     color:#2b6cb0;
     background-color:#f0f5fa;
     border:1px solid #d0e1f9;
-    font-size:12px;
+    font-size:11px;
     font-weight:600;
     text-decoration:none;
-    padding:3px 10px;
+    padding:2px 8px;
     border-radius:4px;
     display:inline-flex;
     align-items:center;
-    gap:5px;
+    gap:4px;
     transition:all 0.2s ease;
 }
 
@@ -363,29 +427,6 @@ a{
     color:#ffffff;
     border-color:#2b6cb0;
     text-decoration:none;
-}
-
-
-/* =========================================================
-   END NOTE
-========================================================= */
-
-.publication-note{
-    margin:23px auto 0;
-
-    max-width:850px;
-
-    text-align:center;
-}
-
-.publication-note p{
-    font-family:"Cormorant Garamond",Georgia,serif;
-
-    font-size:17px;
-
-    color:#80685b;
-
-    line-height:1.5;
 }
 
 
@@ -404,9 +445,9 @@ a{
 
     grid-template-columns:1fr 1fr 1fr;
 
-    gap:30px;
+    gap:20px;
 
-    padding:34px 7%;
+    padding:20px 7%;
 }
 
 .contact-column{
@@ -420,7 +461,7 @@ a{
 .contact-column h3{
     font-family:"Cormorant Garamond",Georgia,serif;
 
-    font-size:25px;
+    font-size:22px;
 
     font-weight:600;
 
@@ -453,7 +494,7 @@ a{
 .location-column p{
     font-family:"Cormorant Garamond",Georgia,serif;
 
-    font-size:17px;
+    font-size:16px;
 
     color:#73594b;
 }
@@ -472,12 +513,12 @@ a{
 
     align-items:center;
 
-    gap:9px;
+    gap:8px;
 }
 
 .social-icon{
-    width:38px;
-    height:38px;
+    width:34px;
+    height:34px;
 
     display:inline-flex;
 
@@ -496,7 +537,7 @@ a{
 }
 
 .social-icon:hover{
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 
     background:#4c78a8;
 
@@ -519,7 +560,7 @@ a{
 
     text-align:center;
 
-    padding:16px 20px;
+    padding:12px 20px;
 }
 
 .footer p{
@@ -540,74 +581,70 @@ a{
 
         justify-content:center;
 
-        gap:2px 8px;
+        gap:2px 6px;
     }
 
     .nav-menu a{
-        padding:7px 8px;
+        padding:5px 6px;
     }
 
     .publication-card{
-        grid-template-columns:115px 1fr;
+        grid-template-columns:100px 1fr;
 
-        min-height:115px;
+        min-height:95px;
     }
 
     .pub-image{
-        width:115px;
+        width:100px;
     }
 
     .pub-content{
-        padding:13px 17px;
+        padding:8px 12px;
     }
 
     .pub-citation{
-        font-size:18px;
+        font-size:17px;
     }
 
     .pub-citation strong{
-        font-size:19px;
+        font-size:18px;
     }
 }
 
 @media(max-width:650px){
 
     .publications-heading{
-        margin-top:38px;
+        margin-top:18px;
 
-        margin-bottom:23px;
+        margin-bottom:12px;
     }
 
     .publications-heading h1{
-        font-size:44px;
-    }
-
-    .publications-heading p{
-        font-size:17px;
+        font-size:36px;
     }
 
     .publication-card{
-        grid-template-columns:90px 1fr;
+        grid-template-columns:85px 1fr;
 
-        min-height:105px;
+        min-height:90px;
     }
 
     .pub-image{
-        width:90px;
+        width:85px;
     }
 
     .pub-content{
-        padding:11px 13px;
+        padding:8px 10px;
     }
 
     .pub-citation{
-        font-size:16px;
+        font-size:15px;
 
-        line-height:1.34;
+        line-height:1.3;
     }
 
     .pub-citation strong{
-        font-size:17px;
+        font-size:16px;
     }
 
     .contact-profile{
@@ -615,7 +652,7 @@ a{
 
         text-align:center;
 
-        padding:30px 20px;
+        padding:20px;
     }
 
     .contact-column,
@@ -667,23 +704,33 @@ a{
     </section>
 
     <section class="publications-section">
+
+        <!-- UNDER REVIEW / MANUSCRIPTS UNDER REVISION (UNDERLINED NO BOX) -->
+        <section class="under-review-section">
+            <h2 class="under-review-heading">Manuscripts Under Revision</h2>
+            <ul class="under-review-list">
+                <li>
+                    <strong>Chapagain, S.</strong>, Shrestha, S., Kandel, B. P., & Rana, D. 
+                    <span class="paper-title">Integrating NDVI and Canopy Temperature Across Phenological Stages for Drought Phenotyping and Grain Yield Prediction.</span> 
+                    <span class="journal">npj Science of Plants.</span> 
+                    <span class="status-tag">(Under 2nd Revision)</span>
+                </li>
+                <li>
+                    <strong>Chapagain, S.</strong>, Kandel, B. P., et al. 
+                    <span class="paper-title">Phenotypic screening for leaf rust resistance in wheat genotypes under open-field conditions.</span> (2026). 
+                    <span class="journal">Australasian Plant Pathology.</span> 
+                    <span class="status-tag">(Under 1st Revision)</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- PUBLISHED ARTICLES HEADING -->
+        <h2 class="published-heading">Peer-Reviewed Published Articles</h2>
+
+        <!-- PUBLISHED ARTICLES -->
         <div class="publication-list">
 
             <!-- PUBLICATION 1 -->
-            <article class="publication-card">
-                <div class="pub-image">
-                    <img src="Image/CABI.jpg" alt="Wheat research">
-                </div>
-                <div class="pub-content">
-                    <div class="pub-citation">
-                        <strong>Chapagain, S.</strong>, Shrestha, S., Kandel, B. P., & Rana, D.
-                        <span class="paper-title">Integrating NDVI and Canopy Temperature Across Phenological Stages for Drought Phenotyping and Grain Yield Prediction.</span>
-                        <span class="journal">Under 2nd Revision.</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PUBLICATION 2 -->
             <article class="publication-card">
                 <div class="pub-image">
                     <img src="Image/advance.jfif" alt="Wheat crop">
@@ -703,7 +750,7 @@ a{
                 </div>
             </article>
 
-            <!-- PUBLICATION 3 -->
+            <!-- PUBLICATION 2 -->
             <article class="publication-card">
                 <div class="pub-image">
                     <img src="Image/CABI.jpg" alt="CABI publication">
@@ -723,7 +770,7 @@ a{
                 </div>
             </article>
 
-            <!-- PUBLICATION 4 -->
+            <!-- PUBLICATION 3 -->
             <article class="publication-card">
                 <div class="pub-image">
                     <img src="Image/discover.png" alt="Finger millet research">
@@ -743,7 +790,7 @@ a{
                 </div>
             </article>
 
-            <!-- PUBLICATION 5 -->
+            <!-- PUBLICATION 4 -->
             <article class="publication-card">
                 <div class="pub-image">
                     <img src="Image/applied.jfif" alt="Drought wheat research">
@@ -763,7 +810,7 @@ a{
                 </div>
             </article>
 
-            <!-- PUBLICATION 6 -->
+            <!-- PUBLICATION 5 -->
             <article class="publication-card">
                 <div class="pub-image">
                     <img src="Image/cogent.jpg" alt="Cogent publication">
@@ -783,7 +830,7 @@ a{
                 </div>
             </article>
 
-            <!-- PUBLICATION 7 -->
+            <!-- PUBLICATION 6 -->
             <article class="publication-card">
                 <div class="pub-image">
                     <img src="Image/iaastu.png" alt="Wheat research">
@@ -803,7 +850,7 @@ a{
                 </div>
             </article>
 
-            <!-- PUBLICATION 8 -->
+            <!-- PUBLICATION 7 -->
             <article class="publication-card">
                 <div class="pub-image">
                     <img src="Image/agrivita.png" alt="Maize research">
@@ -823,7 +870,7 @@ a{
                 </div>
             </article>
 
-            <!-- PUBLICATION 9 -->
+            <!-- PUBLICATION 8 -->
             <article class="publication-card">
                 <div class="pub-image">
                     <img src="Image/iaas.png" alt="Proso millet research">
@@ -889,7 +936,7 @@ a{
 ========================================================= -->
 
 <footer class="footer">
-    <p>© 2026 Sujan Chapagain. All rights reserved.</p>
+    <p>&copy; 2026 Sujan Chapagain</p>
 </footer>
 
 </body>
