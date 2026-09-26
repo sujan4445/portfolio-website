@@ -9,154 +9,153 @@
 
     <title>Projects | Sujan Chapagain</title>
 
+    <!-- Site Icon / Favicon -->
+    <link rel="icon" type="image/jpeg" href="SC.jpg">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-
     /* =========================================================
        GLOBAL & RESET
     ========================================================= */
-
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    html{
-        scroll-behavior:smooth;
+    html {
+        scroll-behavior: smooth;
     }
 
-    body{
-        min-height:100vh;
-        display:flex;
-        flex-direction:column;
-        background:#fbf8f3;
-        color:#332923;
-        font-family:"Cormorant Garamond", Georgia, serif;
-        line-height:1.6;
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        color: #000000;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        line-height: 1.45;
     }
 
-    a{
-        color:inherit;
+    a {
+        color: inherit;
+    }
+
+    i, em {
+        font-style: normal;
     }
 
     /* =========================================================
        HEADER / NAVIGATION
     ========================================================= */
-
-    .header{
-        width:100%;
-        background:#f5efe6;
-        border-top:1px solid #000000;
-        border-bottom:1px solid #000000;
+    .header {
+        width: 100%;
+        background: #f5efe6;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
     }
 
-    .nav-container{
-        min-height:52px;
-        padding:0 20px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
+    .nav-container {
+        min-height: 52px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .nav-menu{
-        width:100%;
-        max-width:1320px;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        list-style:none;
+    .nav-menu {
+        width: 100%;
+        max-width: 1320px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
     }
 
-    .nav-menu a{
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:20px;
-        font-weight:600;
-        color:#13100f;
-        text-decoration:underline;
-        text-underline-offset:3px;
-        padding:8px 12px;
-        transition:color .25s ease;
+    .nav-menu a {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #13100f;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        padding: 8px 12px;
+        transition: color .25s ease;
     }
 
     .nav-menu a:hover,
-    .nav-menu .active a{
-        color:#4c78a8;
+    .nav-menu .active a {
+        color: #4c78a8;
     }
 
     /* =========================================================
-       MAIN LAYOUT & HEADING
+       MAIN LAYOUT & TWO-COLUMN GRID
     ========================================================= */
-
-    .page-content{
-        flex:1;
-        width:min(1080px, 90%);
-        margin:50px auto 60px;
+    .page-content {
+        flex: 1;
+        width: min(1180px, 94%);
+        margin: 30px auto 50px;
     }
 
-    .main-title{
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:clamp(32px, 3.5vw, 46px);
-        font-weight:500;
-        color:#4a2306;
-        margin-bottom:40px;
-        line-height:1.25;
+    .main-title {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(26px, 2.8vw, 36px);
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 20px;
+        line-height: 1.25;
     }
 
-    .section-title{
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:clamp(28px, 2.8vw, 36px);
-        font-weight:600;
-        color:#4a2306;
-        margin:45px 0 20px 0;
-        border-bottom:2px solid #4a2306;
-        padding-bottom:6px;
+    /* Primary Grid - Full height right column enables sticky scroll */
+    .sd-grid {
+        display: grid;
+        grid-template-columns: 1fr 220px;
+        gap: 30px;
+        align-items: start;
     }
 
     /* =========================================================
-       CAROUSEL SECTION WITH SLIDE ANIMATION
+       IMAGE FRAME / CAROUSEL (890px x 470px)
     ========================================================= */
-
-    .carousel-section{
-        background-color:#1a1a1a;
-        position:relative;
-        width:100%;
-        height:480px;
-        margin-bottom:40px;
-        border:1px solid #c2b2a3;
-        overflow:hidden;
-        display:flex;
-        align-items:center;
-        justify-content:center;
+    .carousel-section {
+        background-color: #1a1a1a;
+        position: relative;
+        width: 100%;
+        max-width: 890px;
+        height: 470px;
+        border: 1px solid #000000;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
     }
 
-    .carousel-slide{
-        display:none;
-        width:100%;
-        height:100%;
-        position:absolute;
-        top:0;
-        left:0;
-        text-align:center;
+    .carousel-slide {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-align: center;
     }
 
-    .carousel-slide.active{
-        display:block;
-        z-index:1;
+    .carousel-slide.active {
+        display: block;
     }
 
-    .carousel-slide img{
-        max-width:100%;
-        max-height:100%;
-        height:100%;
-        object-fit:contain;
-        margin:0 auto;
+    .carousel-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+        object-fit: contain;
+        margin: 0 auto;
     }
 
     .carousel-caption {
@@ -164,341 +163,370 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.75);
-        color: #fff;
-        padding: 8px 15px;
+        background: rgba(0, 0, 0, 0.80);
+        color: #ffffff;
+        padding: 8px 14px;
         font-family: "Montserrat", sans-serif;
         font-size: 13px;
         text-align: center;
     }
 
-    .arrow-btn{
-        position:absolute;
-        top:50%;
-        transform:translateY(-50%);
-        background:rgba(0, 0, 0, 0.4);
-        color:#ffffff;
-        border:none;
-        font-size:24px;
-        padding:12px 16px;
-        cursor:pointer;
-        z-index:10;
-        transition:background 0.2s ease;
+    .arrow-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        border: none;
+        font-size: 20px;
+        padding: 10px 14px;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.2s ease;
     }
 
-    .arrow-btn:hover{
-        background:rgba(0, 0, 0, 0.8);
+    .arrow-btn:hover {
+        background: rgba(0, 0, 0, 0.9);
     }
 
-    .arrow-left{ left:0; }
-    .arrow-right{ right:0; }
+    .arrow-left { left: 0; }
+    .arrow-right { right: 0; }
 
-    .slide-counter{
-        position:absolute;
-        bottom:12px;
-        right:15px;
-        background:rgba(0, 0, 0, 0.6);
-        color:#ccc;
-        font-family:"Montserrat", sans-serif;
-        font-size:12px;
-        padding:3px 8px;
-        border-radius:3px;
-        z-index:11;
-    }
-
-    /* Animation keyframes for Right-to-Left and Left-to-Right sliding */
-    .slide-next-in {
-        display: block;
-        animation: slideNextIn 0.4s ease-in-out forwards;
-    }
-    .slide-next-out {
-        display: block;
-        animation: slideNextOut 0.4s ease-in-out forwards;
-    }
-    .slide-prev-in {
-        display: block;
-        animation: slidePrevIn 0.4s ease-in-out forwards;
-    }
-    .slide-prev-out {
-        display: block;
-        animation: slidePrevOut 0.4s ease-in-out forwards;
-    }
-
-    @keyframes slideNextIn {
-        from { transform: translateX(100%); }
-        to { transform: translateX(0); }
-    }
-    @keyframes slideNextOut {
-        from { transform: translateX(0); }
-        to { transform: translateX(-100%); }
-    }
-    @keyframes slidePrevIn {
-        from { transform: translateX(-100%); }
-        to { transform: translateX(0); }
-    }
-    @keyframes slidePrevOut {
-        from { transform: translateX(0); }
-        to { transform: translateX(100%); }
+    .slide-counter {
+        position: absolute;
+        bottom: 8px;
+        right: 12px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #ffffff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 11px;
+        padding: 2px 7px;
+        border-radius: 3px;
+        z-index: 11;
     }
 
     /* =========================================================
-       TEXT CONTENT & LISTS
+       STICKY SIDEBAR NAV (RED ACTIVE SCROLL EFFECT)
     ========================================================= */
-
-    .project-description{
-        font-family:"Cormorant Garamond", Georgia, serif;
-        font-size:21px;
-        color:#332923;
-        line-height:1.6;
-        text-align:justify;
-        margin-bottom:25px;
+    .sd-sidebar {
+        position: sticky;
+        top: 30px;
+        align-self: start;
+        border-left: 2px solid #000000;
+        padding-left: 14px;
     }
 
-    .meta-list{
-        list-style:none;
-        padding:0;
-        margin:0 0 35px 0;
+    .sidebar-title {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 10px;
     }
 
-    .meta-list li{
-        font-size:20px;
-        color:#332923;
-        margin-bottom:8px;
-        line-height:1.5;
+    .sidebar-nav {
+        list-style: none;
     }
 
-    .meta-list li strong{
-        font-weight:600;
-        color:#4a2306;
+    .sidebar-nav li {
+        margin-bottom: 8px;
     }
 
-    .role-list{
-        list-style:none;
-        padding:0;
-        margin:0 0 30px 0;
+    .sidebar-nav a {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 19px;
+        font-weight: 600;
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.2s ease, font-weight 0.2s ease;
     }
 
-    .role-list li{
-        position:relative;
-        font-size:21px;
-        color:#332923;
-        margin-bottom:12px;
-        line-height:1.5;
-        padding-left:20px;
+    .sidebar-nav a:hover {
+        color: #d9381e;
     }
 
-    .role-list li::before{
-        content:"•";
-        position:absolute;
-        left:0;
-        top:0;
-        color:#000000;
-        font-size:18px;
-        font-weight:700;
-        line-height:1.5;
+    /* RED BOLD ACTIVE SCROLL LINK */
+    .sidebar-nav a.active-link {
+        color: #d9381e !important;
+        font-weight: 700 !important;
     }
 
-    .role-list li strong{
-        font-weight:600;
+    /* =========================================================
+       METADATA & HIGHLIGHTS (PURE BLACK TEXT)
+    ========================================================= */
+    .meta-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 25px 0;
+        font-size: 19px;
     }
 
-    .publication-item{
-        margin-bottom:20px;
-        font-size:20px;
+    .meta-list li {
+        color: #000000;
+        margin-bottom: 4px;
+        font-weight: 500;
     }
 
-    .publication-item p{
-        margin-bottom:4px;
+    .meta-list li strong {
+        font-weight: 700;
+        color: #000000;
     }
 
-    .publication-link{
-        font-family:"Montserrat", sans-serif;
-        font-size:14px;
-        color:#4c78a8;
-        text-decoration:none;
-        word-break:break-all;
+    .highlights-box {
+        background-color: #f3ece1;
+        border-left: 4px solid #000000;
+        padding: 14px 20px;
+        margin-bottom: 25px;
     }
 
-    .publication-link:hover{
-        text-decoration:underline;
+    .highlights-title {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 6px;
+    }
+
+    .highlights-list {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .highlights-list li {
+        font-size: 19px;
+        color: #000000;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    /* =========================================================
+       TEXT CONTENT & SECTIONS
+    ========================================================= */
+    .section-title {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 25px;
+        font-weight: 700;
+        color: #000000;
+        margin: 24px 0 10px 0;
+        border-bottom: 2px solid #000000;
+        padding-bottom: 3px;
+    }
+
+    .project-description {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 20px;
+        font-weight: 500;
+        color: #000000;
+        line-height: 1.45;
+        text-align: justify;
+        margin-bottom: 12px;
+    }
+
+    .role-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 15px 0;
+    }
+
+    .role-list li {
+        position: relative;
+        font-size: 19px;
+        font-weight: 500;
+        color: #000000;
+        margin-bottom: 6px;
+        line-height: 1.4;
+        padding-left: 18px;
+    }
+
+    .role-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #000000;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    /* =========================================================
+       PUBLICATIONS
+    ========================================================= */
+    .publications-list {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    .publication-bullet {
+        font-size: 19px;
+        font-weight: 500;
+        color: #000000;
+        margin-bottom: 8px;
+        line-height: 1.35;
+    }
+
+    .doi-link {
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        color: #007398;
+        text-decoration: underline;
+        margin-left: 4px;
+        word-break: break-all;
+    }
+
+    .doi-link:hover {
+        color: #004b63;
     }
 
     /* =========================================================
        CONTACT PROFILE
     ========================================================= */
-
-    .contact-profile{
-        width:100%;
-        background:#f5efe6;
-        border-top:1px solid #e2dad0;
-        display:grid;
-        grid-template-columns:1fr 1fr 1fr;
-        gap:30px;
-        padding:34px 7%;
+    .contact-profile {
+        width: 100%;
+        background: #f5efe6;
+        border-top: 1px solid #000000;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        padding: 22px 7%;
     }
 
-    .contact-column{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
+    .contact-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .contact-column h3{
-        font-family:"Cormorant Garamond",Georgia,serif;
-        font-size:25px;
-        font-weight:600;
-        color:#4a2306;
+    .contact-column h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 23px;
+        font-weight: 700;
+        color: #000000;
     }
 
-    .email-link{
-        font-family:"Montserrat",sans-serif;
-        font-size:12px;
-        color:#73594b;
-        text-decoration:none;
+    .email-link {
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        color: #000000;
+        font-weight: 500;
+        text-decoration: none;
     }
 
-    .email-link:hover{
-        color:#4c78a8;
+    .email-link:hover {
+        color: #4c78a8;
     }
 
-    .location-column{
-        text-align:center;
+    .location-column {
+        text-align: center;
     }
 
-    .location-column p{
-        font-family:"Cormorant Garamond",Georgia,serif;
-        font-size:18px;
-        color:#73594b;
+    .location-column p {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #000000;
     }
 
-    .social-column{
-        align-items:flex-end;
+    .social-column {
+        align-items: flex-end;
     }
 
-    .social-icons{
-        display:flex;
-        align-items:center;
-        gap:9px;
+    .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    .social-icon{
-        width:38px;
-        height:38px;
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        border:1px solid #cfc4bc;
-        border-radius:50%;
-        color:#5a3b2e;
-        text-decoration:none;
-        transition:
-            transform .25s ease,
-            background .25s ease,
-            color .25s ease,
-            border-color .25s ease;
+    .social-icon {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000000;
+        border-radius: 50%;
+        color: #000000;
+        text-decoration: none;
+        transition: transform .25s ease, background .25s ease, color .25s ease;
     }
 
-    .social-icon:hover{
-        transform:translateY(-3px);
-        background:#4c78a8;
-        color:#ffffff;
-        border-color:#4c78a8;
+    .social-icon:hover {
+        transform: translateY(-2px);
+        background: #4c78a8;
+        color: #ffffff;
+        border-color: #4c78a8;
     }
 
     /* =========================================================
        FOOTER
     ========================================================= */
-
-    .footer{
-        width:100%;
-        background:#4a2306;
-        color:#f7f3ef;
-        text-align:center;
-        padding:16px 20px;
+    .footer {
+        width: 100%;
+        background: #4a2306;
+        color: #ffffff;
+        text-align: center;
+        padding: 12px 20px;
     }
 
-    .footer p{
-        font-family:"Montserrat",sans-serif;
-        font-size:12px;
-        letter-spacing:.4px;
+    .footer p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 11px;
+        letter-spacing: .4px;
     }
 
     /* =========================================================
        RESPONSIVE DESIGN
     ========================================================= */
-
-    @media(max-width:768px){
-
-        .nav-container{
-            padding:8px 12px;
+    @media(max-width: 950px) {
+        .sd-grid {
+            grid-template-columns: 1fr;
         }
-
-        .nav-menu{
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:3px 8px;
+        .carousel-section {
+            max-width: 100%;
+            height: 360px;
         }
-
-        .nav-menu a{
-            font-size:18px;
-            padding:5px 7px;
+        .sd-sidebar {
+            display: none;
         }
+    }
 
-        .page-content{
-            width:90%;
-            margin:35px auto 50px;
+    @media(max-width: 768px) {
+        .nav-container {
+            padding: 8px 12px;
         }
-
-        .main-title{
-            font-size:32px;
-            margin-bottom:30px;
+        .nav-menu {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3px 8px;
         }
-
-        .carousel-section{
-            height:320px;
+        .nav-menu a {
+            font-size: 17px;
+            padding: 4px 6px;
         }
-
-        .contact-profile{
-            grid-template-columns:1fr;
-            text-align:center;
-            padding:30px 20px;
+        .carousel-section {
+            height: 280px;
         }
-
+        .contact-profile {
+            grid-template-columns: 1fr;
+            text-align: center;
+            padding: 18px;
+        }
         .contact-column,
-        .social-column{
-            align-items:center;
+        .social-column {
+            align-items: center;
         }
-
-        .social-column{
-            justify-content:center;
-        }
-    }
-
-    @media(max-width:480px){
-
-        .nav-menu a{
-            font-size:17px;
-            padding:4px 5px;
-        }
-
-        .main-title{
-            font-size:28px;
-        }
-
-        .role-list li{
-            font-size:18px;
-        }
-
-        .contact-column h3{
-            font-size:23px;
+        .social-column {
+            justify-content: center;
         }
     }
-
     </style>
 </head>
 
 <body>
 
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================= -->
 <header class="header">
     <nav class="nav-container" aria-label="Main navigation">
         <ul class="nav-menu">
@@ -515,113 +543,154 @@
     </nav>
 </header>
 
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
 <main class="page-content">
 
+    <!-- Title -->
     <h1 class="main-title">
         Performance Evaluation and Morpho-Physiological Screening of Wheat Genotypes under Irrigated and Drought Environments
     </h1>
 
-    <div class="carousel-section">
-        <button class="arrow-btn arrow-left" id="prevSlide" aria-label="Previous slide">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
+    <!-- Grid Container with Main Content Left and Sticky Sidebar Right -->
+    <div class="sd-grid">
 
-        <div class="carousel-slide active">
-            <img src="Image/1.jpg" alt="AFU W01 Genotype Trial" loading="eager">
-            <div class="carousel-caption">
-                Spike length differences under drought and irrigated conditions
+        <!-- Left Column: Media + All Content -->
+        <div>
+            
+            <!-- Image Frame / Carousel Slider (890px x 470px) -->
+            <div class="carousel-section" id="gallery">
+                <button class="arrow-btn arrow-left" id="prevSlide" aria-label="Previous slide">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-slide active">
+                    <img src="Image/1.jpg" alt="AFU W01 Genotype Trial" loading="eager">
+                    <div class="carousel-caption">Spike length differences under drought and irrigated conditions</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="Image/2.jpg" alt="AFU W02 Genotype" loading="lazy">
+                    <div class="carousel-caption">Grain diversity in studied wheat accessions</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="Image/UAV1.jpg" alt="Heading Stage" loading="lazy">
+                    <div class="carousel-caption">Aerial image of wheat field</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="Image/wheat3.jpg" alt="Cluster Analysis" loading="lazy">
+                    <div class="carousel-caption">Controlled environment drought screening</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="Image/afuw1.jpg" alt="Plant Breeding" loading="lazy">
+                    <div class="carousel-caption">Wheat Project Plant Breeding Team</div>
+                </div>
+
+                <button class="arrow-btn arrow-right" id="nextSlide" aria-label="Next slide">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div class="slide-counter" id="slideCounter">1/5</div>
             </div>
+
+            <!-- Metadata Section -->
+            <ul class="meta-list">
+                <li><strong>Principal Investigator:</strong> Sujan Chapagain</li>
+                <li><strong>Co-Principal Investigators:</strong> Sandesh Subedi, Samir Nepal, Sancheet Gautam</li>
+                <li><strong>Funding:</strong> Champadevi Rural Municipality, Okhaldhunga</li>
+            </ul>
+
+            <!-- Highlights Box -->
+            <div class="highlights-box" id="highlights">
+                <h2 class="highlights-title">Highlights</h2>
+                <ul class="highlights-list">
+                    <li>Evaluated wheat genotypes under controlled irrigated and drought-stressed environments.</li>
+                    <li>Morpho-physiological traits (RWC, chlorophyll Fluroscence, canopy temperature) served as effective selection criteria.</li>
+                    <li>Promising novel lines AFU W01 and AFU W02 demonstrated superior yield stability.</li>
+
+                </ul>
+            </div>
+
+            <!-- Background -->
+            <section id="background">
+                <h2 class="section-title">Background</h2>
+                <p class="project-description">
+                    Wheat (Triticum aestivum L.) is a fundamental staple cereal crop contributing significantly to food security, dietary energy supply, and rural livelihoods in Nepal. Most wheat research and varietal development have historically been concentrated in the Terai region, where irrigation facilities allow high-yielding varieties to thrive. However, the mid-hill region—comprising a large portion of the nation's cultivated area—remains predominantly rainfed and faces severe constraints due to erratic rainfall and terminal drought stress. This project addresses yield losses by systematically screening diverse local landraces, improved genotypes, and newly developed lines under controlled water regimes and field conditions.
+                </p>
+            </section>
+
+            <!-- Objectives -->
+            <section id="objectives">
+                <h2 class="section-title">Objectives</h2>
+                <ul class="role-list">
+                    <li>To assess the phenological, agronomic, and yield performance of local and improved wheat genotypes under contrasting irrigated and drought environments.</li>
+                    <li>To screen for key morpho-physiological drought tolerance mechanisms including Relative Water Content (RWC), canopy temperature, SPAD chlorophyll index, and leaf rolling index.</li>
+                    <li>To evaluate novel genotypes <strong>AFU W01</strong> and <strong>AFU W02</strong> alongside standard cultivars for yield stability across varied moisture regimes.</li>
+                    <li>To provide actionable genetic and physiological data to support future wheat breeding programs and variety releases tailored for mid-hill ecosystems.</li>
+                </ul>
+            </section>
+
+
+            <!-- Outcomes -->
+            <section id="outcomes">
+                <h2 class="section-title">Outcomes</h2>
+                <ul class="role-list">
+                    <li>Identification of stable, high-yielding wheat lines resilient to moisture stress conditions in mid-hill rainfed environments.</li>
+                    <li>Validation of physiological traits (RWC, chlorophyll stability, canopy depression) as effective indirect selection criteria for drought tolerance.</li>
+                    <li>Characterization and baseline performance data for prospective lines AFU W01 and AFU W02.</li>
+                    <li>Generation of multi-environment trial datasets supporting national breeding pipelines.</li>
+                </ul>
+            </section>
+
+            <!-- Publications -->
+            <section id="publications">
+                <h2 class="section-title">Publications</h2>
+
+                <ul class="publications-list">
+                    <li class="publication-bullet">
+                        Chapagain, S., Kandel, B.P., Shrestha, S., et al. (2026). Screening drought tolerance capacity in wheat genotypes using physiological traits and drought tolerance indices in the mid-hills of Nepal. Advances in Agriculture.
+                        <a href="https://doi.org/10.1155/aia/4020245" class="doi-link" target="_blank" rel="noopener">https://doi.org/10.1155/aia/4020245</a>
+                    </li>
+
+                    <li class="publication-bullet">
+                        Chapagain, S., Kandel, B. P., Poudel, A., et al. (2026). Assessment of early seedling stage indices for the selection of potential drought-tolerant bread wheat genotypes. Discover Applied Science.
+                        <a href="https://doi.org/10.1007/s42452-026-08252-6" class="doi-link" target="_blank" rel="noopener">https://doi.org/10.1007/s42452-026-08252-6</a>
+                    </li>
+
+                    <li class="publication-bullet">
+                        Chapagain, S., Kandel, B. P., Adhikari, A., Poudel, A., & Kandel, M. (2025). Estimation of genetic parameters and trait association in wheat (Triticum aestivum L.) genotypes. Journal of the Institute of Agriculture and Animal Science, 39(1), 151–155.
+                        <a href="https://doi.org/10.3126/jiaas.v39i1.88144" class="doi-link" target="_blank" rel="noopener">https://doi.org/10.3126/jiaas.v39i1.88144</a>
+                    </li>
+                </ul>
+            </section>
+
         </div>
 
-        <div class="carousel-slide">
-            <img src="Image/2.jpg" alt="AFU W02 Genotype" loading="lazy">
-            <div class="carousel-caption">
-                Grain diversity in studied wheat accessions
-            </div>
-        </div>
+        <!-- Right Column: Sticky Navigation Box (Scrolls with page content) -->
+        <aside class="sd-sidebar">
+            <h3 class="sidebar-title">Contents</h3>
+            <ul class="sidebar-nav">
+                <li><a href="#gallery" class="active-link">Gallery</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#objectives">Objectives</a></li>
+                <li><a href="#outcomes">Outcomes</a></li>
+                <li><a href="#publications">Publications</a></li>
+            </ul>
+        </aside>
 
-        <div class="carousel-slide">
-            <img src="Image/UAV1.jpg" alt="Heading Stage" loading="lazy">
-            <div class="carousel-caption">
-                Aerial image of wheat field
-            </div>
-        </div>
-
-        <div class="carousel-slide">
-            <img src="Image/wheat3.jpg" alt="Cluster Analysis" loading="lazy">
-            <div class="carousel-caption">
-                Controlled environment drought screening
-            </div>
-        </div>
-
-        <div class="carousel-slide">
-            <img src="Image/afuw1.jpg" alt="Plant Breeding" loading="lazy">
-            <div class="carousel-caption">
-                Wheat Project Plant Breeding Team
-            </div>
-        </div>
-
-        <button class="arrow-btn arrow-right" id="nextSlide" aria-label="Next slide">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-        <div class="slide-counter" id="slideCounter">1/5</div>
-    </div>
-
-    <ul class="meta-list">
-        <li><strong>Principal Investigator:</strong> Sujan Chapagain</li>
-        <li><strong>Co-Principal Investigators:</strong> Sandesh Subedi, Samir Nepal, Sancheet Gautam</li>
-        <li><strong>Project Supervisors:</strong> Ankur Poudel, Bishnu Prasad Kandel, Mahesh Subedi</li>
-        <li><strong>Funding:</strong> Champadevi Rural Municipality, Okhaldhunga</li>
-    </ul>
-
-    <h2 class="section-title">Background</h2>
-    <p class="project-description">
-        Wheat (<i>Triticum aestivum</i> L.) is a fundamental staple cereal crop contributing significantly to food security, dietary energy supply, and rural livelihoods in Nepal. Most wheat research and varietal development have historically been concentrated in the Terai region, where irrigation facilities allow high-yielding varieties to thrive. However, the mid-hill region—comprising a large portion of the nation's cultivated area—remains predominantly rainfed and faces severe constraints due to erratic rainfall and terminal drought stress. This project addresses yield losses by systematically screening diverse local landraces, improved genotypes, and newly developed lines under controlled water regimes and field conditions.
-    </p>
-
-    <h2 class="section-title">Objectives</h2>
-    <ul class="role-list">
-        <li>To assess the phenological, agronomic, and yield performance of local and improved wheat genotypes under contrasting irrigated and drought environments.</li>
-        <li>To screen for key morpho-physiological drought tolerance mechanisms including Relative Water Content (RWC), canopy temperature, SPAD chlorophyll index, and leaf rolling index.</li>
-        <li>To evaluate novel genotypes <strong>AFU W01</strong> and <strong>AFU W02</strong> alongside standard cultivars for yield stability across varied moisture regimes.</li>
-        <li>To provide actionable genetic and physiological data to support future wheat breeding programs and variety releases tailored for mid-hill ecosystems.</li>
-    </ul>
-
-    <h2 class="section-title">Ongoing Work</h2>
-    <p class="project-description">
-        Field experiments are conducted using an Alpha Lattice Design across two moisture regimes (Irrigated and Drought-stressed) with two replications. Complementary pot trials utilize a Completely Randomized Design (CRD) comparing 70% Field Capacity (Well-watered) to 35% Field Capacity (Water-stressed). Statistical analysis pipelines incorporate Analysis of Variance (ANOVA), Additive Main Effects and Multiplicative Interaction (AMMI), Genotype and Genotype × Environment interaction (GGE) Biplots, Principal Component Analysis (PCA), and Cluster Analysis.
-    </p>
-
-    <h2 class="section-title">Outcomes</h2>
-    <ul class="role-list">
-        <li>Identification of stable, high-yielding wheat lines resilient to moisture stress conditions in mid-hill rainfed environments.</li>
-        <li>Validation of physiological traits (RWC, chlorophyll stability, canopy depression) as effective indirect selection criteria for drought tolerance.</li>
-        <li>Characterization and baseline performance data for prospective lines AFU W01 and AFU W02.</li>
-        <li>Generation of multi-environment trial datasets supporting national breeding pipelines.</li>
-    </ul>
-
-    <h2 class="section-title">Publications</h2>
-
-    <div class="publication-item">
-        <p>Chapagain, S., Kandel, B.P., Shrestha, S., et al. (2026). Screening drought tolerance capacity in wheat genotypes using physiological traits and drought tolerance indices in the mid-hills of Nepal. <i>Advances in Agriculture</i>.</p>
-        <a href="https://doi.org/10.1155/aia/4020245" class="publication-link" target="_blank" rel="noopener">https://doi.org/10.1155/aia/4020245</a>
-    </div>
-
-    <div class="publication-item">
-        <p>Chapagain, S., Kandel, B. P., Poudel, A., et al. (2026). Assessment of early seedling stage indices for the selection of potential drought-tolerant bread wheat genotypes. <i>Discover Applied Science</i>.</p>
-        <a href="https://doi.org/10.1007/s42452-026-08252-6" class="publication-link" target="_blank" rel="noopener">https://doi.org/10.1007/s42452-026-08252-6</a>
-    </div>
-
-    <div class="publication-item">
-        <p>Chapagain, S., Kandel, B. P., Adhikari, A., Poudel, A., & Kandel, M. (2025). Estimation of genetic parameters and trait association in wheat (<i>Triticum aestivum</i> L.) genotypes. <i>Journal of the Institute of Agriculture and Animal Science</i>, 39(1), 151–155.</p>
-        <a href="https://doi.org/10.3126/jiaas.v39i1.88144" class="publication-link" target="_blank" rel="noopener">https://doi.org/10.3126/jiaas.v39i1.88144</a>
     </div>
 
 </main>
 
+<!-- =========================================================
+     CONTACT / SOCIAL PROFILE
+========================================================= -->
 <section class="contact-profile" aria-label="Contact and social media">
-
     <div class="contact-column">
         <h3>Sujan Chapagain</h3>
         <a href="mailto:chapagainsujan45@gmail.com" class="email-link">chapagainsujan45@gmail.com</a>
@@ -634,79 +703,92 @@
 
     <div class="contact-column social-column">
         <div class="social-icons">
-            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i></a>
-            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" target="_blank" rel="noopener" class="social-icon" aria-label="Research Gate"><i class="fab fa-researchgate"></i></a>
+            <a href="https://scholar.google.com/citations?user=jgRf4AgAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar" target="_blank" rel="noopener">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/sujan4445" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://x.com/Iamsujan45" class="social-icon" aria-label="X" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sujan-chapagain-240617140/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Sujan-Chapagain-2?ev=hdr_xprf" target="_blank" rel="noopener" class="social-icon" aria-label="Research Gate">
+                <i class="fab fa-researchgate"></i>
+            </a>
         </div>
     </div>
-
 </section>
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 <footer class="footer">
     <p>© 2026 Sujan Chapagain. All rights reserved.</p>
 </footer>
 
+<!-- =========================================================
+     SCRIPTS (SLIDER FUNCTION + RED SCROLL HIGHLIGHTING)
+========================================================= -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
+    // 1. Carousel Slider Functionality
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.getElementById('prevSlide');
     const nextBtn = document.getElementById('nextSlide');
     const counter = document.getElementById('slideCounter');
     let currentIndex = 0;
-    let isAnimating = false;
 
     if (slides.length > 0) {
-        function changeSlide(newIndex, direction) {
-            if (isAnimating || newIndex === currentIndex) return;
-            isAnimating = true;
-
-            const currentSlide = slides[currentIndex];
-            const nextSlide = slides[newIndex];
-
-            // Reset animation classes
-            slides.forEach(slide => {
-                slide.className = 'carousel-slide';
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
             });
-
-            if (direction === 'next') {
-                currentSlide.classList.add('slide-next-out');
-                nextSlide.classList.add('slide-next-in');
-            } else {
-                currentSlide.classList.add('slide-prev-out');
-                nextSlide.classList.add('slide-prev-in');
+            if (counter) {
+                counter.textContent = `${index + 1}/${slides.length}`;
             }
-
-            setTimeout(() => {
-                slides.forEach((slide, i) => {
-                    slide.className = 'carousel-slide';
-                    if (i === newIndex) {
-                        slide.classList.add('active');
-                    }
-                });
-                currentIndex = newIndex;
-                if (counter) {
-                    counter.textContent = `${currentIndex + 1}/${slides.length}`;
-                }
-                isAnimating = false;
-            }, 400);
         }
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                const nextIndex = (currentIndex + 1) % slides.length;
-                changeSlide(nextIndex, 'next');
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
             });
         }
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-                changeSlide(prevIndex, 'prev');
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
             });
         }
     }
+
+    // 2. Dynamic Red & Bold Scroll Highlighting
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+    const sections = document.querySelectorAll('#gallery, #highlights, #background, #objectives, #ongoing-work, #outcomes, #publications');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            if (window.pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active-link');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active-link');
+            }
+        });
+    });
+
 });
 </script>
 
